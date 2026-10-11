@@ -1,6 +1,7 @@
 package pe.edu.utp.aglome_tienda.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 import pe.edu.utp.aglome_tienda.dto.AgregarAlCarritoRequest;
 import pe.edu.utp.aglome_tienda.dto.CarritoDTO;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class CarritoService {
 
     private final CarritoRepository carritoRepository;

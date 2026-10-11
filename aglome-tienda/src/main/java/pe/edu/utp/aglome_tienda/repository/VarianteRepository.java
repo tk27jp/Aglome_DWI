@@ -8,4 +8,8 @@ import java.util.UUID;
 public interface VarianteRepository extends JpaRepository<Variante, UUID> {
 
     List<Variante> findByProductoBaseId(UUID productoBaseId);
+
+    boolean existsBySku(String sku);
+
+    boolean existsBySkuAndIdNot(String sku, UUID id);
 }

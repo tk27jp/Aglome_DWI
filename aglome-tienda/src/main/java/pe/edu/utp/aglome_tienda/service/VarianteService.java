@@ -2,6 +2,7 @@ package pe.edu.utp.aglome_tienda.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.utp.aglome_tienda.dto.VarianteDTO;
 import pe.edu.utp.aglome_tienda.dto.VarianteRequest;
 import pe.edu.utp.aglome_tienda.model.*;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class VarianteService {
 
     private final VarianteRepository varianteRepository;
@@ -32,6 +34,10 @@ public class VarianteService {
 
     // ── escrituras: solo panel admin ────────────────────────────────
     public VarianteDTO crear(VarianteRequest request) {
+        if (varianteRepository.existsBySku(request.getSku())) {
+            throw new RuntimeException("Ya existe una variante con ese SKU");
+        }
+
         ProductoBase productoBase = productoBaseRepository.findById(request.getProductoBaseId())
                 .orElseThrow(() -> new RuntimeException("Producto base no encontrado"));
 
@@ -52,7 +58,9 @@ public class VarianteService {
     public VarianteDTO actualizar(UUID id, VarianteRequest request) {
         Variante variante = varianteRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Variante no encontrada"));
-
+        if (varianteRepository.existsBySkuAndIdNot(request.getSku(), id)) {
+        throw new RuntimeException("Ya existe otra variante con ese SKU");
+        }
         variante.setSku(request.getSku());
         variante.setPrecioVenta(request.getPrecioVenta());
         variante.setStock(request.getStock());

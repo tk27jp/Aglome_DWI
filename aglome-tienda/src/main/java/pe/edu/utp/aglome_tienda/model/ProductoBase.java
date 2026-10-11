@@ -3,14 +3,13 @@ package pe.edu.utp.aglome_tienda.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 import java.util.UUID;
 
 @Entity
 @Table(name = "producto_base")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class ProductoBase {
 
     @Id
@@ -30,4 +29,14 @@ public class ProductoBase {
     private Categoria categoria;
 
     private Boolean publicado = false; // solo se muestra en la tienda si está en true
+
+    public ProductoBase(UUID id, String nombre, String descripcion, String marca,
+                        Categoria categoria, Boolean publicado) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.marca = marca;
+        this.categoria = categoria;
+        this.publicado = publicado;
+    }
 }

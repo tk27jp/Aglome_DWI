@@ -8,6 +8,7 @@ import pe.edu.utp.aglome_tienda.dto.PedidoDTO;
 import pe.edu.utp.aglome_tienda.model.*;
 import pe.edu.utp.aglome_tienda.repository.*;
 
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -90,6 +91,14 @@ public class PedidoService {
                 .stream().map(this::mapearADto).collect(Collectors.toList());
     }
 
+    public List<PedidoDTO> misPedidosPorEstado(String email, EstadoPedido estado) {
+    Usuario usuario = usuarioRepository.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        return pedidoRepository.buscarPorUsuarioYEstado(usuario.getId(), estado)
+            .stream().map(this::mapearADto).collect(Collectors.toList());
+    }
+
     public PedidoDTO obtenerPorId(String email, UUID pedidoId) {
         Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
@@ -107,6 +116,28 @@ public class PedidoService {
     // ── para el panel admin: ver todos los pedidos ──────────────────
     public List<PedidoDTO> listarTodosAdmin() {
         return pedidoRepository.findAll().stream().map(this::mapearADto).collect(Collectors.toList());
+    }
+
+    @Transactional
+    public PedidoDTO cambiarEstado(UUID pedidoId, EstadoPedido nuevoEstado) {
+        Pedido pedido = pedidoRepository.findById(pedidoId)
+                .orElseThrow(() -> new RuntimeException("Pedido no encontrado"));
+
+        if (pedido.getEstado() == EstadoPedido.CANCELADO) {
+        throw new RuntimeException("El pedido ya está cancelado");
+        }
+
+        // Si se cancela, el stock de cada producto vuelve al inventario
+        if (nuevoEstado == EstadoPedido.CANCELADO) {
+            for (DetallePedido d : detallePedidoRepository.findByPedidoId(pedidoId)) {
+                Variante v = d.getVariante();
+                v.setStock(v.getStock() + d.getCantidad());
+                varianteRepository.save(v);
+            }
+        }
+
+        pedido.setEstado(nuevoEstado);
+        return mapearADto(pedidoRepository.save(pedido));
     }
 
     // ── helper privado ───────────────────────────────────────────────

@@ -3,13 +3,11 @@ package pe.edu.utp.aglome_tienda.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "categoria")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Categoria {
 
     @Id
@@ -24,4 +22,11 @@ public class Categoria {
     private Categoria padre; // permite subcategorías, opcional
 
     private Boolean activa = true;
+
+    public Categoria(Long id, String nombre, Categoria padre, Boolean activa) {
+        this.id = id;
+        this.nombre = nombre;
+        this.padre = padre;
+        this.activa = activa;
+    }
 }

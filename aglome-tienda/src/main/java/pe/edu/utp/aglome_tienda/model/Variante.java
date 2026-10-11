@@ -3,7 +3,6 @@ package pe.edu.utp.aglome_tienda.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
 import java.util.UUID;
 
@@ -11,7 +10,6 @@ import java.util.UUID;
 @Table(name = "variante")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Variante {
 
     @Id
@@ -32,4 +30,14 @@ public class Variante {
     private Integer stock = 0;
 
     private Boolean activa = true;
+
+    public Variante(UUID id, ProductoBase productoBase, String sku, BigDecimal precioVenta,
+                    Integer stock, Boolean activa) {
+        this.id = id;
+        this.productoBase = productoBase;
+        this.sku = sku;
+        this.precioVenta = precioVenta;
+        this.stock = stock;
+        this.activa = activa;
+    }
 }

@@ -21,6 +21,11 @@ public class ProductoController {
         return ResponseEntity.ok(productoBaseService.listarPublicados());
     }
 
+    @GetMapping("/buscar")
+    public ResponseEntity<List<ProductoBaseDTO>> buscar(@RequestParam String texto) {
+        return ResponseEntity.ok(productoBaseService.buscarPorNombre(texto));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<?> obtener(@PathVariable UUID id) {
         try {

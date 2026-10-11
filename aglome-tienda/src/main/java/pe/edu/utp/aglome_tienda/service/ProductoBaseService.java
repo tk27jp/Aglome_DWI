@@ -62,6 +62,11 @@ public class ProductoBaseService {
         productoBaseRepository.delete(producto);
     }
 
+    public List<ProductoBaseDTO> buscarPorNombre(String texto) {
+        return productoBaseRepository.buscarPublicadosPorNombre(texto)
+                .stream().map(this::mapearADto).collect(Collectors.toList());
+    }
+    
     // ── helpers privados ──────────────────────────────────────────────
     private ProductoBase buscarOFallar(UUID id) {
         return productoBaseRepository.findById(id)
