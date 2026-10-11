@@ -1,37 +1,181 @@
 # Aglome-tienda · API REST con Spring Boot
 
-API REST para una tienda en línea (catálogo de productos con variantes, carrito, pedidos y panel de administración).
+Back-end de la plataforma web de **Aglome Perú**, una empresa de Chimbote (Perú) dedicada a la venta de madera, melamina y productos de ferretería.
 Proyecto académico del curso de **Back-end con Spring Boot**, que cubre dos unidades de aprendizaje:
 
 | Unidad | Tema | Qué se implementó |
 |---|---|---|
-| **1** | API REST con TDD | Controladores, servicios, inyección de dependencias, métodos HTTP y pruebas automatizadas |
-| **2** | Back-end con bases de datos | JPA/Hibernate sobre PostgreSQL, JPQL, transacciones, Spring Security, roles y JWT |
+| **1** | API REST con TDD | Controladores, servicios, inyección de dependencias, métodos HTTP y pruebas automáticas |
+| **2** | Back-end con bases de datos | JPA e Hibernate sobre PostgreSQL, JPQL, transacciones, Spring Security, roles y JWT |
+
+---
+
+## Contexto del proyecto
+
+**El problema.** Aglome no tiene catálogo web ni una base de datos digital accesible: su inventario interno no está conectado a internet y la atención es 100 % por llamadas o visitas. Los clientes deben llamar para consultar disponibilidad, precios, colores y medidas, y pueden perder hasta medio día buscando el producto correcto. El personal (administradora y ejecutiva de ventas) se sobrecarga con llamadas repetitivas y no puede dedicarse a tareas de mayor valor.
+
+**La solución.** Una plataforma web formada por una **API REST** (este repositorio) y un **frontend en Angular** (siguiente etapa del curso) que servirá de vitrina digital: catálogo con fotos, precios y medidas, filtros por categoría, color y medida, botón de contacto por WhatsApp y mapa de ubicación.
+
+**Qué hace este back-end.** Guarda el catálogo (productos con variantes de color y medida, SKU, precio y stock) en PostgreSQL y lo entrega por una API REST. Además incluye carrito, pedidos y un panel administrativo (CRUD) protegido por roles y JWT.
 
 ---
 
 ## Tabla de contenido
 
-1. [Tecnologías](#tecnologías)
-2. [Cómo ejecutar el proyecto](#cómo-ejecutar-el-proyecto)
-3. [Ejecutar las pruebas automáticas](#ejecutar-las-pruebas-automáticas)
-4. [Guía de pruebas manuales con Thunder Client](#guía-de-pruebas-manuales-con-thunder-client)
-5. [Lista de endpoints](#lista-de-endpoints)
-6. [Unidad 1: API REST y TDD](#unidad-1-api-rest-y-tdd)
-7. [Unidad 2: base de datos y seguridad](#unidad-2-base-de-datos-y-seguridad)
-8. [Problemas frecuentes](#problemas-frecuentes)
+1. [Estructura del proyecto](#estructura-del-proyecto)
+2. [Tecnologías](#tecnologías)
+3. [Cómo ejecutar el proyecto](#cómo-ejecutar-el-proyecto)
+4. [Probar en el navegador (y por qué `/` sale en blanco)](#probar-en-el-navegador-y-por-qué--sale-en-blanco)
+5. [Pruebas automáticas](#pruebas-automáticas)
+6. [Demostración paso a paso con Thunder Client](#demostración-paso-a-paso-con-thunder-client)
+7. [Qué se guarda y cómo verlo en la base de datos](#qué-se-guarda-y-cómo-verlo-en-la-base-de-datos)
+8. [Lista de endpoints](#lista-de-endpoints)
+9. [Unidad 1: resumen](#unidad-1-resumen)
+10. [Unidad 2: explicación detallada](#unidad-2-explicación-detallada)
+11. [Problemas frecuentes](#problemas-frecuentes)
+
+---
+
+## Estructura del proyecto
+
+Así se ve el proyecto en el Explorer de VS Code. La carpeta que se abre en VS Code es la raíz del repositorio, `Aglome-tienda`, y el proyecto Maven está dentro de la carpeta `aglome-tienda`.
+
+```
+Aglome-tienda/                                 ← raíz del repositorio
+├── README.md
+├── .vscode/
+└── aglome-tienda/                             ← proyecto Maven (aquí se ejecutan los comandos)
+    ├── .mvn/wrapper/                          Maven Wrapper
+    ├── .vscode/settings.json                  Configuración de VS Code para Java
+    ├── .gitattributes
+    ├── .gitignore
+    ├── HELP.md
+    ├── mvnw                                   Ejecutor de Maven (Linux y macOS)
+    ├── mvnw.cmd                               Ejecutor de Maven (Windows)
+    ├── pom.xml                                Dependencias y configuración de Maven
+    ├── target/                                Se genera al compilar
+    └── src/
+        ├── main/
+        │   ├── java/pe/edu/utp/aglome_tienda/
+        │   │   ├── AglomeTiendaApplication.java        Clase que arranca Spring Boot
+        │   │   │
+        │   │   ├── config/
+        │   │   │   └── DataInitializer.java            Crea el administrador al arrancar
+        │   │   │
+        │   │   ├── controller/                         Reciben las peticiones HTTP
+        │   │   │   ├── AuthController.java             Registro y login
+        │   │   │   ├── PerfilController.java           Datos del usuario autenticado
+        │   │   │   ├── CategoriaController.java        Categorías (público)
+        │   │   │   ├── ProductoController.java         Catálogo y búsqueda (público)
+        │   │   │   ├── CarritoController.java          Carrito del cliente
+        │   │   │   ├── PedidoController.java           Pedidos del cliente
+        │   │   │   ├── AdminCategoriaController.java   CRUD de categorías (ADMIN)
+        │   │   │   ├── AdminProductoController.java    CRUD de productos (ADMIN)
+        │   │   │   ├── AdminVarianteController.java    CRUD de variantes (ADMIN)
+        │   │   │   ├── AdminPedidoController.java      Ver pedidos y cambiar su estado (ADMIN)
+        │   │   │   └── AdminReporteController.java     Reporte de ventas (ADMIN)
+        │   │   │
+        │   │   ├── service/                            Lógica de negocio y transacciones
+        │   │   │   ├── AuthService.java
+        │   │   │   ├── CategoriaService.java
+        │   │   │   ├── ProductoBaseService.java
+        │   │   │   ├── VarianteService.java
+        │   │   │   ├── CarritoService.java
+        │   │   │   ├── PedidoService.java
+        │   │   │   └── ReporteService.java
+        │   │   │
+        │   │   ├── repository/                         Acceso a la base de datos (Spring Data JPA)
+        │   │   │   ├── UsuarioRepository.java
+        │   │   │   ├── CategoriaRepository.java
+        │   │   │   ├── ProductoBaseRepository.java     Consulta JPQL: búsqueda por nombre
+        │   │   │   ├── VarianteRepository.java
+        │   │   │   ├── TipoAtributoRepository.java
+        │   │   │   ├── VarianteAtributoRepository.java
+        │   │   │   ├── CarritoRepository.java
+        │   │   │   ├── CarritoItemRepository.java
+        │   │   │   ├── PedidoRepository.java           Consulta JPQL: pedidos por usuario y estado
+        │   │   │   └── DetallePedidoRepository.java    Consulta JPQL: ventas por categoría
+        │   │   │
+        │   │   ├── model/                              Entidades JPA (cada una es una tabla)
+        │   │   │   ├── Usuario.java    Rol.java
+        │   │   │   ├── Categoria.java
+        │   │   │   ├── ProductoBase.java
+        │   │   │   ├── Variante.java   TipoAtributo.java
+        │   │   │   ├── VarianteAtributo.java   VarianteAtributoId.java
+        │   │   │   ├── Carrito.java    CarritoItem.java
+        │   │   │   └── Pedido.java     EstadoPedido.java    DetallePedido.java
+        │   │   │
+        │   │   ├── dto/                                Objetos de entrada y salida de la API
+        │   │   │   ├── LoginRequest, RegistroRequest, AuthResponse, PerfilDTO
+        │   │   │   ├── CategoriaRequest, CategoriaDTO
+        │   │   │   ├── ProductoBaseRequest, ProductoBaseDTO
+        │   │   │   ├── VarianteRequest, VarianteDTO
+        │   │   │   ├── AgregarAlCarritoRequest, CarritoDTO, CarritoItemDTO
+        │   │   │   ├── PedidoDTO, DetallePedidoDTO
+        │   │   │   └── VentaCategoriaDTO
+        │   │   │
+        │   │   └── security/                           Seguridad y JWT
+        │   │       ├── SecurityConfig.java             Reglas de acceso por ruta y por rol
+        │   │       ├── JwtService.java                 Crea y valida los tokens
+        │   │       ├── JwtAuthFilter.java              Lee el token en cada petición
+        │   │       └── CustomUserDetailsService.java   Busca al usuario en la base de datos
+        │   │
+        │   └── resources/
+        │       └── application.properties              Configuración (variables de entorno)
+        │
+        └── test/
+            ├── java/pe/edu/utp/aglome_tienda/
+            │   ├── AglomeTiendaApplicationTests.java   La aplicación arranca (1 test)
+            │   ├── model/          5 clases · 8 tests    Entidades
+            │   ├── service/        8 clases · 22 tests   Lógica con Mockito, y PedidoTransaccionTest
+            │   ├── repository/     ConsultasJpqlTest · 3 tests   Consultas JPQL contra una base real
+            │   └── controller/     6 clases · 15 tests   Rutas, validaciones y seguridad (401, 403, 200)
+            └── resources/
+                └── application.properties              Configuración de pruebas (H2 en memoria)
+```
+
+### Cómo viaja una petición
+
+```
+Cliente (HTTP) → Controller (@RestController) → Service (@Service) → Repository (JpaRepository) → Entity (@Entity) → PostgreSQL
+```
+
+Cada capa tiene una sola responsabilidad: el controlador recibe y responde, el servicio aplica las reglas del negocio, el repositorio habla con la base de datos y la entidad representa una tabla. Ejemplo: al confirmar una compra, `PedidoController` recibe la petición, `PedidoService` valida el carrito y descuenta el stock, y los repositorios guardan el pedido.
+
+### Modelo de datos (10 tablas)
+
+| Tabla | Qué guarda |
+|---|---|
+| `usuario` | Cuentas: email único, contraseña con BCrypt y rol |
+| `categoria` | Categorías, con subcategorías opcionales (`padre_id`) |
+| `producto_base` | Producto general: nombre, descripción, marca, publicado y categoría |
+| `variante` | Lo que se vende: SKU único, precio, stock y estado |
+| `tipo_atributo` | Nombres de atributos (Color, Medida) |
+| `variante_atributo` | Valor de cada atributo por variante (clave compuesta) |
+| `carrito` | Un carrito por usuario |
+| `carrito_item` | Ítems del carrito: variante y cantidad |
+| `pedido` | Pedido: fecha, total, estado y usuario |
+| `detalle_pedido` | Líneas del pedido: cantidad, precio unitario y subtotal |
+
+Relaciones: una categoría tiene muchos productos, un producto tiene muchas variantes, un usuario tiene un carrito y muchos pedidos, y un pedido tiene muchos detalles. Estados de un pedido: `PENDIENTE`, `CONFIRMADO` y `CANCELADO`.
 
 ---
 
 ## Tecnologías
 
-- Java 21
-- Spring Boot 4.1.1 (Web MVC, Data JPA, Security, Validation)
-- PostgreSQL (aplicación) y H2 en memoria (pruebas automáticas)
-- JWT con la librería `jjwt`
-- Lombok
-- JUnit 5, Mockito y Spring Security Test
-- Maven (incluye el wrapper `mvnw`, no necesitas instalar Maven)
+| Herramienta | Para qué se usa |
+|---|---|
+| Java 21 | Lenguaje |
+| Spring Boot 4.1.1 | Framework: Web MVC, Data JPA, Security y Validation |
+| Hibernate 7 | Convierte las clases Java en tablas |
+| PostgreSQL | Base de datos de la aplicación |
+| H2 en memoria | Base temporal solo para las pruebas automáticas |
+| jjwt | Creación y validación de tokens JWT |
+| Lombok | Evita escribir getters, setters y constructores |
+| JUnit 5, Mockito y Spring Security Test | Pruebas automáticas |
+| Maven (`mvnw`) | Compila, ejecuta y prueba (no hace falta instalarlo) |
+| Thunder Client | Pruebas manuales de la API |
+| pgAdmin | Ver las tablas y los datos |
 
 ---
 
@@ -41,7 +185,7 @@ Proyecto académico del curso de **Back-end con Spring Boot**, que cubre dos uni
 
 - **JDK 21** instalado. Comprueba con `java -version`.
 - **PostgreSQL** instalado y encendido (puerto 5432 por defecto).
-- Un cliente HTTP, por ejemplo la extensión **Thunder Client** de VS Code.
+- **VS Code** con las extensiones de Java y de Spring Boot, y la extensión **Thunder Client**.
 
 ### 2. Clonar el repositorio
 
@@ -50,19 +194,19 @@ git clone <URL-DE-ESTE-REPOSITORIO>
 cd Aglome-tienda/aglome-tienda
 ```
 
-> El proyecto Maven está dentro de la carpeta `aglome-tienda`. Todos los comandos de esta guía se ejecutan desde ahí.
+Todos los comandos de esta guía se ejecutan dentro de `aglome-tienda`, la carpeta que contiene el `pom.xml`.
 
 ### 3. Crear tu base de datos
 
-Cada persona usa **su propia** base de datos local. En pgAdmin (clic derecho en *Databases › Create › Database*) o con `psql`:
+Cada persona usa **su propia** base local. En pgAdmin (clic derecho en *Databases › Create › Database*) o con `psql`:
 
 ```sql
 CREATE DATABASE aglome_spring_db;
 ```
 
-No hace falta crear tablas: Hibernate las crea solas al arrancar (`ddl-auto=update`).
+No hay que crear tablas: Hibernate las crea al arrancar (`ddl-auto=update`).
 
-### 4. Configurar tu conexión (base de datos y puerto)
+### 4. Configurar tu base de datos y tu puerto
 
 La aplicación lee su configuración de **variables de entorno**. Si no defines ninguna, usa estos valores por defecto:
 
@@ -75,7 +219,7 @@ La aplicación lee su configuración de **variables de entorno**. Si no defines 
 | `JWT_SECRET` | Clave que firma los tokens (mínimo 32 caracteres) | clave de desarrollo |
 | `JWT_EXPIRATION_MS` | Duración del token en milisegundos | `36000000` (10 horas) |
 
-Si tu PostgreSQL tiene otra contraseña, otro nombre de base o otro puerto, define las variables **antes** de arrancar.
+Si tu PostgreSQL tiene otra contraseña, otro nombre de base o otro puerto, define las variables **antes** de arrancar, en la misma terminal.
 
 **Windows (PowerShell):**
 
@@ -95,210 +239,281 @@ export DB_PASSWORD="mi_clave"
 export SERVER_PORT="9090"
 ```
 
-Las variables solo duran mientras esa terminal esté abierta.
+Las variables duran mientras esa terminal esté abierta. Si cambias `SERVER_PORT`, reemplaza `8080` en todas las URL de esta guía.
 
 > **Importante:** el valor por defecto de `JWT_SECRET` es solo para desarrollo. Si publicas la aplicación, define tu propio secreto.
 
 ### 5. Arrancar la API
 
-**Windows:**
+Hay tres formas.
+
+**Desde la terminal con Maven** (la que usamos en el proyecto):
 
 ```powershell
-.\mvnw.cmd spring-boot:run
+.\mvnw.cmd clean spring-boot:run
 ```
 
-**Linux / macOS:**
+En Linux o macOS: `chmod +x mvnw` y luego `./mvnw clean spring-boot:run`. `clean` recompila todo; sin `clean` el arranque es más rápido.
 
-```bash
-chmod +x mvnw
-./mvnw spring-boot:run
+**Desde VS Code:** abre `AglomeTiendaApplication.java` y pulsa el botón **Run** que aparece sobre el método `main`, o usa el panel *Spring Boot Dashboard*. Define las variables de entorno antes de abrir VS Code.
+
+**Como archivo jar:**
+
+```powershell
+.\mvnw.cmd clean package "-DskipTests"
+java -jar target\aglome-tienda-0.0.1-SNAPSHOT.jar
 ```
 
-Cuando veas en la consola `Started AglomeTiendaApplication`, la API está lista en `http://localhost:8080` (o en el puerto que definiste en `SERVER_PORT`).
+**Cómo saber que arrancó bien:** la consola muestra al final `Tomcat started on port 8080` y `Started AglomeTiendaApplication in ... seconds`. Para detenerla se pulsa `Ctrl + C`, y cada vez que cambies el código hay que detenerla y arrancarla de nuevo. Si aparece `Port 8080 was already in use`, ya hay otra copia corriendo: detenla o usa otro `SERVER_PORT`.
 
-### 6. Usuario administrador automático
+### 6. Administrador automático
 
-Al arrancar, la aplicación **crea un administrador si no existe**, para poder entrar al panel de administración sin tocar la base de datos:
+Al arrancar, `DataInitializer` **crea un administrador si no existe**, para poder entrar al panel sin tocar la base de datos:
 
 | Email | Contraseña | Rol |
 |---|---|---|
 | `admin@aglome.com` | `Admin123` | `ADMIN` |
 
-Cualquier persona que se registre por la API recibe el rol `CLIENTE`. Un cliente nunca puede crearse como admin.
+Cualquier persona que se registre por la API recibe el rol `CLIENTE`. Un cliente nunca puede crearse como admin. Son credenciales de demostración: cámbialas en `DataInitializer` si vas a publicar la aplicación.
 
 ---
 
-## Ejecutar las pruebas automáticas
+## Probar en el navegador (y por qué `/` sale en blanco)
+
+Al abrir `http://localhost:8080/` el navegador muestra una pantalla en blanco, y **es lo esperado**. Este proyecto es solo una API REST que responde JSON: no tiene página web ni dashboard, y no existen las carpetas `static/` ni `templates/`. Además, la ruta raíz no es pública, así que Spring Security responde 401 sin contenido. El frontend en Angular consumirá esta API en la siguiente etapa.
+
+Lo que sí se puede abrir en el navegador son las rutas **GET públicas**, que no necesitan token:
+
+| URL | Qué muestra |
+|---|---|
+| `http://localhost:8080/api/productos` | Catálogo de productos publicados con sus variantes |
+| `http://localhost:8080/api/categorias` | Lista de categorías |
+| `http://localhost:8080/api/productos/buscar?texto=melamina` | Búsqueda por nombre (consulta JPQL) |
+
+Si aparece JSON, la API está viva y conectada a la base. Si aparece `[]`, funciona pero aún no hay datos. Si el navegador dice que no puede acceder al sitio, la aplicación no está corriendo o usa otro puerto.
+
+Todo lo demás (carrito, pedidos, `/api/admin/**` y cualquier POST, PUT, PATCH o DELETE) no se puede probar desde la barra de direcciones, porque el navegador no envía el header `Authorization`. Para eso se usa **Thunder Client**.
+
+---
+
+## Pruebas automáticas
 
 ```powershell
 .\mvnw.cmd clean test
 ```
 
-(en Linux/macOS: `./mvnw clean test`). Resultado esperado: **49 tests, 0 fallos, `BUILD SUCCESS`**.
+Resultado esperado: **49 tests, 0 fallos, `BUILD SUCCESS`**. Usan **H2 en memoria** (`src/test/resources/application.properties`), así que **no tocan tu PostgreSQL**.
 
-Las pruebas usan **H2 en memoria** (configurado en `src/test/resources/application.properties`), así que **no tocan tu PostgreSQL** ni necesitan que esté encendido.
+| Grupo | Tests | Qué comprueban |
+|---|---|---|
+| Arranque | 1 | La aplicación completa arranca |
+| Modelo | 8 | Comportamiento de las entidades |
+| Servicio | 22 | Lógica de negocio con Mockito, y `PedidoTransaccionTest` (compra y rollback con base real H2) |
+| JPQL | 3 | `ConsultasJpqlTest`: las 3 consultas contra una base real |
+| Controlador | 15 | Rutas, validaciones y seguridad: 401, 403 y 200 |
 
 ---
 
-## Guía de pruebas manuales con Thunder Client
+## Demostración paso a paso con Thunder Client
 
-Esta secuencia recorre toda la API y demuestra cada tema de las dos unidades. **Sigue el orden**: cada paso usa datos del anterior.
+Esta secuencia crea una **categoría, un producto y dos variantes nuevos** (Ferretería › Bisagra de Acero), y recorre todos los temas de la Unidad 2: datos, JPQL, transacciones, roles y JWT. Sigue el orden, porque cada paso usa datos del anterior.
 
 ### Antes de empezar
 
-1. Con la API corriendo, abre Thunder Client en VS Code.
-2. Si cambiaste el puerto, reemplaza `8080` en todas las URL.
-3. Cómo enviar el token: en la pestaña **Headers** agrega
+- La API debe estar corriendo. Crea dos pestañas con nombre en Thunder Client: **ADMIN** y **CLIENTE**.
+- Para enviar el token, en la pestaña **Headers** agrega `Authorization` con el valor `Bearer <tu-token>`: con un espacio después de `Bearer`, sin comillas y copiando solo el valor del campo `token`. No lo pongas también en la pestaña *Auth*, o se duplicará.
+- Thunder guarda los headers **por pestaña**: si cambias de token, actualízalo en cada una.
+- En los JSON, reemplaza los textos en mayúsculas (`ID_CATEGORIA`, `UUID_PRODUCTO`, `UUID_VARIANTE_3PUL`, `ID_PEDIDO`) por lo que devuelva cada paso, **sin** los signos `<` ni `>`.
 
-   ```
-   Authorization: Bearer <tu-token>
-   ```
+### Con el token del administrador
 
-   Con un espacio después de `Bearer`, sin comillas y copiando solo el valor del campo `token`. No lo pongas también en la pestaña *Auth*, o se duplicará.
-4. Los tokens son por usuario: usa el token de **admin** para las rutas de administración y el de **cliente** para el carrito y los pedidos.
-5. Thunder Client guarda los *headers* **por pestaña**. Si cambias de token, actualízalo en cada pestaña.
-
-### Paso 1. Login como administrador
+**D1. Login**
 
 ```
 POST http://localhost:8080/api/auth/login
 ```
-
 ```json
 { "email": "admin@aglome.com", "password": "Admin123" }
 ```
+Esperado: **200** con `token` y `rol: "ADMIN"`. Copia el token a la pestaña ADMIN.
 
-Respuesta esperada: **200** con `token`, `nombre`, `email` y `rol: "ADMIN"`. Copia el `token`.
-
-### Paso 2. Crear una categoría (token de admin)
+**D2. Crear la categoría**
 
 ```
 POST http://localhost:8080/api/admin/categorias
 ```
-
 ```json
-{ "nombre": "Melaminas" }
+{ "nombre": "Ferretería" }
 ```
+Esperado: **201** con el `id`. Anótalo. *Se guarda una fila en `categoria`.*
 
-Respuesta: **201** con el `id` de la categoría (por ejemplo `1`). Anótalo.
-
-### Paso 3. Crear un producto (token de admin)
+**D3. Crear el producto**
 
 ```
 POST http://localhost:8080/api/admin/productos
 ```
-
 ```json
 {
-  "nombre": "Melamina Azul Marino",
-  "descripcion": "Aporta elegancia ejecutiva",
+  "nombre": "Bisagra de Acero",
+  "descripcion": "Bisagra de acero para puertas y muebles",
   "marca": "Aglome",
-  "categoriaId": 1,
+  "categoriaId": ID_CATEGORIA,
   "publicado": true
 }
 ```
+Esperado: **201** con el `id` (UUID) del producto. *Se guarda una fila en `producto_base`.*
 
-Usa en `categoriaId` el id real que obtuviste. Respuesta: **201** con el `id` (UUID) del producto. Cópialo.
-
-### Paso 4. Crear una variante (token de admin)
+**D4. Crear la variante de 3 pulgadas**
 
 ```
 POST http://localhost:8080/api/admin/variantes
 ```
-
 ```json
 {
-  "productoBaseId": "UUID_DEL_PRODUCTO",
-  "sku": "MELM-AZM-18MM",
-  "precioVenta": 45.90,
-  "stock": 30,
-  "atributos": { "Color": "Azul Marino", "Medida": "2.14m x 2.50m" }
+  "productoBaseId": "UUID_PRODUCTO",
+  "sku": "BISAG-ACE-3PUL",
+  "precioVenta": 4.50,
+  "stock": 100,
+  "atributos": { "Material": "Acero", "Medida": "3 pulgadas" }
 }
 ```
+Esperado: **201** con el `id` de la variante. *Se guarda en `variante`, `tipo_atributo` y `variante_atributo`, en una sola transacción.* Si repites el SKU: **400 "Ya existe una variante con ese SKU"**.
 
-Respuesta: **201** con el `id` de la variante. Cópialo.
-El `sku` es único: si repites la petición recibirás **400 "Ya existe una variante con ese SKU"**.
-
-### Paso 5. Ver el catálogo (sin token)
+**D5. Crear la variante de 4 pulgadas**
 
 ```
-GET http://localhost:8080/api/productos
+POST http://localhost:8080/api/admin/variantes
 ```
+```json
+{
+  "productoBaseId": "UUID_PRODUCTO",
+  "sku": "BISAG-ACE-4PUL",
+  "precioVenta": 6.00,
+  "stock": 80,
+  "atributos": { "Material": "Acero", "Medida": "4 pulgadas" }
+}
+```
+Esperado: **201**. Muestra la diferencia entre **producto** (la bisagra) y **variante** (lo que se vende, con su SKU, precio y stock).
 
-Respuesta: **200** con el producto y su variante (stock 30).
+### Sin token
 
-### Paso 6. Registrar un cliente
+**D6. Ver el catálogo:** `GET http://localhost:8080/api/productos`. Esperado: **200**, con la bisagra y sus dos variantes.
+
+**D7. Buscar con JPQL:** `GET http://localhost:8080/api/productos/buscar?texto=bisagra`. Esperado: **200**, solo la bisagra.
+
+### Con el token del cliente
+
+**D8. Registrar un cliente**
 
 ```
 POST http://localhost:8080/api/auth/registro
 ```
-
 ```json
-{ "nombre": "Jonathan Navarro", "email": "jonathan@test.com", "password": "123456" }
+{ "nombre": "Cliente Demo", "email": "demo1@test.com", "password": "123456" }
 ```
+Esperado: **200** con el `token` y `rol: "CLIENTE"`. Cópialo a la pestaña CLIENTE. Si ese email ya existe, usa `POST /api/auth/login`. *Se guarda una fila en `usuario`, con la contraseña encriptada (empieza con `$2a$`).*
 
-Respuesta: **200** con el `token` del cliente. Cópialo (es distinto al del admin).
-La contraseña debe tener al menos 6 caracteres. Si ese email ya existe, recibirás un error: en ese caso usa `POST /api/auth/login` para obtener un token nuevo.
-
-### Paso 7. Comprar (token del cliente)
-
-Agregar al carrito:
+**D9. Agregar al carrito**
 
 ```
 POST http://localhost:8080/api/carrito/items
 ```
-
 ```json
-{ "varianteId": "UUID_DE_LA_VARIANTE", "cantidad": 2 }
+{ "varianteId": "UUID_VARIANTE_3PUL", "cantidad": 10 }
 ```
+Esperado: **200** con el carrito. *Se guardan filas en `carrito` y `carrito_item`.*
 
-Confirmar la compra (sin cuerpo):
+**D10. Confirmar la compra** (sin body)
 
 ```
 POST http://localhost:8080/api/pedidos/confirmar
 ```
+Esperado: **200**, estado `CONFIRMADO` y total **45.00** (10 por 4.50). Copia el `id` del pedido. *En una sola transacción: se crea el pedido y sus detalles, baja el stock y se vacía el carrito.*
 
-Respuesta: **200** con el pedido en estado `CONFIRMADO`.
+### Resultados
 
-### Paso 8. Comprobar el descuento de stock
+**D11. El stock bajó:** `GET http://localhost:8080/api/productos` (sin token). La variante de 3 pulgadas pasa de 100 a **90**.
+
+**D12. Reporte de ventas (JPQL con JOIN, SUM y GROUP BY):** `GET http://localhost:8080/api/admin/reportes/ventas-por-categoria` con el token del admin. Esperado: **200**, con las categorías que tienen ventas, de mayor a menor. Cada elemento trae `categoria` y `unidades`.
+
+**D13. El admin cancela el pedido**
 
 ```
-GET http://localhost:8080/api/productos
+PATCH http://localhost:8080/api/admin/pedidos/ID_PEDIDO/estado?estado=CANCELADO
 ```
+Esperado: **200** y `"estado": "CANCELADO"`. Repite D11: el stock vuelve a **100**, porque la cancelación devuelve el stock dentro de una transacción. Si repites el PATCH, responde **400 "El pedido ya está cancelado"**.
 
-El stock de la variante debe ser **28** (se compraron 2 de 30). Esto ocurre dentro de una transacción junto con la creación del pedido.
-
-### Paso 9. Consultas JPQL
-
-| Qué prueba | Petición | Token | Resultado esperado |
-|---|---|---|---|
-| Búsqueda por nombre (sin distinguir mayúsculas) | `GET /api/productos/buscar?texto=melamina` | ninguno | El producto publicado |
-| Pedidos por estado | `GET /api/pedidos?estado=CONFIRMADO` | cliente | Su pedido |
-| Pedidos por estado (sin coincidencias) | `GET /api/pedidos?estado=CANCELADO` | cliente | Lista vacía `[]` |
-| Reporte de ventas por categoría | `GET /api/admin/reportes/ventas-por-categoria` | admin | `Melaminas` con las unidades vendidas |
-
-### Paso 10. Seguridad: 401 y 403
+### Seguridad
 
 | Petición | Token | Resultado | Por qué |
 |---|---|---|---|
-| `GET /api/carrito` | ninguno | **401** | No te identificaste |
-| `GET /api/admin/pedidos` | cliente | **403** | Te identificaste, pero tu rol no es ADMIN |
-| `GET /api/admin/pedidos` | admin | **200** | Tienes el rol requerido |
+| `GET /api/carrito` | ninguno | **401** | No se identificó |
+| `GET /api/admin/pedidos` | cliente | **403** | Está identificado, pero su rol no es ADMIN |
+| `GET /api/admin/pedidos` | admin | **200** | Tiene el rol requerido |
 
-### Paso 11. El admin cancela un pedido y el stock vuelve
+### Ensayar y presentar
 
-1. Con el token de **admin**: `GET /api/admin/pedidos` y copia el `id` de un pedido `CONFIRMADO`.
-2. Cancelarlo:
+- El **SKU** y el **email** son únicos y repetirlos da error 400. Si ensayas con `BISAG-ACE-3PUL` y `demo1@test.com`, para presentar usa otros (`BISAG-ACE-3PUL-B`, `demo2@test.com`) o borra antes el producto del ensayo con `DELETE /api/admin/productos/{id}` (solo es posible si no tiene pedidos).
+- Para una demostración corta en vivo bastan D2, D3, D4, D6, D9, D10, D11 y D12. Los logins se dejan hechos antes.
+- La **marca** es un campo de texto libre: usa siempre el mismo valor, con las mismas mayúsculas.
 
-   ```
-   PATCH http://localhost:8080/api/admin/pedidos/ID_DEL_PEDIDO/estado?estado=CANCELADO
-   ```
+---
 
-   Respuesta: **200** con el pedido en estado `CANCELADO`.
-3. `GET /api/productos`: el stock vuelve a **30**.
-4. Repite el `PATCH` sobre el mismo pedido: **400 "El pedido ya está cancelado"**.
+## Qué se guarda y cómo verlo en la base de datos
 
-Reemplaza `ID_DEL_PEDIDO` por el UUID real, **sin** `<` ni `>`.
+Con PostgreSQL, las cuentas y todos los datos creados **se conservan al apagar la aplicación**. Lo único que no se guarda en la base son los **tokens**: el servidor solo comprueba su firma, y quien los guarda es Thunder Client.
+
+| Qué | Dónde queda | ¿Se pierde al reiniciar? |
+|---|---|---|
+| Cuentas (admin y clientes) | Tabla `usuario` | No |
+| Categorías, productos y variantes | PostgreSQL | No |
+| Carritos y pedidos | PostgreSQL | No |
+| Token JWT | Solo en Thunder Client | Deja de servir a las 10 horas o si cambia `JWT_SECRET` |
+
+No hace falta registrar de nuevo al admin ni a un cliente: si un token deja de servir, se hace `POST /api/auth/login` con el mismo email y contraseña. (Con una base en memoria, como H2, todo se borraba al reiniciar; por eso H2 queda solo para las pruebas.)
+
+### Ver las tablas en pgAdmin
+
+1. Abre pgAdmin: *Servers › PostgreSQL › Databases › aglome_spring_db › Schemas › public › Tables*.
+2. Clic derecho sobre una tabla › *View/Edit Data › All Rows*. O abre el *Query Tool* y ejecuta:
+
+```sql
+SELECT id, nombre, email, rol FROM usuario;
+SELECT id, nombre FROM categoria;
+SELECT id, nombre, publicado FROM producto_base;
+SELECT sku, precio_venta, stock FROM variante;
+SELECT id, estado, total, fecha FROM pedido;
+
+SELECT c.nombre, SUM(d.cantidad)
+FROM detalle_pedido d
+JOIN variante v ON v.id = d.variante_id
+JOIN producto_base p ON p.id = v.producto_base_id
+JOIN categoria c ON c.id = p.categoria_id
+GROUP BY c.nombre;
+```
+
+La última consulta es la versión SQL del reporte de ventas y debe coincidir con `GET /api/admin/reportes/ventas-por-categoria`.
+
+| Petición | Tablas que cambian |
+|---|---|
+| `POST /api/auth/registro` | `usuario` |
+| `POST /api/admin/categorias` | `categoria` |
+| `POST /api/admin/productos` | `producto_base` |
+| `POST /api/admin/variantes` | `variante`, `tipo_atributo`, `variante_atributo` |
+| `POST /api/carrito/items` | `carrito`, `carrito_item` |
+| `POST /api/pedidos/confirmar` | `pedido`, `detalle_pedido`, `variante` (baja el stock) y `carrito_item` (se vacía) |
+| `PATCH /api/admin/pedidos/{id}/estado` | `pedido` (estado) y `variante` (sube el stock si se cancela) |
+
+### Agregar más datos con el admin existente
+
+Como el admin ya está guardado, no se crea otro: se hace login y se repiten D2 a D5 con otros datos. Para ver los ids existentes: `GET /api/categorias` y `GET /api/admin/productos`. Para una subcategoría, la categoría admite el campo opcional `padreId`, por ejemplo `{ "nombre": "Bisagras", "padreId": 2 }`.
+
+### Crear otro administrador
+
+La API **no permite** registrarse como administrador (el registro siempre crea clientes). Para tener otro admin:
+
+- **Opción A, sin código:** registra la cuenta con `POST /api/auth/registro` y en pgAdmin ejecuta `UPDATE usuario SET rol = 'ADMIN' WHERE email = 'otro.admin@test.com';`. Luego esa persona inicia sesión de nuevo para que su token lleve el rol ADMIN.
+- **Opción B, por código:** agrega en `DataInitializer` otro bloque con otro email y contraseña.
 
 ---
 
@@ -323,7 +538,7 @@ Reemplaza `ID_DEL_PEDIDO` por el UUID real, **sin** `<` ni `>`.
 | GET | `/api/perfil` | Datos del usuario autenticado |
 | GET | `/api/carrito` | Ver el carrito |
 | POST | `/api/carrito/items` | Agregar una variante al carrito |
-| PUT | `/api/carrito/items/{itemId}` | Cambiar la cantidad de un ítem |
+| PUT | `/api/carrito/items/{itemId}?cantidad=` | Cambiar la cantidad de un ítem |
 | DELETE | `/api/carrito/items/{itemId}` | Quitar un ítem |
 | POST | `/api/pedidos/confirmar` | Convierte el carrito en un pedido |
 | GET | `/api/pedidos` | Mis pedidos (admite `?estado=`, JPQL) |
@@ -340,60 +555,45 @@ Reemplaza `ID_DEL_PEDIDO` por el UUID real, **sin** `<` ni `>`.
 | PATCH | `/api/admin/pedidos/{id}/estado?estado=` | Cambia el estado de un pedido |
 | GET | `/api/admin/reportes/ventas-por-categoria` | Unidades vendidas por categoría (JPQL) |
 
-Estados de un pedido: `PENDIENTE`, `CONFIRMADO`, `CANCELADO`.
+---
+
+## Unidad 1: resumen
+
+La Unidad 1 dejó construida la base de la API: arquitectura en capas, 27 endpoints REST y pruebas automáticas.
+
+| Tema | Qué se hizo |
+|---|---|
+| Estructura de Spring Boot | Proyecto Maven con los starters web, JPA, security y validation; configuración en `application.properties` |
+| Controladores y endpoints | 11 controladores `@RestController` con 27 rutas |
+| Inyección de dependencias | Por constructor con `@RequiredArgsConstructor`: Spring entrega los objetos, sin usar `new` |
+| DTO y validación | Los datos de entrada se validan con `@Valid`; si no cumplen, la API responde 400 |
+| Métodos HTTP | GET lee, POST crea, PUT reemplaza, PATCH modifica una parte y DELETE borra |
+| TDD | Pruebas de modelo, de servicio con Mockito y de controlador con MockMvc |
+
+TDD sigue un ciclo: escribir una prueba que falla, escribir el código mínimo para que pase y mejorar el código sin romper nada. PATCH se usa para cambiar el estado de un pedido porque modifica un solo campo; PUT reemplazaría el recurso completo.
 
 ---
 
-## Unidad 1: API REST y TDD
+## Unidad 2: explicación detallada
 
-### Estructura del proyecto
+La Unidad 2 llevó la API a una base de datos real y le agregó control de acceso. Temario de la unidad: manejo de datos con JPA e Hibernate, operaciones CRUD, JPQL, transacciones, Spring Security, roles y permisos, autenticación con JWT e integración de temas (la demostración de arriba integra todos).
 
-```
-src/main/java/pe/edu/utp/aglome_tienda/
-├── controller/   Reciben las peticiones HTTP y devuelven respuestas
-├── service/      Lógica de negocio
-├── repository/   Acceso a la base de datos (interfaces de Spring Data)
-├── model/        Entidades JPA (tablas)
-├── dto/          Objetos que viajan en las peticiones y respuestas
-└── security/     Configuración de Spring Security y JWT
-```
+### JPA, Hibernate y CRUD
 
-El flujo de una petición es: **controller → service → repository → base de datos**, y la respuesta vuelve por el mismo camino.
+Cada entidad de `model/` es una clase con `@Entity` que se convierte en una tabla. Las relaciones se declaran con `@ManyToOne`, `@OneToMany` y `@OneToOne`, y restricciones como `@Column(unique = true)` hacen únicos el email y el SKU. Los repositorios extienden `JpaRepository`, que ya trae las operaciones CRUD sin escribir SQL:
 
-### Conceptos aplicados
-
-- **Controladores y endpoints:** cada clase `@RestController` agrupa rutas con `@RequestMapping` y métodos con `@GetMapping`, `@PostMapping`, etc.
-- **Inyección de dependencias:** las clases reciben sus dependencias por constructor (`@RequiredArgsConstructor` de Lombok). Spring crea los objetos y los entrega, sin usar `new`.
-- **Validación:** los DTO de entrada usan `@NotBlank`, `@Email`, `@Min`, etc. y los controladores `@Valid`. Si los datos no son válidos, la API responde 400.
-- **Métodos HTTP y su uso en la práctica:**
-
-| Método | Uso | Ejemplo en el proyecto |
+| Operación | Método | Endpoint de ejemplo |
 |---|---|---|
-| GET | Leer datos | `GET /api/productos` |
-| POST | Crear | `POST /api/admin/productos` |
-| PUT | Reemplazar un recurso completo | `PUT /api/admin/productos/{id}` |
-| PATCH | Modificar solo una parte | `PATCH /api/admin/pedidos/{id}/estado` |
-| DELETE | Eliminar | `DELETE /api/carrito/items/{itemId}` |
+| Crear | `save()` | `POST /api/admin/categorias` |
+| Leer | `findById()`, `findAll()` | `GET /api/productos` |
+| Actualizar | `save()` sobre un registro existente | `PUT /api/admin/productos/{id}` |
+| Borrar | `delete()` | `DELETE /api/admin/productos/{id}` |
 
-### TDD (desarrollo guiado por pruebas)
-
-Hay pruebas en tres niveles, en `src/test/java`:
-
-- **Modelo:** comprueban las entidades.
-- **Servicio:** usan **Mockito** para simular los repositorios y probar la lógica de negocio de forma aislada.
-- **Controlador:** usan `@WebMvcTest` y `MockMvc` para comprobar rutas, códigos HTTP, validaciones y seguridad, sin levantar toda la aplicación.
-
----
-
-## Unidad 2: base de datos y seguridad
-
-### JPA e Hibernate (operaciones CRUD)
-
-Las entidades de `model/` (`Usuario`, `Categoria`, `ProductoBase`, `Variante`, `Pedido`, `DetallePedido`, `Carrito`...) se convierten en tablas de PostgreSQL con relaciones `@ManyToOne` y una clave compuesta (`VarianteAtributoId`). Los repositorios extienden `JpaRepository`, que ya trae crear, leer, actualizar y borrar. Con `ddl-auto=update`, Hibernate crea o ajusta las tablas al arrancar sin borrar datos.
+También hay consultas generadas por el nombre del método, como `findByEmail` y `existsBySku`. Con `ddl-auto=update`, Hibernate crea las tablas la primera vez y las conserva con sus datos en los siguientes arranques.
 
 ### JPQL
 
-JPQL escribe consultas sobre las **clases Java** (no sobre las tablas). Hay tres consultas con `@Query`:
+JPQL consulta las **clases Java** y no las tablas. Se usa cuando el nombre del método ya no alcanza. Hay tres consultas con `@Query`:
 
 | Consulta | Dónde está | Qué hace |
 |---|---|---|
@@ -401,45 +601,70 @@ JPQL escribe consultas sobre las **clases Java** (no sobre las tablas). Hay tres
 | `buscarPorUsuarioYEstado` | `PedidoRepository` | Pedidos de un usuario filtrados por estado |
 | `unidadesVendidasPorCategoria` | `DetallePedidoRepository` | `JOIN`, `SUM` y `GROUP BY`: unidades vendidas por categoría |
 
-Se prueban contra una base real (H2) en `ConsultasJpqlTest`, con `@DataJpaTest`.
+```java
+@Query("""
+        SELECT c.nombre, SUM(d.cantidad)
+        FROM DetallePedido d
+        JOIN d.variante v
+        JOIN v.productoBase p
+        JOIN p.categoria c
+        GROUP BY c.nombre
+        ORDER BY SUM(d.cantidad) DESC
+        """)
+List<Object[]> unidadesVendidasPorCategoria();
+```
+
+Los parámetros con nombre (`:texto`, `:estado`) evitan la inyección SQL. Las tres consultas se prueban contra una base real en `ConsultasJpqlTest` (`@DataJpaTest`), porque los tests con mocks nunca ejecutan la consulta.
 
 ### Transacciones
 
-`@Transactional` hace que un grupo de operaciones se guarde **completo o no se guarde**:
+Una transacción hace que un grupo de operaciones se guarde **completo o no se guarde**. Se activa con `@Transactional`.
 
-- **Confirmar una compra** (`PedidoService.confirmarCompra`): crea el pedido, descuenta el stock y vacía el carrito. Si algo falla, todo se deshace. `PedidoTransaccionTest` lo demuestra forzando un fallo al final.
-- **Cancelar un pedido** (`PedidoService.cambiarEstado`): cambia el estado y devuelve el stock de cada producto.
-- **Variantes y carrito:** `VarianteService` y `CarritoService` también son transaccionales.
+| Operación | Qué incluye |
+|---|---|
+| Confirmar una compra | Crear el pedido y sus detalles, descontar el stock y vaciar el carrito |
+| Cancelar un pedido (admin) | Cambiar el estado y devolver el stock de cada producto |
+| Crear o actualizar una variante | Guardar la variante y sus atributos en varias tablas |
+| Operaciones del carrito | Agregar, cambiar y quitar ítems |
+
+Sin transacción, un fallo a la mitad dejaría datos inconsistentes, por ejemplo un pedido creado con el stock sin descontar. `PedidoTransaccionTest` fuerza un fallo al final de la compra y comprueba que todo vuelve a su estado original (rollback).
 
 ### Spring Security, roles y permisos
 
-Reglas definidas en `SecurityConfig`:
+Autenticación es saber **quién eres** y autorización es saber **qué puedes hacer**. Las reglas están en `SecurityConfig`:
 
-| Ruta | Acceso |
+| Ruta | Quién puede entrar |
 |---|---|
-| `/api/auth/**` | Público |
-| `GET /api/productos/**` y `GET /api/categorias/**` | Público |
-| `/api/admin/**` | Solo rol `ADMIN` |
-| Cualquier otra | Usuario autenticado |
+| `/api/auth/**` | Cualquiera (registro y login) |
+| `GET /api/productos/**` y `GET /api/categorias/**` | Cualquiera |
+| `/api/admin/**` | Solo el rol ADMIN |
+| Cualquier otra ruta | Cualquier usuario con token válido |
 
-Además, `AdminPedidoController` usa `@PreAuthorize("hasRole('ADMIN')")` como segunda protección a nivel de clase (activada con `@EnableMethodSecurity`).
+`AdminPedidoController` usa además `@PreAuthorize("hasRole('ADMIN')")` como segundo candado, activado con `@EnableMethodSecurity`. Las respuestas de seguridad son:
 
-Respuestas de seguridad:
+- **401 Unauthorized:** no hay token o el token no es válido (no te identificaste).
+- **403 Forbidden:** el token es válido, pero tu rol no tiene permiso.
 
-- **401 Unauthorized:** no hay token o no es válido.
-- **403 Forbidden:** el token es válido, pero el rol no tiene permiso.
+Otros detalles: las contraseñas se guardan con BCrypt, la sesión es sin estado (`STATELESS`) y la ruta interna `/error` está permitida para que Spring no reemplace un 403 por un 401 al armar el mensaje de error.
 
-La sesión es *stateless*: el servidor no guarda nada entre peticiones, todo viaja en el token. Las contraseñas se guardan con **BCrypt**.
+| Acción | Sin token | Cliente | Administrador |
+|---|---|---|---|
+| Ver catálogo y categorías | 200 | 200 | 200 |
+| Registrarse e iniciar sesión | 200 | 200 | 200 |
+| Usar carrito y pedidos | 401 | 200 | 200 |
+| Cualquier ruta `/api/admin/**` | 401 | 403 | 200 |
 
 ### Autenticación con JWT
 
-1. El usuario hace `POST /api/auth/login` con email y contraseña.
-2. `AuthService` valida la contraseña y `JwtService` genera un token firmado con el email y el rol.
-3. En cada petición, el cliente envía `Authorization: Bearer <token>`.
-4. `JwtAuthFilter` lee el token, comprueba su firma y su vigencia y, si es válido, identifica al usuario y su rol para Spring Security.
-5. `SecurityConfig` decide si ese rol puede acceder a la ruta.
+Un JWT es un texto firmado, con tres partes (cabecera, contenido y firma), que contiene el email del usuario y su rol. Flujo completo:
 
-La clave de firma (`JWT_SECRET`) **no está en el código**: se lee de la configuración. Si se cambia, los tokens emitidos antes dejan de ser válidos y hay que volver a iniciar sesión.
+1. El usuario hace `POST /api/auth/login` con su email y contraseña.
+2. `AuthService` valida la contraseña y `JwtService` genera el token firmado.
+3. En cada petición posterior, el cliente envía `Authorization: Bearer <token>`.
+4. `JwtAuthFilter` lee el token, comprueba la firma y la vigencia, e identifica al usuario y su rol.
+5. `SecurityConfig` decide si ese rol puede acceder a la ruta pedida.
+
+La clave de firma **no está en el código**: se lee de `jwt.secret` (variable `JWT_SECRET`). Si se cambia, los tokens emitidos antes dejan de ser válidos y hay que volver a iniciar sesión.
 
 ---
 
@@ -447,12 +672,13 @@ La clave de firma (`JWT_SECRET`) **no está en el código**: se lee de la config
 
 | Síntoma | Causa y solución |
 |---|---|
-| `Connection refused` o `password authentication failed` al arrancar | PostgreSQL apagado, base inexistente o credenciales incorrectas. Revisa `DB_URL`, `DB_USER`, `DB_PASSWORD` y que la base exista. |
-| `Port 8080 was already in use` | Otro programa usa el puerto. Define `SERVER_PORT` con otro valor. |
+| `Connection refused` o `password authentication failed` al arrancar | PostgreSQL apagado, base inexistente o credenciales incorrectas. Revisa `DB_URL`, `DB_USER` y `DB_PASSWORD` y que la base exista. |
+| `Port 8080 was already in use` | Otro programa o una copia de la API usa el puerto. Detenla o define `SERVER_PORT`. |
 | `class file version 69.0 ... only recognizes up to 65.0` | Se compiló con un JDK más nuevo que el que usa Maven. Usa JDK 21 y ejecuta `mvnw clean test`. |
-| **401** con un token que antes funcionaba | El token venció o se cambió `JWT_SECRET`. Haz login otra vez y usa el token nuevo. |
+| **401** con un token que antes funcionaba | El token venció o se cambió `JWT_SECRET`. Haz login otra vez. |
 | **403** en una ruta `/api/admin/**` | Tu usuario es cliente. Usa el token del administrador. |
-| **401** en todas las pestañas tras cambiar de token | Thunder Client guarda los headers por pestaña. Actualiza el token en cada una. |
-| **400** al usar `/api/admin/pedidos/<id>/estado` | Dejaste el texto de ejemplo en la URL. Pon el UUID real, sin `<` ni `>`. |
-| **400 "Ya existe una variante con ese SKU"** | El `sku` es único. Usa otro. |
-| El registro responde que el email ya existe | Esa cuenta ya fue creada. Usa `/api/auth/login`. |
+| **401** solo en algunas pestañas de Thunder | Thunder guarda los headers por pestaña. Actualiza el token en cada una. |
+| **400** al cambiar el estado de un pedido | Dejaste el texto de ejemplo en la URL. Pon el UUID real, sin `<` ni `>`. |
+| **400 "Ya existe una variante con ese SKU"** | El SKU es único. Usa otro. |
+| El registro dice que el email ya existe | Esa cuenta ya fue creada. Usa `POST /api/auth/login`. |
+| Productos duplicados en el catálogo | El nombre puede repetirse; solo el SKU es único. Bórralos con `DELETE /api/admin/productos/{id}`. |
