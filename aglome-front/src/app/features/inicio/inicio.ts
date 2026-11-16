@@ -1,11 +1,13 @@
 import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { enlaceMapa, negocio, Sede } from '../../../environments/negocio';
 import { Producto } from '../../core/models/api.models';
 import { AuthService } from '../../core/services/auth.service';
 import { CategoriasService } from '../../core/services/categorias.service';
 import { ProductoService } from '../../core/services/producto.service';
 import { colorDe } from '../../shared/colores';
+import { descuento, mejorDescuento } from '../../shared/oferta';
 import { Revelar } from '../../shared/revelar';
 import { ProductoCard } from '../catalogo/producto-card';
 
@@ -26,13 +28,17 @@ export class Inicio {
   protected readonly categorias = inject(CategoriasService).arbol;
   protected readonly negocio = negocio;
 
-  /** Colores de melamina para probar en la portada. Llevan al catálogo filtrado por ese color. */
   protected readonly muestras: Muestra[] = ['Blanco', 'Roble', 'Wengué', 'Gris', 'Natural', 'Negro'].map((nombre) => ({ nombre, color: colorDe(nombre) }));
   protected readonly elegida = signal<Muestra>(this.muestras[1]);
 
   protected readonly destacados = signal<Producto[] | null>(null);
+  protected readonly ofertas = signal<Producto[]>([]);
   protected readonly pista = viewChild<ElementRef<HTMLElement>>('pista');
   protected readonly anios = new Date().getFullYear() - negocio.desde;
+  private readonly sanitizador = inject(DomSanitizer);
+  protected incrustado(sede: Sede): SafeResourceUrl | null {
+    return sede.incrustar?.startsWith('https://www.google.com/maps/embed') ? this.sanitizador.bypassSecurityTrustResourceUrl(sede.incrustar) : null;
+  }
   protected mapaDe(sede: Sede): string {
     return enlaceMapa(sede);
   }
@@ -42,9 +48,13 @@ export class Inicio {
       next: (p) => this.destacados.set(p.contenido),
       error: () => this.destacados.set([]),
     });
+
+    this.productos.filtrar({ tamano: 60 }).subscribe({
+      next: (p) => this.ofertas.set(p.contenido.filter((x) => mejorDescuento(x) > 0).sort((a, b) => mejorDescuento(b) - mejorDescuento(a)).slice(0, 8)),
+      error: () => this.ofertas.set([]),
+    });
   }
 
-  /** Inclinación del tablero de la portada según dónde esté el mouse (de -1 a 1). */
   protected readonly giro = signal({ x: 0, y: 0 });
 
   protected inclinar(e: PointerEvent | null): void {

@@ -25,7 +25,15 @@
   } @else if (producto(); as p) {
     <article class="ficha">
       <div class="imagen" [class.con-foto]="conFoto()" (pointermove)="mover($event)" [style.--zx.%]="lupa().x" [style.--zy.%]="lupa().y">
-        <app-producto-imagen [producto]="p" [foto]="seleccionada()?.imagenUrl ?? null" />
+        <app-producto-imagen [producto]="p" [foto]="fotoActual()" [tono]="colorVista()" />
+        @if (galeria().length > 1) {
+          <button type="button" class="flecha izq" aria-label="Foto anterior" (click)="pasar(-1, $event)">‹</button>
+          <button type="button" class="flecha der" aria-label="Foto siguiente" (click)="pasar(1, $event)">›</button>
+          <div class="puntos" aria-hidden="true">
+            @for (f of galeria(); track f.url; let i = $index) { <i [class.activo]="i === posicion()"></i> }
+          </div>
+          <span class="contador" aria-live="polite">{{ posicion() + 1 }} / {{ galeria().length }}@if (galeria()[posicion()].color; as c) { · {{ c }} }</span>
+        }
         @if (estadoStock(); as s) {
           @if (s.clase !== 'ok') { <span class="sello" [class]="'sello ' + s.clase">{{ s.clase === 'agotado' ? 'Agotado' : '¡Últimas unidades!' }}</span> }
         }
@@ -66,7 +74,10 @@
                       <span>{{ v.sku }}</span>
                     }
                   </span>
-                  <span class="precio-op">{{ v.precioVenta | currency: 'PEN' : 'S/ ' }}</span>
+                  <span class="precio-op">
+                    {{ v.precioVenta | currency: 'PEN' : 'S/ ' }}
+                    @if (anterior(v); as a) { <s class="tachado">{{ a | currency: 'PEN' : 'S/ ' }}</s> }
+                  </span>
                 </button>
               </li>
             }
@@ -75,6 +86,13 @@
           @if (seleccionada(); as v) {
             <div class="resumen">
               @for (precio of [v.precioVenta]; track precio) { <div class="precio">{{ precio | currency: 'PEN' : 'S/ ' }}</div> }
+              @if (anterior(v); as a) {
+                <div class="oferta-linea">
+                  <s>{{ a | currency: 'PEN' : 'S/ ' }}</s>
+                  <span class="chapa">−{{ pct(v) }}%</span>
+                  <span class="ahorras">Ahorras {{ ahorra(v) | currency: 'PEN' : 'S/ ' }} por unidad</span>
+                </div>
+              }
               @if (estadoStock(); as s) { <span class="stock" [class]="'stock ' + s.clase">{{ s.texto }}</span> }
               @if (v.stock > 0 && v.stock <= 20) {
                 <div class="barra" role="img" [attr.aria-label]="v.stock + ' unidades en stock'"><i [class]="estadoStock()?.clase" [style.width.%]="v.stock * 5"></i></div>
@@ -123,8 +141,6 @@
 
             <div class="acciones-ficha">
               @if (negocio.whatsapp) { <a class="compartir" [href]="enlaceConsulta()" target="_blank" rel="noopener">Consultar por WhatsApp</a> }
-              <a class="compartir" [href]="enlaceWhatsapp()" target="_blank" rel="noopener">Compartir por WhatsApp</a>
-              <button type="button" class="compartir" (click)="copiarEnlace()">Copiar enlace</button>
             </div>
           }
         } @else {

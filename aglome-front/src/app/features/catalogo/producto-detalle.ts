@@ -8,6 +8,7 @@ import { CarritoService } from '../../core/services/carrito.service';
 import { NotificacionService } from '../../core/services/notificacion.service';
 import { ProductoService } from '../../core/services/producto.service';
 import { colorDe } from '../../shared/colores';
+import { ahorro, atributosVisibles, descuento, precioAnterior } from '../../shared/oferta';
 import { ProductoImagen } from '../../shared/producto-imagen';
 import { variantesActivas } from '../../shared/producto-utils';
 import { Revelar } from '../../shared/revelar';
@@ -75,14 +76,57 @@ export class ProductoDetalle {
   });
 
   protected readonly subtotal = computed(() => (this.seleccionada()?.precioVenta ?? 0) * this.cantidad());
-  protected readonly conFoto = computed(() => !!(this.seleccionada()?.imagenUrl || this.producto()?.imagenUrl));
+  /** Foto que se está mirando: la de la opción elegida, o la que se llegó con las flechas (portada del producto). */
+  protected readonly vista = signal<string | null>(null);
+  protected readonly fotoActual = computed(() => this.vista() ?? this.seleccionada()?.imagenUrl ?? this.producto()?.imagenUrl ?? null);
+  protected readonly conFoto = computed(() => !!this.fotoActual());
+  /** Color de la opción elegida, para pintar la vista previa cuando aún no hay foto. */
+  protected readonly colorVista = computed(() => {
+    const v = this.seleccionada();
+    return v ? this.colorDeVariante(v) : null;
+  });
+
+  /** Fotos del producto, una por color (o por opción si no hay colores), más la portada. Las flechas recorren esta lista. */
+  protected readonly galeria = computed(() => {
+    const p = this.producto();
+    const lista: { url: string; color: string | null; variante: Variante | null }[] = [];
+    if (p?.imagenUrl) lista.push({ url: p.imagenUrl, color: null, variante: null });
+    const vistos = new Set<string>();
+    for (const v of this.variantes()) {
+      const color = this.colorDeVariante(v);
+      const clave = color ?? v.sku;
+      if (!v.imagenUrl || vistos.has(clave) || lista.some((f) => f.url === v.imagenUrl)) continue;
+      vistos.add(clave);
+      lista.push({ url: v.imagenUrl, color, variante: v });
+    }
+    return lista;
+  });
+  protected readonly posicion = computed(() => Math.max(0, this.galeria().findIndex((f) => f.url === this.fotoActual())));
+
+  /** Flechas de la foto: pasa a la siguiente o anterior; si esa foto es de un color, también elige ese color. */
+  protected pasar(paso: number, e?: Event): void {
+    e?.stopPropagation();
+    const g = this.galeria();
+    if (g.length < 2) return;
+    this.ir((this.posicion() + paso + g.length) % g.length);
+  }
+
+  protected ir(i: number): void {
+    const f = this.galeria()[i];
+    if (!f) return;
+    if (f.color) {
+      this.elegirColor(f.color);
+      if (this.seleccionada()?.imagenUrl !== f.url) this.vista.set(f.url);
+    } else if (f.variante) this.elegir(f.variante);
+    else this.vista.set(f.url);
+  }
 
   /** Medidas de la plancha elegida (ej. "2.14m x 2.50m"), si es un tablero y la medida se puede leer. */
   protected readonly plancha = computed(() => {
     const p = this.producto();
     const v = this.seleccionada();
     if (!p || !v || !/(melamin|mdf|triplay|tablero|plancha|aglomerado)/.test(this.normalizar(`${p.nombre} ${p.categoriaNombre ?? ''}`))) return null;
-    const texto = Object.values(v.atributos ?? {}).join(' ');
+    const texto = atributosVisibles(v.atributos).map(([, x]) => x).join(' ');
     const m = texto.match(/(\d+(?:[.,]\d+)?)\s*(?:mm|cm|m)?\s*[x×]\s*(\d+(?:[.,]\d+)?)\s*(?:mm|cm|m)?/i);
     if (!m) return null;
     let a = parseFloat(m[1].replace(',', '.'));
@@ -111,7 +155,6 @@ export class ProductoDetalle {
     return this.catalogo().filter((p) => p.id !== actual && variantesActivas(p).length > 0);
   }
 
-  /** Los relacionados del back; si no hay, otros de la misma categoría. */
   protected readonly relacionadosVista = computed(() => {
     const dados = this.relacionados().filter((r) => r.id !== this.producto()?.id);
     if (dados.length) return dados.slice(0, 4);
@@ -119,7 +162,6 @@ export class ProductoDetalle {
     return cat == null ? [] : this.otros().filter((p) => p.categoriaId === cat).slice(0, 4);
   });
 
-  /** Lo que suele hacer falta con este producto: a un tablero, herrajes y acabados; a un herraje, tableros. */
   protected readonly combinan = computed(() => {
     const p = this.producto();
     if (!p) return [];
@@ -140,7 +182,7 @@ export class ProductoDetalle {
   protected readonly enlaceConsulta = computed(() => {
     const p = this.producto();
     const v = this.seleccionada();
-    const detalle = v ? ` (${Object.values(v.atributos ?? {}).join(', ') || v.sku})` : '';
+    const detalle = v ? ` (${atributosVisibles(v.atributos).map(([, x]) => x).join(', ') || v.sku})` : '';
     return p ? `https://wa.me/${negocio.whatsapp}?text=${encodeURIComponent(`Hola, quiero consultar por: ${p.nombre}${detalle}. ${window.location.href}`)}` : '#';
   });
 
@@ -158,11 +200,6 @@ export class ProductoDetalle {
     return filas;
   });
 
-  protected readonly enlaceWhatsapp = computed(() => {
-    const p = this.producto();
-    return p ? `https://wa.me/?text=${encodeURIComponent(`Mira este producto de Aglome Perú: ${p.nombre} ${window.location.href}`)}` : '#';
-  });
-
   constructor() {
     effect((limpiar) => {
       const id = this.id();
@@ -178,6 +215,7 @@ export class ProductoDetalle {
         next: (p) => {
           this.producto.set(p);
           const activas = variantesActivas(p);
+          this.vista.set(null);
           this.seleccionada.set(activas.find((v) => v.stock > 0) ?? activas[0] ?? null);
           this.cargando.set(false);
         },
@@ -199,6 +237,7 @@ export class ProductoDetalle {
   }
 
   protected elegir(v: Variante): void {
+    this.vista.set(null);
     this.seleccionada.set(v);
     this.cantidad.set(1);
   }
@@ -234,14 +273,6 @@ export class ProductoDetalle {
     this.lupa.set({ x: ((e.clientX - caja.left) / caja.width) * 100, y: ((e.clientY - caja.top) / caja.height) * 100 });
   }
 
-  protected copiarEnlace(): void {
-    navigator.clipboard?.writeText(window.location.href).then(
-      () => this.avisos.ok('Enlace copiado'),
-      () => this.avisos.mostrar('No se pudo copiar el enlace.'),
-    );
-  }
-
-  /** Agrega la opción elegida al carrito. Sin sesión, lleva a ingresar y vuelve a este producto. */
   protected agregar(): void {
     const v = this.seleccionada();
     if (!v) return;
@@ -266,7 +297,6 @@ export class ProductoDetalle {
     });
   }
 
-  /** Agrega y va directo al carrito para terminar la compra. */
   protected comprarAhora(): void {
     const v = this.seleccionada();
     if (!v) return;
@@ -279,10 +309,13 @@ export class ProductoDetalle {
   }
 
   protected atributos(v: Variante): { nombre: string; valor: string }[] {
-    return Object.entries(v.atributos ?? {}).map(([nombre, valor]) => ({ nombre, valor }));
+    return atributosVisibles(v.atributos).map(([nombre, valor]) => ({ nombre, valor }));
   }
 
-  /** Atributos de la opción sin el color (el color se elige con las muestras). */
+  protected readonly anterior = precioAnterior;
+  protected readonly pct = descuento;
+  protected readonly ahorra = ahorro;
+
   protected atributosSin(v: Variante): { nombre: string; valor: string }[] {
     return this.colores().length ? this.atributos(v).filter((a) => !this.esColor(a.nombre)) : this.atributos(v);
   }
@@ -304,7 +337,6 @@ export class ProductoDetalle {
     return colorDe(color);
   }
 
-  /** Un cuadrito del color del producto vuela desde la foto hasta el carrito de la cabecera. */
   private volar(color: string): Promise<void> {
     const origen = this.host.nativeElement.querySelector('.imagen');
     const destino = document.querySelector('.accion.carrito');

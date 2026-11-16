@@ -3,6 +3,8 @@
     <app-producto-imagen [producto]="producto()" />
     @if (agotado()) {
       <span class="etiqueta agotado">Agotado</span>
+    } @else if (oferta() > 0) {
+      <span class="etiqueta oferta">−{{ oferta() }}%</span>
     }
   </div>
 
@@ -18,6 +20,7 @@
     <div class="pie">
       @if (desde() !== null) {
         <span class="precio"><small>Desde</small> {{ desde() | currency: 'PEN' : 'S/ ' }}</span>
+        @if (anterior(); as a) { <s class="tachado">{{ a | currency: 'PEN' : 'S/ ' }}</s> }
       } @else {
         <span class="precio sin">Sin precio</span>
       }

@@ -38,6 +38,7 @@
   ],
   "marcas": [
     "3M",
+    "Alitorn",
     "Arauco",
     "C&A",
     "C&A PRO",
@@ -73,14 +74,15 @@
           "stock": 131,
           "atributos": {
             "Color": "Blanco",
-            "Medida": "15 mm · 214 x 250 cm"
+            "Medida": "15 mm · 214 x 250 cm",
+            "Precio anterior": "220.00"
           },
           "_excel": "MELAMINA BLANCO 15 MM. MASISA"
         },
         {
           "sku": "MEL-MAS-BLANCO-18MM214X250CM",
           "precioVenta": 204.0,
-          "stock": 0,
+          "stock": 26,
           "atributos": {
             "Color": "Blanco",
             "Medida": "18 mm · 214 x 250 cm"
@@ -113,7 +115,8 @@
           "stock": 36,
           "atributos": {
             "Color": "Roble Moro (Wengué)",
-            "Medida": "18 mm · 214 x 250 cm"
+            "Medida": "18 mm · 214 x 250 cm",
+            "Precio anterior": "355.00"
           },
           "_excel": "MELAMINA ROBLE MORO (WENGUE) 18 MM. MASISA"
         },
@@ -136,6 +139,56 @@
             "Medida": "18 mm · 214 x 250 cm"
           },
           "_excel": "MELAMINA SANTORINI 18 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-BOSCO-18MM214X250CM",
+          "precioVenta": 268.9,
+          "stock": 21,
+          "atributos": {
+            "Color": "Bosco",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA BOSCO 18 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-CAVA-18MM214X250CM",
+          "precioVenta": 274.0,
+          "stock": 19,
+          "atributos": {
+            "Color": "Cava",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA CAVA 18 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-GRIGIO-18MM214X250CM",
+          "precioVenta": 261.0,
+          "stock": 14,
+          "atributos": {
+            "Color": "Grigio",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA GRIGIO 18 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-ROBLEMILANO-18MM183X250CM",
+          "precioVenta": 256.7,
+          "stock": 28,
+          "atributos": {
+            "Color": "Roble Milano",
+            "Medida": "18 mm · 183 x 250 cm"
+          },
+          "_excel": "MELAMINA ROBLE MILANO 18 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-SAVIA-18MM214X250CM",
+          "precioVenta": 265.0,
+          "stock": 16,
+          "atributos": {
+            "Color": "Savia",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA SAVIA 18 MM. MASISA"
         }
       ]
     },
@@ -158,7 +211,7 @@
         {
           "sku": "MEL-DUR-BLANCO-18MM214X244CM",
           "precioVenta": 190.5,
-          "stock": 1,
+          "stock": 27,
           "atributos": {
             "Color": "Blanco",
             "Medida": "18 mm · 214 x 244 cm"
@@ -208,7 +261,7 @@
         {
           "sku": "MEL-DUR-WENGUE-18MM210X244CM",
           "precioVenta": 244.0,
-          "stock": 3,
+          "stock": 16,
           "atributos": {
             "Color": "Wengué",
             "Medida": "18 mm · 210 x 244 cm"
@@ -218,12 +271,210 @@
         {
           "sku": "MEL-DUR-NEGRO-18MM210X244CM",
           "precioVenta": 240.0,
-          "stock": 0,
+          "stock": 9,
           "atributos": {
             "Color": "Negro",
             "Medida": "18 mm · 210 x 244 cm"
           },
           "_excel": "MELAMINA NEGRO DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-ARIZONA-18MM210X244CM",
+          "precioVenta": 246.5,
+          "stock": 9,
+          "atributos": {
+            "Color": "Arizona",
+            "Medida": "18 mm · 210 x 244 cm",
+            "Precio anterior": "290.00"
+          },
+          "_excel": "MELAMINA ARIZONA DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-AZULCORAL-18MM214X244CM",
+          "precioVenta": 245.0,
+          "stock": 9,
+          "atributos": {
+            "Color": "Azul Coral",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA AZUL CORAL 18 MM. DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-BLANCO-15MM210X244CM",
+          "precioVenta": 150.0,
+          "stock": 12,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "15 mm · 210 x 244 cm",
+            "Precio anterior": "190.00"
+          },
+          "_excel": "MELAMINA BLANCO 15 MM. DURATEX 210 X 244"
+        },
+        {
+          "sku": "MEL-DUR-BLANCO-18MM210X244CM",
+          "precioVenta": 185.0,
+          "stock": 21,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "18 mm · 210 x 244 cm",
+            "Precio anterior": "200.00"
+          },
+          "_excel": "MELAMINA BLANCO 18 MM. DURATEX 210 X 244"
+        },
+        {
+          "sku": "MEL-DUR-BRISE-18MM183X275CM",
+          "precioVenta": 238.5,
+          "stock": 15,
+          "atributos": {
+            "Color": "Brise",
+            "Medida": "18 mm · 183 x 275 cm"
+          },
+          "_excel": "MELAMINA BRISE DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-BRIXTON-18MM210X244CM",
+          "precioVenta": 245.0,
+          "stock": 19,
+          "atributos": {
+            "Color": "Brixton",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA BRIXTON DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-CAPUCCINO-18MM210X244CM",
+          "precioVenta": 245.0,
+          "stock": 16,
+          "atributos": {
+            "Color": "Capuccino",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA CAPUCCINO DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-CHANTILLI-18MM210X244CM",
+          "precioVenta": 245.0,
+          "stock": 17,
+          "atributos": {
+            "Color": "Chantilli",
+            "Medida": "18 mm · 210 x 244 cm",
+            "Precio anterior": "280.00"
+          },
+          "_excel": "MELAMINA CHANTILLI DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-FUCSIA-18MM210X244CM",
+          "precioVenta": 240.0,
+          "stock": 26,
+          "atributos": {
+            "Color": "Fucsia",
+            "Medida": "18 mm · 210 x 244 cm",
+            "Precio anterior": "300.00"
+          },
+          "_excel": "MELAMINA FUCSIA DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-GRAFITE-18MM184X275CM",
+          "precioVenta": 240.0,
+          "stock": 8,
+          "atributos": {
+            "Color": "Grafite",
+            "Medida": "18 mm · 184 x 275 cm"
+          },
+          "_excel": "MELAMINA GRAFITE DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-GRIS-18MM184X275CM",
+          "precioVenta": 232.0,
+          "stock": 14,
+          "atributos": {
+            "Color": "Gris",
+            "Medida": "18 mm · 184 x 275 cm"
+          },
+          "_excel": "MELAMINA GRIS DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-HEURA-18MM210X244CM",
+          "precioVenta": 240.0,
+          "stock": 27,
+          "atributos": {
+            "Color": "Heura",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA HEURA DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-IBIZA-18MM214X244CM",
+          "precioVenta": 245.0,
+          "stock": 16,
+          "atributos": {
+            "Color": "Ibiza",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA IBIZA DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-INHOTIM-18MM210X244CM",
+          "precioVenta": 240.0,
+          "stock": 14,
+          "atributos": {
+            "Color": "Inhotim",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA INHOTIM DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-NARANJA-18MM210X244CM",
+          "precioVenta": 268.5,
+          "stock": 29,
+          "atributos": {
+            "Color": "Naranja",
+            "Medida": "18 mm · 210 x 244 cm",
+            "Precio anterior": "300.00"
+          },
+          "_excel": "MELAMINA NARANJA DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-PIGNETTO-18MM210X244CM",
+          "precioVenta": 240.0,
+          "stock": 12,
+          "atributos": {
+            "Color": "Pignetto",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA PIGNETTO DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-VERDELIMON-15MM210X244CM",
+          "precioVenta": 216.5,
+          "stock": 12,
+          "atributos": {
+            "Color": "Verde Limón",
+            "Medida": "15 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA VERDE LIMON 15 MM. DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-VERDELIMON-18MM210X244CM",
+          "precioVenta": 254.0,
+          "stock": 16,
+          "atributos": {
+            "Color": "Verde Limón",
+            "Medida": "18 mm · 210 x 244 cm",
+            "Precio anterior": "300.00"
+          },
+          "_excel": "MELAMINA VERDE LIMON DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-VIENES-18MM210X244CM",
+          "precioVenta": 244.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Vienes",
+            "Medida": "18 mm · 210 x 244 cm",
+            "Precio anterior": "270.00"
+          },
+          "_excel": "MELAMINA VIENES DURATEX"
         }
       ]
     },
@@ -276,7 +527,7 @@
         {
           "sku": "MEL-PGB-CARAMELO-18MM275X183CM",
           "precioVenta": 226.0,
-          "stock": 8,
+          "stock": 33,
           "atributos": {
             "Color": "Caramelo",
             "Medida": "18 mm · 275 x 183 cm"
@@ -292,6 +543,99 @@
             "Medida": "18 mm · 275 x 183 cm"
           },
           "_excel": "MELAMINA NEGRO PG BISON"
+        },
+        {
+          "sku": "MEL-BIS-ARDEN-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 33,
+          "atributos": {
+            "Color": "Arden",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA ARDEN PG BISON"
+        },
+        {
+          "sku": "MEL-BIS-BLACKCHERRY-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 19,
+          "atributos": {
+            "Color": "Black Cherry",
+            "Medida": "18 mm · 275 x 183 cm",
+            "Precio anterior": "245.00"
+          },
+          "_excel": "MELAMINA BLACK CHERRY PG BISON"
+        },
+        {
+          "sku": "MEL-BIS-BLANCORHRESISTENTEALAHUMEDAD-18MM275X183CM",
+          "precioVenta": 260.5,
+          "stock": 21,
+          "atributos": {
+            "Color": "Blanco RH (resistente a la humedad)",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA BLANCO RH 18 MM. PG BISON"
+        },
+        {
+          "sku": "MEL-BIS-COIMBRA-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Coimbra",
+            "Medida": "18 mm · 275 x 183 cm",
+            "Precio anterior": "245.00"
+          },
+          "_excel": "MELAMINA COIMBRA PG BISON"
+        },
+        {
+          "sku": "MEL-BIS-HARVARDCHERRY-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Harvard Cherry",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA HARVARD CHERRY PG BISON"
+        },
+        {
+          "sku": "MEL-BIS-PANELA-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Panela",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA PANELA PG BISON"
+        },
+        {
+          "sku": "MEL-BIS-SHALE-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Shale",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA SHALE PG BISON"
+        },
+        {
+          "sku": "MEL-BIS-TAUPE-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Taupe",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA TAUPE PG BISON"
+        },
+        {
+          "sku": "MEL-BIS-VERZASCA-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 20,
+          "atributos": {
+            "Color": "Verzasca",
+            "Medida": "18 mm · 275 x 183 cm",
+            "Precio anterior": "250.00"
+          },
+          "_excel": "MELAMINA VERZASCA PG BISON"
         }
       ]
     },
@@ -307,14 +651,15 @@
           "stock": 20,
           "atributos": {
             "Color": "Cedro",
-            "Medida": "18 mm · 214 x 244 cm"
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "270.00"
           },
           "_excel": "MELAMINA CEDRO VESTO"
         },
         {
           "sku": "MEL-VES-WENGUE-18MM214X244CM",
           "precioVenta": 247.5,
-          "stock": 5,
+          "stock": 11,
           "atributos": {
             "Color": "Wengué",
             "Medida": "18 mm · 214 x 244 cm"
@@ -324,7 +669,7 @@
         {
           "sku": "MEL-VES-HAYA-18MM214X244CM",
           "precioVenta": 247.5,
-          "stock": 3,
+          "stock": 34,
           "atributos": {
             "Color": "Haya",
             "Medida": "18 mm · 214 x 244 cm"
@@ -337,7 +682,8 @@
           "stock": 11,
           "atributos": {
             "Color": "Espresso",
-            "Medida": "18 mm · 214 x 244 cm"
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "280.00"
           },
           "_excel": "MELAMINA ESPRESSO VESTO"
         },
@@ -347,7 +693,8 @@
           "stock": 17,
           "atributos": {
             "Color": "Roble Rústico",
-            "Medida": "18 mm · 214 x 244 cm"
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "280.00"
           },
           "_excel": "MELAMINA ROBLE RUSTICO VESTO"
         },
@@ -360,6 +707,235 @@
             "Medida": "18 mm · 214 x 244 cm"
           },
           "_excel": "MELAMINA ROJO VESTO"
+        },
+        {
+          "sku": "MEL-VES-ALMENDRA-18MM214X244CM",
+          "precioVenta": 246.5,
+          "stock": 26,
+          "atributos": {
+            "Color": "Almendra",
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "290.00"
+          },
+          "_excel": "MELAMINA ALMENDRA VESTO"
+        },
+        {
+          "sku": "MEL-VES-ALUMINIO-18MM214X244CM",
+          "precioVenta": 246.5,
+          "stock": 22,
+          "atributos": {
+            "Color": "Aluminio",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA ALUMINIO VESTO"
+        },
+        {
+          "sku": "MEL-VES-AMAZONAS-18MM214X244CM",
+          "precioVenta": 259.0,
+          "stock": 14,
+          "atributos": {
+            "Color": "Amazonas",
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "290.00"
+          },
+          "_excel": "MELAMINA AMAZONAS VESTO"
+        },
+        {
+          "sku": "MEL-VES-ASERRADONORDICO-18MM214X244CM",
+          "precioVenta": 266.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Aserrado Nórdico",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA ASERRADO NORDICO VESTO"
+        },
+        {
+          "sku": "MEL-VES-AWOURA-18MM214X244CM",
+          "precioVenta": 266.0,
+          "stock": 13,
+          "atributos": {
+            "Color": "Awoura",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA AWOURA VESTO"
+        },
+        {
+          "sku": "MEL-VES-AZULLAGO-18MM214X244CM",
+          "precioVenta": 246.5,
+          "stock": 18,
+          "atributos": {
+            "Color": "Azul Lago",
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "290.00"
+          },
+          "_excel": "MELAMINA AZUL LAGO VESTO"
+        },
+        {
+          "sku": "MEL-VES-CARAMEL-18MM214X244CM",
+          "precioVenta": 265.0,
+          "stock": 34,
+          "atributos": {
+            "Color": "Caramel",
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "330.00"
+          },
+          "_excel": "MELAMINA CARAMEL VESTO"
+        },
+        {
+          "sku": "MEL-VES-CENDRAESCANDINAVO-18MM214X244CM",
+          "precioVenta": 265.5,
+          "stock": 27,
+          "atributos": {
+            "Color": "Cendra Escandinavo",
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "295.00"
+          },
+          "_excel": "MELAMINA CENDRA ESCANDINAVO VESTO"
+        },
+        {
+          "sku": "MEL-VES-CEREZONATURAL-18MM214X244CM",
+          "precioVenta": 247.5,
+          "stock": 16,
+          "atributos": {
+            "Color": "Cerezo Natural",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA CEREZO NATURAL VESTO"
+        },
+        {
+          "sku": "MEL-VES-FRESNOEUROPEO-18MM214X244CM",
+          "precioVenta": 266.0,
+          "stock": 16,
+          "atributos": {
+            "Color": "Fresno Europeo",
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "330.00"
+          },
+          "_excel": "MELAMINA FRESNO EUROPEO VESTO"
+        },
+        {
+          "sku": "MEL-VES-MARAS-18MM214X244CM",
+          "precioVenta": 248.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Maras",
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "270.00"
+          },
+          "_excel": "MELAMINA MARAS VESTO"
+        },
+        {
+          "sku": "MEL-VES-NEGRO-18MM244X214CM",
+          "precioVenta": 246.5,
+          "stock": 14,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "18 mm · 244 x 214 cm",
+            "Precio anterior": "275.00"
+          },
+          "_excel": "MELAMINA NEGRO VESTO"
+        },
+        {
+          "sku": "MEL-VES-NOCCEMILANO-18MM214X244CM",
+          "precioVenta": 243.5,
+          "stock": 17,
+          "atributos": {
+            "Color": "Nocce Milano",
+            "Medida": "18 mm · 214 x 244 cm",
+            "Precio anterior": "270.00"
+          },
+          "_excel": "MELAMINA NOCCE MILANO VESTO"
+        },
+        {
+          "sku": "MEL-VES-NOGALTERRACOTA-18MM214X244CM",
+          "precioVenta": 248.5,
+          "stock": 16,
+          "atributos": {
+            "Color": "Nogal Terracota",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA NOGAL TERRACOTA VESTO"
+        },
+        {
+          "sku": "MEL-VES-OLMOPARDO-18MM214X244CM",
+          "precioVenta": 243.5,
+          "stock": 14,
+          "atributos": {
+            "Color": "Olmo Pardo",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA OLMO PARDO VESTO"
+        },
+        {
+          "sku": "MEL-VES-ORIGENANDINO-18MM214X244CM",
+          "precioVenta": 259.0,
+          "stock": 34,
+          "atributos": {
+            "Color": "Origen Andino",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA ORIGEN ANDINO VESTO"
+        },
+        {
+          "sku": "MEL-VES-ROBLEAMERICANO-18MM214X244CM",
+          "precioVenta": 265.5,
+          "stock": 15,
+          "atributos": {
+            "Color": "Roble Americano",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA ROBLE AMERICANO VESTO"
+        },
+        {
+          "sku": "MEL-VES-ROBLECAVA-18MM214X244CM",
+          "precioVenta": 265.5,
+          "stock": 18,
+          "atributos": {
+            "Color": "Roble Cava",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA ROBLE CAVA VESTO"
+        },
+        {
+          "sku": "MEL-VES-SEDANOTTE-18MM214X244CM",
+          "precioVenta": 266.0,
+          "stock": 11,
+          "atributos": {
+            "Color": "Seda Notte",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA SEDA NOTTE VESTO"
+        },
+        {
+          "sku": "MEL-VES-TEKAARTICO-18MM214X244CM",
+          "precioVenta": 248.5,
+          "stock": 13,
+          "atributos": {
+            "Color": "Teka Artico",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA TEKA ARTICO VESTO"
+        },
+        {
+          "sku": "MEL-VES-TOSCANA-18MM214X244CM",
+          "precioVenta": 266.0,
+          "stock": 14,
+          "atributos": {
+            "Color": "Toscana",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA TOSCANA VESTO"
+        },
+        {
+          "sku": "MEL-VES-VISCAYA-18MM214X244CM",
+          "precioVenta": 266.0,
+          "stock": 20,
+          "atributos": {
+            "Color": "Viscaya",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA VISCAYA VESTO"
         }
       ]
     },
@@ -438,6 +1014,66 @@
             "Medida": "Grueso"
           },
           "_excel": "CANTO UNICOLORES GRUESO"
+        },
+        {
+          "sku": "CANMADERADOFRIODELGADO",
+          "precioVenta": 0.8,
+          "stock": 38196,
+          "atributos": {
+            "Color": "Maderado frío",
+            "Medida": "Delgado"
+          },
+          "_excel": "CANTO MADERADO TONALIDADES FRIAS DELGADO"
+        },
+        {
+          "sku": "CANBLANCODELGADOPEGASO",
+          "precioVenta": 0.6,
+          "stock": 8506,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "Delgado (Pegaso)"
+          },
+          "_excel": "CANTO BLANCO DELGADO PEGASO"
+        },
+        {
+          "sku": "CANBLANCODELGADOECONOMICO",
+          "precioVenta": 0.5,
+          "stock": 2152,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "Delgado (económico)"
+          },
+          "_excel": "CANTO BLANCO DELGADO GK"
+        },
+        {
+          "sku": "CANBLANCODOBLEANCHO40X045MM",
+          "precioVenta": 2.2,
+          "stock": 57,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "Doble ancho 40 x 0.45 mm"
+          },
+          "_excel": "CANTO BLANCO DELGADO DOBLE ANCHO 40X0.45MM"
+        },
+        {
+          "sku": "CANMADERADOCLASICODOBLEANCHO40X045MM",
+          "precioVenta": 3.2,
+          "stock": 743,
+          "atributos": {
+            "Color": "Maderado clásico",
+            "Medida": "Doble ancho 40 x 0.45 mm"
+          },
+          "_excel": "CANTO MADERADO DELGADO DOBLE ANCHO 40X0.45MM"
+        },
+        {
+          "sku": "CANUNICOLORDOBLEANCHO40X045MM",
+          "precioVenta": 2.2,
+          "stock": 162,
+          "atributos": {
+            "Color": "Unicolor",
+            "Medida": "Doble ancho 40 x 0.45 mm"
+          },
+          "_excel": "CANTO UNICOLOR DELGADO DOBLE ANCHO 40X0.45MM"
         }
       ]
     },
@@ -546,7 +1182,8 @@
           "stock": 36,
           "atributos": {
             "Color": "Natural",
-            "Medida": "18 mm · 122 x 244 cm"
+            "Medida": "18 mm · 122 x 244 cm",
+            "Precio anterior": "115.00"
           },
           "_excel": "OSB 18 MM."
         }
@@ -627,7 +1264,7 @@
         {
           "sku": "TRP-NATURAL-4MM122X244CM",
           "precioVenta": 28.0,
-          "stock": 1,
+          "stock": 16,
           "atributos": {
             "Color": "Natural",
             "Medida": "4 mm · 122 x 244 cm"
@@ -653,6 +1290,28 @@
             "Medida": "3.5 mm · 122 x 244 cm"
           },
           "_excel": "TRIPLAY VENNER 3.5 MM."
+        },
+        {
+          "sku": "TRISAPELLY4MM122X244CM",
+          "precioVenta": 36.0,
+          "stock": 96,
+          "atributos": {
+            "Color": "Sapelly",
+            "Medida": "4 mm · 122 x 244 cm",
+            "Precio anterior": "39.10"
+          },
+          "_excel": "TRIPLAY SAPELLY 4 MM."
+        },
+        {
+          "sku": "TRIBITANGOR4MM122X244CM",
+          "precioVenta": 33.0,
+          "stock": 11,
+          "atributos": {
+            "Color": "Bitangor",
+            "Medida": "4 mm · 122 x 244 cm",
+            "Precio anterior": "35.90"
+          },
+          "_excel": "TRIPLAY BITANGOR CONSTRUCTOR"
         }
       ]
     },
@@ -676,7 +1335,8 @@
           "precioVenta": 6.5,
           "stock": 150,
           "atributos": {
-            "Medida": "1 x 2 pulg x 8 pies"
+            "Medida": "1 x 2 pulg x 8 pies",
+            "Precio anterior": "7.20"
           },
           "_excel": "LISTON DE MADERA 1X2X8"
         }
@@ -704,7 +1364,8 @@
           "stock": 207,
           "atributos": {
             "Tipo": "Interior",
-            "Medida": "35 mm"
+            "Medida": "35 mm",
+            "Precio anterior": "5.70"
           },
           "_excel": "BISAGRA INTERIOR CIERRE LENTO (PAR)"
         },
@@ -742,7 +1403,8 @@
           "stock": 1220,
           "atributos": {
             "Tipo": "Interior",
-            "Medida": "35 mm"
+            "Medida": "35 mm",
+            "Precio anterior": "2.30"
           },
           "_excel": "BISAGRA INTERIOR ECONOMICA SIN TORNILLO"
         },
@@ -777,7 +1439,7 @@
         {
           "sku": "BIS-PO-INTERIOR-35MM",
           "precioVenta": 5.0,
-          "stock": 9,
+          "stock": 14,
           "atributos": {
             "Tipo": "Interior",
             "Medida": "35 mm"
@@ -816,7 +1478,8 @@
           "precioVenta": 5.8,
           "stock": 352,
           "atributos": {
-            "Medida": "12\" (30 cm)"
+            "Medida": "12\" (30 cm)",
+            "Precio anterior": "6.80"
           },
           "_excel": "CORREDERAS MINI TELESCOPICAS 12\""
         },
@@ -869,7 +1532,8 @@
           "precioVenta": 7.0,
           "stock": 165,
           "atributos": {
-            "Medida": "10\" (25 cm)"
+            "Medida": "10\" (25 cm)",
+            "Precio anterior": "8.00"
           },
           "_excel": "CORREDERAS PESADA 10\""
         },
@@ -878,7 +1542,8 @@
           "precioVenta": 7.5,
           "stock": 153,
           "atributos": {
-            "Medida": "12\" (30 cm)"
+            "Medida": "12\" (30 cm)",
+            "Precio anterior": "8.80"
           },
           "_excel": "CORREDERAS PESADA 12\""
         },
@@ -896,7 +1561,8 @@
           "precioVenta": 9.0,
           "stock": 54,
           "atributos": {
-            "Medida": "16\" (40 cm)"
+            "Medida": "16\" (40 cm)",
+            "Precio anterior": "10.20"
           },
           "_excel": "CORREDERAS PESADA 16\""
         },
@@ -905,7 +1571,8 @@
           "precioVenta": 9.5,
           "stock": 178,
           "atributos": {
-            "Medida": "18\" (45 cm)"
+            "Medida": "18\" (45 cm)",
+            "Precio anterior": "10.60"
           },
           "_excel": "CORREDERAS PESADA 18\""
         },
@@ -1010,7 +1677,8 @@
           "precioVenta": 4.1,
           "stock": 193,
           "atributos": {
-            "Medida": "12.8 cm"
+            "Medida": "12.8 cm",
+            "Precio anterior": "5.10"
           },
           "_excel": "TIRADOR BARRA PESADO 12.8 CM"
         },
@@ -1026,7 +1694,7 @@
         {
           "sku": "TIR-BP-196CM",
           "precioVenta": 5.5,
-          "stock": 0,
+          "stock": 14,
           "atributos": {
             "Medida": "19.6 cm"
           },
@@ -1035,7 +1703,7 @@
         {
           "sku": "TIR-BP-226CM",
           "precioVenta": 5.9,
-          "stock": 0,
+          "stock": 13,
           "atributos": {
             "Medida": "22.6 cm"
           },
@@ -1055,7 +1723,8 @@
           "stock": 416,
           "atributos": {
             "Color": "Cromado",
-            "Medida": "9.6 cm"
+            "Medida": "9.6 cm",
+            "Precio anterior": "2.60"
           },
           "_excel": "TIRADOR TINA CROMADO 9.6 CM"
         },
@@ -1072,7 +1741,7 @@
         {
           "sku": "TIR-TI-CROMADO-16CM",
           "precioVenta": 4.5,
-          "stock": 0,
+          "stock": 8,
           "atributos": {
             "Color": "Cromado",
             "Medida": "16 cm"
@@ -1100,7 +1769,7 @@
         {
           "sku": "TIR-U-CROMADO-128CM",
           "precioVenta": 5.8,
-          "stock": 0,
+          "stock": 22,
           "atributos": {
             "Color": "Cromado",
             "Medida": "12.8 cm"
@@ -1155,7 +1824,8 @@
           "precioVenta": 3.3,
           "stock": 243,
           "atributos": {
-            "Medida": "8 kg"
+            "Medida": "8 kg",
+            "Precio anterior": "4.10"
           },
           "_excel": "PISTON DE AIRE 8 KG."
         },
@@ -1201,7 +1871,8 @@
           "stock": 108,
           "atributos": {
             "Color": "Gris",
-            "Medida": "1 1/2\""
+            "Medida": "1 1/2\"",
+            "Precio anterior": "3.10"
           },
           "_excel": "GARRUCHA 1 1/2\" 25040GR GRIS S/FRENO"
         },
@@ -1234,6 +1905,26 @@
             "Medida": "2\""
           },
           "_excel": "GARRUCHA 2\" 25050AL PVC CROMADO NARANJA"
+        },
+        {
+          "sku": "GARNEGRO3",
+          "precioVenta": 5.1,
+          "stock": 25,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "3\""
+          },
+          "_excel": "GARRUCHA 3\""
+        },
+        {
+          "sku": "GARGRISPLASTICASINFRENO",
+          "precioVenta": 6.6,
+          "stock": 32,
+          "atributos": {
+            "Color": "Gris",
+            "Medida": "Plástica sin freno"
+          },
+          "_excel": "GARRUCHA PLASTICA S/FRENO"
         }
       ]
     },
@@ -1259,7 +1950,8 @@
           "stock": 40,
           "atributos": {
             "Color": "Blanco",
-            "Medida": "5 x 6"
+            "Medida": "5 x 6",
+            "Precio anterior": "2.10"
           },
           "_excel": "ESCUADRA METALICA BLANCA DE 5X6X1.2 MM."
         },
@@ -1269,7 +1961,8 @@
           "stock": 61,
           "atributos": {
             "Color": "Blanco",
-            "Medida": "8 x 10"
+            "Medida": "8 x 10",
+            "Precio anterior": "3.50"
           },
           "_excel": "ESCUADRA METALICA BLANCA DE 8X10X1.2MM."
         },
@@ -1279,14 +1972,15 @@
           "stock": 41,
           "atributos": {
             "Color": "Blanco",
-            "Medida": "10 x 12"
+            "Medida": "10 x 12",
+            "Precio anterior": "4.40"
           },
           "_excel": "ESCUADRA METALICA BLANCA DE 10X12X1.2MM TC0922"
         },
         {
           "sku": "ESC-BL-BLANCO-12X14",
           "precioVenta": 4.6,
-          "stock": 1,
+          "stock": 34,
           "atributos": {
             "Color": "Blanco",
             "Medida": "12 x 14"
@@ -1401,7 +2095,8 @@
           "precioVenta": 1.0,
           "stock": 12,
           "atributos": {
-            "Color": "Marrón"
+            "Color": "Marrón",
+            "Precio anterior": "1.10"
           },
           "_excel": "PASACABLE MARRON"
         },
@@ -1410,7 +2105,8 @@
           "precioVenta": 1.0,
           "stock": 78,
           "atributos": {
-            "Color": "Marrón claro"
+            "Color": "Marrón claro",
+            "Precio anterior": "1.10"
           },
           "_excel": "PASACABLE MARRON CLARO"
         },
@@ -1419,7 +2115,8 @@
           "precioVenta": 1.0,
           "stock": 19,
           "atributos": {
-            "Color": "Negro"
+            "Color": "Negro",
+            "Precio anterior": "1.10"
           },
           "_excel": "PASACABLE NEGRO"
         }
@@ -1600,9 +2297,10 @@
         {
           "sku": "WIN-3M",
           "precioVenta": 8.0,
-          "stock": 9,
+          "stock": 31,
           "atributos": {
-            "Medida": "3 m"
+            "Medida": "3 m",
+            "Precio anterior": "8.70"
           },
           "_excel": "WINCHA X 3 MTS. 21605"
         },
@@ -1611,7 +2309,8 @@
           "precioVenta": 11.0,
           "stock": 13,
           "atributos": {
-            "Medida": "5 m"
+            "Medida": "5 m",
+            "Precio anterior": "13.80"
           },
           "_excel": "WINCHA X 5 MTS. 21606  0100908010067"
         }
@@ -1626,7 +2325,7 @@
         {
           "sku": "MAR-16OZ",
           "precioVenta": 24.5,
-          "stock": 1,
+          "stock": 24,
           "atributos": {
             "Medida": "16 oz"
           },
@@ -1652,17 +2351,18 @@
         {
           "sku": "ALI-CORTE-6",
           "precioVenta": 6.5,
-          "stock": 2,
+          "stock": 29,
           "atributos": {
             "Tipo": "Corte",
-            "Medida": "6\""
+            "Medida": "6\"",
+            "Precio anterior": "7.40"
           },
           "_excel": "ALICATE DE CORTE 6\"  1400108140070"
         },
         {
           "sku": "ALI-PUNTA-6",
           "precioVenta": 7.8,
-          "stock": 3,
+          "stock": 14,
           "atributos": {
             "Tipo": "Punta",
             "Medida": "6\""
@@ -1672,7 +2372,7 @@
         {
           "sku": "ALI-PELACABLES-6",
           "precioVenta": 7.4,
-          "stock": 0,
+          "stock": 8,
           "atributos": {
             "Tipo": "Pelacables",
             "Medida": "6\""
@@ -1682,7 +2382,7 @@
         {
           "sku": "ALI-UNIVERSAL-8",
           "precioVenta": 8.8,
-          "stock": 2,
+          "stock": 14,
           "atributos": {
             "Tipo": "Universal",
             "Medida": "8\""
@@ -1700,7 +2400,7 @@
         {
           "sku": "SER-18",
           "precioVenta": 15.5,
-          "stock": 3,
+          "stock": 21,
           "atributos": {
             "Medida": "18\""
           },
@@ -1709,7 +2409,7 @@
         {
           "sku": "SER-20",
           "precioVenta": 17.8,
-          "stock": 6,
+          "stock": 29,
           "atributos": {
             "Medida": "20\""
           },
@@ -1726,16 +2426,17 @@
         {
           "sku": "LLF-6",
           "precioVenta": 8.5,
-          "stock": 2,
+          "stock": 14,
           "atributos": {
-            "Medida": "6\""
+            "Medida": "6\"",
+            "Precio anterior": "9.20"
           },
           "_excel": "LLAVE FRANCESA 6\" 1400108140330"
         },
         {
           "sku": "LLF-12",
           "precioVenta": 15.5,
-          "stock": 3,
+          "stock": 23,
           "atributos": {
             "Medida": "12\""
           },
@@ -1752,10 +2453,11 @@
         {
           "sku": "BRO-MADERA-6PIEZAS",
           "precioVenta": 13.5,
-          "stock": 3,
+          "stock": 18,
           "atributos": {
             "Tipo": "Madera",
-            "Medida": "6 piezas"
+            "Medida": "6 piezas",
+            "Precio anterior": "15.30"
           },
           "_excel": "JGO BROCAS MADERA 6PZ 11337"
         },
@@ -1772,7 +2474,7 @@
         {
           "sku": "BRO-METALMADERAYCO-9PIEZAS",
           "precioVenta": 32.5,
-          "stock": 3,
+          "stock": 12,
           "atributos": {
             "Tipo": "Metal, madera y concreto",
             "Medida": "9 piezas"
@@ -1782,7 +2484,7 @@
         {
           "sku": "BRO-METALHSS-10PIEZAS",
           "precioVenta": 37.0,
-          "stock": 3,
+          "stock": 11,
           "atributos": {
             "Tipo": "Metal HSS",
             "Medida": "10 piezas"
@@ -1809,7 +2511,7 @@
         {
           "sku": "TAL-IN-MANDRIL12",
           "precioVenta": 325.0,
-          "stock": 1,
+          "stock": 26,
           "atributos": {
             "Medida": "Mandril 1/2\""
           },
@@ -1826,7 +2528,7 @@
         {
           "sku": "TAL-85-850W",
           "precioVenta": 150.0,
-          "stock": 2,
+          "stock": 31,
           "atributos": {
             "Medida": "850 W"
           },
@@ -1843,7 +2545,7 @@
         {
           "sku": "ESM-412750W",
           "precioVenta": 110.5,
-          "stock": 2,
+          "stock": 26,
           "atributos": {
             "Medida": "4 1/2\" · 750 W"
           },
@@ -1862,7 +2564,8 @@
           "precioVenta": 277.5,
           "stock": 2,
           "atributos": {
-            "Medida": "1400 W"
+            "Medida": "1400 W",
+            "Precio anterior": "310.00"
           },
           "_excel": "SIERRA CIRCULAR 1400W CS18538"
         }
@@ -1896,7 +2599,8 @@
           "precioVenta": 8.5,
           "stock": 8,
           "atributos": {
-            "Tipo": "Reforzada"
+            "Tipo": "Reforzada",
+            "Precio anterior": "9.20"
           },
           "_excel": "PISTOLA PARA SILICONA REFORZADA 1700106200686"
         },
@@ -1905,7 +2609,8 @@
           "precioVenta": 7.5,
           "stock": 24,
           "atributos": {
-            "Tipo": "Esqueleto"
+            "Tipo": "Esqueleto",
+            "Precio anterior": "8.30"
           },
           "_excel": "PISTOLA PARA SILICONA TIPO ESQUELETO 1700106200691"
         }
@@ -1922,7 +2627,8 @@
           "precioVenta": 1.9,
           "stock": 41,
           "atributos": {
-            "Medida": "1/64 de galón"
+            "Medida": "1/64 de galón",
+            "Precio anterior": "2.20"
           },
           "_excel": "PEGAMENTO DE CONTACTO 1/64 AFRICANO'S"
         },
@@ -1940,7 +2646,8 @@
           "precioVenta": 13.0,
           "stock": 14,
           "atributos": {
-            "Medida": "1/8 de galón"
+            "Medida": "1/8 de galón",
+            "Precio anterior": "14.40"
           },
           "_excel": "PEGAMENTO DE CONTACTO 1/8 AFRICANO'S"
         }
@@ -1978,7 +2685,8 @@
           "stock": 45,
           "atributos": {
             "Color": "Negro",
-            "Medida": "225 ml"
+            "Medida": "225 ml",
+            "Precio anterior": "10.00"
           },
           "_excel": "SILICONA MULTIUSOS 1000 NEGRO 225ML 0020105002841"
         },
@@ -2031,7 +2739,8 @@
           "precioVenta": 3.6,
           "stock": 50,
           "atributos": {
-            "Medida": "Grano 40"
+            "Medida": "Grano 40",
+            "Precio anterior": "4.50"
           },
           "_excel": "LIJA MADERA 40 PL31B 2059"
         },
@@ -2120,7 +2829,8 @@
           "precioVenta": 3.3,
           "stock": 47,
           "atributos": {
-            "Medida": "Grano 40"
+            "Medida": "Grano 40",
+            "Precio anterior": "3.60"
           },
           "_excel": "LIJA FIERRO 40 KL371 2100"
         },
@@ -2147,7 +2857,8 @@
           "precioVenta": 2.7,
           "stock": 46,
           "atributos": {
-            "Medida": "Grano 80"
+            "Medida": "Grano 80",
+            "Precio anterior": "2.90"
           },
           "_excel": "LIJA FIERRO 80 KL371 2103"
         },
@@ -2156,7 +2867,8 @@
           "precioVenta": 2.8,
           "stock": 47,
           "atributos": {
-            "Medida": "Grano 100"
+            "Medida": "Grano 100",
+            "Precio anterior": "3.10"
           },
           "_excel": "LIJA FIERRO 100 KL371 2104"
         },
@@ -2165,7 +2877,8 @@
           "precioVenta": 2.6,
           "stock": 24,
           "atributos": {
-            "Medida": "Grano 120"
+            "Medida": "Grano 120",
+            "Precio anterior": "3.10"
           },
           "_excel": "LIJA FIERRO 120 KL371 2105"
         },
@@ -2174,7 +2887,8 @@
           "precioVenta": 2.7,
           "stock": 49,
           "atributos": {
-            "Medida": "Grano 150"
+            "Medida": "Grano 150",
+            "Precio anterior": "2.90"
           },
           "_excel": "LIJA FIERRO 150 KL371 2106"
         },
@@ -2183,7 +2897,8 @@
           "precioVenta": 3.5,
           "stock": 49,
           "atributos": {
-            "Medida": "Grano 180"
+            "Medida": "Grano 180",
+            "Precio anterior": "3.80"
           },
           "_excel": "LIJA FIERRO 180 KL371 2107"
         },
@@ -2244,16 +2959,18 @@
           "precioVenta": 8.8,
           "stock": 18,
           "atributos": {
-            "Medida": "9 W"
+            "Medida": "9 W",
+            "Precio anterior": "10.00"
           },
           "_excel": "FOCO LED ESPIRAL 9W/650 LUMEN BLANCO"
         },
         {
           "sku": "FOC-ES-12W",
           "precioVenta": 11.9,
-          "stock": 8,
+          "stock": 16,
           "atributos": {
-            "Medida": "12 W"
+            "Medida": "12 W",
+            "Precio anterior": "14.00"
           },
           "_excel": "FOCO LED ESPIRAL 12W/850 LUMEN BLANCO"
         }
@@ -2281,7 +2998,8 @@
           "stock": 29,
           "atributos": {
             "Color": "Cálido",
-            "Medida": "5 W"
+            "Medida": "5 W",
+            "Precio anterior": "7.20"
           },
           "_excel": "FOCO LED 5W/430 LUMEN 3000K CALIDO"
         },
@@ -2354,7 +3072,7 @@
         {
           "sku": "EXT-3M",
           "precioVenta": 10.5,
-          "stock": 5,
+          "stock": 22,
           "atributos": {
             "Medida": "3 m"
           },
@@ -2363,7 +3081,7 @@
         {
           "sku": "EXT-5M",
           "precioVenta": 12.0,
-          "stock": 4,
+          "stock": 16,
           "atributos": {
             "Medida": "5 m"
           },
@@ -2400,7 +3118,8 @@
           "precioVenta": 3.3,
           "stock": 10,
           "atributos": {
-            "Tipo": "Triple"
+            "Tipo": "Triple",
+            "Precio anterior": "3.70"
           },
           "_excel": "INTERRUPTOR TRIPLE P/EMP CLASSIC 1660104046379"
         }
@@ -2424,11 +3143,1394 @@
         {
           "sku": "TOM-DOBLE",
           "precioVenta": 2.5,
-          "stock": 5,
+          "stock": 32,
           "atributos": {
             "Tipo": "Doble"
           },
           "_excel": "TOMACORRIENTE DOBLE P/EMP 1660104046191"
+        }
+      ]
+    },
+    {
+      "nombre": "MDP crudo",
+      "categoria": "Madera",
+      "marca": "Representaciones Martin",
+      "descripcion": "Tablero de MDP sin recubrimiento, para enchapar, laminar o fabricar muebles. Elige el espesor.",
+      "variantes": [
+        {
+          "sku": "MDPNATURAL6MM244X214CM",
+          "precioVenta": 71.4,
+          "stock": 24,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "6 mm · 244 x 214 cm"
+          },
+          "_excel": "MDP CRUDO 6 MM."
+        },
+        {
+          "sku": "MDPNATURAL12MM212X244CM",
+          "precioVenta": 125.0,
+          "stock": 17,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "12 mm · 212 x 244 cm"
+          },
+          "_excel": "MDP CRUDO 12 MM."
+        },
+        {
+          "sku": "MDPNATURAL15MM244X213CM",
+          "precioVenta": 137.5,
+          "stock": 152,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "15 mm · 244 x 213 cm"
+          },
+          "_excel": "MDP CRUDO 15 MM."
+        },
+        {
+          "sku": "MDPNATURAL18MM244X213CM",
+          "precioVenta": 171.0,
+          "stock": 23,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "18 mm · 244 x 213 cm"
+          },
+          "_excel": "MDP CRUDO 18 MM. 244 X 213"
+        },
+        {
+          "sku": "MDPNATURAL18MM207X244CM",
+          "precioVenta": 170.3,
+          "stock": 21,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "18 mm · 207 x 244 cm"
+          },
+          "_excel": "MDP CRUDO 18 MM. 207 X 244"
+        }
+      ]
+    },
+    {
+      "nombre": "Trupán",
+      "categoria": "Madera",
+      "marca": "Maderas América SAC",
+      "descripcion": "Trupán liso y ranurado para fondos, divisiones y paneles decorativos.",
+      "variantes": [
+        {
+          "sku": "TRUNATURALLISO25MM25MM213X244CM",
+          "precioVenta": 40.0,
+          "stock": 61,
+          "atributos": {
+            "Color": "Natural",
+            "Tipo": "Liso 2.5 mm",
+            "Medida": "2.5 mm · 213 x 244 cm"
+          },
+          "_excel": "TRUPAN 2,5 MM."
+        },
+        {
+          "sku": "TRUNATURALRANURADOCHICO18MM244X122CM",
+          "precioVenta": 135.0,
+          "stock": 14,
+          "atributos": {
+            "Color": "Natural",
+            "Tipo": "Ranurado chico",
+            "Medida": "18 mm · 244 x 122 cm"
+          },
+          "_excel": "TRUPAN RANURADO (CH)"
+        },
+        {
+          "sku": "TRUNATURALRANURADOGRANDE18MM244X152CM",
+          "precioVenta": 210.0,
+          "stock": 18,
+          "atributos": {
+            "Color": "Natural",
+            "Tipo": "Ranurado grande",
+            "Medida": "18 mm · 244 x 152 cm"
+          },
+          "_excel": "TRUPAN RANURADO (G)"
+        }
+      ]
+    },
+    {
+      "nombre": "Plywood especial",
+      "categoria": "Madera",
+      "marca": "Inversiones Jocema",
+      "descripcion": "Plywood de 12 mm, Film fenólico y Plynovo para encofrados y trabajos de mayor exigencia.",
+      "variantes": [
+        {
+          "sku": "PLYNATURALPLYWOOD12MM12MM122X244CM",
+          "precioVenta": 120.0,
+          "stock": 33,
+          "atributos": {
+            "Color": "Natural",
+            "Tipo": "Plywood 12 mm",
+            "Medida": "12 mm · 122 x 244 cm"
+          },
+          "_excel": "PLYWOOD 12 MM."
+        },
+        {
+          "sku": "PLYNATURALFILM18MM18MM122X244CM",
+          "precioVenta": 95.0,
+          "stock": 27,
+          "atributos": {
+            "Color": "Natural",
+            "Tipo": "Film 18 mm",
+            "Medida": "18 mm · 122 x 244 cm"
+          },
+          "_excel": "PLYWOOD FILM 18 MM."
+        },
+        {
+          "sku": "PLYNATURALPLYNOVOSUPER18MM18MM244X122CM",
+          "precioVenta": 130.0,
+          "stock": 29,
+          "atributos": {
+            "Color": "Natural",
+            "Tipo": "Plynovo Super 18 mm",
+            "Medida": "18 mm · 244 x 122 cm",
+            "Precio anterior": "155.00"
+          },
+          "_excel": "PLYNOVO SUPER 18 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Wall panel (panel decorativo para pared)",
+      "categoria": "Madera",
+      "marca": "Representaciones Martin",
+      "descripcion": "Panel decorativo tipo listón para revestir paredes y muebles. Elige el modelo.",
+      "variantes": [
+        {
+          "sku": "WALLK1013290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 11,
+          "atributos": {
+            "Color": "LK1013",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LK1013"
+        },
+        {
+          "sku": "WALLK1016290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 32,
+          "atributos": {
+            "Color": "LK1016",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LK1016"
+        },
+        {
+          "sku": "WALLK4006290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 60,
+          "atributos": {
+            "Color": "LK4006",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LK4006"
+        },
+        {
+          "sku": "WALLK4032290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 22,
+          "atributos": {
+            "Color": "LK4032",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LK4032"
+        },
+        {
+          "sku": "WALLK5005290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 64,
+          "atributos": {
+            "Color": "LK5005",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LK5005"
+        },
+        {
+          "sku": "WALLK6017290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 54,
+          "atributos": {
+            "Color": "LK6017",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LK6017"
+        },
+        {
+          "sku": "WALLK8003290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 43,
+          "atributos": {
+            "Color": "LK8003",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LK8003"
+        },
+        {
+          "sku": "WALLK8019290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 70,
+          "atributos": {
+            "Color": "LK8019",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LK8019"
+        },
+        {
+          "sku": "WALLK8020290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 112,
+          "atributos": {
+            "Color": "LK8020",
+            "Medida": "2.90 m x 16 cm",
+            "Precio anterior": "21.70"
+          },
+          "_excel": "WALL PANEL LK8020"
+        },
+        {
+          "sku": "WALLKH3102290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 38,
+          "atributos": {
+            "Color": "LKh3102",
+            "Medida": "2.90 m x 16 cm",
+            "Precio anterior": "21.70"
+          },
+          "_excel": "WALL PANEL LKH3102"
+        },
+        {
+          "sku": "WALLKH3103290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 32,
+          "atributos": {
+            "Color": "LKh3103",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LKH3103"
+        },
+        {
+          "sku": "WALLKH3115290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 10,
+          "atributos": {
+            "Color": "LKh3115",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL LKH3115"
+        },
+        {
+          "sku": "WALWP4032BLACK290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 11,
+          "atributos": {
+            "Color": "WP4032 Black",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL WP4032 BLACK"
+        },
+        {
+          "sku": "WALWP53102308290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 24,
+          "atributos": {
+            "Color": "WP53102-308",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL WP53102-308"
+        },
+        {
+          "sku": "WALWP8503002B2290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 69,
+          "atributos": {
+            "Color": "WP85030-02b2",
+            "Medida": "2.90 m x 16 cm",
+            "Precio anterior": "23.50"
+          },
+          "_excel": "WALL PANEL WP85030-02B2"
+        },
+        {
+          "sku": "WALWPAW062290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 70,
+          "atributos": {
+            "Color": "WPaw062",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL WPAW062"
+        },
+        {
+          "sku": "WALWPDT10290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 12,
+          "atributos": {
+            "Color": "WPdt-10",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL WPDT-10"
+        },
+        {
+          "sku": "WALWPH0021290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 70,
+          "atributos": {
+            "Color": "WPh002-1",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL WPH002-1"
+        },
+        {
+          "sku": "WALWPH2109290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 70,
+          "atributos": {
+            "Color": "WPh2109",
+            "Medida": "2.90 m x 16 cm",
+            "Precio anterior": "21.70"
+          },
+          "_excel": "WALL PANEL WPH2109"
+        },
+        {
+          "sku": "WALWPH3114290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 70,
+          "atributos": {
+            "Color": "WPh3114",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL WPH3114"
+        },
+        {
+          "sku": "WALWPOW290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 21,
+          "atributos": {
+            "Color": "WPow",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL WPOW"
+        },
+        {
+          "sku": "WALWPQ945101290MX16CM",
+          "precioVenta": 20.0,
+          "stock": 73,
+          "atributos": {
+            "Color": "WPq9451-01",
+            "Medida": "2.90 m x 16 cm"
+          },
+          "_excel": "WALL PANEL WPQ9451-01"
+        }
+      ]
+    },
+    {
+      "nombre": "Panel mármol",
+      "categoria": "Madera",
+      "marca": "Representaciones Martin",
+      "descripcion": "Panel de apariencia mármol para revestimientos. Elige el diseño.",
+      "variantes": [
+        {
+          "sku": "PAN307725MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 12,
+          "atributos": {
+            "Color": "3077",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL 3077"
+        },
+        {
+          "sku": "PANAK8960625MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 27,
+          "atributos": {
+            "Color": "AK-89606",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL AK-89606"
+        },
+        {
+          "sku": "PANDY05825MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 28,
+          "atributos": {
+            "Color": "DY058",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL DY058"
+        },
+        {
+          "sku": "PANDY06125MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 20,
+          "atributos": {
+            "Color": "DY061",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL DY061"
+        },
+        {
+          "sku": "PANDY10125MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 32,
+          "atributos": {
+            "Color": "DY101",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL DY101"
+        },
+        {
+          "sku": "PANDY17525MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 31,
+          "atributos": {
+            "Color": "DY175",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL DY175"
+        },
+        {
+          "sku": "PANLJ00125MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 24,
+          "atributos": {
+            "Color": "LJ001",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL LJ001"
+        },
+        {
+          "sku": "PANLJ8000725MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 27,
+          "atributos": {
+            "Color": "LJ80007",
+            "Medida": "2.5 mm · 244 x 122 cm",
+            "Precio anterior": "110.00"
+          },
+          "_excel": "PANEL MARMOL LJ80007"
+        },
+        {
+          "sku": "PANMT9021L25MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 23,
+          "atributos": {
+            "Color": "MT9021-L",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL MT9021-L"
+        },
+        {
+          "sku": "PANS165025MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 12,
+          "atributos": {
+            "Color": "S1650",
+            "Medida": "2.5 mm · 244 x 122 cm",
+            "Precio anterior": "110.00"
+          },
+          "_excel": "PANEL MARMOL S1650"
+        },
+        {
+          "sku": "PANS1654125MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 26,
+          "atributos": {
+            "Color": "S1654-1",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL S1654-1"
+        },
+        {
+          "sku": "PANS1657125MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "S1657-1",
+            "Medida": "2.5 mm · 244 x 122 cm"
+          },
+          "_excel": "PANEL MARMOL S1657-1"
+        },
+        {
+          "sku": "PANSJ101325MM244X122CM",
+          "precioVenta": 100.0,
+          "stock": 10,
+          "atributos": {
+            "Color": "SJ101-3",
+            "Medida": "2.5 mm · 244 x 122 cm",
+            "Precio anterior": "115.00"
+          },
+          "_excel": "PANEL MARMOL SJ101-3"
+        }
+      ]
+    },
+    {
+      "nombre": "Jalador animado",
+      "categoria": "Tiradores",
+      "marca": "Representaciones Martin",
+      "descripcion": "Jalador con figuras para muebles infantiles. Elige el modelo.",
+      "variantes": [
+        {
+          "sku": "JALGM110MODELOGM110",
+          "precioVenta": 3.7,
+          "stock": 33,
+          "atributos": {
+            "Color": "GM-110",
+            "Medida": "Modelo GM-110"
+          },
+          "_excel": "JALADOR ANIMADO GM-110"
+        },
+        {
+          "sku": "JALGM112MODELOGM112",
+          "precioVenta": 3.7,
+          "stock": 33,
+          "atributos": {
+            "Color": "GM-112",
+            "Medida": "Modelo GM-112"
+          },
+          "_excel": "JALADOR ANIMADO GM-112"
+        },
+        {
+          "sku": "JALGM113MODELOGM113",
+          "precioVenta": 3.7,
+          "stock": 26,
+          "atributos": {
+            "Color": "GM-113",
+            "Medida": "Modelo GM-113",
+            "Precio anterior": "4.10"
+          },
+          "_excel": "JALADOR ANIMADO GM-113"
+        },
+        {
+          "sku": "JALGM120MODELOGM120",
+          "precioVenta": 3.7,
+          "stock": 29,
+          "atributos": {
+            "Color": "GM-120",
+            "Medida": "Modelo GM-120"
+          },
+          "_excel": "JALADOR ANIMADO GM-120"
+        },
+        {
+          "sku": "JALGM124MODELOGM124",
+          "precioVenta": 3.7,
+          "stock": 19,
+          "atributos": {
+            "Color": "GM-124",
+            "Medida": "Modelo GM-124"
+          },
+          "_excel": "JALADOR ANIMADO GM-124"
+        },
+        {
+          "sku": "JALGM24MODELOGM24",
+          "precioVenta": 3.7,
+          "stock": 20,
+          "atributos": {
+            "Color": "GM-24",
+            "Medida": "Modelo GM-24",
+            "Precio anterior": "4.40"
+          },
+          "_excel": "JALADOR ANIMADO GM-24"
+        },
+        {
+          "sku": "JALGM72MODELOGM72",
+          "precioVenta": 3.7,
+          "stock": 21,
+          "atributos": {
+            "Color": "GM-72",
+            "Medida": "Modelo GM-72"
+          },
+          "_excel": "JALADOR ANIMADO GM-72"
+        },
+        {
+          "sku": "JALGM73MODELOGM73",
+          "precioVenta": 3.7,
+          "stock": 12,
+          "atributos": {
+            "Color": "GM-73",
+            "Medida": "Modelo GM-73",
+            "Precio anterior": "4.40"
+          },
+          "_excel": "JALADOR ANIMADO GM-73"
+        },
+        {
+          "sku": "JALGM74MODELOGM74",
+          "precioVenta": 3.7,
+          "stock": 33,
+          "atributos": {
+            "Color": "GM-74",
+            "Medida": "Modelo GM-74",
+            "Precio anterior": "4.00"
+          },
+          "_excel": "JALADOR ANIMADO GM-74"
+        },
+        {
+          "sku": "JALGM75MODELOGM75",
+          "precioVenta": 3.7,
+          "stock": 12,
+          "atributos": {
+            "Color": "GM-75",
+            "Medida": "Modelo GM-75"
+          },
+          "_excel": "JALADOR ANIMADO GM-75"
+        },
+        {
+          "sku": "JALGM76MODELOGM76",
+          "precioVenta": 3.7,
+          "stock": 12,
+          "atributos": {
+            "Color": "GM-76",
+            "Medida": "Modelo GM-76"
+          },
+          "_excel": "JALADOR ANIMADO GM-76"
+        },
+        {
+          "sku": "JALGM77MODELOGM77",
+          "precioVenta": 3.7,
+          "stock": 26,
+          "atributos": {
+            "Color": "GM-77",
+            "Medida": "Modelo GM-77",
+            "Precio anterior": "4.60"
+          },
+          "_excel": "JALADOR ANIMADO GM-77"
+        },
+        {
+          "sku": "JALGMA861MODELOGMA861",
+          "precioVenta": 3.7,
+          "stock": 33,
+          "atributos": {
+            "Color": "GM-A861",
+            "Medida": "Modelo GM-A861"
+          },
+          "_excel": "JALADOR ANIMADO GM-A861"
+        }
+      ]
+    },
+    {
+      "nombre": "Tornillo autorroscante 3.5 mm",
+      "categoria": "Tornillería",
+      "marca": "Alitorn",
+      "descripcion": "Tornillo autorroscante de 3.5 mm para melamina y madera. Elige el largo.",
+      "variantes": [
+        {
+          "sku": "TORZINCADO35X12MM",
+          "precioVenta": 1.6,
+          "stock": 729,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "3.5 x 12 mm"
+          },
+          "_excel": "TORNILLO 3.5 X 12"
+        },
+        {
+          "sku": "TORZINCADO35X15MM",
+          "precioVenta": 2.0,
+          "stock": 2136,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "3.5 x 15 mm"
+          },
+          "_excel": "TORNILLO 3.5 X 15"
+        },
+        {
+          "sku": "TORZINCADO35X20MM",
+          "precioVenta": 2.4,
+          "stock": 474,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "3.5 x 20 mm"
+          },
+          "_excel": "TORNILLO 3.5 X 20"
+        },
+        {
+          "sku": "TORZINCADO35X25MM",
+          "precioVenta": 2.7,
+          "stock": 392,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "3.5 x 25 mm",
+            "Precio anterior": "3.40"
+          },
+          "_excel": "TORNILLO 3.5 X 25"
+        },
+        {
+          "sku": "TORZINCADO35X30MM",
+          "precioVenta": 3.0,
+          "stock": 493,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "3.5 x 30 mm"
+          },
+          "_excel": "TORNILLO 3.5 X 30"
+        },
+        {
+          "sku": "TORZINCADO35X35MM",
+          "precioVenta": 3.5,
+          "stock": 200,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "3.5 x 35 mm"
+          },
+          "_excel": "TORNILLO 3.5 X 35"
+        },
+        {
+          "sku": "TORZINCADO35X40MM",
+          "precioVenta": 3.5,
+          "stock": 105,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "3.5 x 40 mm",
+            "Precio anterior": "4.00"
+          },
+          "_excel": "TORNILLO 3.5 X 40"
+        },
+        {
+          "sku": "TORZINCADO35X50MM",
+          "precioVenta": 5.0,
+          "stock": 388,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "3.5 x 50 mm"
+          },
+          "_excel": "TORNILLO 3.5 X 50"
+        },
+        {
+          "sku": "TORZINCADODENTADO35X50MM",
+          "precioVenta": 5.1,
+          "stock": 30,
+          "atributos": {
+            "Color": "Zincado",
+            "Tipo": "Dentado",
+            "Medida": "3.5 x 50 mm",
+            "Precio anterior": "5.70"
+          },
+          "_excel": "TORNILLO 3.5 X 50 DENTADO"
+        }
+      ]
+    },
+    {
+      "nombre": "Tornillo autorroscante 4 mm",
+      "categoria": "Tornillería",
+      "marca": "Alitorn",
+      "descripcion": "Tornillo autorroscante de 4 mm para madera, MDF y melamina. Elige el largo.",
+      "variantes": [
+        {
+          "sku": "TORZINCADO4X16MM",
+          "precioVenta": 2.2,
+          "stock": 485,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 16 mm"
+          },
+          "_excel": "TORNILLO 4 X 16"
+        },
+        {
+          "sku": "TORZINCADO4X20MM",
+          "precioVenta": 3.7,
+          "stock": 387,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 20 mm"
+          },
+          "_excel": "TORNILLO 4 X 20"
+        },
+        {
+          "sku": "TORZINCADODENTADO4X20MM",
+          "precioVenta": 4.2,
+          "stock": 23,
+          "atributos": {
+            "Color": "Zincado",
+            "Tipo": "Dentado",
+            "Medida": "4 x 20 mm"
+          },
+          "_excel": "TORNILLO 4 X 20 DENTADO ALIRTON"
+        },
+        {
+          "sku": "TORZINCADO4X25MM",
+          "precioVenta": 3.2,
+          "stock": 362,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 25 mm"
+          },
+          "_excel": "TORNILLO 4 X 25"
+        },
+        {
+          "sku": "TORZINCADO4X30MM",
+          "precioVenta": 4.6,
+          "stock": 1009,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 30 mm",
+            "Precio anterior": "5.70"
+          },
+          "_excel": "TORNILLO 4 X 30"
+        },
+        {
+          "sku": "TORZINCADODENTADO4X30MM",
+          "precioVenta": 4.8,
+          "stock": 1241,
+          "atributos": {
+            "Color": "Zincado",
+            "Tipo": "Dentado",
+            "Medida": "4 x 30 mm"
+          },
+          "_excel": "TORNILLO 4 X 30 DENTADO"
+        },
+        {
+          "sku": "TORZINCADO4X40MM",
+          "precioVenta": 4.6,
+          "stock": 185,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 40 mm"
+          },
+          "_excel": "TORNILLO 4 X 40 ALITORN"
+        },
+        {
+          "sku": "TORZINCADO4X45MM",
+          "precioVenta": 5.0,
+          "stock": 83,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 45 mm"
+          },
+          "_excel": "TORNILLO 4 X 45"
+        },
+        {
+          "sku": "TORZINCADO4X50MM",
+          "precioVenta": 5.4,
+          "stock": 227,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 50 mm"
+          },
+          "_excel": "TORNILLO 4 X 50"
+        },
+        {
+          "sku": "TORZINCADODENTADO4X50MM",
+          "precioVenta": 5.4,
+          "stock": 401,
+          "atributos": {
+            "Color": "Zincado",
+            "Tipo": "Dentado",
+            "Medida": "4 x 50 mm",
+            "Precio anterior": "6.80"
+          },
+          "_excel": "TORNILLO 4 X 50 DENTADO"
+        }
+      ]
+    },
+    {
+      "nombre": "Tornillo autorroscante 5 mm",
+      "categoria": "Tornillería",
+      "marca": "Alitorn",
+      "descripcion": "Tornillo autorroscante de 5 mm para fijaciones más fuertes. Elige el largo.",
+      "variantes": [
+        {
+          "sku": "TORZINCADO5X30MM",
+          "precioVenta": 5.0,
+          "stock": 109,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "5 x 30 mm"
+          },
+          "_excel": "TORNILLO 5 X 30"
+        },
+        {
+          "sku": "TORZINCADO5X40MM",
+          "precioVenta": 10.0,
+          "stock": 90,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "5 x 40 mm",
+            "Precio anterior": "10.90"
+          },
+          "_excel": "TORNILLO 5 X 40"
+        },
+        {
+          "sku": "TORZINCADO5X50MM",
+          "precioVenta": 7.0,
+          "stock": 166,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "5 x 50 mm"
+          },
+          "_excel": "TORNILLO 5 X 50"
+        },
+        {
+          "sku": "TORZINCADO5X70MM",
+          "precioVenta": 11.5,
+          "stock": 112,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "5 x 70 mm"
+          },
+          "_excel": "TORNILLO 5 X 70"
+        },
+        {
+          "sku": "TORZINCADO5X80MM",
+          "precioVenta": 12.0,
+          "stock": 40,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "5 x 80 mm"
+          },
+          "_excel": "TORNILLO 5 X 80"
+        }
+      ]
+    },
+    {
+      "nombre": "Gancho para trupán",
+      "categoria": "Ferretería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Gancho de 6 mm para trupán y paneles ranurados. Elige el largo.",
+      "variantes": [
+        {
+          "sku": "GANZINCADO100MM",
+          "precioVenta": 1.6,
+          "stock": 117,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "100 mm",
+            "Precio anterior": "1.90"
+          },
+          "_excel": "GANCHO PARA TRUPAN DIAMETRO 6MM. LONGITUD 100 MM."
+        },
+        {
+          "sku": "GANZINCADO150MM",
+          "precioVenta": 1.7,
+          "stock": 176,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "150 mm"
+          },
+          "_excel": "GANCHO PARA TRUPAN DIAMETRO 6MM. LONGITUD 150 MM."
+        },
+        {
+          "sku": "GANZINCADO200MM",
+          "precioVenta": 1.9,
+          "stock": 114,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "200 mm"
+          },
+          "_excel": "GANCHO PARA TRUPAN DIAMETRO 6MM. LONGITUD 200 MM."
+        },
+        {
+          "sku": "GANZINCADO250MM",
+          "precioVenta": 2.0,
+          "stock": 69,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "250 mm"
+          },
+          "_excel": "GANCHO PARA TRUPAN DIAMETRO 6MM. LONGITUD 250 MM."
+        },
+        {
+          "sku": "GANZINCADO300MM",
+          "precioVenta": 2.0,
+          "stock": 150,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "300 mm"
+          },
+          "_excel": "GANCHO PARA TRUPAN DIAMETRO 6MM. LONGITUD 300 MM."
+        },
+        {
+          "sku": "GANZINCADO50MM",
+          "precioVenta": 1.4,
+          "stock": 124,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "50 mm",
+            "Precio anterior": "1.60"
+          },
+          "_excel": "GANCHO PARA TRUPAN DIAMETRO 6MM. LONGITUD 50 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Tarugo plástico",
+      "categoria": "Tornillería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Tarugo plástico para fijar tornillos en pared. El color indica la medida.",
+      "variantes": [
+        {
+          "sku": "TARROJO316",
+          "precioVenta": 0.08,
+          "stock": 976,
+          "atributos": {
+            "Color": "Rojo",
+            "Medida": "3/16\""
+          },
+          "_excel": "TARUGO ROJO DE PLASTICO 3/16\""
+        },
+        {
+          "sku": "TARNARANJA38",
+          "precioVenta": 0.1,
+          "stock": 2563,
+          "atributos": {
+            "Color": "Naranja",
+            "Medida": "3/8\""
+          },
+          "_excel": "TARUGO NARANJA DE PLASTICO 3/8\""
+        },
+        {
+          "sku": "TARVERDE14",
+          "precioVenta": 0.1,
+          "stock": 3301,
+          "atributos": {
+            "Color": "Verde",
+            "Medida": "1/4\""
+          },
+          "_excel": "TARUGO VERDE DE PLASTICO 1/4\""
+        },
+        {
+          "sku": "TARGRIS12",
+          "precioVenta": 0.15,
+          "stock": 1000,
+          "atributos": {
+            "Color": "Gris",
+            "Medida": "1/2\""
+          },
+          "_excel": "TARUGO GRIS DE PLASTICO 1/2\""
+        },
+        {
+          "sku": "TARAZUL34",
+          "precioVenta": 0.1,
+          "stock": 894,
+          "atributos": {
+            "Color": "Azul",
+            "Medida": "3/4\""
+          },
+          "_excel": "TARUGO AZUL DE PLASTICO 3/4\""
+        }
+      ]
+    },
+    {
+      "nombre": "Platina",
+      "categoria": "Ferretería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Platina metálica para uniones y refuerzos. Elige el ancho.",
+      "variantes": [
+        {
+          "sku": "PLAZINCADO40MM",
+          "precioVenta": 0.8,
+          "stock": 81,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "40 mm"
+          },
+          "_excel": "PLATINA 40 MM."
+        },
+        {
+          "sku": "PLAZINCADO60MM",
+          "precioVenta": 1.2,
+          "stock": 84,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "60 mm"
+          },
+          "_excel": "PLATINA 60 MM."
+        },
+        {
+          "sku": "PLAZINCADO80MM",
+          "precioVenta": 1.5,
+          "stock": 96,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "80 mm"
+          },
+          "_excel": "PLATINA 80 MM."
+        },
+        {
+          "sku": "PLAZINCADO100MM",
+          "precioVenta": 2.0,
+          "stock": 100,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "100 mm"
+          },
+          "_excel": "PLATINA 100 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Rejilla de aluminio",
+      "categoria": "Ferretería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Rejilla de aluminio para ventilación de muebles y cocinas. Elige líneas y largo.",
+      "variantes": [
+        {
+          "sku": "REJALUMINIO3LINEAS80X150MM",
+          "precioVenta": 8.0,
+          "stock": 28,
+          "atributos": {
+            "Color": "Aluminio",
+            "Tipo": "3 líneas",
+            "Medida": "80 x 150 mm"
+          },
+          "_excel": "REJILLA ALUMINIO 3 LINEAS 80 X 150"
+        },
+        {
+          "sku": "REJALUMINIO3LINEAS80X200MM",
+          "precioVenta": 9.0,
+          "stock": 26,
+          "atributos": {
+            "Color": "Aluminio",
+            "Tipo": "3 líneas",
+            "Medida": "80 x 200 mm"
+          },
+          "_excel": "REJILLA ALUMINIO 3 LINEAS 80 X 200"
+        },
+        {
+          "sku": "REJALUMINIO3LINEAS80X250MM",
+          "precioVenta": 10.0,
+          "stock": 11,
+          "atributos": {
+            "Color": "Aluminio",
+            "Tipo": "3 líneas",
+            "Medida": "80 x 250 mm"
+          },
+          "_excel": "REJILLA ALUMINIO 3 LINEAS 80 X 250"
+        },
+        {
+          "sku": "REJALUMINIO5LINEAS50X150MM",
+          "precioVenta": 7.0,
+          "stock": 32,
+          "atributos": {
+            "Color": "Aluminio",
+            "Tipo": "5 líneas",
+            "Medida": "50 x 150 mm",
+            "Precio anterior": "8.80"
+          },
+          "_excel": "REJILLA ALUMINIO 5 LINEAS 50 X 150"
+        },
+        {
+          "sku": "REJALUMINIO5LINEAS50X200MM",
+          "precioVenta": 8.0,
+          "stock": 20,
+          "atributos": {
+            "Color": "Aluminio",
+            "Tipo": "5 líneas",
+            "Medida": "50 x 200 mm"
+          },
+          "_excel": "REJILLA ALUMINIO 5 LINEAS 50 X 200"
+        },
+        {
+          "sku": "REJALUMINIO5LINEAS50X250MM",
+          "precioVenta": 9.0,
+          "stock": 31,
+          "atributos": {
+            "Color": "Aluminio",
+            "Tipo": "5 líneas",
+            "Medida": "50 x 250 mm",
+            "Precio anterior": "11.20"
+          },
+          "_excel": "REJILLA ALUMINIO 5 LINEAS 50 X 250"
+        },
+        {
+          "sku": "REJALUMINIO5LINEAS50X300MM",
+          "precioVenta": 10.0,
+          "stock": 12,
+          "atributos": {
+            "Color": "Aluminio",
+            "Tipo": "5 líneas",
+            "Medida": "50 x 300 mm"
+          },
+          "_excel": "REJILLA ALUMINIO 5 LINEAS 50 X 300"
+        }
+      ]
+    },
+    {
+      "nombre": "Perchero de aluminio e inox",
+      "categoria": "Ferretería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Perchero tubular para closets y roperos.",
+      "variantes": [
+        {
+          "sku": "PERACEROINOXIDABLEINOX145G",
+          "precioVenta": 3.5,
+          "stock": 29,
+          "atributos": {
+            "Color": "Acero inoxidable",
+            "Medida": "Inox 1\" 45g"
+          },
+          "_excel": "PERCHERO DE ACERO INOX. 1\" 45G"
+        },
+        {
+          "sku": "PERACEROINOXIDABLEINOX170G",
+          "precioVenta": 6.6,
+          "stock": 78,
+          "atributos": {
+            "Color": "Acero inoxidable",
+            "Medida": "Inox 1\" 70g"
+          },
+          "_excel": "PERCHERO DE ACERO INOX. 1\" 70G"
+        },
+        {
+          "sku": "PERALUMINIOALUMINIO170G",
+          "precioVenta": 7.0,
+          "stock": 33,
+          "atributos": {
+            "Color": "Aluminio",
+            "Medida": "Aluminio 1\" 70g"
+          },
+          "_excel": "PERCHERO DE ALUMINIO 1\" 70G"
+        },
+        {
+          "sku": "PERALUMINIOALUMINIOPESADO",
+          "precioVenta": 6.8,
+          "stock": 21,
+          "atributos": {
+            "Color": "Aluminio",
+            "Medida": "Aluminio Pesado",
+            "Precio anterior": "8.50"
+          },
+          "_excel": "PERCHERO DE ALUMINIO PESADO"
+        },
+        {
+          "sku": "PERCROMADOLISOCUADRADO1BH0183M",
+          "precioVenta": 9.5,
+          "stock": 40,
+          "atributos": {
+            "Color": "Cromado",
+            "Medida": "Liso Cuadrado 1\" Bh-018-3m",
+            "Precio anterior": "10.30"
+          },
+          "_excel": "PERCHERO LISO CUADRADO 1\" BH-018-3M"
+        },
+        {
+          "sku": "PERCROMADOLISOREDONDO1BH0193M",
+          "precioVenta": 9.4,
+          "stock": 36,
+          "atributos": {
+            "Color": "Cromado",
+            "Medida": "Liso Redondo 1\" Bh-019-3m"
+          },
+          "_excel": "PERCHERO LISO REDONDO 1\" BH-019-3M"
+        }
+      ]
+    },
+    {
+      "nombre": "Precinto de seguridad",
+      "categoria": "Ferretería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Cinta plástica para amarrar cables y paquetes. Elige color y largo.",
+      "variantes": [
+        {
+          "sku": "PRENEGRO200MM50UNID",
+          "precioVenta": 7.0,
+          "stock": 10,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "200 mm · 50 unid."
+          },
+          "_excel": "PRECINTO SEGURIDAD NEGRO 3.6MM X 200MM (50 UND)"
+        },
+        {
+          "sku": "PRENEGRO300MM50UNID",
+          "precioVenta": 8.0,
+          "stock": 10,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "300 mm · 50 unid.",
+            "Precio anterior": "8.70"
+          },
+          "_excel": "PRECINTO SEGURIDAD NEGRO 3.6MM X 300MM (50 UND)"
+        },
+        {
+          "sku": "PRENEGRO400MM25UNID",
+          "precioVenta": 5.5,
+          "stock": 11,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "400 mm · 25 unid."
+          },
+          "_excel": "PRECINTO SEGURIDAD NEGRO 3.6MM X 400MM (25 UND)"
+        },
+        {
+          "sku": "PRETRANSPARENTE200MM50UNID",
+          "precioVenta": 7.0,
+          "stock": 12,
+          "atributos": {
+            "Color": "Transparente",
+            "Medida": "200 mm · 50 unid.",
+            "Precio anterior": "8.80"
+          },
+          "_excel": "PRECINTO SEGURIDAD TRANS. 3.6MM X 200MM (50 UND)"
+        },
+        {
+          "sku": "PRETRANSPARENTE300MM50UNID",
+          "precioVenta": 8.0,
+          "stock": 10,
+          "atributos": {
+            "Color": "Transparente",
+            "Medida": "300 mm · 50 unid."
+          },
+          "_excel": "PRECINTO SEGURIDAD TRANS. 3.6MM X 300MM (50 UND)"
+        },
+        {
+          "sku": "PRETRANSPARENTE400MM25UNID",
+          "precioVenta": 5.5,
+          "stock": 12,
+          "atributos": {
+            "Color": "Transparente",
+            "Medida": "400 mm · 25 unid."
+          },
+          "_excel": "PRECINTO SEGURIDAD TRANS. 3.6MM X 400MM (25 UND)"
+        }
+      ]
+    },
+    {
+      "nombre": "Escuadra de carpintero",
+      "categoria": "Herramientas",
+      "marca": "Truper",
+      "descripcion": "Escuadra de acero para trazar y comprobar ángulos. Elige el largo.",
+      "variantes": [
+        {
+          "sku": "ESCACERO10",
+          "precioVenta": 14.0,
+          "stock": 16,
+          "atributos": {
+            "Color": "Acero",
+            "Medida": "10\""
+          },
+          "_excel": "ESCUADRA 10' PARA CARPINTERO T26088"
+        },
+        {
+          "sku": "ESCACERO12",
+          "precioVenta": 15.5,
+          "stock": 19,
+          "atributos": {
+            "Color": "Acero",
+            "Medida": "12\"",
+            "Precio anterior": "17.60"
+          },
+          "_excel": "ESCUADRA 12\" PARA CARPINTERO T26089"
+        },
+        {
+          "sku": "ESCACERO6",
+          "precioVenta": 12.0,
+          "stock": 10,
+          "atributos": {
+            "Color": "Acero",
+            "Medida": "6\""
+          },
+          "_excel": "ESCUADRA 6' PARA CARPINTERO T26086"
+        },
+        {
+          "sku": "ESCACERO8",
+          "precioVenta": 13.3,
+          "stock": 13,
+          "atributos": {
+            "Color": "Acero",
+            "Medida": "8\""
+          },
+          "_excel": "ESCUADRA 8\" PARA CARPINTERO T26087"
         }
       ]
     }

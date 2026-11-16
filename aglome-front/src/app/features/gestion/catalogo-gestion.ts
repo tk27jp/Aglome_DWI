@@ -13,7 +13,8 @@ import { aplicarErroresDelServidor, mensajeDeError } from '../../shared/formular
 import { PanelLateral } from './panel-lateral';
 
 const POR_PAGINA = 10;
-const ATRIBUTOS_COMUNES = ['Color', 'Medida', 'Espesor'];
+// "Precio anterior" convierte la opción en oferta: se muestra tachado y con su % de descuento.
+const ATRIBUTOS_COMUNES = ['Color', 'Medida', 'Espesor', 'Precio anterior'];
 
 interface Atributo {
   clave: string;

@@ -1,226 +1,2374 @@
 {
   "Melamina Masisa": {
     "buscar": "melamina Masisa colores tablero",
-    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaZH0iXtuIb_4QTtzus68wjlACbZhnKudSnK_ytmO-QM_4qx63F3nLlmd3&s=10"
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaZH0iXtuIb_4QTtzus68wjlACbZhnKudSnK_ytmO-QM_4qx63F3nLlmd3&s=10",
+    "variantes": {
+      "MEL-MAS-BLANCO-15MM214X250CM": {
+        "opcion": "Color: Blanco · Medida: 15 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Blanco 15 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-BLANCO-18MM214X250CM": {
+        "opcion": "Color: Blanco · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Blanco 18 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-CEDRO-18MM214X250CM": {
+        "opcion": "Color: Cedro · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Cedro 18 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-CEREZO-18MM214X250CM": {
+        "opcion": "Color: Cerezo · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Cerezo 18 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-ROBLEMOROWENGU-18MM214X250CM": {
+        "opcion": "Color: Roble Moro (Wengué) · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Roble Moro (Wengué) 18 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-SAHARA-18MM214X250CM": {
+        "opcion": "Color: Sahara · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Sahara 18 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-SANTORINI-18MM214X250CM": {
+        "opcion": "Color: Santorini · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Santorini 18 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-BOSCO-18MM214X250CM": {
+        "opcion": "Color: Bosco · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Bosco 18 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-CAVA-18MM214X250CM": {
+        "opcion": "Color: Cava · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Cava 18 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-GRIGIO-18MM214X250CM": {
+        "opcion": "Color: Grigio · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Grigio 18 mm · 214 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-ROBLEMILANO-18MM183X250CM": {
+        "opcion": "Color: Roble Milano · Medida: 18 mm · 183 x 250 cm",
+        "buscar": "Melamina Masisa Roble Milano 18 mm · 183 x 250 cm",
+        "url": ""
+      },
+      "MEL-MAS-SAVIA-18MM214X250CM": {
+        "opcion": "Color: Savia · Medida: 18 mm · 214 x 250 cm",
+        "buscar": "Melamina Masisa Savia 18 mm · 214 x 250 cm",
+        "url": ""
+      }
+    }
   },
   "Melamina Duratex": {
     "buscar": "melamina Duratex colores tablero",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "MEL-DUR-BLANCO-15MM214X244CM": {
+        "opcion": "Color: Blanco · Medida: 15 mm · 214 x 244 cm",
+        "buscar": "Melamina Duratex Blanco 15 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-BLANCO-18MM214X244CM": {
+        "opcion": "Color: Blanco · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Duratex Blanco 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-ARENA-18MM214X244CM": {
+        "opcion": "Color: Arena · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Duratex Arena 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-CEDRO-18MM210X244CM": {
+        "opcion": "Color: Cedro · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Cedro 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-HUMO-18MM210X244CM": {
+        "opcion": "Color: Humo · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Humo 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-CARBONO-18MM210X244CM": {
+        "opcion": "Color: Carbono · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Carbono 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-WENGUE-18MM210X244CM": {
+        "opcion": "Color: Wengué · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Wengué 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-NEGRO-18MM210X244CM": {
+        "opcion": "Color: Negro · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Negro 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-ARIZONA-18MM210X244CM": {
+        "opcion": "Color: Arizona · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Arizona 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-AZULCORAL-18MM214X244CM": {
+        "opcion": "Color: Azul Coral · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Duratex Azul Coral 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-BLANCO-15MM210X244CM": {
+        "opcion": "Color: Blanco · Medida: 15 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Blanco 15 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-BLANCO-18MM210X244CM": {
+        "opcion": "Color: Blanco · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Blanco 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-BRISE-18MM183X275CM": {
+        "opcion": "Color: Brise · Medida: 18 mm · 183 x 275 cm",
+        "buscar": "Melamina Duratex Brise 18 mm · 183 x 275 cm",
+        "url": ""
+      },
+      "MEL-DUR-BRIXTON-18MM210X244CM": {
+        "opcion": "Color: Brixton · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Brixton 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-CAPUCCINO-18MM210X244CM": {
+        "opcion": "Color: Capuccino · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Capuccino 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-CHANTILLI-18MM210X244CM": {
+        "opcion": "Color: Chantilli · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Chantilli 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-FUCSIA-18MM210X244CM": {
+        "opcion": "Color: Fucsia · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Fucsia 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-GRAFITE-18MM184X275CM": {
+        "opcion": "Color: Grafite · Medida: 18 mm · 184 x 275 cm",
+        "buscar": "Melamina Duratex Grafite 18 mm · 184 x 275 cm",
+        "url": ""
+      },
+      "MEL-DUR-GRIS-18MM184X275CM": {
+        "opcion": "Color: Gris · Medida: 18 mm · 184 x 275 cm",
+        "buscar": "Melamina Duratex Gris 18 mm · 184 x 275 cm",
+        "url": ""
+      },
+      "MEL-DUR-HEURA-18MM210X244CM": {
+        "opcion": "Color: Heura · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Heura 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-IBIZA-18MM214X244CM": {
+        "opcion": "Color: Ibiza · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Duratex Ibiza 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-INHOTIM-18MM210X244CM": {
+        "opcion": "Color: Inhotim · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Inhotim 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-NARANJA-18MM210X244CM": {
+        "opcion": "Color: Naranja · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Naranja 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-PIGNETTO-18MM210X244CM": {
+        "opcion": "Color: Pignetto · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Pignetto 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-VERDELIMON-15MM210X244CM": {
+        "opcion": "Color: Verde Limón · Medida: 15 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Verde Limón 15 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-VERDELIMON-18MM210X244CM": {
+        "opcion": "Color: Verde Limón · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Verde Limón 18 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "MEL-DUR-VIENES-18MM210X244CM": {
+        "opcion": "Color: Vienes · Medida: 18 mm · 210 x 244 cm",
+        "buscar": "Melamina Duratex Vienes 18 mm · 210 x 244 cm",
+        "url": ""
+      }
+    }
   },
   "Melamina PG Bison": {
     "buscar": "melamina PG Bison colores tablero",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "MEL-PGB-BLANCO-15MM275X183CM": {
+        "opcion": "Color: Blanco · Medida: 15 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Blanco 15 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-PGB-BLANCO-18MM275X183CM": {
+        "opcion": "Color: Blanco · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Blanco 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-PGB-GRISCLARO-18MM275X183CM": {
+        "opcion": "Color: Gris Claro · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Gris Claro 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-PGB-CENIZA-18MM275X183CM": {
+        "opcion": "Color: Ceniza · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Ceniza 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-PGB-CARAMELO-18MM275X183CM": {
+        "opcion": "Color: Caramelo · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Caramelo 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-PGB-NEGRO-18MM275X183CM": {
+        "opcion": "Color: Negro · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Negro 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-BIS-ARDEN-18MM275X183CM": {
+        "opcion": "Color: Arden · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Arden 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-BIS-BLACKCHERRY-18MM275X183CM": {
+        "opcion": "Color: Black Cherry · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Black Cherry 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-BIS-BLANCORHRESISTENTEALAHUMEDAD-18MM275X183CM": {
+        "opcion": "Color: Blanco RH (resistente a la humedad) · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Blanco RH (resistente a la humedad) 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-BIS-COIMBRA-18MM275X183CM": {
+        "opcion": "Color: Coimbra · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Coimbra 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-BIS-HARVARDCHERRY-18MM275X183CM": {
+        "opcion": "Color: Harvard Cherry · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Harvard Cherry 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-BIS-PANELA-18MM275X183CM": {
+        "opcion": "Color: Panela · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Panela 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-BIS-SHALE-18MM275X183CM": {
+        "opcion": "Color: Shale · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Shale 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-BIS-TAUPE-18MM275X183CM": {
+        "opcion": "Color: Taupe · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Taupe 18 mm · 275 x 183 cm",
+        "url": ""
+      },
+      "MEL-BIS-VERZASCA-18MM275X183CM": {
+        "opcion": "Color: Verzasca · Medida: 18 mm · 275 x 183 cm",
+        "buscar": "Melamina PG Bison Verzasca 18 mm · 275 x 183 cm",
+        "url": ""
+      }
+    }
   },
   "Melamina Vesto": {
     "buscar": "melamina Vesto colores tablero",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "MEL-VES-CEDRO-18MM214X244CM": {
+        "opcion": "Color: Cedro · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Cedro 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-WENGUE-18MM214X244CM": {
+        "opcion": "Color: Wengué · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Wengué 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-HAYA-18MM214X244CM": {
+        "opcion": "Color: Haya · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Haya 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-ESPRESSO-18MM214X244CM": {
+        "opcion": "Color: Espresso · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Espresso 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-ROBLERUSTICO-18MM214X244CM": {
+        "opcion": "Color: Roble Rústico · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Roble Rústico 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-ROJO-18MM214X244CM": {
+        "opcion": "Color: Rojo · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Rojo 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-ALMENDRA-18MM214X244CM": {
+        "opcion": "Color: Almendra · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Almendra 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-ALUMINIO-18MM214X244CM": {
+        "opcion": "Color: Aluminio · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Aluminio 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-AMAZONAS-18MM214X244CM": {
+        "opcion": "Color: Amazonas · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Amazonas 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-ASERRADONORDICO-18MM214X244CM": {
+        "opcion": "Color: Aserrado Nórdico · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Aserrado Nórdico 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-AWOURA-18MM214X244CM": {
+        "opcion": "Color: Awoura · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Awoura 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-AZULLAGO-18MM214X244CM": {
+        "opcion": "Color: Azul Lago · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Azul Lago 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-CARAMEL-18MM214X244CM": {
+        "opcion": "Color: Caramel · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Caramel 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-CENDRAESCANDINAVO-18MM214X244CM": {
+        "opcion": "Color: Cendra Escandinavo · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Cendra Escandinavo 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-CEREZONATURAL-18MM214X244CM": {
+        "opcion": "Color: Cerezo Natural · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Cerezo Natural 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-FRESNOEUROPEO-18MM214X244CM": {
+        "opcion": "Color: Fresno Europeo · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Fresno Europeo 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-MARAS-18MM214X244CM": {
+        "opcion": "Color: Maras · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Maras 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-NEGRO-18MM244X214CM": {
+        "opcion": "Color: Negro · Medida: 18 mm · 244 x 214 cm",
+        "buscar": "Melamina Vesto Negro 18 mm · 244 x 214 cm",
+        "url": ""
+      },
+      "MEL-VES-NOCCEMILANO-18MM214X244CM": {
+        "opcion": "Color: Nocce Milano · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Nocce Milano 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-NOGALTERRACOTA-18MM214X244CM": {
+        "opcion": "Color: Nogal Terracota · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Nogal Terracota 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-OLMOPARDO-18MM214X244CM": {
+        "opcion": "Color: Olmo Pardo · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Olmo Pardo 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-ORIGENANDINO-18MM214X244CM": {
+        "opcion": "Color: Origen Andino · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Origen Andino 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-ROBLEAMERICANO-18MM214X244CM": {
+        "opcion": "Color: Roble Americano · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Roble Americano 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-ROBLECAVA-18MM214X244CM": {
+        "opcion": "Color: Roble Cava · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Roble Cava 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-SEDANOTTE-18MM214X244CM": {
+        "opcion": "Color: Seda Notte · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Seda Notte 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-TEKAARTICO-18MM214X244CM": {
+        "opcion": "Color: Teka Artico · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Teka Artico 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-TOSCANA-18MM214X244CM": {
+        "opcion": "Color: Toscana · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Toscana 18 mm · 214 x 244 cm",
+        "url": ""
+      },
+      "MEL-VES-VISCAYA-18MM214X244CM": {
+        "opcion": "Color: Viscaya · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Melamina Vesto Viscaya 18 mm · 214 x 244 cm",
+        "url": ""
+      }
+    }
   },
   "Canto de PVC (por metro)": {
     "buscar": "canto PVC melamina rollo",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "CAN-BLANCO-DELGADO": {
+        "opcion": "Color: Blanco · Medida: Delgado",
+        "buscar": "Canto de PVC (por metro) Blanco Delgado",
+        "url": ""
+      },
+      "CAN-MADERADOCLASIC-DELGADO": {
+        "opcion": "Color: Maderado clásico · Medida: Delgado",
+        "buscar": "Canto de PVC (por metro) Maderado clásico Delgado",
+        "url": ""
+      },
+      "CAN-MADERADOOSCURO-DELGADO": {
+        "opcion": "Color: Maderado oscuro · Medida: Delgado",
+        "buscar": "Canto de PVC (por metro) Maderado oscuro Delgado",
+        "url": ""
+      },
+      "CAN-UNICOLOR-DELGADO": {
+        "opcion": "Color: Unicolor · Medida: Delgado",
+        "buscar": "Canto de PVC (por metro) Unicolor Delgado",
+        "url": ""
+      },
+      "CAN-BLANCO-GRUESO": {
+        "opcion": "Color: Blanco · Medida: Grueso",
+        "buscar": "Canto de PVC (por metro) Blanco Grueso",
+        "url": ""
+      },
+      "CAN-MADERADOCLASIC-GRUESO": {
+        "opcion": "Color: Maderado clásico · Medida: Grueso",
+        "buscar": "Canto de PVC (por metro) Maderado clásico Grueso",
+        "url": ""
+      },
+      "CAN-UNICOLOR-GRUESO": {
+        "opcion": "Color: Unicolor · Medida: Grueso",
+        "buscar": "Canto de PVC (por metro) Unicolor Grueso",
+        "url": ""
+      },
+      "CANMADERADOFRIODELGADO": {
+        "opcion": "Color: Maderado frío · Medida: Delgado",
+        "buscar": "Canto de PVC (por metro) Maderado frío Delgado",
+        "url": ""
+      },
+      "CANBLANCODELGADOPEGASO": {
+        "opcion": "Color: Blanco · Medida: Delgado (Pegaso)",
+        "buscar": "Canto de PVC (por metro) Blanco Delgado (Pegaso)",
+        "url": ""
+      },
+      "CANBLANCODELGADOECONOMICO": {
+        "opcion": "Color: Blanco · Medida: Delgado (económico)",
+        "buscar": "Canto de PVC (por metro) Blanco Delgado (económico)",
+        "url": ""
+      },
+      "CANBLANCODOBLEANCHO40X045MM": {
+        "opcion": "Color: Blanco · Medida: Doble ancho 40 x 0.45 mm",
+        "buscar": "Canto de PVC (por metro) Blanco Doble ancho 40 x 0.45 mm",
+        "url": ""
+      },
+      "CANMADERADOCLASICODOBLEANCHO40X045MM": {
+        "opcion": "Color: Maderado clásico · Medida: Doble ancho 40 x 0.45 mm",
+        "buscar": "Canto de PVC (por metro) Maderado clásico Doble ancho 40 x 0.45 mm",
+        "url": ""
+      },
+      "CANUNICOLORDOBLEANCHO40X045MM": {
+        "opcion": "Color: Unicolor · Medida: Doble ancho 40 x 0.45 mm",
+        "buscar": "Canto de PVC (por metro) Unicolor Doble ancho 40 x 0.45 mm",
+        "url": ""
+      }
+    }
   },
   "Tapatornillo para melamina": {
     "buscar": "tapatornillo melamina tapa tornillo",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TAPA-BLANCO": {
+        "opcion": "Color: Blanco",
+        "buscar": "Tapatornillo para melamina Blanco",
+        "url": ""
+      },
+      "TAPA-MADERADO": {
+        "opcion": "Color: Maderado",
+        "buscar": "Tapatornillo para melamina Maderado",
+        "url": ""
+      },
+      "TAPA-UNICOLOR": {
+        "opcion": "Color: Unicolor",
+        "buscar": "Tapatornillo para melamina Unicolor",
+        "url": ""
+      }
+    }
   },
   "Plywood": {
     "buscar": "plywood tablero madera plancha",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "PLY-NATURAL-9MM122X244CM": {
+        "opcion": "Color: Natural · Medida: 9 mm · 122 x 244 cm",
+        "buscar": "Plywood Natural 9 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "PLY-NATURAL-15MM122X244CM": {
+        "opcion": "Color: Natural · Medida: 15 mm · 122 x 244 cm",
+        "buscar": "Plywood Natural 15 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "PLY-NATURAL-18MM122X244CM": {
+        "opcion": "Color: Natural · Medida: 18 mm · 122 x 244 cm",
+        "buscar": "Plywood Natural 18 mm · 122 x 244 cm",
+        "url": ""
+      }
+    }
   },
   "OSB": {
     "buscar": "tablero OSB plancha",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "OSB-NATURAL-8MM122X244CM": {
+        "opcion": "Color: Natural · Medida: 8 mm · 122 x 244 cm",
+        "buscar": "OSB Natural 8 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "OSB-NATURAL-15MM122X244CM": {
+        "opcion": "Color: Natural · Medida: 15 mm · 122 x 244 cm",
+        "buscar": "OSB Natural 15 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "OSB-NATURAL-18MM122X244CM": {
+        "opcion": "Color: Natural · Medida: 18 mm · 122 x 244 cm",
+        "buscar": "OSB Natural 18 mm · 122 x 244 cm",
+        "url": ""
+      }
+    }
   },
   "Trupán Maderas América": {
     "buscar": "trupan MDP crudo tablero",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TRU-MA-NATURAL-55MM213X244CM": {
+        "opcion": "Color: Natural · Medida: 5.5 mm · 213 x 244 cm",
+        "buscar": "Trupán Maderas América Natural 5.5 mm · 213 x 244 cm",
+        "url": ""
+      },
+      "TRU-MA-NATURAL-12MM210X244CM": {
+        "opcion": "Color: Natural · Medida: 12 mm · 210 x 244 cm",
+        "buscar": "Trupán Maderas América Natural 12 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "TRU-MA-NATURAL-18MM214X244CM": {
+        "opcion": "Color: Natural · Medida: 18 mm · 214 x 244 cm",
+        "buscar": "Trupán Maderas América Natural 18 mm · 214 x 244 cm",
+        "url": ""
+      }
+    }
   },
   "Trupán Duratex": {
     "buscar": "trupan MDP crudo tablero Duratex",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TRU-DU-NATURAL-9MM210X244CM": {
+        "opcion": "Color: Natural · Medida: 9 mm · 210 x 244 cm",
+        "buscar": "Trupán Duratex Natural 9 mm · 210 x 244 cm",
+        "url": ""
+      },
+      "TRU-DU-NATURAL-15MM214X244CM": {
+        "opcion": "Color: Natural · Medida: 15 mm · 214 x 244 cm",
+        "buscar": "Trupán Duratex Natural 15 mm · 214 x 244 cm",
+        "url": ""
+      }
+    }
   },
   "Triplay": {
     "buscar": "triplay lupuna plancha",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TRP-NATURAL-4MM122X244CM": {
+        "opcion": "Color: Natural · Medida: 4 mm · 122 x 244 cm",
+        "buscar": "Triplay Natural 4 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "TRP-LUPUNA-4MM122X244CM": {
+        "opcion": "Color: Lupuna · Medida: 4 mm · 122 x 244 cm",
+        "buscar": "Triplay Lupuna 4 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "TRP-VENNER-35MM122X244CM": {
+        "opcion": "Color: Venner · Medida: 3.5 mm · 122 x 244 cm",
+        "buscar": "Triplay Venner 3.5 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "TRISAPELLY4MM122X244CM": {
+        "opcion": "Color: Sapelly · Medida: 4 mm · 122 x 244 cm",
+        "buscar": "Triplay Sapelly 4 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "TRIBITANGOR4MM122X244CM": {
+        "opcion": "Color: Bitangor · Medida: 4 mm · 122 x 244 cm",
+        "buscar": "Triplay Bitangor 4 mm · 122 x 244 cm",
+        "url": ""
+      }
+    }
   },
   "Listón de madera de 8 pies": {
     "buscar": "liston madera pino",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "LIS-1X15PULGX8PIES": {
+        "opcion": "Medida: 1 x 1.5 pulg x 8 pies",
+        "buscar": "Listón de madera de 8 pies 1 x 1.5 pulg x 8 pies",
+        "url": ""
+      },
+      "LIS-1X2PULGX8PIES": {
+        "opcion": "Medida: 1 x 2 pulg x 8 pies",
+        "buscar": "Listón de madera de 8 pies 1 x 2 pulg x 8 pies",
+        "url": ""
+      }
+    }
   },
   "Bisagra de cazoleta cierre lento 35 mm (par)": {
     "buscar": "bisagra cangrejo cierre lento 35mm",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "BIS-CL-CENTRAL-35MM": {
+        "opcion": "Tipo: Central · Medida: 35 mm",
+        "buscar": "Bisagra de cazoleta cierre lento 35 mm (par) Central 35 mm",
+        "url": ""
+      },
+      "BIS-CL-INTERIOR-35MM": {
+        "opcion": "Tipo: Interior · Medida: 35 mm",
+        "buscar": "Bisagra de cazoleta cierre lento 35 mm (par) Interior 35 mm",
+        "url": ""
+      },
+      "BIS-CL-LATERAL-35MM": {
+        "opcion": "Tipo: Lateral · Medida: 35 mm",
+        "buscar": "Bisagra de cazoleta cierre lento 35 mm (par) Lateral 35 mm",
+        "url": ""
+      }
+    }
   },
   "Bisagra de cazoleta económica 35 mm": {
     "buscar": "bisagra cangrejo económica 35mm",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "BIS-EC-CENTRAL-35MM": {
+        "opcion": "Tipo: Central · Medida: 35 mm",
+        "buscar": "Bisagra de cazoleta económica 35 mm Central 35 mm",
+        "url": ""
+      },
+      "BIS-EC-INTERIOR-35MM": {
+        "opcion": "Tipo: Interior · Medida: 35 mm",
+        "buscar": "Bisagra de cazoleta económica 35 mm Interior 35 mm",
+        "url": ""
+      },
+      "BIS-EC-LATERAL-35MM": {
+        "opcion": "Tipo: Lateral · Medida: 35 mm",
+        "buscar": "Bisagra de cazoleta económica 35 mm Lateral 35 mm",
+        "url": ""
+      }
+    }
   },
   "Bisagra push open 35 mm + sistema": {
     "buscar": "bisagra push open 35mm",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "BIS-PO-CENTRAL-35MM": {
+        "opcion": "Tipo: Central · Medida: 35 mm",
+        "buscar": "Bisagra push open 35 mm + sistema Central 35 mm",
+        "url": ""
+      },
+      "BIS-PO-INTERIOR-35MM": {
+        "opcion": "Tipo: Interior · Medida: 35 mm",
+        "buscar": "Bisagra push open 35 mm + sistema Interior 35 mm",
+        "url": ""
+      },
+      "BIS-PO-LATERAL-35MM": {
+        "opcion": "Tipo: Lateral · Medida: 35 mm",
+        "buscar": "Bisagra push open 35 mm + sistema Lateral 35 mm",
+        "url": ""
+      }
+    }
   },
   "Corredera telescópica mini (par)": {
     "buscar": "corredera telescópica cajón mini",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "COR-MI-1025CM": {
+        "opcion": "Medida: 10\" (25 cm)",
+        "buscar": "Corredera telescópica mini (par) 10\" (25 cm)",
+        "url": ""
+      },
+      "COR-MI-1230CM": {
+        "opcion": "Medida: 12\" (30 cm)",
+        "buscar": "Corredera telescópica mini (par) 12\" (30 cm)",
+        "url": ""
+      },
+      "COR-MI-1435CM": {
+        "opcion": "Medida: 14\" (35 cm)",
+        "buscar": "Corredera telescópica mini (par) 14\" (35 cm)",
+        "url": ""
+      },
+      "COR-MI-1640CM": {
+        "opcion": "Medida: 16\" (40 cm)",
+        "buscar": "Corredera telescópica mini (par) 16\" (40 cm)",
+        "url": ""
+      },
+      "COR-MI-1845CM": {
+        "opcion": "Medida: 18\" (45 cm)",
+        "buscar": "Corredera telescópica mini (par) 18\" (45 cm)",
+        "url": ""
+      },
+      "COR-MI-2050CM": {
+        "opcion": "Medida: 20\" (50 cm)",
+        "buscar": "Corredera telescópica mini (par) 20\" (50 cm)",
+        "url": ""
+      }
+    }
   },
   "Corredera telescópica pesada (par)": {
     "buscar": "corredera telescópica pesada cajón",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "COR-PE-1025CM": {
+        "opcion": "Medida: 10\" (25 cm)",
+        "buscar": "Corredera telescópica pesada (par) 10\" (25 cm)",
+        "url": ""
+      },
+      "COR-PE-1230CM": {
+        "opcion": "Medida: 12\" (30 cm)",
+        "buscar": "Corredera telescópica pesada (par) 12\" (30 cm)",
+        "url": ""
+      },
+      "COR-PE-1435CM": {
+        "opcion": "Medida: 14\" (35 cm)",
+        "buscar": "Corredera telescópica pesada (par) 14\" (35 cm)",
+        "url": ""
+      },
+      "COR-PE-1640CM": {
+        "opcion": "Medida: 16\" (40 cm)",
+        "buscar": "Corredera telescópica pesada (par) 16\" (40 cm)",
+        "url": ""
+      },
+      "COR-PE-1845CM": {
+        "opcion": "Medida: 18\" (45 cm)",
+        "buscar": "Corredera telescópica pesada (par) 18\" (45 cm)",
+        "url": ""
+      },
+      "COR-PE-2050CM": {
+        "opcion": "Medida: 20\" (50 cm)",
+        "buscar": "Corredera telescópica pesada (par) 20\" (50 cm)",
+        "url": ""
+      }
+    }
   },
   "Corredera telescópica push open (par)": {
     "buscar": "corredera telescópica push open",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "COR-PO-1435CM": {
+        "opcion": "Medida: 14\" (35 cm)",
+        "buscar": "Corredera telescópica push open (par) 14\" (35 cm)",
+        "url": ""
+      },
+      "COR-PO-1640CM": {
+        "opcion": "Medida: 16\" (40 cm)",
+        "buscar": "Corredera telescópica push open (par) 16\" (40 cm)",
+        "url": ""
+      },
+      "COR-PO-1845CM": {
+        "opcion": "Medida: 18\" (45 cm)",
+        "buscar": "Corredera telescópica push open (par) 18\" (45 cm)",
+        "url": ""
+      },
+      "COR-PO-2050CM": {
+        "opcion": "Medida: 20\" (50 cm)",
+        "buscar": "Corredera telescópica push open (par) 20\" (50 cm)",
+        "url": ""
+      }
+    }
   },
   "Tirador barra liviana": {
     "buscar": "tirador barra mueble cromado",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TIR-BL-96CM": {
+        "opcion": "Medida: 9.6 cm",
+        "buscar": "Tirador barra liviana 9.6 cm",
+        "url": ""
+      },
+      "TIR-BL-128CM": {
+        "opcion": "Medida: 12.8 cm",
+        "buscar": "Tirador barra liviana 12.8 cm",
+        "url": ""
+      }
+    }
   },
   "Tirador barra pesado": {
     "buscar": "tirador barra pesado mueble",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TIR-BP-96CM": {
+        "opcion": "Medida: 9.6 cm",
+        "buscar": "Tirador barra pesado 9.6 cm",
+        "url": ""
+      },
+      "TIR-BP-128CM": {
+        "opcion": "Medida: 12.8 cm",
+        "buscar": "Tirador barra pesado 12.8 cm",
+        "url": ""
+      },
+      "TIR-BP-16CM": {
+        "opcion": "Medida: 16 cm",
+        "buscar": "Tirador barra pesado 16 cm",
+        "url": ""
+      },
+      "TIR-BP-196CM": {
+        "opcion": "Medida: 19.6 cm",
+        "buscar": "Tirador barra pesado 19.6 cm",
+        "url": ""
+      },
+      "TIR-BP-226CM": {
+        "opcion": "Medida: 22.6 cm",
+        "buscar": "Tirador barra pesado 22.6 cm",
+        "url": ""
+      }
+    }
   },
   "Tirador tina cromado": {
     "buscar": "tirador tina cromado mueble",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TIR-TI-CROMADO-96CM": {
+        "opcion": "Color: Cromado · Medida: 9.6 cm",
+        "buscar": "Tirador tina cromado Cromado 9.6 cm",
+        "url": ""
+      },
+      "TIR-TI-CROMADO-128CM": {
+        "opcion": "Color: Cromado · Medida: 12.8 cm",
+        "buscar": "Tirador tina cromado Cromado 12.8 cm",
+        "url": ""
+      },
+      "TIR-TI-CROMADO-16CM": {
+        "opcion": "Color: Cromado · Medida: 16 cm",
+        "buscar": "Tirador tina cromado Cromado 16 cm",
+        "url": ""
+      }
+    }
   },
   "Tirador en U cromado de aluminio": {
     "buscar": "tirador en U aluminio cromado mueble",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TIR-U-CROMADO-96CM": {
+        "opcion": "Color: Cromado · Medida: 9.6 cm",
+        "buscar": "Tirador en U cromado de aluminio Cromado 9.6 cm",
+        "url": ""
+      },
+      "TIR-U-CROMADO-128CM": {
+        "opcion": "Color: Cromado · Medida: 12.8 cm",
+        "buscar": "Tirador en U cromado de aluminio Cromado 12.8 cm",
+        "url": ""
+      }
+    }
   },
   "Jalador de cristal": {
     "buscar": "jalador cristal perilla mueble",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "JAL-CR-30MM": {
+        "opcion": "Medida: 30 mm",
+        "buscar": "Jalador de cristal 30 mm",
+        "url": ""
+      },
+      "JAL-CR-40MM": {
+        "opcion": "Medida: 40 mm",
+        "buscar": "Jalador de cristal 40 mm",
+        "url": ""
+      }
+    }
   },
   "Pistón de aire (gas)": {
     "buscar": "pistón de gas mueble puerta abatible",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "PIS-6KG": {
+        "opcion": "Medida: 6 kg",
+        "buscar": "Pistón de aire (gas) 6 kg",
+        "url": ""
+      },
+      "PIS-8KG": {
+        "opcion": "Medida: 8 kg",
+        "buscar": "Pistón de aire (gas) 8 kg",
+        "url": ""
+      },
+      "PIS-10KG": {
+        "opcion": "Medida: 10 kg",
+        "buscar": "Pistón de aire (gas) 10 kg",
+        "url": ""
+      },
+      "PIS-12KG": {
+        "opcion": "Medida: 12 kg",
+        "buscar": "Pistón de aire (gas) 12 kg",
+        "url": ""
+      }
+    }
   },
   "Garrucha (rueda para muebles)": {
     "buscar": "garrucha rueda mueble plástico",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "GAR-NEGRO-112": {
+        "opcion": "Color: Negro · Medida: 1 1/2\"",
+        "buscar": "Garrucha (rueda para muebles) Negro 1 1/2\"",
+        "url": ""
+      },
+      "GAR-GRIS-112": {
+        "opcion": "Color: Gris · Medida: 1 1/2\"",
+        "buscar": "Garrucha (rueda para muebles) Gris 1 1/2\"",
+        "url": ""
+      },
+      "GAR-NARANJA-112": {
+        "opcion": "Color: Naranja · Medida: 1 1/2\"",
+        "buscar": "Garrucha (rueda para muebles) Naranja 1 1/2\"",
+        "url": ""
+      },
+      "GAR-GRIS-2": {
+        "opcion": "Color: Gris · Medida: 2\"",
+        "buscar": "Garrucha (rueda para muebles) Gris 2\"",
+        "url": ""
+      },
+      "GAR-NARANJA-2": {
+        "opcion": "Color: Naranja · Medida: 2\"",
+        "buscar": "Garrucha (rueda para muebles) Naranja 2\"",
+        "url": ""
+      },
+      "GARNEGRO3": {
+        "opcion": "Color: Negro · Medida: 3\"",
+        "buscar": "Garrucha (rueda para muebles) Negro 3\"",
+        "url": ""
+      },
+      "GARGRISPLASTICASINFRENO": {
+        "opcion": "Color: Gris · Medida: Plástica sin freno",
+        "buscar": "Garrucha (rueda para muebles) Gris Plástica sin freno",
+        "url": ""
+      }
+    }
   },
   "Escuadra metálica blanca": {
     "buscar": "escuadra metálica blanca unión",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "ESC-BL-BLANCO-4X5": {
+        "opcion": "Color: Blanco · Medida: 4 x 5",
+        "buscar": "Escuadra metálica blanca Blanco 4 x 5",
+        "url": ""
+      },
+      "ESC-BL-BLANCO-5X6": {
+        "opcion": "Color: Blanco · Medida: 5 x 6",
+        "buscar": "Escuadra metálica blanca Blanco 5 x 6",
+        "url": ""
+      },
+      "ESC-BL-BLANCO-8X10": {
+        "opcion": "Color: Blanco · Medida: 8 x 10",
+        "buscar": "Escuadra metálica blanca Blanco 8 x 10",
+        "url": ""
+      },
+      "ESC-BL-BLANCO-10X12": {
+        "opcion": "Color: Blanco · Medida: 10 x 12",
+        "buscar": "Escuadra metálica blanca Blanco 10 x 12",
+        "url": ""
+      },
+      "ESC-BL-BLANCO-12X14": {
+        "opcion": "Color: Blanco · Medida: 12 x 14",
+        "buscar": "Escuadra metálica blanca Blanco 12 x 14",
+        "url": ""
+      }
+    }
   },
   "Escuadra zincada": {
     "buscar": "escuadra zincada refuerzo ángulo",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "ESC-ZI-ZINCADO-30X20X20": {
+        "opcion": "Color: Zincado · Medida: 30 x 20 x 20",
+        "buscar": "Escuadra zincada Zincado 30 x 20 x 20",
+        "url": ""
+      },
+      "ESC-ZI-ZINCADO-30X30X30": {
+        "opcion": "Color: Zincado · Medida: 30 x 30 x 30",
+        "buscar": "Escuadra zincada Zincado 30 x 30 x 30",
+        "url": ""
+      },
+      "ESC-ZI-ZINCADO-30X40X40": {
+        "opcion": "Color: Zincado · Medida: 30 x 40 x 40",
+        "buscar": "Escuadra zincada Zincado 30 x 40 x 40",
+        "url": ""
+      },
+      "ESC-ZI-ZINCADO-40X45X45": {
+        "opcion": "Color: Zincado · Medida: 40 x 45 x 45",
+        "buscar": "Escuadra zincada Zincado 40 x 45 x 45",
+        "url": ""
+      },
+      "ESC-ZI-ZINCADO-40X60X60": {
+        "opcion": "Color: Zincado · Medida: 40 x 60 x 60",
+        "buscar": "Escuadra zincada Zincado 40 x 60 x 60",
+        "url": ""
+      },
+      "ESC-ZI-ZINCADO-30X100X100": {
+        "opcion": "Color: Zincado · Medida: 30 x 100 x 100",
+        "buscar": "Escuadra zincada Zincado 30 x 100 x 100",
+        "url": ""
+      }
+    }
   },
   "Pasacable para escritorio": {
     "buscar": "pasacable escritorio tapa cables",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "PAS-ALMENDRA": {
+        "opcion": "Color: Almendra",
+        "buscar": "Pasacable para escritorio Almendra",
+        "url": ""
+      },
+      "PAS-AZUL": {
+        "opcion": "Color: Azul",
+        "buscar": "Pasacable para escritorio Azul",
+        "url": ""
+      },
+      "PAS-HAYA": {
+        "opcion": "Color: Haya",
+        "buscar": "Pasacable para escritorio Haya",
+        "url": ""
+      },
+      "PAS-MARRON": {
+        "opcion": "Color: Marrón",
+        "buscar": "Pasacable para escritorio Marrón",
+        "url": ""
+      },
+      "PAS-MARRONCLARO": {
+        "opcion": "Color: Marrón claro",
+        "buscar": "Pasacable para escritorio Marrón claro",
+        "url": ""
+      },
+      "PAS-NEGRO": {
+        "opcion": "Color: Negro",
+        "buscar": "Pasacable para escritorio Negro",
+        "url": ""
+      }
+    }
   },
   "Clavos con cabeza (por kilo)": {
     "buscar": "clavos con cabeza kilo",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "CLA-34": {
+        "opcion": "Medida: 3/4\"",
+        "buscar": "Clavos con cabeza (por kilo) 3/4\"",
+        "url": ""
+      },
+      "CLA-1": {
+        "opcion": "Medida: 1\"",
+        "buscar": "Clavos con cabeza (por kilo) 1\"",
+        "url": ""
+      },
+      "CLA-2": {
+        "opcion": "Medida: 2\"",
+        "buscar": "Clavos con cabeza (por kilo) 2\"",
+        "url": ""
+      },
+      "CLA-212": {
+        "opcion": "Medida: 2 1/2\"",
+        "buscar": "Clavos con cabeza (por kilo) 2 1/2\"",
+        "url": ""
+      }
+    }
   },
   "Tornillo Stovolt zincado": {
     "buscar": "tornillo stovolt zincado",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "STO-ZINCADO-4X20MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 20 mm",
+        "buscar": "Tornillo Stovolt zincado Zincado 4 x 20 mm",
+        "url": ""
+      },
+      "STO-ZINCADO-4X25MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 25 mm",
+        "buscar": "Tornillo Stovolt zincado Zincado 4 x 25 mm",
+        "url": ""
+      },
+      "STO-ZINCADO-4X30MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 30 mm",
+        "buscar": "Tornillo Stovolt zincado Zincado 4 x 30 mm",
+        "url": ""
+      },
+      "STO-ZINCADO-4X35MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 35 mm",
+        "buscar": "Tornillo Stovolt zincado Zincado 4 x 35 mm",
+        "url": ""
+      },
+      "STO-ZINCADO-4X40MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 40 mm",
+        "buscar": "Tornillo Stovolt zincado Zincado 4 x 40 mm",
+        "url": ""
+      },
+      "STO-ZINCADO-4X50MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 50 mm",
+        "buscar": "Tornillo Stovolt zincado Zincado 4 x 50 mm",
+        "url": ""
+      }
+    }
   },
   "Tornillo drywall punta fina negro": {
     "buscar": "tornillo drywall punta fina negro",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "DRY-NEGRO-6X1": {
+        "opcion": "Color: Negro · Medida: 6 x 1",
+        "buscar": "Tornillo drywall punta fina negro Negro 6 x 1",
+        "url": ""
+      },
+      "DRY-NEGRO-7X716": {
+        "opcion": "Color: Negro · Medida: 7 x 7/16",
+        "buscar": "Tornillo drywall punta fina negro Negro 7 x 7/16",
+        "url": ""
+      }
+    }
   },
   "Tarugo de madera": {
     "buscar": "tarugo madera unión espiga",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TAR-38": {
+        "opcion": "Medida: 3/8",
+        "buscar": "Tarugo de madera 3/8",
+        "url": ""
+      },
+      "TAR-124X70": {
+        "opcion": "Medida: 1/2 (4 x 70)",
+        "buscar": "Tarugo de madera 1/2 (4 x 70)",
+        "url": ""
+      }
+    }
   },
   "Wincha Pretul": {
     "buscar": "wincha flexómetro Pretul",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "WIN-3M": {
+        "opcion": "Medida: 3 m",
+        "buscar": "Wincha Pretul 3 m",
+        "url": ""
+      },
+      "WIN-5M": {
+        "opcion": "Medida: 5 m",
+        "buscar": "Wincha Pretul 5 m",
+        "url": ""
+      }
+    }
   },
   "Martillo de uña curva Truper": {
     "buscar": "martillo uña curva Truper",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "MAR-16OZ": {
+        "opcion": "Medida: 16 oz",
+        "buscar": "Martillo de uña curva Truper 16 oz",
+        "url": ""
+      },
+      "MAR-20OZ": {
+        "opcion": "Medida: 20 oz",
+        "buscar": "Martillo de uña curva Truper 20 oz",
+        "url": ""
+      }
+    }
   },
   "Alicate C&A": {
     "buscar": "alicate universal punta corte",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "ALI-CORTE-6": {
+        "opcion": "Tipo: Corte · Medida: 6\"",
+        "buscar": "Alicate C&A Corte 6\"",
+        "url": ""
+      },
+      "ALI-PUNTA-6": {
+        "opcion": "Tipo: Punta · Medida: 6\"",
+        "buscar": "Alicate C&A Punta 6\"",
+        "url": ""
+      },
+      "ALI-PELACABLES-6": {
+        "opcion": "Tipo: Pelacables · Medida: 6\"",
+        "buscar": "Alicate C&A Pelacables 6\"",
+        "url": ""
+      },
+      "ALI-UNIVERSAL-8": {
+        "opcion": "Tipo: Universal · Medida: 8\"",
+        "buscar": "Alicate C&A Universal 8\"",
+        "url": ""
+      }
+    }
   },
   "Serrucho de carpintero C&A": {
     "buscar": "serrucho carpintero mango madera",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "SER-18": {
+        "opcion": "Medida: 18\"",
+        "buscar": "Serrucho de carpintero C&A 18\"",
+        "url": ""
+      },
+      "SER-20": {
+        "opcion": "Medida: 20\"",
+        "buscar": "Serrucho de carpintero C&A 20\"",
+        "url": ""
+      }
+    }
   },
   "Llave francesa C&A": {
     "buscar": "llave francesa ajustable",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "LLF-6": {
+        "opcion": "Medida: 6\"",
+        "buscar": "Llave francesa C&A 6\"",
+        "url": ""
+      },
+      "LLF-12": {
+        "opcion": "Medida: 12\"",
+        "buscar": "Llave francesa C&A 12\"",
+        "url": ""
+      }
+    }
   },
   "Juego de brocas Truper": {
     "buscar": "juego de brocas Truper estuche",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "BRO-MADERA-6PIEZAS": {
+        "opcion": "Tipo: Madera · Medida: 6 piezas",
+        "buscar": "Juego de brocas Truper Madera 6 piezas",
+        "url": ""
+      },
+      "BRO-CONCRETO-6PIEZAS": {
+        "opcion": "Tipo: Concreto · Medida: 6 piezas",
+        "buscar": "Juego de brocas Truper Concreto 6 piezas",
+        "url": ""
+      },
+      "BRO-METALMADERAYCO-9PIEZAS": {
+        "opcion": "Tipo: Metal, madera y concreto · Medida: 9 piezas",
+        "buscar": "Juego de brocas Truper Metal, madera y concreto 9 piezas",
+        "url": ""
+      },
+      "BRO-METALHSS-10PIEZAS": {
+        "opcion": "Tipo: Metal HSS · Medida: 10 piezas",
+        "buscar": "Juego de brocas Truper Metal HSS 10 piezas",
+        "url": ""
+      }
+    }
   },
   "Taladro inalámbrico Ingco 20V": {
     "buscar": "taladro inalámbrico Ingco 20V",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TAL-IN-MANDRIL38": {
+        "opcion": "Medida: Mandril 3/8\"",
+        "buscar": "Taladro inalámbrico Ingco 20V Mandril 3/8\"",
+        "url": ""
+      },
+      "TAL-IN-MANDRIL12": {
+        "opcion": "Medida: Mandril 1/2\"",
+        "buscar": "Taladro inalámbrico Ingco 20V Mandril 1/2\"",
+        "url": ""
+      }
+    }
   },
   "Taladro percutor Ingco 850 W": {
     "buscar": "taladro percutor Ingco 850W",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TAL-85-850W": {
+        "opcion": "Medida: 850 W",
+        "buscar": "Taladro percutor Ingco 850 W 850 W",
+        "url": ""
+      }
+    }
   },
   "Esmeril angular Ingco 4 1/2\" 750 W": {
     "buscar": "esmeril angular Ingco 750W",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "ESM-412750W": {
+        "opcion": "Medida: 4 1/2\" · 750 W",
+        "buscar": "Esmeril angular Ingco 4 1/2\" 750 W 4 1/2\" · 750 W",
+        "url": ""
+      }
+    }
   },
   "Sierra circular Ingco 1400 W": {
     "buscar": "sierra circular Ingco 1400W",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "SIE-1400W": {
+        "opcion": "Medida: 1400 W",
+        "buscar": "Sierra circular Ingco 1400 W 1400 W",
+        "url": ""
+      }
+    }
   },
   "Nivel de aluminio 18\"": {
     "buscar": "nivel de aluminio 18 pulgadas",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "NIV-18": {
+        "opcion": "Medida: 18\"",
+        "buscar": "Nivel de aluminio 18\" 18\"",
+        "url": ""
+      }
+    }
   },
   "Pistola para silicona C&A PRO": {
     "buscar": "pistola para silicona esqueleto",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "PIS-SI-REFORZADA": {
+        "opcion": "Tipo: Reforzada",
+        "buscar": "Pistola para silicona C&A PRO Reforzada",
+        "url": ""
+      },
+      "PIS-SI-ESQUELETO": {
+        "opcion": "Tipo: Esqueleto",
+        "buscar": "Pistola para silicona C&A PRO Esqueleto",
+        "url": ""
+      }
+    }
   },
   "Pegamento de contacto Africano's": {
     "buscar": "pegamento de contacto Africano",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "PEG-AF-164DEGALON": {
+        "opcion": "Medida: 1/64 de galón",
+        "buscar": "Pegamento de contacto Africano's 1/64 de galón",
+        "url": ""
+      },
+      "PEG-AF-132DEGALON": {
+        "opcion": "Medida: 1/32 de galón",
+        "buscar": "Pegamento de contacto Africano's 1/32 de galón",
+        "url": ""
+      },
+      "PEG-AF-18DEGALON": {
+        "opcion": "Medida: 1/8 de galón",
+        "buscar": "Pegamento de contacto Africano's 1/8 de galón",
+        "url": ""
+      }
+    }
   },
   "Silicona multiusos Knauff 225 ml": {
     "buscar": "silicona multiusos Knauff 225ml",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "SIL-BLANCO-225ML": {
+        "opcion": "Color: Blanco · Medida: 225 ml",
+        "buscar": "Silicona multiusos Knauff 225 ml Blanco 225 ml",
+        "url": ""
+      },
+      "SIL-GRIS-225ML": {
+        "opcion": "Color: Gris · Medida: 225 ml",
+        "buscar": "Silicona multiusos Knauff 225 ml Gris 225 ml",
+        "url": ""
+      },
+      "SIL-NEGRO-225ML": {
+        "opcion": "Color: Negro · Medida: 225 ml",
+        "buscar": "Silicona multiusos Knauff 225 ml Negro 225 ml",
+        "url": ""
+      },
+      "SIL-TRANSPARENTE-225ML": {
+        "opcion": "Color: Transparente · Medida: 225 ml",
+        "buscar": "Silicona multiusos Knauff 225 ml Transparente 225 ml",
+        "url": ""
+      }
+    }
   },
   "Pegamento instantáneo Knauff": {
     "buscar": "super glue pegamento instantáneo Knauff",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "PEG-KN-15G": {
+        "opcion": "Medida: 1.5 g",
+        "buscar": "Pegamento instantáneo Knauff 1.5 g",
+        "url": ""
+      },
+      "PEG-KN-3G": {
+        "opcion": "Medida: 3 g",
+        "buscar": "Pegamento instantáneo Knauff 3 g",
+        "url": ""
+      }
+    }
   },
   "Lija para madera Klingspor": {
     "buscar": "lija madera Klingspor",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "LIJ-MA-GRANO40": {
+        "opcion": "Medida: Grano 40",
+        "buscar": "Lija para madera Klingspor Grano 40",
+        "url": ""
+      },
+      "LIJ-MA-GRANO50": {
+        "opcion": "Medida: Grano 50",
+        "buscar": "Lija para madera Klingspor Grano 50",
+        "url": ""
+      },
+      "LIJ-MA-GRANO60": {
+        "opcion": "Medida: Grano 60",
+        "buscar": "Lija para madera Klingspor Grano 60",
+        "url": ""
+      },
+      "LIJ-MA-GRANO80": {
+        "opcion": "Medida: Grano 80",
+        "buscar": "Lija para madera Klingspor Grano 80",
+        "url": ""
+      },
+      "LIJ-MA-GRANO100": {
+        "opcion": "Medida: Grano 100",
+        "buscar": "Lija para madera Klingspor Grano 100",
+        "url": ""
+      },
+      "LIJ-MA-GRANO120": {
+        "opcion": "Medida: Grano 120",
+        "buscar": "Lija para madera Klingspor Grano 120",
+        "url": ""
+      },
+      "LIJ-MA-GRANO150": {
+        "opcion": "Medida: Grano 150",
+        "buscar": "Lija para madera Klingspor Grano 150",
+        "url": ""
+      },
+      "LIJ-MA-GRANO180": {
+        "opcion": "Medida: Grano 180",
+        "buscar": "Lija para madera Klingspor Grano 180",
+        "url": ""
+      },
+      "LIJ-MA-GRANO220": {
+        "opcion": "Medida: Grano 220",
+        "buscar": "Lija para madera Klingspor Grano 220",
+        "url": ""
+      }
+    }
   },
   "Lija para fierro Klingspor": {
     "buscar": "lija fierro Klingspor",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "LIJ-FI-GRANO40": {
+        "opcion": "Medida: Grano 40",
+        "buscar": "Lija para fierro Klingspor Grano 40",
+        "url": ""
+      },
+      "LIJ-FI-GRANO50": {
+        "opcion": "Medida: Grano 50",
+        "buscar": "Lija para fierro Klingspor Grano 50",
+        "url": ""
+      },
+      "LIJ-FI-GRANO60": {
+        "opcion": "Medida: Grano 60",
+        "buscar": "Lija para fierro Klingspor Grano 60",
+        "url": ""
+      },
+      "LIJ-FI-GRANO80": {
+        "opcion": "Medida: Grano 80",
+        "buscar": "Lija para fierro Klingspor Grano 80",
+        "url": ""
+      },
+      "LIJ-FI-GRANO100": {
+        "opcion": "Medida: Grano 100",
+        "buscar": "Lija para fierro Klingspor Grano 100",
+        "url": ""
+      },
+      "LIJ-FI-GRANO120": {
+        "opcion": "Medida: Grano 120",
+        "buscar": "Lija para fierro Klingspor Grano 120",
+        "url": ""
+      },
+      "LIJ-FI-GRANO150": {
+        "opcion": "Medida: Grano 150",
+        "buscar": "Lija para fierro Klingspor Grano 150",
+        "url": ""
+      },
+      "LIJ-FI-GRANO180": {
+        "opcion": "Medida: Grano 180",
+        "buscar": "Lija para fierro Klingspor Grano 180",
+        "url": ""
+      },
+      "LIJ-FI-GRANO220": {
+        "opcion": "Medida: Grano 220",
+        "buscar": "Lija para fierro Klingspor Grano 220",
+        "url": ""
+      }
+    }
   },
   "Cinta aislante 3M Temflex 155": {
     "buscar": "cinta aislante 3M Temflex negra",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "CIN-34X45M": {
+        "opcion": "Medida: 3/4\" x 4.5 m",
+        "buscar": "Cinta aislante 3M Temflex 155 3/4\" x 4.5 m",
+        "url": ""
+      },
+      "CIN-34X18M": {
+        "opcion": "Medida: 3/4\" x 18 m",
+        "buscar": "Cinta aislante 3M Temflex 155 3/4\" x 18 m",
+        "url": ""
+      }
+    }
   },
   "Foco LED espiral blanco": {
     "buscar": "foco LED espiral blanco",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "FOC-ES-7W": {
+        "opcion": "Medida: 7 W",
+        "buscar": "Foco LED espiral blanco 7 W",
+        "url": ""
+      },
+      "FOC-ES-9W": {
+        "opcion": "Medida: 9 W",
+        "buscar": "Foco LED espiral blanco 9 W",
+        "url": ""
+      },
+      "FOC-ES-12W": {
+        "opcion": "Medida: 12 W",
+        "buscar": "Foco LED espiral blanco 12 W",
+        "url": ""
+      }
+    }
   },
   "Foco LED": {
     "buscar": "foco LED 5W luz cálida",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "FOC-CALIDO-3W": {
+        "opcion": "Color: Cálido · Medida: 3 W",
+        "buscar": "Foco LED Cálido 3 W",
+        "url": ""
+      },
+      "FOC-CALIDO-5W": {
+        "opcion": "Color: Cálido · Medida: 5 W",
+        "buscar": "Foco LED Cálido 5 W",
+        "url": ""
+      },
+      "FOC-BLANCO-5W": {
+        "opcion": "Color: Blanco · Medida: 5 W",
+        "buscar": "Foco LED Blanco 5 W",
+        "url": ""
+      }
+    }
   },
   "Panel LED para empotrar": {
     "buscar": "panel LED empotrar cuadrado redondo",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "PAN-CUADRADO-6W": {
+        "opcion": "Tipo: Cuadrado · Medida: 6 W",
+        "buscar": "Panel LED para empotrar Cuadrado 6 W",
+        "url": ""
+      },
+      "PAN-CUADRADO-12W": {
+        "opcion": "Tipo: Cuadrado · Medida: 12 W",
+        "buscar": "Panel LED para empotrar Cuadrado 12 W",
+        "url": ""
+      },
+      "PAN-REDONDO-6W": {
+        "opcion": "Tipo: Redondo · Medida: 6 W",
+        "buscar": "Panel LED para empotrar Redondo 6 W",
+        "url": ""
+      },
+      "PAN-REDONDO-12W": {
+        "opcion": "Tipo: Redondo · Medida: 12 W",
+        "buscar": "Panel LED para empotrar Redondo 12 W",
+        "url": ""
+      }
+    }
   },
   "Extensión eléctrica 4 tomas gris Home Light": {
     "buscar": "extensión eléctrica 4 tomas",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "EXT-3M": {
+        "opcion": "Medida: 3 m",
+        "buscar": "Extensión eléctrica 4 tomas gris Home Light 3 m",
+        "url": ""
+      },
+      "EXT-5M": {
+        "opcion": "Medida: 5 m",
+        "buscar": "Extensión eléctrica 4 tomas gris Home Light 5 m",
+        "url": ""
+      }
+    }
   },
   "Interruptor para empotrar Home Light": {
     "buscar": "interruptor empotrar simple doble",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "INT-SIMPLE": {
+        "opcion": "Tipo: Simple",
+        "buscar": "Interruptor para empotrar Home Light Simple",
+        "url": ""
+      },
+      "INT-DOBLE": {
+        "opcion": "Tipo: Doble",
+        "buscar": "Interruptor para empotrar Home Light Doble",
+        "url": ""
+      },
+      "INT-TRIPLE": {
+        "opcion": "Tipo: Triple",
+        "buscar": "Interruptor para empotrar Home Light Triple",
+        "url": ""
+      }
+    }
   },
   "Tomacorriente para empotrar Home Light": {
     "buscar": "tomacorriente empotrar doble",
-    "url": ""
+    "url": "",
+    "variantes": {
+      "TOM-SIMPLE": {
+        "opcion": "Tipo: Simple",
+        "buscar": "Tomacorriente para empotrar Home Light Simple",
+        "url": ""
+      },
+      "TOM-DOBLE": {
+        "opcion": "Tipo: Doble",
+        "buscar": "Tomacorriente para empotrar Home Light Doble",
+        "url": ""
+      }
+    }
+  },
+  "MDP crudo": {
+    "buscar": "MDP crudo",
+    "url": "",
+    "variantes": {
+      "MDPNATURAL6MM244X214CM": {
+        "opcion": "Color: Natural · Medida: 6 mm · 244 x 214 cm",
+        "buscar": "MDP crudo Natural 6 mm · 244 x 214 cm",
+        "url": ""
+      },
+      "MDPNATURAL12MM212X244CM": {
+        "opcion": "Color: Natural · Medida: 12 mm · 212 x 244 cm",
+        "buscar": "MDP crudo Natural 12 mm · 212 x 244 cm",
+        "url": ""
+      },
+      "MDPNATURAL15MM244X213CM": {
+        "opcion": "Color: Natural · Medida: 15 mm · 244 x 213 cm",
+        "buscar": "MDP crudo Natural 15 mm · 244 x 213 cm",
+        "url": ""
+      },
+      "MDPNATURAL18MM244X213CM": {
+        "opcion": "Color: Natural · Medida: 18 mm · 244 x 213 cm",
+        "buscar": "MDP crudo Natural 18 mm · 244 x 213 cm",
+        "url": ""
+      },
+      "MDPNATURAL18MM207X244CM": {
+        "opcion": "Color: Natural · Medida: 18 mm · 207 x 244 cm",
+        "buscar": "MDP crudo Natural 18 mm · 207 x 244 cm",
+        "url": ""
+      }
+    }
+  },
+  "Trupán": {
+    "buscar": "Trupán",
+    "url": "",
+    "variantes": {
+      "TRUNATURALLISO25MM25MM213X244CM": {
+        "opcion": "Color: Natural · Tipo: Liso 2.5 mm · Medida: 2.5 mm · 213 x 244 cm",
+        "buscar": "Trupán Natural Liso 2.5 mm 2.5 mm · 213 x 244 cm",
+        "url": ""
+      },
+      "TRUNATURALRANURADOCHICO18MM244X122CM": {
+        "opcion": "Color: Natural · Tipo: Ranurado chico · Medida: 18 mm · 244 x 122 cm",
+        "buscar": "Trupán Natural Ranurado chico 18 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "TRUNATURALRANURADOGRANDE18MM244X152CM": {
+        "opcion": "Color: Natural · Tipo: Ranurado grande · Medida: 18 mm · 244 x 152 cm",
+        "buscar": "Trupán Natural Ranurado grande 18 mm · 244 x 152 cm",
+        "url": ""
+      }
+    }
+  },
+  "Plywood especial": {
+    "buscar": "Plywood especial",
+    "url": "",
+    "variantes": {
+      "PLYNATURALPLYWOOD12MM12MM122X244CM": {
+        "opcion": "Color: Natural · Tipo: Plywood 12 mm · Medida: 12 mm · 122 x 244 cm",
+        "buscar": "Plywood especial Natural Plywood 12 mm 12 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "PLYNATURALFILM18MM18MM122X244CM": {
+        "opcion": "Color: Natural · Tipo: Film 18 mm · Medida: 18 mm · 122 x 244 cm",
+        "buscar": "Plywood especial Natural Film 18 mm 18 mm · 122 x 244 cm",
+        "url": ""
+      },
+      "PLYNATURALPLYNOVOSUPER18MM18MM244X122CM": {
+        "opcion": "Color: Natural · Tipo: Plynovo Super 18 mm · Medida: 18 mm · 244 x 122 cm",
+        "buscar": "Plywood especial Natural Plynovo Super 18 mm 18 mm · 244 x 122 cm",
+        "url": ""
+      }
+    }
+  },
+  "Wall panel (panel decorativo para pared)": {
+    "buscar": "Wall panel (panel decorativo para pared)",
+    "url": "",
+    "variantes": {
+      "WALLK1013290MX16CM": {
+        "opcion": "Color: LK1013 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LK1013 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLK1016290MX16CM": {
+        "opcion": "Color: LK1016 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LK1016 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLK4006290MX16CM": {
+        "opcion": "Color: LK4006 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LK4006 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLK4032290MX16CM": {
+        "opcion": "Color: LK4032 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LK4032 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLK5005290MX16CM": {
+        "opcion": "Color: LK5005 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LK5005 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLK6017290MX16CM": {
+        "opcion": "Color: LK6017 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LK6017 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLK8003290MX16CM": {
+        "opcion": "Color: LK8003 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LK8003 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLK8019290MX16CM": {
+        "opcion": "Color: LK8019 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LK8019 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLK8020290MX16CM": {
+        "opcion": "Color: LK8020 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LK8020 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLKH3102290MX16CM": {
+        "opcion": "Color: LKh3102 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LKh3102 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLKH3103290MX16CM": {
+        "opcion": "Color: LKh3103 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LKh3103 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALLKH3115290MX16CM": {
+        "opcion": "Color: LKh3115 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) LKh3115 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWP4032BLACK290MX16CM": {
+        "opcion": "Color: WP4032 Black · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WP4032 Black 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWP53102308290MX16CM": {
+        "opcion": "Color: WP53102-308 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WP53102-308 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWP8503002B2290MX16CM": {
+        "opcion": "Color: WP85030-02b2 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WP85030-02b2 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWPAW062290MX16CM": {
+        "opcion": "Color: WPaw062 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WPaw062 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWPDT10290MX16CM": {
+        "opcion": "Color: WPdt-10 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WPdt-10 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWPH0021290MX16CM": {
+        "opcion": "Color: WPh002-1 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WPh002-1 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWPH2109290MX16CM": {
+        "opcion": "Color: WPh2109 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WPh2109 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWPH3114290MX16CM": {
+        "opcion": "Color: WPh3114 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WPh3114 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWPOW290MX16CM": {
+        "opcion": "Color: WPow · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WPow 2.90 m x 16 cm",
+        "url": ""
+      },
+      "WALWPQ945101290MX16CM": {
+        "opcion": "Color: WPq9451-01 · Medida: 2.90 m x 16 cm",
+        "buscar": "Wall panel (panel decorativo para pared) WPq9451-01 2.90 m x 16 cm",
+        "url": ""
+      }
+    }
+  },
+  "Panel mármol": {
+    "buscar": "Panel mármol",
+    "url": "",
+    "variantes": {
+      "PAN307725MM244X122CM": {
+        "opcion": "Color: 3077 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol 3077 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANAK8960625MM244X122CM": {
+        "opcion": "Color: AK-89606 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol AK-89606 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANDY05825MM244X122CM": {
+        "opcion": "Color: DY058 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol DY058 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANDY06125MM244X122CM": {
+        "opcion": "Color: DY061 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol DY061 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANDY10125MM244X122CM": {
+        "opcion": "Color: DY101 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol DY101 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANDY17525MM244X122CM": {
+        "opcion": "Color: DY175 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol DY175 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANLJ00125MM244X122CM": {
+        "opcion": "Color: LJ001 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol LJ001 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANLJ8000725MM244X122CM": {
+        "opcion": "Color: LJ80007 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol LJ80007 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANMT9021L25MM244X122CM": {
+        "opcion": "Color: MT9021-L · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol MT9021-L 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANS165025MM244X122CM": {
+        "opcion": "Color: S1650 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol S1650 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANS1654125MM244X122CM": {
+        "opcion": "Color: S1654-1 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol S1654-1 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANS1657125MM244X122CM": {
+        "opcion": "Color: S1657-1 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol S1657-1 2.5 mm · 244 x 122 cm",
+        "url": ""
+      },
+      "PANSJ101325MM244X122CM": {
+        "opcion": "Color: SJ101-3 · Medida: 2.5 mm · 244 x 122 cm",
+        "buscar": "Panel mármol SJ101-3 2.5 mm · 244 x 122 cm",
+        "url": ""
+      }
+    }
+  },
+  "Jalador animado": {
+    "buscar": "Jalador animado",
+    "url": "",
+    "variantes": {
+      "JALGM110MODELOGM110": {
+        "opcion": "Color: GM-110 · Medida: Modelo GM-110",
+        "buscar": "Jalador animado GM-110 Modelo GM-110",
+        "url": ""
+      },
+      "JALGM112MODELOGM112": {
+        "opcion": "Color: GM-112 · Medida: Modelo GM-112",
+        "buscar": "Jalador animado GM-112 Modelo GM-112",
+        "url": ""
+      },
+      "JALGM113MODELOGM113": {
+        "opcion": "Color: GM-113 · Medida: Modelo GM-113",
+        "buscar": "Jalador animado GM-113 Modelo GM-113",
+        "url": ""
+      },
+      "JALGM120MODELOGM120": {
+        "opcion": "Color: GM-120 · Medida: Modelo GM-120",
+        "buscar": "Jalador animado GM-120 Modelo GM-120",
+        "url": ""
+      },
+      "JALGM124MODELOGM124": {
+        "opcion": "Color: GM-124 · Medida: Modelo GM-124",
+        "buscar": "Jalador animado GM-124 Modelo GM-124",
+        "url": ""
+      },
+      "JALGM24MODELOGM24": {
+        "opcion": "Color: GM-24 · Medida: Modelo GM-24",
+        "buscar": "Jalador animado GM-24 Modelo GM-24",
+        "url": ""
+      },
+      "JALGM72MODELOGM72": {
+        "opcion": "Color: GM-72 · Medida: Modelo GM-72",
+        "buscar": "Jalador animado GM-72 Modelo GM-72",
+        "url": ""
+      },
+      "JALGM73MODELOGM73": {
+        "opcion": "Color: GM-73 · Medida: Modelo GM-73",
+        "buscar": "Jalador animado GM-73 Modelo GM-73",
+        "url": ""
+      },
+      "JALGM74MODELOGM74": {
+        "opcion": "Color: GM-74 · Medida: Modelo GM-74",
+        "buscar": "Jalador animado GM-74 Modelo GM-74",
+        "url": ""
+      },
+      "JALGM75MODELOGM75": {
+        "opcion": "Color: GM-75 · Medida: Modelo GM-75",
+        "buscar": "Jalador animado GM-75 Modelo GM-75",
+        "url": ""
+      },
+      "JALGM76MODELOGM76": {
+        "opcion": "Color: GM-76 · Medida: Modelo GM-76",
+        "buscar": "Jalador animado GM-76 Modelo GM-76",
+        "url": ""
+      },
+      "JALGM77MODELOGM77": {
+        "opcion": "Color: GM-77 · Medida: Modelo GM-77",
+        "buscar": "Jalador animado GM-77 Modelo GM-77",
+        "url": ""
+      },
+      "JALGMA861MODELOGMA861": {
+        "opcion": "Color: GM-A861 · Medida: Modelo GM-A861",
+        "buscar": "Jalador animado GM-A861 Modelo GM-A861",
+        "url": ""
+      }
+    }
+  },
+  "Tornillo autorroscante 3.5 mm": {
+    "buscar": "Tornillo autorroscante 3.5 mm",
+    "url": "",
+    "variantes": {
+      "TORZINCADO35X12MM": {
+        "opcion": "Color: Zincado · Medida: 3.5 x 12 mm",
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado 3.5 x 12 mm",
+        "url": ""
+      },
+      "TORZINCADO35X15MM": {
+        "opcion": "Color: Zincado · Medida: 3.5 x 15 mm",
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado 3.5 x 15 mm",
+        "url": ""
+      },
+      "TORZINCADO35X20MM": {
+        "opcion": "Color: Zincado · Medida: 3.5 x 20 mm",
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado 3.5 x 20 mm",
+        "url": ""
+      },
+      "TORZINCADO35X25MM": {
+        "opcion": "Color: Zincado · Medida: 3.5 x 25 mm",
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado 3.5 x 25 mm",
+        "url": ""
+      },
+      "TORZINCADO35X30MM": {
+        "opcion": "Color: Zincado · Medida: 3.5 x 30 mm",
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado 3.5 x 30 mm",
+        "url": ""
+      },
+      "TORZINCADO35X35MM": {
+        "opcion": "Color: Zincado · Medida: 3.5 x 35 mm",
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado 3.5 x 35 mm",
+        "url": ""
+      },
+      "TORZINCADO35X40MM": {
+        "opcion": "Color: Zincado · Medida: 3.5 x 40 mm",
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado 3.5 x 40 mm",
+        "url": ""
+      },
+      "TORZINCADO35X50MM": {
+        "opcion": "Color: Zincado · Medida: 3.5 x 50 mm",
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado 3.5 x 50 mm",
+        "url": ""
+      },
+      "TORZINCADODENTADO35X50MM": {
+        "opcion": "Color: Zincado · Tipo: Dentado · Medida: 3.5 x 50 mm",
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado Dentado 3.5 x 50 mm",
+        "url": ""
+      }
+    }
+  },
+  "Tornillo autorroscante 4 mm": {
+    "buscar": "Tornillo autorroscante 4 mm",
+    "url": "",
+    "variantes": {
+      "TORZINCADO4X16MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 16 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado 4 x 16 mm",
+        "url": ""
+      },
+      "TORZINCADO4X20MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 20 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado 4 x 20 mm",
+        "url": ""
+      },
+      "TORZINCADODENTADO4X20MM": {
+        "opcion": "Color: Zincado · Tipo: Dentado · Medida: 4 x 20 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado Dentado 4 x 20 mm",
+        "url": ""
+      },
+      "TORZINCADO4X25MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 25 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado 4 x 25 mm",
+        "url": ""
+      },
+      "TORZINCADO4X30MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 30 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado 4 x 30 mm",
+        "url": ""
+      },
+      "TORZINCADODENTADO4X30MM": {
+        "opcion": "Color: Zincado · Tipo: Dentado · Medida: 4 x 30 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado Dentado 4 x 30 mm",
+        "url": ""
+      },
+      "TORZINCADO4X40MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 40 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado 4 x 40 mm",
+        "url": ""
+      },
+      "TORZINCADO4X45MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 45 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado 4 x 45 mm",
+        "url": ""
+      },
+      "TORZINCADO4X50MM": {
+        "opcion": "Color: Zincado · Medida: 4 x 50 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado 4 x 50 mm",
+        "url": ""
+      },
+      "TORZINCADODENTADO4X50MM": {
+        "opcion": "Color: Zincado · Tipo: Dentado · Medida: 4 x 50 mm",
+        "buscar": "Tornillo autorroscante 4 mm Zincado Dentado 4 x 50 mm",
+        "url": ""
+      }
+    }
+  },
+  "Tornillo autorroscante 5 mm": {
+    "buscar": "Tornillo autorroscante 5 mm",
+    "url": "",
+    "variantes": {
+      "TORZINCADO5X30MM": {
+        "opcion": "Color: Zincado · Medida: 5 x 30 mm",
+        "buscar": "Tornillo autorroscante 5 mm Zincado 5 x 30 mm",
+        "url": ""
+      },
+      "TORZINCADO5X40MM": {
+        "opcion": "Color: Zincado · Medida: 5 x 40 mm",
+        "buscar": "Tornillo autorroscante 5 mm Zincado 5 x 40 mm",
+        "url": ""
+      },
+      "TORZINCADO5X50MM": {
+        "opcion": "Color: Zincado · Medida: 5 x 50 mm",
+        "buscar": "Tornillo autorroscante 5 mm Zincado 5 x 50 mm",
+        "url": ""
+      },
+      "TORZINCADO5X70MM": {
+        "opcion": "Color: Zincado · Medida: 5 x 70 mm",
+        "buscar": "Tornillo autorroscante 5 mm Zincado 5 x 70 mm",
+        "url": ""
+      },
+      "TORZINCADO5X80MM": {
+        "opcion": "Color: Zincado · Medida: 5 x 80 mm",
+        "buscar": "Tornillo autorroscante 5 mm Zincado 5 x 80 mm",
+        "url": ""
+      }
+    }
+  },
+  "Gancho para trupán": {
+    "buscar": "Gancho para trupán",
+    "url": "",
+    "variantes": {
+      "GANZINCADO100MM": {
+        "opcion": "Color: Zincado · Medida: 100 mm",
+        "buscar": "Gancho para trupán Zincado 100 mm",
+        "url": ""
+      },
+      "GANZINCADO150MM": {
+        "opcion": "Color: Zincado · Medida: 150 mm",
+        "buscar": "Gancho para trupán Zincado 150 mm",
+        "url": ""
+      },
+      "GANZINCADO200MM": {
+        "opcion": "Color: Zincado · Medida: 200 mm",
+        "buscar": "Gancho para trupán Zincado 200 mm",
+        "url": ""
+      },
+      "GANZINCADO250MM": {
+        "opcion": "Color: Zincado · Medida: 250 mm",
+        "buscar": "Gancho para trupán Zincado 250 mm",
+        "url": ""
+      },
+      "GANZINCADO300MM": {
+        "opcion": "Color: Zincado · Medida: 300 mm",
+        "buscar": "Gancho para trupán Zincado 300 mm",
+        "url": ""
+      },
+      "GANZINCADO50MM": {
+        "opcion": "Color: Zincado · Medida: 50 mm",
+        "buscar": "Gancho para trupán Zincado 50 mm",
+        "url": ""
+      }
+    }
+  },
+  "Tarugo plástico": {
+    "buscar": "Tarugo plástico",
+    "url": "",
+    "variantes": {
+      "TARROJO316": {
+        "opcion": "Color: Rojo · Medida: 3/16\"",
+        "buscar": "Tarugo plástico Rojo 3/16\"",
+        "url": ""
+      },
+      "TARNARANJA38": {
+        "opcion": "Color: Naranja · Medida: 3/8\"",
+        "buscar": "Tarugo plástico Naranja 3/8\"",
+        "url": ""
+      },
+      "TARVERDE14": {
+        "opcion": "Color: Verde · Medida: 1/4\"",
+        "buscar": "Tarugo plástico Verde 1/4\"",
+        "url": ""
+      },
+      "TARGRIS12": {
+        "opcion": "Color: Gris · Medida: 1/2\"",
+        "buscar": "Tarugo plástico Gris 1/2\"",
+        "url": ""
+      },
+      "TARAZUL34": {
+        "opcion": "Color: Azul · Medida: 3/4\"",
+        "buscar": "Tarugo plástico Azul 3/4\"",
+        "url": ""
+      }
+    }
+  },
+  "Platina": {
+    "buscar": "Platina",
+    "url": "",
+    "variantes": {
+      "PLAZINCADO40MM": {
+        "opcion": "Color: Zincado · Medida: 40 mm",
+        "buscar": "Platina Zincado 40 mm",
+        "url": ""
+      },
+      "PLAZINCADO60MM": {
+        "opcion": "Color: Zincado · Medida: 60 mm",
+        "buscar": "Platina Zincado 60 mm",
+        "url": ""
+      },
+      "PLAZINCADO80MM": {
+        "opcion": "Color: Zincado · Medida: 80 mm",
+        "buscar": "Platina Zincado 80 mm",
+        "url": ""
+      },
+      "PLAZINCADO100MM": {
+        "opcion": "Color: Zincado · Medida: 100 mm",
+        "buscar": "Platina Zincado 100 mm",
+        "url": ""
+      }
+    }
+  },
+  "Rejilla de aluminio": {
+    "buscar": "Rejilla de aluminio",
+    "url": "",
+    "variantes": {
+      "REJALUMINIO3LINEAS80X150MM": {
+        "opcion": "Color: Aluminio · Tipo: 3 líneas · Medida: 80 x 150 mm",
+        "buscar": "Rejilla de aluminio Aluminio 3 líneas 80 x 150 mm",
+        "url": ""
+      },
+      "REJALUMINIO3LINEAS80X200MM": {
+        "opcion": "Color: Aluminio · Tipo: 3 líneas · Medida: 80 x 200 mm",
+        "buscar": "Rejilla de aluminio Aluminio 3 líneas 80 x 200 mm",
+        "url": ""
+      },
+      "REJALUMINIO3LINEAS80X250MM": {
+        "opcion": "Color: Aluminio · Tipo: 3 líneas · Medida: 80 x 250 mm",
+        "buscar": "Rejilla de aluminio Aluminio 3 líneas 80 x 250 mm",
+        "url": ""
+      },
+      "REJALUMINIO5LINEAS50X150MM": {
+        "opcion": "Color: Aluminio · Tipo: 5 líneas · Medida: 50 x 150 mm",
+        "buscar": "Rejilla de aluminio Aluminio 5 líneas 50 x 150 mm",
+        "url": ""
+      },
+      "REJALUMINIO5LINEAS50X200MM": {
+        "opcion": "Color: Aluminio · Tipo: 5 líneas · Medida: 50 x 200 mm",
+        "buscar": "Rejilla de aluminio Aluminio 5 líneas 50 x 200 mm",
+        "url": ""
+      },
+      "REJALUMINIO5LINEAS50X250MM": {
+        "opcion": "Color: Aluminio · Tipo: 5 líneas · Medida: 50 x 250 mm",
+        "buscar": "Rejilla de aluminio Aluminio 5 líneas 50 x 250 mm",
+        "url": ""
+      },
+      "REJALUMINIO5LINEAS50X300MM": {
+        "opcion": "Color: Aluminio · Tipo: 5 líneas · Medida: 50 x 300 mm",
+        "buscar": "Rejilla de aluminio Aluminio 5 líneas 50 x 300 mm",
+        "url": ""
+      }
+    }
+  },
+  "Perchero de aluminio e inox": {
+    "buscar": "Perchero de aluminio e inox",
+    "url": "",
+    "variantes": {
+      "PERACEROINOXIDABLEINOX145G": {
+        "opcion": "Color: Acero inoxidable · Medida: Inox 1\" 45g",
+        "buscar": "Perchero de aluminio e inox Acero inoxidable Inox 1\" 45g",
+        "url": ""
+      },
+      "PERACEROINOXIDABLEINOX170G": {
+        "opcion": "Color: Acero inoxidable · Medida: Inox 1\" 70g",
+        "buscar": "Perchero de aluminio e inox Acero inoxidable Inox 1\" 70g",
+        "url": ""
+      },
+      "PERALUMINIOALUMINIO170G": {
+        "opcion": "Color: Aluminio · Medida: Aluminio 1\" 70g",
+        "buscar": "Perchero de aluminio e inox Aluminio Aluminio 1\" 70g",
+        "url": ""
+      },
+      "PERALUMINIOALUMINIOPESADO": {
+        "opcion": "Color: Aluminio · Medida: Aluminio Pesado",
+        "buscar": "Perchero de aluminio e inox Aluminio Aluminio Pesado",
+        "url": ""
+      },
+      "PERCROMADOLISOCUADRADO1BH0183M": {
+        "opcion": "Color: Cromado · Medida: Liso Cuadrado 1\" Bh-018-3m",
+        "buscar": "Perchero de aluminio e inox Cromado Liso Cuadrado 1\" Bh-018-3m",
+        "url": ""
+      },
+      "PERCROMADOLISOREDONDO1BH0193M": {
+        "opcion": "Color: Cromado · Medida: Liso Redondo 1\" Bh-019-3m",
+        "buscar": "Perchero de aluminio e inox Cromado Liso Redondo 1\" Bh-019-3m",
+        "url": ""
+      }
+    }
+  },
+  "Precinto de seguridad": {
+    "buscar": "Precinto de seguridad",
+    "url": "",
+    "variantes": {
+      "PRENEGRO200MM50UNID": {
+        "opcion": "Color: Negro · Medida: 200 mm · 50 unid.",
+        "buscar": "Precinto de seguridad Negro 200 mm · 50 unid.",
+        "url": ""
+      },
+      "PRENEGRO300MM50UNID": {
+        "opcion": "Color: Negro · Medida: 300 mm · 50 unid.",
+        "buscar": "Precinto de seguridad Negro 300 mm · 50 unid.",
+        "url": ""
+      },
+      "PRENEGRO400MM25UNID": {
+        "opcion": "Color: Negro · Medida: 400 mm · 25 unid.",
+        "buscar": "Precinto de seguridad Negro 400 mm · 25 unid.",
+        "url": ""
+      },
+      "PRETRANSPARENTE200MM50UNID": {
+        "opcion": "Color: Transparente · Medida: 200 mm · 50 unid.",
+        "buscar": "Precinto de seguridad Transparente 200 mm · 50 unid.",
+        "url": ""
+      },
+      "PRETRANSPARENTE300MM50UNID": {
+        "opcion": "Color: Transparente · Medida: 300 mm · 50 unid.",
+        "buscar": "Precinto de seguridad Transparente 300 mm · 50 unid.",
+        "url": ""
+      },
+      "PRETRANSPARENTE400MM25UNID": {
+        "opcion": "Color: Transparente · Medida: 400 mm · 25 unid.",
+        "buscar": "Precinto de seguridad Transparente 400 mm · 25 unid.",
+        "url": ""
+      }
+    }
+  },
+  "Escuadra de carpintero": {
+    "buscar": "Escuadra de carpintero",
+    "url": "",
+    "variantes": {
+      "ESCACERO10": {
+        "opcion": "Color: Acero · Medida: 10\"",
+        "buscar": "Escuadra de carpintero Acero 10\"",
+        "url": ""
+      },
+      "ESCACERO12": {
+        "opcion": "Color: Acero · Medida: 12\"",
+        "buscar": "Escuadra de carpintero Acero 12\"",
+        "url": ""
+      },
+      "ESCACERO6": {
+        "opcion": "Color: Acero · Medida: 6\"",
+        "buscar": "Escuadra de carpintero Acero 6\"",
+        "url": ""
+      },
+      "ESCACERO8": {
+        "opcion": "Color: Acero · Medida: 8\"",
+        "buscar": "Escuadra de carpintero Acero 8\"",
+        "url": ""
+      }
+    }
   }
 }

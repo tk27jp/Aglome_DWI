@@ -10,20 +10,20 @@
 .columnas {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 2rem;
-  padding-block: 3rem 2.25rem;
+  gap: 2.5rem 3rem;
+  padding-block: 3.5rem 3rem;
   @include v.tablet { grid-template-columns: 1fr 1fr; }
   @include v.movil { grid-template-columns: 1fr; padding-block: 2rem; }
 }
 
 h2 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1.1rem;
   font-size: 1.15rem;
   color: #fff;
   letter-spacing: 0.04em;
 }
 
-ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.8rem; }
 
 .id {
   display: flex;
