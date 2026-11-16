@@ -1,0 +1,13 @@
+@use 'variables' as v;
+
+.esqueleto { height: 14rem; background: linear-gradient(100deg, #e9eaef 30%, #f5f5f8 50%, #e9eaef 70%) 0 0 / 200% 100%; animation: brillo 1.2s linear infinite; }
+@keyframes brillo { to { background-position: -200% 0; } }
+.aviso button { margin-left: 0.75rem; }
+.arbol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+.arbol li { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; padding: 0.6rem 0.9rem; margin-left: calc(var(--nivel, 0) * 1.75rem); background: #fff; border: 1px solid v.$color-borde; border-left: 4px solid v.$color-primario; border-radius: v.$radio; animation: sube 0.35s both; animation-delay: calc(var(--i) * 30ms); transition: box-shadow 0.15s;
+  &:hover { box-shadow: v.$sombra; } }
+@keyframes sube { from { opacity: 0; transform: translateY(6px); } }
+.marca-n { color: v.$color-secundario; font-size: 1.1rem; }
+.nom { display: grid; line-height: 1.25; margin-right: auto; small { color: v.$color-texto-suave; } }
+.acc { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.confirma { font-size: 0.85rem; font-weight: 600; color: v.$color-error; }

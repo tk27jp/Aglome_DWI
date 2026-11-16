@@ -1,0 +1,203 @@
+<div class="gp">
+  <header class="g-titulo">
+    <div>
+      <h1>Productos</h1>
+      <p>Crea, edita, oculta o elimina lo que se vende en la tienda.</p>
+    </div>
+    <div class="acciones"><button type="button" class="g-btn" (click)="abrirEditor(null)">+ Nuevo producto</button></div>
+  </header>
+
+  @if (origen(); as o) {
+    <a class="volver-producto" [routerLink]="['/productos', o.id]">← Regresar al producto que estás editando: <strong>{{ o.nombre }}</strong></a>
+  }
+
+  @if (error(); as e) {
+    <div class="aviso error" role="alert">{{ e }} <button type="button" class="g-btn sec mini" (click)="cargar()">Reintentar</button></div>
+  } @else if (productos() === null) {
+    <div class="esqueleto" aria-busy="true"></div>
+  } @else {
+    <div class="mini-resumen">
+      <span><strong>{{ resumen().total }}</strong> productos</span>
+      <span><strong>{{ resumen().publicados }}</strong> visibles en la tienda</span>
+      <span [class.alerta]="resumen().sinStock > 0"><strong>{{ resumen().sinStock }}</strong> sin stock</span>
+    </div>
+
+    <div class="g-barra">
+      <input type="search" placeholder="Buscar por nombre, marca o código…" aria-label="Buscar productos" [value]="texto()" (input)="texto.set($any($event.target).value); pagina.set(0)" />
+      <select aria-label="Filtrar por categoría" [value]="categoriaFiltro()" (change)="categoriaFiltro.set($any($event.target).value); pagina.set(0)">
+        <option value="">Todas las categorías</option>
+        @for (c of categorias(); track c.id) { <option [value]="c.id">{{ c.nombre }}</option> }
+      </select>
+      <select aria-label="Filtrar por estado" [value]="estadoFiltro()" (change)="estadoFiltro.set($any($event.target).value); pagina.set(0)">
+        <option value="todos">Todos</option>
+        <option value="publicados">Visibles</option>
+        <option value="borradores">Ocultos</option>
+        <option value="sin-stock">Sin stock</option>
+      </select>
+    </div>
+
+    @if (visibles().length) {
+      <div class="g-envoltura">
+        <table class="g-tabla">
+          <thead><tr><th>Producto</th><th>Categoría</th><th class="num">Opciones</th><th class="num">Desde</th><th class="num">Stock</th><th>En tienda</th><th></th></tr></thead>
+          <tbody>
+            @for (p of visibles(); track p.id) {
+              <tr>
+                <td>
+                  <div class="celda-prod">
+                    @if (foto(p); as f) { <img class="g-mini" [src]="f" alt="" loading="lazy" /> } @else { <span class="g-mini" aria-hidden="true">{{ p.nombre[0] }}</span> }
+                    <div><button type="button" class="nombre-btn" (click)="abrirEditor(p)">{{ p.nombre }}</button><small>{{ p.marca || 'Sin marca' }}</small></div>
+                  </div>
+                </td>
+                <td>{{ p.categoriaNombre || '—' }}</td>
+                <td class="num">{{ opciones(p).length }}</td>
+                <td class="num">{{ precioDesde(p) !== null ? (precioDesde(p) | currency: 'PEN' : 'S/ ') : '—' }}</td>
+                <td class="num"><span class="g-chip" [class.error]="stockTotal(p) <= 0" [class.aviso]="stockTotal(p) > 0 && stockTotal(p) <= 5" [class.ok]="stockTotal(p) > 5">{{ stockTotal(p) }}</span></td>
+                <td>
+                  <label class="g-switch" [attr.aria-label]="(p.publicado ? 'Ocultar ' : 'Publicar ') + p.nombre">
+                    <input type="checkbox" [checked]="p.publicado" (change)="alternarPublicado(p)" /><i></i>
+                  </label>
+                </td>
+                <td class="acc">
+                  @if (porEliminar() === p.id) {
+                    <span class="confirma">¿Eliminar?</span>
+                    <button type="button" class="g-btn peligro mini" [disabled]="eliminando()" (click)="eliminar(p)">Sí</button>
+                    <button type="button" class="g-btn sec mini" (click)="porEliminar.set(null)">No</button>
+                  } @else {
+                    <button type="button" class="g-enlace" (click)="abrirEditor(p)">Editar</button>
+                    <button type="button" class="g-enlace rojo" (click)="porEliminar.set(p.id)">Eliminar</button>
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      @if (totalPaginas() > 1) { <app-paginacion [pagina]="pagina()" [totalPaginas]="totalPaginas()" (cambio)="pagina.set($event)" /> }
+    } @else {
+      <div class="g-tarjeta g-vacio">
+        <p>{{ productos()!.length ? 'Ningún producto coincide con los filtros.' : 'Todavía no hay productos.' }}</p>
+        @if (!productos()!.length) { <button type="button" class="g-btn" (click)="abrirEditor(null)">Crear el primero</button> }
+      </div>
+    }
+  }
+
+  <app-panel-lateral [abierto]="abierto()" [titulo]="editando() ? 'Editar producto' : 'Nuevo producto'" ancho="40rem" (cerrar)="cerrarEditor()">
+    @if (abierto()) {
+      @if (origen(); as o) {
+        <a class="volver-producto en-panel" [routerLink]="['/productos', o.id]">← Regresar al producto</a>
+      }
+      <form [formGroup]="form" (ngSubmit)="guardar()" novalidate>
+        <div class="g-campo">
+          <label for="p-nombre">Nombre</label>
+          <input id="p-nombre" formControlName="nombre" [class.invalido]="mensaje(form.controls.nombre)" placeholder="Ej.: Melamina Azul Marino" />
+          @if (mensaje(form.controls.nombre); as m) { <p class="error-campo">{{ m }}</p> }
+        </div>
+        <div class="g-campo">
+          <label for="p-desc">Descripción</label>
+          <textarea id="p-desc" formControlName="descripcion" placeholder="Una o dos frases que ayuden a elegir"></textarea>
+        </div>
+        <div class="g-fila2">
+          <div class="g-campo">
+            <label for="p-cat">Categoría</label>
+            <select id="p-cat" formControlName="categoriaId" [class.invalido]="mensaje(form.controls.categoriaId)">
+              <option [ngValue]="0" disabled>Elige una categoría</option>
+              @for (c of categorias(); track c.id) { <option [ngValue]="c.id">{{ c.padreId ? '— ' : '' }}{{ c.nombre }}</option> }
+            </select>
+            @if (form.controls.categoriaId.touched && form.controls.categoriaId.invalid) { <p class="error-campo">Elige una categoría.</p> }
+          </div>
+          <div class="g-campo">
+            <label for="p-marca">Marca</label>
+            <select id="p-marca" formControlName="marcaId">
+              <option [ngValue]="0">Sin marca</option>
+              @for (m of marcas(); track m.id) { <option [ngValue]="m.id">{{ m.nombre }}</option> }
+            </select>
+          </div>
+        </div>
+        <div class="g-campo">
+          <label for="p-img">Imagen principal (enlace)</label>
+          <div class="imagen-fila">
+            @if (urlImagen().trim() && !imagenRota()) { <img class="g-mini grande" [src]="urlImagen()" alt="Vista previa" (error)="imagenRota.set(true)" (load)="imagenRota.set(false)" /> } @else { <span class="g-mini grande" aria-hidden="true">🖼</span> }
+            <input id="p-img" formControlName="imagenUrl" [class.invalido]="mensaje(form.controls.imagenUrl)" placeholder="https://…/foto.jpg" (input)="imagenRota.set(false)" />
+          </div>
+          <p class="ayuda">{{ imagenRota() ? 'No se pudo cargar esa imagen; revisa el enlace.' : 'Pega el enlace de una foto. Si lo dejas vacío, la tienda dibuja una vista previa.' }}</p>
+        </div>
+        <label class="g-switch-fila">
+          <span class="g-switch"><input type="checkbox" formControlName="publicado" /><i></i></span>
+          <span>Visible en la tienda<small>Si lo apagas, los clientes no lo ven (queda como borrador).</small></span>
+        </label>
+        <div class="g-acciones-form">
+          <button type="submit" class="g-btn" [disabled]="guardando()">{{ guardando() ? 'Guardando…' : editando() ? 'Guardar cambios' : 'Crear producto' }}</button>
+          <button type="button" class="g-btn sec" (click)="cerrarEditor()">Cerrar</button>
+        </div>
+      </form>
+
+      @if (editando(); as prod) {
+        <hr />
+        <section class="opciones">
+          <header class="cab-op">
+            <h3>Opciones de «{{ prod.nombre }}»</h3>
+            @if (!varianteAbierta()) { <button type="button" class="g-btn sec mini" (click)="abrirVariante(null)">+ Agregar opción</button> }
+          </header>
+          <p class="ayuda">Cada opción es una combinación vendible: un color y una medida con su precio y stock. Para mover el stock de una opción existente usa <strong>Inventario</strong>.</p>
+
+          @if (varianteAbierta(); as va) {
+            <form class="form-var" [formGroup]="formVar" (ngSubmit)="guardarVariante()" novalidate>
+              <h4>{{ va.id ? 'Editar opción' : 'Nueva opción' }}</h4>
+              <div class="g-fila2">
+                <div class="g-campo"><label for="v-sku">Código (SKU)</label><input id="v-sku" formControlName="sku" [class.invalido]="mensaje(formVar.controls.sku)" placeholder="MELM-AZM-18MM" />@if (mensaje(formVar.controls.sku); as m) { <p class="error-campo">{{ m }}</p> }</div>
+                <div class="g-campo"><label for="v-precio">Precio (S/)</label><input id="v-precio" type="number" min="0" step="0.10" formControlName="precioVenta" [class.invalido]="mensaje(formVar.controls.precioVenta)" />@if (mensaje(formVar.controls.precioVenta); as m) { <p class="error-campo">{{ m }}</p> }</div>
+              </div>
+              <div class="g-fila2">
+                <div class="g-campo">
+                  <label for="v-stock">Stock</label>
+                  <input id="v-stock" type="number" min="0" step="1" formControlName="stock" [readonly]="!!va.id" />
+                  @if (va.id) { <p class="ayuda">Para cambiarlo usa Inventario, así queda el historial.</p> }
+                </div>
+                <div class="g-campo"><label for="v-img">Imagen de esta opción (enlace)</label><input id="v-img" formControlName="imagenUrl" placeholder="Opcional" /></div>
+              </div>
+              <div class="g-campo">
+                <span class="etq">Características</span>
+                @for (a of atributos(); track $index) {
+                  <div class="attr-fila">
+                    <input [value]="a.clave" list="atributos-comunes" placeholder="Color, Medida…" aria-label="Nombre de la característica" (input)="ponerAtributo($index, 'clave', $any($event.target).value)" />
+                    <input [value]="a.valor" placeholder="Azul marino, 2.14 x 2.50 m…" aria-label="Valor de la característica" (input)="ponerAtributo($index, 'valor', $any($event.target).value)" />
+                    <button type="button" class="g-enlace rojo" aria-label="Quitar característica" (click)="quitarAtributo($index)">×</button>
+                  </div>
+                }
+                <datalist id="atributos-comunes">@for (c of atributosComunes; track c) { <option [value]="c"></option> }</datalist>
+                <button type="button" class="g-enlace" (click)="agregarAtributo()">+ Otra característica</button>
+              </div>
+              <div class="g-acciones-form">
+                <button type="submit" class="g-btn" [disabled]="guardandoVariante()">{{ guardandoVariante() ? 'Guardando…' : 'Guardar opción' }}</button>
+                <button type="button" class="g-btn sec" (click)="varianteAbierta.set(null)">Cancelar</button>
+              </div>
+            </form>
+          }
+
+          @if (opciones(prod).length) {
+            <ul class="lista-op">
+              @for (v of opciones(prod); track v.id) {
+                <li>
+                  <div class="info"><strong>{{ v.sku }}</strong><small>{{ atributosTexto(v) || 'Sin características' }}</small></div>
+                  <div class="num-op"><strong>{{ v.precioVenta | currency: 'PEN' : 'S/ ' }}</strong><span class="g-chip" [class.error]="v.stock <= 0" [class.aviso]="v.stock > 0 && v.stock <= 5" [class.ok]="v.stock > 5">{{ v.stock }} u.</span></div>
+                  <div class="acc-op">
+                    @if (porEliminarVariante() === v.id) {
+                      <button type="button" class="g-btn peligro mini" [disabled]="eliminando()" (click)="eliminarVariante(v)">Eliminar</button>
+                      <button type="button" class="g-btn sec mini" (click)="porEliminarVariante.set(null)">No</button>
+                    } @else {
+                      <button type="button" class="g-enlace" (click)="abrirVariante(v)">Editar</button>
+                      <button type="button" class="g-enlace rojo" (click)="porEliminarVariante.set(v.id)">Quitar</button>
+                    }
+                  </div>
+                </li>
+              }
+            </ul>
+          } @else if (!varianteAbierta()) {
+            <p class="g-vacio chico">Este producto aún no tiene opciones. Sin ellas no se puede comprar.</p>
+          }
+        </section>
+      }
+    }
+  </app-panel-lateral>
+</div>

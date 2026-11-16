@@ -1,0 +1,172 @@
+<section class="portada" aria-labelledby="titulo-portada" (pointermove)="inclinar($event)" (pointerleave)="inclinar(null)">
+  <div class="contenedor portada-fila">
+    <div class="mensaje">
+      <h1 id="titulo-portada">Todo para tu mueble, en un solo lugar.</h1>
+      <p>Melamina, madera y ferretería de Aglome Perú, con precios y stock a la vista. Elige el color y mira qué hay.</p>
+
+      <div class="muestras" role="radiogroup" aria-label="Color de melamina">
+        @for (m of muestras; track m.nombre) {
+          <button
+            type="button"
+            role="radio"
+            class="muestra"
+            [class.elegida]="m.nombre === elegida().nombre"
+            [attr.aria-checked]="m.nombre === elegida().nombre"
+            [attr.aria-label]="m.nombre"
+            [style.--c]="m.color"
+            (click)="elegida.set(m)"
+          ></button>
+        }
+      </div>
+
+      <div class="botones">
+        <a class="btn grande" routerLink="/productos" [queryParams]="{ texto: 'melamina', color: elegida().nombre }">Ver melamina {{ elegida().nombre.toLowerCase() }}</a>
+        <a class="btn secundario claro grande" routerLink="/productos">Todo el catálogo</a>
+      </div>
+    </div>
+
+    <div class="tableros" aria-hidden="true" [style.--gx]="giro().x" [style.--gy]="giro().y">
+      <div class="tablero atras"></div>
+      <div class="tablero frente" [style.--tono]="elegida().color">
+        @for (m of [elegida()]; track m.nombre) { <span>{{ m.nombre }}</span><i class="brillo"></i> }
+      </div>
+    </div>
+  </div>
+</section>
+
+@if (categorias().length) {
+  <div class="cinta" aria-hidden="true">
+    <div class="carril">
+      @for (copia of [0, 1, 2, 3, 4, 5, 6]; track copia) {
+        <div class="grupo">
+          @for (c of categorias(); track c.id) {
+            <span>{{ c.nombre }}</span><i></i>
+          }
+        </div>
+      }
+    </div>
+  </div>
+}
+
+@if (categorias().length) {
+  <section class="bloque">
+    <div class="contenedor">
+      <h2>Compra por categoría</h2>
+      <div class="categorias">
+        @for (c of categorias(); track c.id; let i = $index) {
+          <div class="envoltura" revelar [style.--i]="i">
+            <a class="categoria" routerLink="/productos" [queryParams]="{ categoriaId: c.id }">
+              <span class="nombre">{{ c.nombre }}</span>
+              @if (c.hijas.length) { <span class="subs">{{ subnombres(c.hijas) }}</span> }
+              <span class="ir" aria-hidden="true">Ver productos<b>→</b></span>
+            </a>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+@if (destacados() === null || destacados()!.length) {
+  <section class="bloque claro">
+    <div class="contenedor">
+      <div class="titulo-fila" revelar>
+        <h2>Del catálogo</h2>
+        <div class="flechas">
+          <button type="button" aria-label="Anteriores" (click)="mover(-1)">‹</button>
+          <button type="button" aria-label="Siguientes" (click)="mover(1)">›</button>
+        </div>
+        <a routerLink="/productos">Ver todo</a>
+      </div>
+      <div class="pista" revelar #pista tabindex="0" aria-label="Productos del catálogo">
+        @if (destacados(); as lista) {
+          @for (p of lista; track p.id) {
+            <div class="item"><app-producto-card [producto]="p" /></div>
+          }
+        } @else {
+          @for (i of [1, 2, 3, 4]; track i) { <div class="item esqueleto"></div> }
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<section class="bloque">
+  <div class="contenedor ventajas">
+    <div revelar [style.--i]="0">
+      <h3>Precio y stock a la vista</h3>
+      <p>Mira cuánto cuesta y cuántas unidades quedan antes de decidir. Sin llamadas.</p>
+    </div>
+    <div revelar [style.--i]="1">
+      <h3>Busca por color y medida</h3>
+      <p>Filtra el catálogo por categoría, marca, color, medida y precio hasta encontrar justo lo que buscas.</p>
+    </div>
+    <div revelar [style.--i]="2">
+      <h3>Sigue tu pedido</h3>
+      <p>Desde tu cuenta ves en qué paso va cada compra, desde confirmada hasta entregada.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bloque claro" id="nosotros">
+  <div class="contenedor nosotros">
+    <div class="nos-texto" revelar>
+      <h2>Somos {{ negocio.nombre }}</h2>
+      <p class="lead"><strong>{{ negocio.razonSocial }}</strong> es una empresa de Chimbote, Áncash, que vende aglomerados, herramientas y accesorios al por mayor y menor para proyectos de construcción y carpintería.</p>
+      <ul class="cifras">
+        <li><strong>{{ anios }}</strong><span>años atendiendo en Chimbote</span></li>
+        <li><strong>{{ negocio.sedes.length }}</strong><span>sedes</span></li>
+        <li><strong>Mayor y menor</strong><span>venta para empresas y particulares</span></li>
+      </ul>
+    </div>
+    <figure class="nos-foto" revelar [style.--i]="1">
+      <img src="sedes/distribuidor.jpg" alt="Aglome Perú, distribuidor de aglomerados, herramientas y accesorios" loading="lazy" />
+    </figure>
+  </div>
+  <div class="contenedor mision-vision">
+    <article revelar [style.--i]="0">
+      <h3>Nuestra misión</h3>
+      <p>{{ negocio.mision }}</p>
+    </article>
+    <article revelar [style.--i]="1">
+      <h3>Nuestra visión</h3>
+      <p>{{ negocio.vision }}</p>
+    </article>
+  </div>
+</section>
+
+<section class="bloque" id="sedes">
+  <div class="contenedor">
+    <h2 revelar>Visítanos en nuestras sedes</h2>
+    <div class="sedes">
+      @for (sede of negocio.sedes; track sede.nombre; let i = $index) {
+        <article class="sede" revelar [style.--i]="i">
+          <div class="sede-foto"><img [src]="sede.foto" [alt]="'Fachada de la sede ' + sede.nombre" loading="lazy" /></div>
+          <div class="sede-datos">
+            <h3>{{ sede.nombre }}</h3>
+            <p class="direccion">{{ sede.direccion }}</p>
+            <dl>
+              @for (h of sede.horarios; track h.dias) { <dt>{{ h.dias }}</dt><dd>{{ h.horas }}</dd> }
+            </dl>
+            <a class="btn secundario" [href]="mapaDe(sede)" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </article>
+      }
+    </div>
+    @if (negocio.correo) {
+      <p class="correo-sedes" revelar>¿Prefieres escribirnos? <a [href]="'mailto:' + negocio.correo">{{ negocio.correo }}</a></p>
+    }
+  </div>
+</section>
+
+@if (!auth.autenticado()) {
+  <section class="invitacion">
+    <div class="contenedor invitacion-fila" revelar>
+      <div>
+        <h2>Crea tu cuenta y compra más rápido</h2>
+        <p>Guarda tu carrito, confirma tus pedidos y revisa su estado cuando quieras.</p>
+      </div>
+      <a routerLink="/registro" class="btn grande">Crear cuenta</a>
+    </div>
+  </section>
+}

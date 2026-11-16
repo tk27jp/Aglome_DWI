@@ -1,0 +1,149 @@
+@use 'variables' as v;
+
+.portada {
+  background: v.$color-primario;
+  color: #fff;
+  padding: 2.25rem 0;
+
+  h1 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); margin-bottom: 0.4rem; }
+  p { margin: 0; max-width: 40rem; opacity: 0.9; }
+}
+
+.cuerpo {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding-block: 1.75rem 3rem;
+
+  @include v.tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.abrir-filtros {
+  display: none;
+  @include v.tablet { display: block; }
+}
+
+.filtros {
+  background: v.$color-fondo;
+  border: 1px solid v.$color-borde;
+  border-radius: v.$radio;
+  padding: 1rem 1.1rem;
+  position: sticky;
+  top: 5.25rem;
+
+  h2 { font-size: 1.05rem; }
+
+  label, fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0 0 0.85rem;
+    padding: 0;
+    border: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: v.$color-texto-suave;
+  }
+  legend { padding: 0; margin-bottom: 0.25rem; }
+  input, select { width: 100%; font-weight: 400; }
+  label.check {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    input { width: auto; margin: 0; }
+  }
+
+  @include v.tablet {
+    display: none;
+    position: static;
+    &.abierto { display: block; }
+  }
+}
+
+.rango {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  input { min-width: 0; }
+}
+
+.acciones { display: flex; gap: 0.5rem; }
+
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.conteo { margin: 0; color: v.$color-texto-suave; }
+
+.orden {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: v.$color-texto-suave;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.35rem 0.25rem 0.7rem;
+    background: v.$color-primario-claro;
+    color: v.$color-primario-oscuro;
+    border-radius: v.$radio;
+    font-size: 0.85rem;
+  }
+  button {
+    border: 0;
+    background: none;
+    color: inherit;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 0.25rem;
+  }
+}
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.1rem;
+  transition: opacity 0.15s;
+  &.cargando { opacity: 0.55; }
+}
+
+.esqueleto {
+  height: 20rem;
+  background: linear-gradient(100deg, #e9eaef 30%, #f5f5f8 50%, #e9eaef 70%) 0 0 / 200% 100%;
+  border-radius: v.$radio;
+  animation: brillo 1.2s linear infinite;
+}
+
+@keyframes brillo {
+  to { background-position: -200% 0; }
+}
+
+.vacio {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: v.$color-fondo;
+  border: 1px dashed v.$color-borde;
+  p { color: v.$color-texto-suave; margin-bottom: 1.25rem; }
+}

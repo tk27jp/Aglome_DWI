@@ -1,0 +1,45 @@
+<div class="contenedor pagina">
+  <h1>Tu carrito</h1>
+
+  @if (carrito.vacio()) {
+    <div class="vacio">
+      <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2.5l2.2 11h10.6l2-8H6.4" /><circle cx="9.5" cy="19.5" r="1.4" /><circle cx="17" cy="19.5" r="1.4" /></svg>
+      <h2>Tu carrito está vacío</h2>
+      <p>Explora el catálogo y agrega lo que necesitas para tu proyecto.</p>
+      <a routerLink="/productos" class="btn">Ver productos</a>
+    </div>
+  } @else {
+    <div class="disposicion">
+      <section aria-label="Productos en el carrito">
+        @if (error(); as e) { <div class="aviso error" role="alert">{{ e }}</div> }
+        <ul class="lista">
+          @for (i of carrito.carrito()!.items; track i.id) {
+            <li class="fila">
+              <div class="datos">
+                <strong>{{ i.productoNombre }}</strong>
+                <span class="meta">SKU {{ i.sku }}</span>
+                <span class="meta">{{ i.precioUnitario | currency: 'PEN' : 'S/ ' }} c/u</span>
+              </div>
+              <div class="cantidad" role="group" [attr.aria-label]="'Cantidad de ' + i.productoNombre">
+                <button type="button" aria-label="Quitar una unidad" (click)="cambiar(i.id, i.cantidad - 1)">−</button>
+                <span>{{ i.cantidad }}</span>
+                <button type="button" aria-label="Agregar una unidad" (click)="cambiar(i.id, i.cantidad + 1)">+</button>
+              </div>
+              <span class="subtotal">{{ i.subtotal | currency: 'PEN' : 'S/ ' }}</span>
+              <button type="button" class="quitar" [attr.aria-label]="'Quitar ' + i.productoNombre" (click)="quitar(i.id)">Quitar</button>
+            </li>
+          }
+        </ul>
+        <a routerLink="/productos" class="seguir">← Seguir comprando</a>
+      </section>
+
+      <aside class="resumen" aria-label="Resumen del pedido">
+        <h2>Resumen</h2>
+        <div class="linea"><span>Productos</span><span>{{ carrito.cantidad() }}</span></div>
+        <div class="linea total"><span>Total</span><strong>{{ carrito.total() | currency: 'PEN' : 'S/ ' }}</strong></div>
+        <button type="button" class="btn" [disabled]="confirmando()" (click)="confirmar()">{{ confirmando() ? 'Confirmando…' : 'Confirmar pedido' }}</button>
+        <p class="nota">Al confirmar, el stock se reserva para ti y el pedido queda registrado en tu cuenta.</p>
+      </aside>
+    </div>
+  }
+</div>

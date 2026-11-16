@@ -17,4 +17,5 @@ public class PedidoDTO {
     private String estado;
     private BigDecimal total;
     private List<DetallePedidoDTO> detalles;
+    private List<String> siguientesEstados;   // a qué estados se puede pasar desde el actual
 }

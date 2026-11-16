@@ -1,0 +1,62 @@
+@use 'variables' as v;
+
+// Piezas visuales compartidas por todas las pantallas del panel de gestión.
+// Van en el CSS global y dentro de .gp (la raíz del panel) para no chocar con la tienda.
+.gp {
+  // ── Cabecera de cada pantalla
+  .g-titulo { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 0.75rem 1.5rem; margin-bottom: 1.25rem;
+    h1 { margin: 0; font-size: 2.4rem; line-height: 1.05; }
+    p { margin: 0.15rem 0 0; color: v.$color-texto-suave; }
+    .acciones { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; } }
+
+  // ── Botones
+  .g-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border: 1px solid v.$color-primario; border-radius: v.$radio; background: v.$color-primario; color: #fff; font: inherit; font-weight: 600; font-size: 0.92rem; cursor: pointer; transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+    &:hover:not(:disabled) { background: v.$color-primario-oscuro; text-decoration: none; box-shadow: 0 6px 16px rgb(0 73 175 / 25%); }
+    &:active:not(:disabled) { transform: scale(0.97); }
+    &:disabled { opacity: 0.45; cursor: not-allowed; }
+    &.sec { background: #fff; color: v.$color-texto; border-color: v.$color-borde; &:hover:not(:disabled) { background: v.$color-fondo-seccion; box-shadow: none; } }
+    &.peligro { background: v.$color-error; border-color: v.$color-error; &:hover:not(:disabled) { background: #a21f1f; box-shadow: none; } }
+    &.mini { padding: 0.3rem 0.65rem; font-size: 0.82rem; } }
+  .g-enlace { background: none; border: 0; padding: 0; font: inherit; font-size: 0.88rem; font-weight: 600; color: v.$color-primario; cursor: pointer; &:hover { text-decoration: underline; } &.rojo { color: v.$color-error; } }
+
+  // ── Barra de herramientas y tarjetas
+  .g-barra { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 1rem; padding: 0.75rem; background: #fff; border: 1px solid v.$color-borde; border-radius: v.$radio;
+    input[type='search'], input[type='text'] { flex: 1 1 14rem; min-width: 0; } select { flex: 0 1 12rem; } .espacio { margin-left: auto; } }
+  .g-tarjeta { background: #fff; border: 1px solid v.$color-borde; border-radius: v.$radio; padding: 1.25rem; }
+  .g-vacio { padding: 2.5rem 1rem; text-align: center; color: v.$color-texto-suave; }
+
+  // ── Tabla
+  .g-tabla { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: #fff;
+    th { text-align: left; padding: 0.65rem 0.8rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: v.$color-texto-suave; background: v.$color-fondo-seccion; border-bottom: 1px solid v.$color-borde; white-space: nowrap; }
+    td { padding: 0.65rem 0.8rem; border-bottom: 1px solid v.$color-borde; vertical-align: middle; }
+    tbody tr { transition: background 0.15s; &:hover { background: #f8f9fc; } }
+    .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .acc { text-align: right; white-space: nowrap; display: table-cell; > * + * { margin-left: 0.75rem; } } }
+  .g-envoltura { overflow-x: auto; background: #fff; border: 1px solid v.$color-borde; border-radius: v.$radio; }
+
+  // ── Etiquetas
+  .g-chip { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px; background: v.$color-primario-claro; color: v.$color-primario-oscuro; font-size: 0.78rem; font-weight: 600; white-space: nowrap;
+    &.ok { background: #e6f4ea; color: v.$color-ok; } &.aviso { background: v.$color-madera-claro; color: v.$color-aviso; } &.error { background: #fdecec; color: v.$color-error; } &.gris { background: v.$color-fondo-seccion; color: v.$color-texto-suave; } }
+
+  // ── Interruptor
+  .g-switch { position: relative; display: inline-block; width: 2.5rem; height: 1.4rem; flex: none;
+    input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; z-index: 1; }
+    i { position: absolute; inset: 0; border-radius: 999px; background: #c9ced9; transition: background 0.2s; &::after { content: ''; position: absolute; top: 2px; left: 2px; width: calc(1.4rem - 4px); height: calc(1.4rem - 4px); border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / 30%); transition: transform 0.2s cubic-bezier(0.3, 1.4, 0.5, 1); } }
+    input:checked + i { background: v.$color-ok; &::after { transform: translateX(1.1rem); } }
+    input:focus-visible + i { outline: 2px solid v.$color-primario; outline-offset: 2px; } }
+
+  // ── Formularios
+  .g-campo { display: grid; gap: 0.3rem; margin-bottom: 0.9rem; min-width: 0;
+    label, .etq { font-weight: 600; font-size: 0.86rem; }
+    input, select, textarea { width: 100%; font: inherit; padding: 0.55rem 0.7rem; border: 1px solid v.$color-borde; border-radius: v.$radio; background: #fff; color: v.$color-texto; &:focus-visible { outline: 2px solid v.$color-primario; outline-offset: 1px; } }
+    textarea { min-height: 5.5rem; resize: vertical; }
+    input.invalido, select.invalido { border-color: v.$color-error; }
+    .error-campo { margin: 0; font-size: 0.8rem; color: v.$color-error; }
+    .ayuda { margin: 0; font-size: 0.78rem; color: v.$color-texto-suave; } }
+  .g-fila2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 0.9rem; @include v.movil { grid-template-columns: 1fr; } }
+  .g-acciones-form { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .g-switch-fila { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; font-weight: 600; font-size: 0.92rem; small { display: block; font-weight: 400; color: v.$color-texto-suave; } }
+
+  // ── Miniatura
+  .g-mini { width: 3rem; height: 3rem; flex: none; object-fit: cover; border-radius: v.$radio; background: v.$color-fondo-seccion; border: 1px solid v.$color-borde; display: grid; place-items: center; color: v.$color-secundario; font-family: v.$fuente-titulo; font-weight: 700; font-size: 1.2rem; overflow: hidden; }
+}

@@ -21,11 +21,7 @@ public class PedidoController {
     // POST /api/pedidos/confirmar → convierte el carrito actual en un pedido
     @PostMapping("/confirmar")
     public ResponseEntity<?> confirmarCompra(Authentication authentication) {
-        try {
-            return ResponseEntity.ok(pedidoService.confirmarCompra(authentication.getName()));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        return ResponseEntity.ok(pedidoService.confirmarCompra(authentication.getName()));
     }
 
     // GET /api/pedidos → ver mi historial de compras
@@ -43,10 +39,12 @@ public class PedidoController {
     // GET /api/pedidos/{id} → ver el detalle de un pedido específico mío
     @GetMapping("/{id}")
     public ResponseEntity<?> obtener(Authentication authentication, @PathVariable UUID id) {
-        try {
-            return ResponseEntity.ok(pedidoService.obtenerPorId(authentication.getName(), id));
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(404).body(e.getMessage());
-        }
+        return ResponseEntity.ok(pedidoService.obtenerPorId(authentication.getName(), id));
+    }
+
+    // POST /api/pedidos/{id}/cancelar → cancelo mi pedido (solo si aún no está en preparación)
+    @PostMapping("/{id}/cancelar")
+    public ResponseEntity<?> cancelar(Authentication authentication, @PathVariable UUID id) {
+        return ResponseEntity.ok(pedidoService.cancelarMiPedido(authentication.getName(), id));
     }
 }

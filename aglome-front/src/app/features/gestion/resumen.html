@@ -1,0 +1,272 @@
+<div class="gp">
+  <header class="g-titulo">
+    <div>
+      <h1>{{ saludo() }}, {{ auth.primerNombre() }}</h1>
+      <p class="fecha">{{ fechaLarga() }}</p>
+    </div>
+    <div class="acciones">
+      <button type="button" class="g-btn sec" [disabled]="cargando()" (click)="cargar()">
+        <svg class="girar" [class.activo]="cargando()" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5" /></svg>
+        {{ cargando() ? 'Actualizando…' : 'Actualizar' }}
+      </button>
+      <button type="button" class="g-btn" [disabled]="!actuales().length" (click)="exportar()">Exportar pedidos (CSV)</button>
+    </div>
+  </header>
+
+  @if (error(); as e) {
+    <div class="aviso error" role="alert">{{ e }} <button type="button" class="g-btn sec mini" (click)="cargar()">Reintentar</button></div>
+  } @else if (pedidos() === null) {
+    <div class="esqueleto" aria-busy="true"></div>
+  } @else {
+    @if (porAtender() > 0) {
+      <a class="por-atender" routerLink="../pedidos">
+        <span class="punto" aria-hidden="true"></span>
+        <strong>{{ porAtender() }} {{ porAtender() === 1 ? 'pedido espera' : 'pedidos esperan' }} tu atención</strong>
+        <span>Confirmados o en preparación · Ir a pedidos →</span>
+      </a>
+    }
+
+    <!-- Barra de fechas -->
+    <section class="fechas g-tarjeta" aria-label="Período">
+      <div class="chips" role="group" aria-label="Períodos rápidos">
+        @for (p of presets; track p.valor) {
+          <button type="button" [class.activo]="preset() === p.valor" (click)="aplicar(p.valor)">{{ p.texto }}</button>
+        }
+      </div>
+      <div class="rango">
+        <label>Desde <input type="date" [value]="desdeTxt()" [max]="hastaTxt()" (change)="cambiarFecha('desde', $any($event.target).value)" /></label>
+        <label>Hasta <input type="date" [value]="hastaTxt()" [min]="desdeTxt()" (change)="cambiarFecha('hasta', $any($event.target).value)" /></label>
+      </div>
+      <p class="comparando"><strong>{{ dias() }} {{ dias() === 1 ? 'día' : 'días' }}</strong> · comparado con {{ textoPrevio() }}</p>
+    </section>
+
+    <!-- Indicadores -->
+    <section class="kpis" aria-label="Indicadores">
+      @for (k of kpis(); track k.id; let i = $index) {
+        <article class="kpi" [style.--i]="i">
+          <span class="etq">{{ k.etiqueta }}</span>
+          <strong><app-contador [valor]="k.valor" [formato]="k.formato" /></strong>
+          <div class="pie-kpi">
+            @if (k.delta === null) {
+              <span class="delta neutro">nuevo</span>
+            } @else {
+              <span class="delta" [class]="'delta ' + claseDelta(k.delta, k.invertido)">{{ k.delta > 0 ? '▲' : k.delta < 0 ? '▼' : '=' }} {{ fmt(k.delta) }}</span>
+            }
+            <small>{{ k.nota }}</small>
+          </div>
+          @if (k.spark.length > 1) {
+            <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none" aria-hidden="true"><path [attr.d]="spark(k.spark)" /></svg>
+          }
+        </article>
+      }
+      @if (dash(); as d) {
+        <a class="kpi stock" [class.ok]="d.variantesConStockBajo === 0" routerLink="../inventario" [style.--i]="5">
+          <span class="etq">Stock bajo</span>
+          <strong><app-contador [valor]="d.variantesConStockBajo" /></strong>
+          <div class="pie-kpi"><small>{{ d.variantesConStockBajo === 1 ? 'opción por reponer' : 'opciones por reponer' }}</small></div>
+        </a>
+      }
+    </section>
+
+    <div class="rejilla">
+      <!-- Línea de ventas -->
+      <section class="g-tarjeta c8">
+        <header class="cab-tarjeta">
+          <h2>{{ metrica() === 'ingresos' ? 'Ingresos' : 'Pedidos' }} en el tiempo</h2>
+          <div class="alterna" role="group" aria-label="Qué mostrar">
+            <button type="button" [class.activo]="metrica() === 'ingresos'" (click)="metrica.set('ingresos')">Ingresos</button>
+            <button type="button" [class.activo]="metrica() === 'pedidos'" (click)="metrica.set('pedidos')">Pedidos</button>
+          </div>
+        </header>
+        @if (grafico().hayVentas) {
+          <div class="lienzo">
+            <svg [attr.viewBox]="'0 0 ' + W + ' ' + H" role="img" [attr.aria-label]="'Gráfico de ' + metrica() + ' del período'" (pointermove)="mover($event)" (pointerleave)="hover.set(null)">
+              <defs>
+                <linearGradient id="relleno" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0049af" stop-opacity="0.28" /><stop offset="100%" stop-color="#0049af" stop-opacity="0" /></linearGradient>
+              </defs>
+              @for (t of grafico().ticks; track $index) {
+                <line class="rejilla-h" [attr.x1]="56" [attr.x2]="W - 14" [attr.y1]="t.y" [attr.y2]="t.y" />
+                <text class="eje" x="48" [attr.y]="t.y + 4" text-anchor="end">{{ t.texto }}</text>
+              }
+              @for (e of grafico().etiquetas; track e.i) {
+                <text class="eje" [attr.x]="e.x" [attr.y]="H - 10" text-anchor="middle">{{ e.texto }}</text>
+              }
+              <path class="area" [attr.d]="grafico().area" fill="url(#relleno)" />
+              <path class="linea" [attr.d]="grafico().linea" />
+              @if (grafico().xy.length <= 45) {
+                @for (q of grafico().xy; track $index) { <circle class="nodo" [attr.cx]="q.x" [attr.cy]="q.y" r="2.6" /> }
+              }
+              @if (punto(); as p) {
+                <line class="guia" [attr.x1]="p.x" [attr.x2]="p.x" [attr.y1]="14" [attr.y2]="grafico().base" />
+                <circle class="foco" [attr.cx]="p.x" [attr.cy]="p.y" r="5.5" />
+              }
+            </svg>
+            @if (punto(); as p) {
+              <div class="tip" [style.left.%]="(p.x / W) * 100" [style.top.%]="(p.y / H) * 100" [class.izq]="p.x > W * 0.7">
+                <strong>{{ p.d.detalle }}</strong>
+                <span>{{ p.d.ingresos | currency: 'PEN' : 'S/ ' }}</span>
+                <span>{{ p.d.pedidos }} {{ p.d.pedidos === 1 ? 'pedido' : 'pedidos' }}</span>
+              </div>
+            }
+          </div>
+          <p class="nota-g">Agrupado por {{ datosSerie().granularidad === 'dia' ? 'día' : datosSerie().granularidad === 'semana' ? 'semana' : 'mes' }}. Pasa el cursor sobre el gráfico para ver cada punto.</p>
+        } @else {
+          <p class="g-vacio">No hay ventas en este período. Prueba con un rango más amplio.</p>
+        }
+      </section>
+
+      <!-- Estados -->
+      <section class="g-tarjeta c4">
+        <h2>Estado de los pedidos</h2>
+        @if (estados().length) {
+          <div class="dona-caja">
+            <svg class="dona" viewBox="0 0 42 42" role="img" aria-label="Pedidos por estado">
+              <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#eef0f5" stroke-width="6" />
+              @for (s of estados(); track s.estado; let i = $index) {
+                <circle class="trozo" cx="21" cy="21" r="15.9155" fill="none" [attr.stroke]="s.color" stroke-width="6" [attr.stroke-dasharray]="s.pct + ' ' + (100 - s.pct)" [attr.stroke-dashoffset]="s.desfase" [style.--i]="i" />
+              }
+            </svg>
+            <div class="centro"><strong><app-contador [valor]="actuales().length" /></strong><small>pedidos</small></div>
+          </div>
+          <ul class="leyenda">
+            @for (s of estados(); track s.estado) {
+              <li><i [style.background]="s.color"></i><span>{{ s.etiqueta }}</span><strong>{{ s.n }}</strong></li>
+            }
+          </ul>
+        } @else {
+          <p class="g-vacio">Sin pedidos en este período.</p>
+        }
+      </section>
+
+      <!-- Día de la semana + horas -->
+      <section class="g-tarjeta c8">
+        <header class="cab-tarjeta">
+          <h2>¿Cuándo compran?</h2>
+          @if (semana().mejor; as m) { <span class="g-chip ok">Mejor día: {{ m }}</span> }
+        </header>
+        <div class="dos-cols">
+          <div>
+            <h3>Ingresos por día</h3>
+            <div class="semana" role="img" aria-label="Ingresos por día de la semana">
+              @for (f of semana().filas; track f.dia; let i = $index) {
+                <div class="dia" [style.--i]="i" [class.mejor]="f.dia === semana().mejor">
+                  <span class="valor">{{ f.ingresos ? corto(f.ingresos) : '' }}</span>
+                  <div class="barra" [style.height.%]="f.alto" [title]="f.dia + ': ' + f.pedidos + ' pedidos'"></div>
+                  <span class="nom">{{ f.dia }}</span>
+                </div>
+              }
+            </div>
+          </div>
+          <div>
+            <h3>Pedidos por hora</h3>
+            <div class="calor" role="img" aria-label="Mapa de calor de pedidos por día y hora">
+              <div class="fila-calor cabeza"><span></span>@for (h of calor().horas; track h) { <span class="h">{{ h % 2 === 1 ? h : '' }}</span> }</div>
+              @for (f of calor().filas; track f.dia) {
+                <div class="fila-calor"><span class="d">{{ f.dia }}</span>@for (c of f.celdas; track c.hora) { <i [style.--n]="c.n / calor().max" [class.vacia]="c.n === 0" [title]="f.dia + ' ' + c.hora + ':00 · ' + c.n + ' pedidos'"></i> }</div>
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Meta del mes -->
+      <section class="g-tarjeta c4 meta">
+        <h2>Meta de {{ nombreMes() }}</h2>
+        <div class="anillo-caja">
+          <svg class="anillo" viewBox="0 0 42 42" role="img" [attr.aria-label]="'Avance de la meta: ' + avanceMeta().toFixed(0) + '%'">
+            <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#eef0f5" stroke-width="4.5" />
+            <circle class="progreso" cx="21" cy="21" r="15.9155" fill="none" stroke="#0049af" stroke-width="4.5" stroke-linecap="round" [attr.stroke-dasharray]="avanceMeta() + ' ' + (100 - avanceMeta())" stroke-dashoffset="25" [class.completa]="avanceMeta() >= 100" />
+          </svg>
+          <div class="centro"><strong>{{ avanceMeta().toFixed(0) }}%</strong></div>
+        </div>
+        <p class="detalle-meta"><strong>{{ ingresosMes() | currency: 'PEN' : 'S/ ' }}</strong> vendidos este mes</p>
+        @if (editandoMeta()) {
+          <form class="form-meta" (submit)="$event.preventDefault(); guardarMeta(m.value)">
+            <input #m type="number" min="0" step="100" [value]="meta() || ''" placeholder="Meta en soles" aria-label="Meta del mes en soles" />
+            <button type="submit" class="g-btn mini">Guardar</button>
+          </form>
+        } @else if (meta() > 0) {
+          <p class="nota-g">{{ avanceMeta() >= 100 ? '¡Meta cumplida! 🎉' : 'Faltan ' }}@if (avanceMeta() < 100) { <strong>{{ meta() - ingresosMes() | currency: 'PEN' : 'S/ ' }}</strong> para llegar a {{ meta() | currency: 'PEN' : 'S/ ' }}. }
+            <button type="button" class="g-enlace" (click)="editandoMeta.set(true)">Cambiar meta</button></p>
+        } @else {
+          <button type="button" class="g-btn sec mini" (click)="editandoMeta.set(true)">Definir meta del mes</button>
+        }
+      </section>
+
+      <!-- Más vendidos -->
+      <section class="g-tarjeta c4">
+        <h2>Más vendidos</h2>
+        @if (top().length) {
+          <ol class="ranking">
+            @for (p of top(); track p.nombre; let i = $index) {
+              <li [style.--i]="i">
+                <span class="pos">{{ i + 1 }}</span>
+                <div><span class="nombre">{{ p.nombre }}</span><span class="pista"><i [style.width.%]="p.ancho"></i></span><small>{{ p.unidades }} u. · {{ p.ingresos | currency: 'PEN' : 'S/ ' }}</small></div>
+              </li>
+            }
+          </ol>
+        } @else {
+          <p class="g-vacio">Sin ventas en este período.</p>
+        }
+      </section>
+
+      <!-- Categorías -->
+      <section class="g-tarjeta c4">
+        <h2>Ventas por categoría <small class="hist">histórico</small></h2>
+        @if (porCategoria().length) {
+          <ul class="barras">
+            @for (c of porCategoria(); track c.categoria; let i = $index) {
+              <li [style.--i]="i"><span class="nombre">{{ c.categoria }}</span><span class="pista"><i [style.width.%]="c.ancho"></i></span><strong>{{ c.unidades }}</strong></li>
+            }
+          </ul>
+        } @else {
+          <p class="g-vacio">Aún no hay ventas por categoría.</p>
+        }
+      </section>
+
+      <!-- Últimos pedidos -->
+      <section class="g-tarjeta c4">
+        <header class="cab-tarjeta"><h2>Últimos pedidos</h2><a routerLink="../pedidos" class="g-enlace">Ver todos</a></header>
+        @if (recientes().length) {
+          <ul class="actividad">
+            @for (p of recientes(); track p.id) {
+              <li>
+                <span class="marca-estado" [style.background]="p.estado === 'CANCELADO' ? '#fdecec' : '#e6eef9'" aria-hidden="true">#</span>
+                <div><strong>#{{ codigo(p.id) }}</strong><small>{{ haceCuanto(p.fecha) }} · {{ etiquetaEstado[p.estado] }}</small></div>
+                <span class="monto" [class.tachado]="p.estado === 'CANCELADO'">{{ p.total | currency: 'PEN' : 'S/ ' }}</span>
+              </li>
+            }
+          </ul>
+        } @else {
+          <p class="g-vacio">Todavía no hay pedidos.</p>
+        }
+      </section>
+
+      <!-- Stock bajo -->
+      @if (dash(); as d) {
+        <section class="g-tarjeta c12">
+          <header class="cab-tarjeta"><h2>Stock bajo</h2><a routerLink="../inventario" class="g-enlace">Ir al inventario</a></header>
+          @if (d.stockBajo.length) {
+            <div class="g-envoltura">
+              <table class="g-tabla">
+                <thead><tr><th>Producto</th><th>Código</th><th class="num">Quedan</th><th></th></tr></thead>
+                <tbody>
+                  @for (s of d.stockBajo; track s.varianteId) {
+                    <tr>
+                      <td>{{ s.producto }}</td>
+                      <td>{{ s.sku }}</td>
+                      <td class="num"><span class="g-chip" [class.error]="s.stock <= 0" [class.aviso]="s.stock > 0">{{ s.stock }}</span></td>
+                      <td class="acc"><a routerLink="../inventario" [queryParams]="{ buscar: s.producto }" class="g-enlace">Reponer</a></td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          } @else {
+            <p class="g-vacio">Todo el inventario tiene stock suficiente. ✅</p>
+          }
+        </section>
+      }
+    </div>
+  }
+</div>

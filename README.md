@@ -1,12 +1,15 @@
 # Aglome-tienda · API REST con Spring Boot
 
 Back-end de la plataforma web de **Aglome Perú**, una empresa de Chimbote (Perú) dedicada a la venta de madera, melamina y productos de ferretería.
-Proyecto académico del curso de **Back-end con Spring Boot**, que cubre dos unidades de aprendizaje:
+Proyecto académico del curso de **Back-end con Spring Boot**, que cubre dos unidades de aprendizaje y una etapa final de **mejora del back-end** (13 pasos, resumidos al final de este README):
 
 | Unidad | Tema | Qué se implementó |
 |---|---|---|
 | **1** | API REST con TDD | Controladores, servicios, inyección de dependencias, métodos HTTP y pruebas automáticas |
 | **2** | Back-end con bases de datos | JPA e Hibernate sobre PostgreSQL, JPQL, transacciones, Spring Security, roles y JWT |
+| **Mejora** | Pasos 1 a 13 | Errores globales, paginación, filtros, marcas, auditoría, flujo de pedidos, historial de stock, rol VENDEDOR, sesión segura, Swagger y 428 pruebas |
+
+**Estado actual:** 428 pruebas, 0 fallos · 15 controladores · ~70 rutas · 3 roles · listo para conectar el frontend en Angular.
 
 ---
 
@@ -14,9 +17,11 @@ Proyecto académico del curso de **Back-end con Spring Boot**, que cubre dos uni
 
 **El problema.** Aglome no tiene catálogo web ni una base de datos digital accesible: su inventario interno no está conectado a internet y la atención es 100 % por llamadas o visitas. Los clientes deben llamar para consultar disponibilidad, precios, colores y medidas, y pueden perder hasta medio día buscando el producto correcto. El personal (administradora y ejecutiva de ventas) se sobrecarga con llamadas repetitivas y no puede dedicarse a tareas de mayor valor.
 
-**La solución.** Una plataforma web formada por una **API REST** (este repositorio) y un **frontend en Angular** (siguiente etapa del curso) que servirá de vitrina digital: catálogo con fotos, precios y medidas, filtros por categoría, color y medida, botón de contacto por WhatsApp y mapa de ubicación.
+**La solución.** Una plataforma web formada por una **API REST** (este repositorio) y un **frontend en Angular** (siguiente etapa) que servirá de vitrina digital: catálogo con fotos, precios y medidas, filtros por categoría, marca, color y medida, botón de contacto por WhatsApp y mapa de ubicación.
 
-**Qué hace este back-end.** Guarda el catálogo (productos con variantes de color y medida, SKU, precio y stock) en PostgreSQL y lo entrega por una API REST. Además incluye carrito, pedidos y un panel administrativo (CRUD) protegido por roles y JWT.
+**Qué hace este back-end.** Guarda el catálogo (productos con marca, variantes de color y medida, SKU, precio y stock) en PostgreSQL y lo entrega por una API REST con paginación y filtros. Incluye carrito, pedidos con flujo de estados, historial de movimientos de stock, reportes y un panel administrativo con tres roles (`ADMIN`, `VENDEDOR`, `CLIENTE`) protegido con JWT, bloqueo por intentos fallidos y errores uniformes en JSON.
+
+**De dónde partimos.** La entrega de las Unidades 1 y 2 dejó una API funcional pero básica: 10 tablas, marca como texto libre, pedidos con 3 estados, borrado físico, errores como texto con `try/catch` en cada controlador, un administrador con contraseña escrita en el código y 49 pruebas. La etapa de mejora la convirtió en un back-end listo para producción académica.
 
 ---
 
@@ -25,139 +30,74 @@ Proyecto académico del curso de **Back-end con Spring Boot**, que cubre dos uni
 1. [Estructura del proyecto](#estructura-del-proyecto)
 2. [Tecnologías](#tecnologías)
 3. [Cómo ejecutar el proyecto](#cómo-ejecutar-el-proyecto)
-4. [Probar en el navegador (y por qué `/` sale en blanco)](#probar-en-el-navegador-y-por-qué--sale-en-blanco)
+4. [Probar en el navegador y con Swagger](#probar-en-el-navegador-y-con-swagger)
 5. [Pruebas automáticas](#pruebas-automáticas)
 6. [Demostración paso a paso con Thunder Client](#demostración-paso-a-paso-con-thunder-client)
 7. [Qué se guarda y cómo verlo en la base de datos](#qué-se-guarda-y-cómo-verlo-en-la-base-de-datos)
 8. [Lista de endpoints](#lista-de-endpoints)
-9. [Unidad 1: resumen](#unidad-1-resumen)
-10. [Unidad 2: explicación detallada](#unidad-2-explicación-detallada)
-11. [Problemas frecuentes](#problemas-frecuentes)
+9. [Reglas de negocio importantes](#reglas-de-negocio-importantes)
+10. [Roles y permisos](#roles-y-permisos)
+11. [Errores de la API](#errores-de-la-api)
+12. [Unidad 1: resumen](#unidad-1-resumen)
+13. [Unidad 2: explicación detallada](#unidad-2-explicación-detallada)
+14. [Mejoras del back-end (pasos 1 a 13)](#mejoras-del-back-end-pasos-1-a-13)
+15. [Problemas frecuentes](#problemas-frecuentes)
 
 ---
 
 ## Estructura del proyecto
 
-Así se ve el proyecto en el Explorer de VS Code. La carpeta que se abre en VS Code es la raíz del repositorio, `Aglome-tienda`, y el proyecto Maven está dentro de la carpeta `aglome-tienda`.
+La carpeta que se abre en VS Code es la raíz del repositorio, `Aglome-tienda`, y el proyecto Maven está dentro de la carpeta `aglome-tienda`.
 
 ```
 Aglome-tienda/                                 ← raíz del repositorio
 ├── README.md
-├── .vscode/
 └── aglome-tienda/                             ← proyecto Maven (aquí se ejecutan los comandos)
-    ├── .mvn/wrapper/                          Maven Wrapper
-    ├── .vscode/settings.json                  Configuración de VS Code para Java
-    ├── .gitattributes
-    ├── .gitignore
-    ├── HELP.md
-    ├── mvnw                                   Ejecutor de Maven (Linux y macOS)
-    ├── mvnw.cmd                               Ejecutor de Maven (Windows)
-    ├── pom.xml                                Dependencias y configuración de Maven
-    ├── target/                                Se genera al compilar
+    ├── pom.xml   mvnw   mvnw.cmd              Maven y su Wrapper
     └── src/
-        ├── main/
-        │   ├── java/pe/edu/utp/aglome_tienda/
-        │   │   ├── AglomeTiendaApplication.java        Clase que arranca Spring Boot
-        │   │   │
-        │   │   ├── config/
-        │   │   │   └── DataInitializer.java            Crea el administrador al arrancar
-        │   │   │
-        │   │   ├── controller/                         Reciben las peticiones HTTP
-        │   │   │   ├── AuthController.java             Registro y login
-        │   │   │   ├── PerfilController.java           Datos del usuario autenticado
-        │   │   │   ├── CategoriaController.java        Categorías (público)
-        │   │   │   ├── ProductoController.java         Catálogo y búsqueda (público)
-        │   │   │   ├── CarritoController.java          Carrito del cliente
-        │   │   │   ├── PedidoController.java           Pedidos del cliente
-        │   │   │   ├── AdminCategoriaController.java   CRUD de categorías (ADMIN)
-        │   │   │   ├── AdminProductoController.java    CRUD de productos (ADMIN)
-        │   │   │   ├── AdminVarianteController.java    CRUD de variantes (ADMIN)
-        │   │   │   ├── AdminPedidoController.java      Ver pedidos y cambiar su estado (ADMIN)
-        │   │   │   └── AdminReporteController.java     Reporte de ventas (ADMIN)
-        │   │   │
-        │   │   ├── service/                            Lógica de negocio y transacciones
-        │   │   │   ├── AuthService.java
-        │   │   │   ├── CategoriaService.java
-        │   │   │   ├── ProductoBaseService.java
-        │   │   │   ├── VarianteService.java
-        │   │   │   ├── CarritoService.java
-        │   │   │   ├── PedidoService.java
-        │   │   │   └── ReporteService.java
-        │   │   │
-        │   │   ├── repository/                         Acceso a la base de datos (Spring Data JPA)
-        │   │   │   ├── UsuarioRepository.java
-        │   │   │   ├── CategoriaRepository.java
-        │   │   │   ├── ProductoBaseRepository.java     Consulta JPQL: búsqueda por nombre
-        │   │   │   ├── VarianteRepository.java
-        │   │   │   ├── TipoAtributoRepository.java
-        │   │   │   ├── VarianteAtributoRepository.java
-        │   │   │   ├── CarritoRepository.java
-        │   │   │   ├── CarritoItemRepository.java
-        │   │   │   ├── PedidoRepository.java           Consulta JPQL: pedidos por usuario y estado
-        │   │   │   └── DetallePedidoRepository.java    Consulta JPQL: ventas por categoría
-        │   │   │
-        │   │   ├── model/                              Entidades JPA (cada una es una tabla)
-        │   │   │   ├── Usuario.java    Rol.java
-        │   │   │   ├── Categoria.java
-        │   │   │   ├── ProductoBase.java
-        │   │   │   ├── Variante.java   TipoAtributo.java
-        │   │   │   ├── VarianteAtributo.java   VarianteAtributoId.java
-        │   │   │   ├── Carrito.java    CarritoItem.java
-        │   │   │   └── Pedido.java     EstadoPedido.java    DetallePedido.java
-        │   │   │
-        │   │   ├── dto/                                Objetos de entrada y salida de la API
-        │   │   │   ├── LoginRequest, RegistroRequest, AuthResponse, PerfilDTO
-        │   │   │   ├── CategoriaRequest, CategoriaDTO
-        │   │   │   ├── ProductoBaseRequest, ProductoBaseDTO
-        │   │   │   ├── VarianteRequest, VarianteDTO
-        │   │   │   ├── AgregarAlCarritoRequest, CarritoDTO, CarritoItemDTO
-        │   │   │   ├── PedidoDTO, DetallePedidoDTO
-        │   │   │   └── VentaCategoriaDTO
-        │   │   │
-        │   │   └── security/                           Seguridad y JWT
-        │   │       ├── SecurityConfig.java             Reglas de acceso por ruta y por rol
-        │   │       ├── JwtService.java                 Crea y valida los tokens
-        │   │       ├── JwtAuthFilter.java              Lee el token en cada petición
-        │   │       └── CustomUserDetailsService.java   Busca al usuario en la base de datos
-        │   │
-        │   └── resources/
-        │       └── application.properties              Configuración (variables de entorno)
-        │
-        └── test/
-            ├── java/pe/edu/utp/aglome_tienda/
-            │   ├── AglomeTiendaApplicationTests.java   La aplicación arranca (1 test)
-            │   ├── model/          5 clases · 8 tests    Entidades
-            │   ├── service/        8 clases · 22 tests   Lógica con Mockito, y PedidoTransaccionTest
-            │   ├── repository/     ConsultasJpqlTest · 3 tests   Consultas JPQL contra una base real
-            │   └── controller/     6 clases · 15 tests   Rutas, validaciones y seguridad (401, 403, 200)
-            └── resources/
-                └── application.properties              Configuración de pruebas (H2 en memoria)
+        ├── main/java/pe/edu/utp/aglome_tienda/
+        │   ├── AglomeTiendaApplication.java
+        │   ├── config/        DataInitializer (admin inicial), JpaAuditingConfig, OpenApiConfig (Swagger)
+        │   ├── controller/    15 controladores: Auth, Perfil, Categoria, Marca, Producto, Carrito, Pedido
+        │   │                  + Admin{Categoria,Marca,Producto,Variante,Pedido,Stock,Reporte,Dashboard,Usuario}
+        │   ├── service/       Auth, Categoria, Marca, ProductoBase, Variante, Carrito, Pedido,
+        │   │                  MovimientoStock, Reporte, UsuarioAdmin
+        │   ├── repository/    Spring Data JPA + ProductoSpecification (filtros dinámicos)
+        │   ├── model/         Entidades: Usuario, Rol, Categoria, Marca, ProductoBase, Variante, TipoAtributo,
+        │   │                  VarianteAtributo, Carrito, CarritoItem, Pedido, EstadoPedido, DetallePedido,
+        │   │                  MovimientoStock, TipoMovimiento, Auditable
+        │   ├── dto/           Objetos de entrada y salida (incluye PaginaDTO, ApiError, reportes)
+        │   ├── exception/     Excepciones con nombre + GlobalExceptionHandler + ApiError
+        │   └── security/      SecurityConfig, JwtService, JwtAuthFilter, ErrorJsonWriter, CustomUserDetailsService
+        └── test/              428 pruebas (JUnit 5, Mockito, MockMvc, @DataJpaTest, @SpringBootTest, H2)
 ```
 
 ### Cómo viaja una petición
 
 ```
-Cliente (HTTP) → Controller (@RestController) → Service (@Service) → Repository (JpaRepository) → Entity (@Entity) → PostgreSQL
+Cliente (HTTP) → Controller → Service → Repository → Entity → PostgreSQL
+                     ↓ (si algo falla)
+              GlobalExceptionHandler → JSON uniforme (ApiError)
 ```
 
-Cada capa tiene una sola responsabilidad: el controlador recibe y responde, el servicio aplica las reglas del negocio, el repositorio habla con la base de datos y la entidad representa una tabla. Ejemplo: al confirmar una compra, `PedidoController` recibe la petición, `PedidoService` valida el carrito y descuenta el stock, y los repositorios guardan el pedido.
+Cada capa tiene una sola responsabilidad: el controlador recibe y responde, el servicio aplica las reglas del negocio y abre las transacciones, el repositorio habla con la base de datos y la entidad representa una tabla. Los errores no se atrapan en los controladores: se lanzan como excepciones con nombre y un único `GlobalExceptionHandler` los convierte en respuestas JSON iguales para toda la API.
 
-### Modelo de datos (10 tablas)
+### Modelo de datos (12 tablas)
 
 | Tabla | Qué guarda |
 |---|---|
-| `usuario` | Cuentas: email único, contraseña con BCrypt y rol |
+| `usuario` | Cuentas: email único, contraseña BCrypt, rol, intentos fallidos y bloqueo |
 | `categoria` | Categorías, con subcategorías opcionales (`padre_id`) |
-| `producto_base` | Producto general: nombre, descripción, marca, publicado y categoría |
+| `marca` | Marcas (nombre único); los productos la referencian |
+| `producto_base` | Producto general: nombre, descripción, imagen, marca, publicado y categoría |
 | `variante` | Lo que se vende: SKU único, precio, stock y estado |
 | `tipo_atributo` | Nombres de atributos (Color, Medida) |
 | `variante_atributo` | Valor de cada atributo por variante (clave compuesta) |
-| `carrito` | Un carrito por usuario |
-| `carrito_item` | Ítems del carrito: variante y cantidad |
-| `pedido` | Pedido: fecha, total, estado y usuario |
-| `detalle_pedido` | Líneas del pedido: cantidad, precio unitario y subtotal |
+| `carrito` · `carrito_item` | Un carrito por usuario y sus ítems |
+| `pedido` · `detalle_pedido` | Pedido (fecha, total, estado, usuario) y sus líneas |
+| `movimiento_stock` | Historial de cada cambio de stock (quién, cuándo, cuánto y por qué) |
 
-Relaciones: una categoría tiene muchos productos, un producto tiene muchas variantes, un usuario tiene un carrito y muchos pedidos, y un pedido tiene muchos detalles. Estados de un pedido: `PENDIENTE`, `CONFIRMADO` y `CANCELADO`.
+Categorías, productos, variantes y pedidos llevan **auditoría de fechas** (`fecha_creacion`, `fecha_actualizacion`). Categorías, productos y variantes tienen además **borrado lógico** (campo `eliminado`): borrar oculta el registro pero conserva el historial de pedidos. Quién hizo cada cambio de stock queda en `movimiento_stock`.
 
 ---
 
@@ -170,9 +110,10 @@ Relaciones: una categoría tiene muchos productos, un producto tiene muchas vari
 | Hibernate 7 | Convierte las clases Java en tablas |
 | PostgreSQL | Base de datos de la aplicación |
 | H2 en memoria | Base temporal solo para las pruebas automáticas |
-| jjwt | Creación y validación de tokens JWT |
+| jjwt 0.12.6 | Creación y validación de tokens JWT |
+| springdoc-openapi 3.2.0 | Documentación interactiva (Swagger UI) |
 | Lombok | Evita escribir getters, setters y constructores |
-| JUnit 5, Mockito y Spring Security Test | Pruebas automáticas |
+| JUnit 5, Mockito, MockMvc y Spring Security Test | Pruebas automáticas |
 | Maven (`mvnw`) | Compila, ejecuta y prueba (no hace falta instalarlo) |
 | Thunder Client | Pruebas manuales de la API |
 | pgAdmin | Ver las tablas y los datos |
@@ -183,9 +124,8 @@ Relaciones: una categoría tiene muchos productos, un producto tiene muchas vari
 
 ### 1. Requisitos
 
-- **JDK 21** instalado. Comprueba con `java -version`.
-- **PostgreSQL** instalado y encendido (puerto 5432 por defecto).
-- **VS Code** con las extensiones de Java y de Spring Boot, y la extensión **Thunder Client**.
+- **JDK 21** (`java -version`) y **PostgreSQL** encendido (puerto 5432).
+- **VS Code** con las extensiones de Java y Spring Boot, y **Thunder Client**.
 
 ### 2. Clonar el repositorio
 
@@ -194,105 +134,98 @@ git clone <URL-DE-ESTE-REPOSITORIO>
 cd Aglome-tienda/aglome-tienda
 ```
 
-Todos los comandos de esta guía se ejecutan dentro de `aglome-tienda`, la carpeta que contiene el `pom.xml`.
+Todos los comandos se ejecutan dentro de `aglome-tienda`, la carpeta que contiene el `pom.xml`.
 
 ### 3. Crear tu base de datos
-
-Cada persona usa **su propia** base local. En pgAdmin (clic derecho en *Databases › Create › Database*) o con `psql`:
 
 ```sql
 CREATE DATABASE aglome_spring_db;
 ```
 
-No hay que crear tablas: Hibernate las crea al arrancar (`ddl-auto=update`).
+No hay que crear tablas: Hibernate las crea al arrancar (`ddl-auto=update`). **Si ya tenías una base de una versión anterior**, mira [Base de una versión anterior](#base-de-una-versión-anterior).
 
-### 4. Configurar tu base de datos y tu puerto
+### 4. Configurar la aplicación
 
-La aplicación lee su configuración de **variables de entorno**. Si no defines ninguna, usa estos valores por defecto:
+La conexión a la base está en `src/main/resources/application.properties` (`spring.datasource.url`, `username` y `password`): ajústala a tu PostgreSQL local. El resto se controla con **variables de entorno**, todas con valor por defecto para desarrollo:
 
-| Variable | Qué es | Valor por defecto |
+| Variable | Qué es | Por defecto |
 |---|---|---|
-| `DB_URL` | URL JDBC de tu base | `jdbc:postgresql://localhost:5432/aglome_spring_db` |
-| `DB_USER` | Usuario de PostgreSQL | `postgres` |
-| `DB_PASSWORD` | Contraseña de PostgreSQL | `postgres` |
-| `SERVER_PORT` | Puerto donde corre la API | `8080` |
 | `JWT_SECRET` | Clave que firma los tokens (mínimo 32 caracteres) | clave de desarrollo |
 | `JWT_EXPIRATION_MS` | Duración del token en milisegundos | `36000000` (10 horas) |
-
-Si tu PostgreSQL tiene otra contraseña, otro nombre de base o otro puerto, define las variables **antes** de arrancar, en la misma terminal.
+| `CORS_ORIGENES` | Orígenes del frontend permitidos (separados por coma) | `http://localhost:4200` |
+| `ADMIN_EMAIL` | Email del administrador que se crea al arrancar | `admin@aglome.com` |
+| `ADMIN_PASSWORD` | Contraseña de ese administrador | `Admin123` |
 
 **Windows (PowerShell):**
 
 ```powershell
-$env:DB_URL = "jdbc:postgresql://localhost:5432/mi_base"
-$env:DB_USER = "postgres"
-$env:DB_PASSWORD = "mi_clave"
-$env:SERVER_PORT = "9090"
+$env:JWT_SECRET = "una-clave-larga-de-al-menos-32-caracteres"
+$env:ADMIN_EMAIL = "jefa@aglome.pe"
+$env:ADMIN_PASSWORD = "UnaClaveSegura2026"
 ```
 
-**Linux / macOS:**
+**Linux / macOS:** `export JWT_SECRET="..."`, `export ADMIN_EMAIL="..."`, etc.
 
-```bash
-export DB_URL="jdbc:postgresql://localhost:5432/mi_base"
-export DB_USER="postgres"
-export DB_PASSWORD="mi_clave"
-export SERVER_PORT="9090"
-```
+Las variables duran mientras esa terminal esté abierta; define las variables **antes** de arrancar.
 
-Las variables duran mientras esa terminal esté abierta. Si cambias `SERVER_PORT`, reemplaza `8080` en todas las URL de esta guía.
-
-> **Importante:** el valor por defecto de `JWT_SECRET` es solo para desarrollo. Si publicas la aplicación, define tu propio secreto.
+> **Importante:** los valores por defecto (`JWT_SECRET`, `Admin123`) son solo para desarrollo. Si publicas la aplicación, define los tuyos. Además `application.properties` contiene la contraseña de tu PostgreSQL local en texto plano: no la subas a un repositorio público (o cámbiala por `${DB_PASSWORD:...}`).
 
 ### 5. Arrancar la API
-
-Hay tres formas.
-
-**Desde la terminal con Maven** (la que usamos en el proyecto):
 
 ```powershell
 .\mvnw.cmd clean spring-boot:run
 ```
 
-En Linux o macOS: `chmod +x mvnw` y luego `./mvnw clean spring-boot:run`. `clean` recompila todo; sin `clean` el arranque es más rápido.
+En Linux o macOS: `chmod +x mvnw` y luego `./mvnw clean spring-boot:run`. También desde VS Code con el botón **Run** sobre `main` en `AglomeTiendaApplication.java`, o como jar: `.\mvnw.cmd clean package "-DskipTests"` y `java -jar target\aglome-tienda-0.0.1-SNAPSHOT.jar`.
 
-**Desde VS Code:** abre `AglomeTiendaApplication.java` y pulsa el botón **Run** que aparece sobre el método `main`, o usa el panel *Spring Boot Dashboard*. Define las variables de entorno antes de abrir VS Code.
-
-**Como archivo jar:**
-
-```powershell
-.\mvnw.cmd clean package "-DskipTests"
-java -jar target\aglome-tienda-0.0.1-SNAPSHOT.jar
-```
-
-**Cómo saber que arrancó bien:** la consola muestra al final `Tomcat started on port 8080` y `Started AglomeTiendaApplication in ... seconds`. Para detenerla se pulsa `Ctrl + C`, y cada vez que cambies el código hay que detenerla y arrancarla de nuevo. Si aparece `Port 8080 was already in use`, ya hay otra copia corriendo: detenla o usa otro `SERVER_PORT`.
+Arrancó bien si la consola muestra `Tomcat started on port 8080` y `Started AglomeTiendaApplication`. Se detiene con `Ctrl + C`; cada cambio de código requiere reiniciar. Si aparece `Port 8080 was already in use`, ya hay otra copia corriendo.
 
 ### 6. Administrador automático
 
-Al arrancar, `DataInitializer` **crea un administrador si no existe**, para poder entrar al panel sin tocar la base de datos:
+Al arrancar, `DataInitializer` **crea un administrador si no existe**, con `ADMIN_EMAIL` y `ADMIN_PASSWORD` (o los valores por defecto):
 
 | Email | Contraseña | Rol |
 |---|---|---|
 | `admin@aglome.com` | `Admin123` | `ADMIN` |
 
-Cualquier persona que se registre por la API recibe el rol `CLIENTE`. Un cliente nunca puede crearse como admin. Son credenciales de demostración: cámbialas en `DataInitializer` si vas a publicar la aplicación.
+Si usa la contraseña por defecto, la consola muestra una advertencia. Si el administrador ya existe, no se modifica. Quien se registre por la API siempre recibe el rol `CLIENTE`. Los usuarios `VENDEDOR` (y otros administradores) los crea un ADMIN con `POST /api/admin/usuarios`.
+
+### Base de una versión anterior
+
+`ddl-auto=update` agrega tablas y columnas, pero **no actualiza los CHECK** que PostgreSQL pone a las columnas enum (`pedido.estado`, `usuario.rol`) ni migra datos antiguos (por ejemplo, la marca que antes era texto libre). Si tu base viene de una versión anterior al paso 6, lo más simple es **recrearla**, porque son datos de prueba:
+
+```sql
+DROP DATABASE aglome_spring_db;
+CREATE DATABASE aglome_spring_db;
+```
+
+Al arrancar, Hibernate crea todas las tablas y `DataInitializer` crea el administrador. Con una base nueva no hace falta nada más.
+
+---|---|---|
+| `paso6_migrar_marcas.sql` | Tras el paso 6 | Pasa la marca de texto libre a la tabla `marca` |
+| `paso7_auditoria_borrado_logico.sql` | Tras el paso 7 | Rellena las fechas de auditoría y comprueba `eliminado` |
+| `paso10_estados_pedido.sql` | Tras el paso 10 | Amplía el CHECK de `pedido.estado` a los 6 estados |
+| `paso11_historial_inicial.sql` | Opcional | Crea el movimiento `STOCK_INICIAL` de las variantes existentes |
+| `paso12_rol_vendedor.sql` | Tras el paso 12 | Amplía el CHECK de `usuario.rol` para `VENDEDOR` |
+| `paso13_seguridad_usuario.sql` | Tras el paso 13 | Verifica las columnas de bloqueo y permite desbloquear una cuenta |
+
+Con una base nueva y vacía no se necesita ninguno.
 
 ---
 
-## Probar en el navegador (y por qué `/` sale en blanco)
+## Probar en el navegador y con Swagger
 
-Al abrir `http://localhost:8080/` el navegador muestra una pantalla en blanco, y **es lo esperado**. Este proyecto es solo una API REST que responde JSON: no tiene página web ni dashboard, y no existen las carpetas `static/` ni `templates/`. Además, la ruta raíz no es pública, así que Spring Security responde 401 sin contenido. El frontend en Angular consumirá esta API en la siguiente etapa.
-
-Lo que sí se puede abrir en el navegador son las rutas **GET públicas**, que no necesitan token:
+Al abrir `http://localhost:8080/` el navegador muestra una pantalla en blanco, y **es lo esperado**: es una API que responde JSON, sin página web. Lo que sí se abre en el navegador son las rutas **GET públicas**:
 
 | URL | Qué muestra |
 |---|---|
-| `http://localhost:8080/api/productos` | Catálogo de productos publicados con sus variantes |
-| `http://localhost:8080/api/categorias` | Lista de categorías |
-| `http://localhost:8080/api/productos/buscar?texto=melamina` | Búsqueda por nombre (consulta JPQL) |
+| `http://localhost:8080/api/productos` | Catálogo paginado de productos publicados |
+| `http://localhost:8080/api/productos/filtrar?texto=melamina&marcaId=1` | Filtros combinados |
+| `http://localhost:8080/api/categorias/arbol` | Categorías con sus subcategorías |
+| `http://localhost:8080/api/marcas` | Marcas |
+| `http://localhost:8080/swagger-ui.html` | **Documentación interactiva** de toda la API |
 
-Si aparece JSON, la API está viva y conectada a la base. Si aparece `[]`, funciona pero aún no hay datos. Si el navegador dice que no puede acceder al sitio, la aplicación no está corriendo o usa otro puerto.
-
-Todo lo demás (carrito, pedidos, `/api/admin/**` y cualquier POST, PUT, PATCH o DELETE) no se puede probar desde la barra de direcciones, porque el navegador no envía el header `Authorization`. Para eso se usa **Thunder Client**.
+En Swagger se pulsa **Authorize**, se pega el token (sin la palabra `Bearer`) y se pueden probar también las rutas protegidas. El JSON crudo está en `/v3/api-docs`. El resto (POST, PUT, PATCH, DELETE y `/api/admin/**`) se prueba con Swagger, Thunder Client o Postman.
 
 ---
 
@@ -302,15 +235,19 @@ Todo lo demás (carrito, pedidos, `/api/admin/**` y cualquier POST, PUT, PATCH o
 .\mvnw.cmd clean test
 ```
 
-Resultado esperado: **49 tests, 0 fallos, `BUILD SUCCESS`**. Usan **H2 en memoria** (`src/test/resources/application.properties`), así que **no tocan tu PostgreSQL**.
+Resultado esperado: **428 tests, 0 fallos, `BUILD SUCCESS`**. Usan **H2 en memoria**, así que **no tocan tu PostgreSQL**.
 
-| Grupo | Tests | Qué comprueban |
-|---|---|---|
-| Arranque | 1 | La aplicación completa arranca |
-| Modelo | 8 | Comportamiento de las entidades |
-| Servicio | 22 | Lógica de negocio con Mockito, y `PedidoTransaccionTest` (compra y rollback con base real H2) |
-| JPQL | 3 | `ConsultasJpqlTest`: las 3 consultas contra una base real |
-| Controlador | 15 | Rutas, validaciones y seguridad: 401, 403 y 200 |
+| Grupo | Qué comprueban |
+|---|---|
+| Arranque | La aplicación completa arranca |
+| Modelo | Comportamiento de entidades (estados, roles, auditoría) |
+| Servicio | Lógica con Mockito: pedidos, stock, usuarios, reportes, bloqueo de cuenta |
+| Transacción | `PedidoTransaccionTest` y `AuthBloqueoIntegracionTest`: rollback y bloqueo con base real |
+| Repositorio | Consultas JPQL, filtros con Specifications, auditoría y borrado lógico contra una base real |
+| Controlador | Rutas, validaciones y respuestas de error con `@WebMvcTest` |
+| Seguridad | `SeguridadRutasAdminTest`: cada ruta admin × (sin token, cliente, vendedor, admin), más una prueba que falla si aparece una ruta admin nueva sin cubrir; `JwtServiceTest` y `JwtAuthFilterTest` |
+
+
 
 ---
 
@@ -356,12 +293,12 @@ POST http://localhost:8080/api/admin/productos
 {
   "nombre": "Bisagra de Acero",
   "descripcion": "Bisagra de acero para puertas y muebles",
-  "marca": "Aglome",
+  "marcaId": ID_MARCA,
   "categoriaId": ID_CATEGORIA,
   "publicado": true
 }
 ```
-Esperado: **201** con el `id` (UUID) del producto. *Se guarda una fila en `producto_base`.*
+Esperado: **201** con el `id` (UUID) del producto. (Antes crea la marca con `POST /api/admin/marcas` y `{ "nombre": "Aglome" }`, y usa su `id` como `ID_MARCA`.) *Se guarda una fila en `producto_base`.*
 
 **D4. Crear la variante de 3 pulgadas**
 
@@ -377,7 +314,7 @@ POST http://localhost:8080/api/admin/variantes
   "atributos": { "Material": "Acero", "Medida": "3 pulgadas" }
 }
 ```
-Esperado: **201** con el `id` de la variante. *Se guarda en `variante`, `tipo_atributo` y `variante_atributo`, en una sola transacción.* Si repites el SKU: **400 "Ya existe una variante con ese SKU"**.
+Esperado: **201** con el `id` de la variante. *Se guarda en `variante`, `tipo_atributo` y `variante_atributo`, en una sola transacción.* Si repites el SKU: **409 "Ya existe una variante con ese SKU"**.
 
 **D5. Crear la variante de 4 pulgadas**
 
@@ -441,130 +378,228 @@ Esperado: **200**, estado `CONFIRMADO` y total **45.00** (10 por 4.50). Copia el
 ```
 PATCH http://localhost:8080/api/admin/pedidos/ID_PEDIDO/estado?estado=CANCELADO
 ```
-Esperado: **200** y `"estado": "CANCELADO"`. Repite D11: el stock vuelve a **100**, porque la cancelación devuelve el stock dentro de una transacción. Si repites el PATCH, responde **400 "El pedido ya está cancelado"**.
+Esperado: **200** y `"estado": "CANCELADO"`. Repite D11: el stock vuelve a **100**, porque la cancelación devuelve el stock dentro de una transacción. Si repites el PATCH, responde **400** porque `CANCELADO` es un estado final (ver [flujo de estados](#flujo-de-estados-del-pedido)). El cliente también puede cancelar su pedido (mientras esté `PENDIENTE` o `CONFIRMADO`) con `POST /api/pedidos/{id}/cancelar`.
 
 ### Seguridad
 
 | Petición | Token | Resultado | Por qué |
 |---|---|---|---|
 | `GET /api/carrito` | ninguno | **401** | No se identificó |
-| `GET /api/admin/pedidos` | cliente | **403** | Está identificado, pero su rol no es ADMIN |
+| `GET /api/admin/pedidos` | cliente | **403** | Está identificado, pero su rol no es ADMIN ni VENDEDOR |
 | `GET /api/admin/pedidos` | admin | **200** | Tiene el rol requerido |
 
 ### Ensayar y presentar
 
 - El **SKU** y el **email** son únicos y repetirlos da error 400. Si ensayas con `BISAG-ACE-3PUL` y `demo1@test.com`, para presentar usa otros (`BISAG-ACE-3PUL-B`, `demo2@test.com`) o borra antes el producto del ensayo con `DELETE /api/admin/productos/{id}` (solo es posible si no tiene pedidos).
 - Para una demostración corta en vivo bastan D2, D3, D4, D6, D9, D10, D11 y D12. Los logins se dejan hechos antes.
-- La **marca** es un campo de texto libre: usa siempre el mismo valor, con las mismas mayúsculas.
+- La **marca** ahora es una entidad (`marca`): se crea una vez y los productos la referencian por `marcaId`.
+
+---
+
+Con la API corriendo también hay documentación interactiva, con todas las rutas, en **`http://localhost:8080/swagger-ui.html`**.
 
 ---
 
 ## Qué se guarda y cómo verlo en la base de datos
 
-Con PostgreSQL, las cuentas y todos los datos creados **se conservan al apagar la aplicación**. Lo único que no se guarda en la base son los **tokens**: el servidor solo comprueba su firma, y quien los guarda es Thunder Client.
+Con PostgreSQL, todos los datos creados **se conservan al apagar la aplicación**. Lo único que no se guarda en la base son los **tokens**: el servidor solo comprueba su firma.
 
 | Qué | Dónde queda | ¿Se pierde al reiniciar? |
 |---|---|---|
-| Cuentas (admin y clientes) | Tabla `usuario` | No |
-| Categorías, productos y variantes | PostgreSQL | No |
-| Carritos y pedidos | PostgreSQL | No |
-| Token JWT | Solo en Thunder Client | Deja de servir a las 10 horas o si cambia `JWT_SECRET` |
-
-No hace falta registrar de nuevo al admin ni a un cliente: si un token deja de servir, se hace `POST /api/auth/login` con el mismo email y contraseña. (Con una base en memoria, como H2, todo se borraba al reiniciar; por eso H2 queda solo para las pruebas.)
+| Cuentas (admin, vendedores, clientes) | Tabla `usuario` | No |
+| Categorías, productos y variantes | PostgreSQL (borrado lógico) | No |
+| Carritos, pedidos e historial de stock | PostgreSQL | No |
+| Token JWT | Solo en el cliente (Thunder, Swagger, navegador) | Deja de servir a las 10 horas o si cambia `JWT_SECRET` |
 
 ### Ver las tablas en pgAdmin
 
-1. Abre pgAdmin: *Servers › PostgreSQL › Databases › aglome_spring_db › Schemas › public › Tables*.
-2. Clic derecho sobre una tabla › *View/Edit Data › All Rows*. O abre el *Query Tool* y ejecuta:
+*Servers › PostgreSQL › Databases › aglome_spring_db › Schemas › public › Tables*, clic derecho › *View/Edit Data*, o en el *Query Tool*:
 
 ```sql
-SELECT id, nombre, email, rol FROM usuario;
-SELECT id, nombre FROM categoria;
-SELECT id, nombre, publicado FROM producto_base;
+SELECT id, nombre, email, rol, intentos_fallidos, bloqueado_hasta FROM usuario;
+SELECT id, nombre FROM marca;
+SELECT id, nombre, publicado, eliminado FROM producto_base;
 SELECT sku, precio_venta, stock FROM variante;
 SELECT id, estado, total, fecha FROM pedido;
+SELECT tipo, cantidad, stock_anterior, stock_resultante, usuario_email, fecha
+FROM movimiento_stock ORDER BY fecha DESC;
 
 SELECT c.nombre, SUM(d.cantidad)
 FROM detalle_pedido d
+JOIN pedido pe ON pe.id = d.pedido_id
 JOIN variante v ON v.id = d.variante_id
 JOIN producto_base p ON p.id = v.producto_base_id
 JOIN categoria c ON c.id = p.categoria_id
+WHERE pe.estado <> 'CANCELADO'
 GROUP BY c.nombre;
 ```
 
-La última consulta es la versión SQL del reporte de ventas y debe coincidir con `GET /api/admin/reportes/ventas-por-categoria`.
+La última consulta es la versión SQL del reporte y debe coincidir con `GET /api/admin/reportes/ventas-por-categoria`.
 
 | Petición | Tablas que cambian |
 |---|---|
 | `POST /api/auth/registro` | `usuario` |
-| `POST /api/admin/categorias` | `categoria` |
+| `POST /api/admin/categorias` · `/marcas` | `categoria` · `marca` |
 | `POST /api/admin/productos` | `producto_base` |
-| `POST /api/admin/variantes` | `variante`, `tipo_atributo`, `variante_atributo` |
+| `POST /api/admin/variantes` | `variante`, `tipo_atributo`, `variante_atributo`, `movimiento_stock` (STOCK_INICIAL) |
 | `POST /api/carrito/items` | `carrito`, `carrito_item` |
-| `POST /api/pedidos/confirmar` | `pedido`, `detalle_pedido`, `variante` (baja el stock) y `carrito_item` (se vacía) |
-| `PATCH /api/admin/pedidos/{id}/estado` | `pedido` (estado) y `variante` (sube el stock si se cancela) |
+| `POST /api/pedidos/confirmar` | `pedido`, `detalle_pedido`, `variante` (baja el stock), `movimiento_stock` (VENTA) y `carrito_item` (se vacía) |
+| `PATCH /api/admin/pedidos/{id}/estado` · `POST /api/pedidos/{id}/cancelar` | `pedido`; al cancelar también `variante` y `movimiento_stock` (CANCELACION) |
+| `POST /api/admin/stock/ajustes` | `variante` y `movimiento_stock` (AJUSTE) |
+| `POST /api/admin/usuarios` | `usuario` |
 
-### Agregar más datos con el admin existente
+### Crear otro administrador o un vendedor
 
-Como el admin ya está guardado, no se crea otro: se hace login y se repiten D2 a D5 con otros datos. Para ver los ids existentes: `GET /api/categorias` y `GET /api/admin/productos`. Para una subcategoría, la categoría admite el campo opcional `padreId`, por ejemplo `{ "nombre": "Bisagras", "padreId": 2 }`.
-
-### Crear otro administrador
-
-La API **no permite** registrarse como administrador (el registro siempre crea clientes). Para tener otro admin:
-
-- **Opción A, sin código:** registra la cuenta con `POST /api/auth/registro` y en pgAdmin ejecuta `UPDATE usuario SET rol = 'ADMIN' WHERE email = 'otro.admin@test.com';`. Luego esa persona inicia sesión de nuevo para que su token lleve el rol ADMIN.
-- **Opción B, por código:** agrega en `DataInitializer` otro bloque con otro email y contraseña.
+Con la API, sin tocar la base: un ADMIN hace `POST /api/admin/usuarios` con `{ "nombre": "...", "email": "...", "password": "...", "rol": "VENDEDOR" }` (el rol puede ser `ADMIN` o `VENDEDOR`; `CLIENTE` se rechaza con 400 y un email repetido con 409).
 
 ---
 
 ## Lista de endpoints
+
+La documentación completa con ejemplos está en Swagger (`/swagger-ui.html`).
 
 **Acceso público**
 
 | Método | Ruta | Descripción |
 |---|---|---|
 | POST | `/api/auth/registro` | Crea una cuenta de cliente y devuelve un token |
-| POST | `/api/auth/login` | Inicia sesión y devuelve un token |
-| GET | `/api/productos` | Lista los productos publicados |
-| GET | `/api/productos/{id}` | Detalle de un producto |
-| GET | `/api/productos/buscar?texto=` | Busca por nombre (JPQL) |
+| POST | `/api/auth/login` | Inicia sesión (423 si la cuenta está bloqueada) |
+| GET | `/api/productos` | Catálogo paginado: `pagina`, `tamano` (12, máx. 50), `orden` (`nombre`/`marca`), `direccion` |
+| GET | `/api/productos/filtrar` | Filtros: `texto`, `categoriaId`, `marcaId`, `color`, `medida`, `precioMin`, `precioMax` (+ paginación) |
+| GET | `/api/productos/filtros` | Opciones disponibles para armar los filtros (colores, medidas, marcas, rango de precio) |
+| GET | `/api/productos/sugerencias?texto=` | Autocompletado del buscador |
+| GET | `/api/productos/buscar?texto=` | Búsqueda por nombre (JPQL) |
+| GET | `/api/productos/{id}` · `/{id}/relacionados` | Detalle y productos relacionados |
 | GET | `/api/productos/categoria/{categoriaId}` | Productos de una categoría |
-| GET | `/api/categorias` · `/api/categorias/{id}` | Categorías |
+| GET | `/api/categorias` · `/arbol` · `/{id}` | Categorías (lista, árbol, detalle) |
+| GET | `/api/marcas` · `/{id}` | Marcas |
 
 **Requieren token (cualquier usuario autenticado)**
 
 | Método | Ruta | Descripción |
 |---|---|---|
 | GET | `/api/perfil` | Datos del usuario autenticado |
+| PUT | `/api/perfil/contrasena` | Cambia la contraseña (pide la actual; 8–72 caracteres con letras y números) |
 | GET | `/api/carrito` | Ver el carrito |
-| POST | `/api/carrito/items` | Agregar una variante al carrito |
-| PUT | `/api/carrito/items/{itemId}?cantidad=` | Cambiar la cantidad de un ítem |
-| DELETE | `/api/carrito/items/{itemId}` | Quitar un ítem |
-| POST | `/api/pedidos/confirmar` | Convierte el carrito en un pedido |
-| GET | `/api/pedidos` | Mis pedidos (admite `?estado=`, JPQL) |
-| GET | `/api/pedidos/{id}` | Detalle de uno de mis pedidos |
+| POST | `/api/carrito/items` | Agregar una variante |
+| PUT · DELETE | `/api/carrito/items/{itemId}` | Cambiar cantidad · quitar ítem |
+| POST | `/api/pedidos/confirmar` | Convierte el carrito en un pedido `CONFIRMADO` y descuenta el stock |
+| GET | `/api/pedidos` · `/{id}` | Mis pedidos (admite `?estado=`) y su detalle |
+| POST | `/api/pedidos/{id}/cancelar` | Cancela mi pedido (solo en `PENDIENTE` o `CONFIRMADO`) |
+
+**Roles `ADMIN` y `VENDEDOR`**
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| GET | `/api/admin/pedidos` · `/{id}` | Todos los pedidos (`?estado=`) y su detalle |
+| PATCH | `/api/admin/pedidos/{id}/estado?estado=` | Avanza el pedido según el flujo permitido |
+| GET | `/api/admin/stock/movimientos` | Historial de stock (filtrable y paginado) |
+| POST | `/api/admin/stock/ajustes` | Ajuste manual de stock con motivo |
 
 **Solo rol `ADMIN`**
 
 | Método | Ruta | Descripción |
 |---|---|---|
 | POST · PUT · DELETE | `/api/admin/categorias` · `/{id}` | Gestión de categorías |
+| POST · PUT · DELETE | `/api/admin/marcas` · `/{id}` | Gestión de marcas |
 | GET · POST · PUT · DELETE | `/api/admin/productos` · `/{id}` | Gestión de productos |
 | POST · PUT · DELETE | `/api/admin/variantes` · `/{id}` | Gestión de variantes |
-| GET | `/api/admin/pedidos` | Todos los pedidos |
-| PATCH | `/api/admin/pedidos/{id}/estado?estado=` | Cambia el estado de un pedido |
-| GET | `/api/admin/reportes/ventas-por-categoria` | Unidades vendidas por categoría (JPQL) |
+| GET | `/api/admin/dashboard` | Resumen: ingresos, pedidos por estado, ticket promedio, ventas por mes, más vendidos y stock bajo |
+| GET | `/api/admin/reportes/ventas-por-categoria` · `/ventas-por-mes` · `/productos-mas-vendidos` · `/stock-bajo` | Reportes (excluyen pedidos cancelados) |
+| GET · POST | `/api/admin/usuarios` | Listar y crear administradores o vendedores |
+
+---
+
+## Reglas de negocio importantes
+
+### Flujo de estados del pedido
+
+```
+PENDIENTE → CONFIRMADO → EN_PREPARACION → ENVIADO → ENTREGADO
+    └──────────┴───────────────┘
+              ↓ (cancelar)
+          CANCELADO
+```
+
+| Estado actual | Puede pasar a |
+|---|---|
+| `PENDIENTE` | `CONFIRMADO`, `CANCELADO` |
+| `CONFIRMADO` | `EN_PREPARACION`, `CANCELADO` |
+| `EN_PREPARACION` | `ENVIADO`, `CANCELADO` |
+| `ENVIADO` | `ENTREGADO` |
+| `ENTREGADO`, `CANCELADO` | (finales: no cambian) |
+
+`PENDIENTE` queda como estado inicial posible del flujo; hoy `confirmar` crea el pedido ya en `CONFIRMADO`. El pedido devuelve `siguientesEstados` para que el frontend muestre solo los botones válidos. El cliente solo puede cancelar en `PENDIENTE` o `CONFIRMADO`. Al cancelar se **devuelve el stock** (salvo desde `PENDIENTE`) y queda el movimiento `CANCELACION`. Los pedidos cancelados **no cuentan** en reportes ni dashboard.
+
+### Stock con historial
+
+Todo cambio de stock deja un `movimiento_stock` (tipo `STOCK_INICIAL`, `VENTA`, `CANCELACION` o `AJUSTE`) con cantidad con signo, stock anterior y resultante, motivo, pedido relacionado y el email de quien lo hizo. Se guarda dentro de la misma transacción: si falla el cambio, tampoco queda el registro.
+
+### Borrado lógico y auditoría
+
+Borrar una categoría, producto o variante lo marca `eliminado` y deja de aparecer en la API, sin perder los pedidos históricos. Categorías, productos, variantes y pedidos guardan cuándo se crearon y modificaron (`fecha_creacion`, `fecha_actualizacion`).
+
+### Sesión segura
+
+- **5 contraseñas incorrectas seguidas** bloquean la cuenta **3 minutos** (respuesta **423**); un login correcto reinicia el contador. Equivocarse con la contraseña actual al cambiarla también cuenta.
+- Contraseña nueva: 8 a 72 caracteres, con letras y números.
+- El administrador inicial sale de variables de entorno, no del código.
+- Limitación conocida: el JWT no se revoca al cambiar la contraseña (es sin estado); vence a las 10 horas.
+
+---
+
+## Roles y permisos
+
+| Acción | Sin token | Cliente | Vendedor | Administrador |
+|---|---|---|---|---|
+| Ver catálogo, categorías y marcas | 200 | 200 | 200 | 200 |
+| Registrarse e iniciar sesión | 200 | 200 | 200 | 200 |
+| Carrito, pedidos propios y perfil | 401 | 200 | 200 | 200 |
+| `/api/admin/pedidos/**` y `/api/admin/stock/**` | 401 | 403 | 200 | 200 |
+| Resto de `/api/admin/**` (catálogo, reportes, usuarios) | 401 | 403 | 403 | 200 |
+
+Las reglas están en `SecurityConfig`. **401** = no te identificaste (sin token o token inválido); **403** = estás identificado pero tu rol no tiene permiso.
+
+---
+
+## Errores de la API
+
+Todos los errores (de validación, de negocio y de seguridad) tienen la misma forma:
+
+```json
+{
+  "timestamp": "2026-11-10T15:30:00",
+  "status": 409,
+  "error": "Conflict",
+  "mensaje": "Ya existe una variante con ese SKU",
+  "path": "/api/admin/variantes",
+  "errores": [ { "campo": "sku", "mensaje": "no debe estar vacío" } ]
+}
+```
+
+`errores` solo aparece en validaciones (400 por campo). Códigos usados:
+
+| Código | Cuándo | Excepción |
+|---|---|---|
+| 400 | Datos inválidos o regla de negocio incumplida (transición de estado no permitida, stock insuficiente) | `ReglaNegocioException` / validación |
+| 401 | Sin token, token inválido o credenciales incorrectas | `CredencialesInvalidasException` |
+| 403 | Rol sin permiso | Filtro de seguridad |
+| 404 | El recurso no existe | `RecursoNoEncontradoException` |
+| 409 | Duplicado (SKU, email, nombre de marca) | `ConflictoException` |
+| 423 | Cuenta bloqueada por intentos fallidos | `CuentaBloqueadaException` |
+
+Las listas paginadas responden `PaginaDTO`: `contenido`, `pagina`, `tamano`, `totalElementos`, `totalPaginas`, `primera`, `ultima`.
 
 ---
 
 ## Unidad 1: resumen
 
-La Unidad 1 dejó construida la base de la API: arquitectura en capas, 27 endpoints REST y pruebas automáticas.
+La Unidad 1 dejó construida la base de la API: arquitectura en capas, los endpoints REST iniciales y pruebas automáticas.
 
 | Tema | Qué se hizo |
 |---|---|
 | Estructura de Spring Boot | Proyecto Maven con los starters web, JPA, security y validation; configuración en `application.properties` |
-| Controladores y endpoints | 11 controladores `@RestController` con 27 rutas |
+| Controladores y endpoints | controladores `@RestController` (hoy 15, con ~70 rutas) |
 | Inyección de dependencias | Por constructor con `@RequiredArgsConstructor`: Spring entrega los objetos, sin usar `new` |
 | DTO y validación | Los datos de entrada se validan con `@Valid`; si no cumplen, la API responde 400 |
 | Métodos HTTP | GET lee, POST crea, PUT reemplaza, PATCH modifica una parte y DELETE borra |
@@ -593,7 +628,7 @@ También hay consultas generadas por el nombre del método, como `findByEmail` y
 
 ### JPQL
 
-JPQL consulta las **clases Java** y no las tablas. Se usa cuando el nombre del método ya no alcanza. Hay tres consultas con `@Query`:
+JPQL consulta las **clases Java** y no las tablas. Se usa cuando el nombre del método ya no alcanza. Las tres consultas originales con `@Query` (hoy hay más, para reportes y dashboard):
 
 | Consulta | Dónde está | Qué hace |
 |---|---|---|
@@ -637,22 +672,18 @@ Autenticación es saber **quién eres** y autorización es saber **qué puedes h
 |---|---|
 | `/api/auth/**` | Cualquiera (registro y login) |
 | `GET /api/productos/**` y `GET /api/categorias/**` | Cualquiera |
-| `/api/admin/**` | Solo el rol ADMIN |
+| `/api/admin/pedidos/**` y `/api/admin/stock/**` | ADMIN y VENDEDOR |
+| Resto de `/api/admin/**` | Solo el rol ADMIN |
 | Cualquier otra ruta | Cualquier usuario con token válido |
 
-`AdminPedidoController` usa además `@PreAuthorize("hasRole('ADMIN')")` como segundo candado, activado con `@EnableMethodSecurity`. Las respuestas de seguridad son:
+`AdminPedidoController` usa además `@PreAuthorize("hasAnyRole('ADMIN','VENDEDOR')")` como segundo candado, activado con `@EnableMethodSecurity`. Las respuestas de seguridad son:
 
 - **401 Unauthorized:** no hay token o el token no es válido (no te identificaste).
 - **403 Forbidden:** el token es válido, pero tu rol no tiene permiso.
 
 Otros detalles: las contraseñas se guardan con BCrypt, la sesión es sin estado (`STATELESS`) y la ruta interna `/error` está permitida para que Spring no reemplace un 403 por un 401 al armar el mensaje de error.
 
-| Acción | Sin token | Cliente | Administrador |
-|---|---|---|---|
-| Ver catálogo y categorías | 200 | 200 | 200 |
-| Registrarse e iniciar sesión | 200 | 200 | 200 |
-| Usar carrito y pedidos | 401 | 200 | 200 |
-| Cualquier ruta `/api/admin/**` | 401 | 403 | 200 |
+(La tabla completa de permisos por rol está en [Roles y permisos](#roles-y-permisos).)
 
 ### Autenticación con JWT
 
@@ -668,6 +699,30 @@ La clave de firma **no está en el código**: se lee de `jwt.secret` (variable `
 
 ---
 
+## Mejoras del back-end (pasos 1 a 13)
+
+Después de las Unidades 1 y 2 se hizo una etapa de mejora en 13 pasos, uno a la vez: cambio, pruebas en verde, verificación en Swagger o Thunder Client y commit. Resumen:
+
+| # | Paso | Resultado |
+|---|---|---|
+| 1 | CORS, PATCH e `imagenUrl` | El frontend Angular puede llamar a la API; los productos tienen imagen |
+| 2 | Pruebas faltantes | Se cubrieron los huecos de la entrega inicial |
+| 3 | Errores globales | Excepciones con nombre, `GlobalExceptionHandler` y JSON uniforme; sin `try/catch` en controladores |
+| 4 | Paginación y orden | `PaginaDTO` y parámetros `pagina`, `tamano`, `orden`, `direccion` |
+| 5 | Swagger | Documentación interactiva de toda la API |
+| 6 | Entidad Marca | La marca deja de ser texto libre |
+| 7 | Auditoría y borrado lógico | Fechas de creación/modificación; borrar no pierde historial |
+| 8 | Filtros y extras | Filtros combinables, sugerencias, relacionados, categorías en árbol |
+| 9 | Reportes y dashboard | Reportes sin pedidos cancelados y `GET /api/admin/dashboard` |
+| 10 | Flujo de pedidos | Estados con transiciones válidas y cancelación por el cliente |
+| 11 | Historial de stock | `movimiento_stock` y ajustes manuales con motivo |
+| 12 | Rol VENDEDOR | Tercer rol y pruebas 401/403 en todas las rutas admin |
+| 13 | Sesión segura | Bloqueo por intentos, cambio de contraseña, admin por variables de entorno, pruebas de JWT |
+
+**Fuera de alcance** (decidido desde el inicio): Docker, Flyway, SUNAT, pasarela de pago, correo, PDF y stock por sucursal.
+
+---
+
 ## Problemas frecuentes
 
 | Síntoma | Causa y solución |
@@ -679,6 +734,10 @@ La clave de firma **no está en el código**: se lee de `jwt.secret` (variable `
 | **403** en una ruta `/api/admin/**` | Tu usuario es cliente. Usa el token del administrador. |
 | **401** solo en algunas pestañas de Thunder | Thunder guarda los headers por pestaña. Actualiza el token en cada una. |
 | **400** al cambiar el estado de un pedido | Dejaste el texto de ejemplo en la URL. Pon el UUID real, sin `<` ni `>`. |
-| **400 "Ya existe una variante con ese SKU"** | El SKU es único. Usa otro. |
+| **409 "Ya existe una variante con ese SKU"** | El SKU es único. Usa otro. |
 | El registro dice que el email ya existe | Esa cuenta ya fue creada. Usa `POST /api/auth/login`. |
 | Productos duplicados en el catálogo | El nombre puede repetirse; solo el SKU es único. Bórralos con `DELETE /api/admin/productos/{id}`. |
+| **423 Locked** al iniciar sesión | La cuenta se bloqueó por 5 contraseñas incorrectas seguidas. Espera el tiempo que indica el mensaje (3 minutos). |
+| **400** al cambiar el estado de un pedido a uno no permitido | El flujo es ordenado (PENDIENTE → CONFIRMADO → EN_PREPARACION → ENVIADO → ENTREGADO). La respuesta indica los estados permitidos. |
+| `violates check constraint` en `pedido.estado` o `usuario.rol` | PostgreSQL conserva el CHECK viejo de la columna: `ddl-auto=update` no lo actualiza. Recrea la base de datos (ver [Base de una versión anterior](#base-de-una-versión-anterior)). |
+| El admin no tiene la contraseña que esperaba | Si ya existía, `DataInitializer` no lo toca. `ADMIN_EMAIL`/`ADMIN_PASSWORD` solo se usan al **crear** el admin. |

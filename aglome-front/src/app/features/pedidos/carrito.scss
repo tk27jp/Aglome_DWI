@@ -1,0 +1,67 @@
+@use 'variables' as v;
+
+.pagina { padding-block: 2rem 4rem; }
+h1 { font-size: 2.6rem; }
+
+.disposicion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 21rem;
+  gap: 1.5rem;
+  align-items: start;
+  @include v.tablet { grid-template-columns: 1fr; }
+}
+
+.lista { list-style: none; margin: 0 0 1rem; padding: 0; background: #fff; border: 1px solid v.$color-borde; border-radius: v.$radio; }
+.fila {
+  display: grid;
+  grid-template-columns: 1fr auto 7rem auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  & + & { border-top: 1px solid v.$color-borde; }
+  @include v.movil { grid-template-columns: 1fr auto; .subtotal { text-align: left; } }
+}
+.datos { display: grid; gap: 0.1rem; }
+.meta { font-size: 0.82rem; color: v.$color-texto-suave; }
+.cantidad {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid v.$color-borde;
+  border-radius: v.$radio;
+  button { width: 2.2rem; height: 2.2rem; background: none; border: 0; font-size: 1.2rem; cursor: pointer; &:hover { background: v.$color-primario-claro; } }
+  span { min-width: 2.2rem; text-align: center; font-weight: 600; }
+}
+.subtotal { text-align: right; font-family: v.$fuente-titulo; font-size: 1.5rem; font-weight: 700; color: v.$color-primario; }
+.quitar { background: none; border: 0; color: v.$color-error; font: inherit; font-size: 0.85rem; text-decoration: underline; cursor: pointer; }
+.seguir { font-weight: 600; }
+
+.resumen {
+  position: sticky;
+  top: 8rem;
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid v.$color-borde;
+  border-radius: v.$radio;
+  h2 { font-size: 1.6rem; margin: 0; }
+  .btn { padding-block: 0.85rem; font-weight: 600; }
+  @include v.tablet { position: static; }
+}
+.linea { display: flex; justify-content: space-between; }
+.total { padding-top: 0.85rem; border-top: 1px solid v.$color-borde; align-items: baseline; strong { font-family: v.$fuente-titulo; font-size: 2.2rem; color: v.$color-primario; } }
+.nota { margin: 0; font-size: 0.82rem; color: v.$color-texto-suave; }
+
+.vacio {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  padding: 4rem 1rem;
+  background: #fff;
+  border: 1px dashed v.$color-borde;
+  text-align: center;
+  color: v.$color-texto-suave;
+  svg { color: v.$color-secundario; }
+  h2 { color: v.$color-texto; margin: 0; }
+  p { margin: 0 0 0.75rem; }
+}

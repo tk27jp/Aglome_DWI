@@ -1,0 +1,89 @@
+@use 'variables' as v;
+
+.pagina { padding-block: 2rem 4rem; }
+h1 { font-size: 2.6rem; }
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  button {
+    padding: 0.4rem 0.9rem;
+    background: #fff;
+    border: 1px solid v.$color-borde;
+    border-radius: 2rem;
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    &:hover { border-color: v.$color-primario; }
+    &.activo { background: v.$color-primario; border-color: v.$color-primario; color: #fff; }
+  }
+}
+
+.pedido { margin-bottom: 1rem; padding: 1.25rem 1.5rem; background: #fff; border: 1px solid v.$color-borde; border-radius: v.$radio; }
+.cabeza {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  div { display: grid; }
+  .fecha { font-size: 0.85rem; color: v.$color-texto-suave; }
+  .total { font-family: v.$fuente-titulo; font-size: 1.7rem; color: v.$color-primario; }
+  @include v.movil { grid-template-columns: 1fr auto; .estado { grid-row: 1; grid-column: 2; } }
+}
+
+.estado {
+  padding: 0.2rem 0.65rem;
+  border-radius: v.$radio;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: v.$color-primario-claro;
+  color: v.$color-primario-oscuro;
+  &.PENDIENTE { background: v.$color-madera-claro; color: v.$color-aviso; }
+  &.ENTREGADO { background: #e6f4ea; color: v.$color-ok; }
+  &.CANCELADO { background: #fdecec; color: v.$color-error; }
+}
+
+// línea de avance: muestra en qué punto está el pedido
+.avance {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  margin: 1.25rem 0;
+  padding: 0;
+  li {
+    position: relative;
+    padding-top: 1.4rem;
+    text-align: center;
+    font-size: 0.82rem;
+    color: v.$color-texto-suave;
+    &::before { content: ''; position: absolute; top: 0.38rem; left: 0; right: 0; height: 3px; background: v.$color-borde; }
+    &.hecho { color: v.$color-texto; &::before { background: v.$color-primario; } }
+    &.actual { font-weight: 700; color: v.$color-primario; }
+  }
+  .punto {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0.85rem;
+    height: 0.85rem;
+    margin-left: -0.425rem;
+    border-radius: 50%;
+    background: v.$color-borde;
+  }
+  .hecho .punto { background: v.$color-primario; }
+  .actual .punto { box-shadow: 0 0 0 4px rgb(0 73 175 / 22%); }
+}
+
+details summary { cursor: pointer; font-weight: 600; color: v.$color-primario; }
+.detalle { list-style: none; margin: 0.75rem 0 0; padding: 0; li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-top: 1px solid v.$color-borde; } small { color: v.$color-texto-suave; margin-left: 0.4rem; } }
+
+.pie { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid v.$color-borde; }
+.peligro { background: v.$color-error; border-color: v.$color-error; &:hover:not(:disabled) { background: #9f1f1f; } }
+.enlace { background: none; border: 0; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
+
+.vacio { padding: 3rem 1rem; text-align: center; background: #fff; border: 1px dashed v.$color-borde; color: v.$color-texto-suave; h2 { color: v.$color-texto; } }
+.vacio-filtro { padding: 2rem; text-align: center; color: v.$color-texto-suave; }
+.esqueleto { height: 14rem; background: linear-gradient(100deg, #e9eaef 30%, #f5f5f8 50%, #e9eaef 70%) 0 0 / 200% 100%; animation: brillo 1.2s linear infinite; }
+@keyframes brillo { to { background-position: -200% 0; } }

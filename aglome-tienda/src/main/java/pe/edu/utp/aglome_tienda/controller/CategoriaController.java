@@ -3,6 +3,7 @@ package pe.edu.utp.aglome_tienda.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.utp.aglome_tienda.dto.CategoriaArbolDTO;
 import pe.edu.utp.aglome_tienda.dto.CategoriaDTO;
 import pe.edu.utp.aglome_tienda.service.CategoriaService;
 
@@ -20,12 +21,14 @@ public class CategoriaController {
         return ResponseEntity.ok(categoriaService.listarTodas());
     }
 
+    // categorías con sus subcategorías anidadas, para el menú
+    @GetMapping("/arbol")
+    public ResponseEntity<List<CategoriaArbolDTO>> arbol() {
+        return ResponseEntity.ok(categoriaService.arbol());
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<?> obtener(@PathVariable Long id) {
-        try {
-            return ResponseEntity.ok(categoriaService.obtenerPorId(id));
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(404).body(e.getMessage());
-        }
+        return ResponseEntity.ok(categoriaService.obtenerPorId(id));
     }
 }

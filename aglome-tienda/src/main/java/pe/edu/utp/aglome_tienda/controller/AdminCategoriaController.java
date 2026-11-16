@@ -17,29 +17,17 @@ public class AdminCategoriaController {
 
     @PostMapping
     public ResponseEntity<?> crear(@Valid @RequestBody CategoriaRequest request) {
-        try {
-            return ResponseEntity.status(HttpStatus.CREATED).body(categoriaService.crear(request));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(categoriaService.crear(request));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizar(@PathVariable Long id, @Valid @RequestBody CategoriaRequest request) {
-        try {
-            return ResponseEntity.ok(categoriaService.actualizar(id, request));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        return ResponseEntity.ok(categoriaService.actualizar(id, request));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Long id) {
-        try {
-            categoriaService.eliminar(id);
-            return ResponseEntity.noContent().build();
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(404).body(e.getMessage());
-        }
+        categoriaService.eliminar(id);
+        return ResponseEntity.noContent().build();
     }
 }

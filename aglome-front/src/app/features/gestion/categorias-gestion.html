@@ -1,0 +1,63 @@
+<div class="gp">
+  <header class="g-titulo">
+    <div><h1>Categorías</h1><p>Así se ordena el menú de la tienda: categorías y sus subcategorías.</p></div>
+    <div class="acciones"><button type="button" class="g-btn" (click)="abrir(null)">+ Nueva categoría</button></div>
+  </header>
+
+  @if (error(); as e) {
+    <div class="aviso error" role="alert">{{ e }} <button type="button" class="g-btn sec mini" (click)="cargar()">Reintentar</button></div>
+  } @else if (categorias() === null) {
+    <div class="esqueleto" aria-busy="true"></div>
+  } @else if (filas().length) {
+    <ul class="arbol">
+      @for (f of filas(); track f.cat.id; let i = $index) {
+        <li [style.--nivel]="f.nivel" [style.--i]="i">
+          <span class="marca-n" aria-hidden="true">{{ f.nivel ? '↳' : '▪' }}</span>
+          @if (f.cat.imagenUrl) { <img class="g-mini" [src]="f.cat.imagenUrl" alt="" loading="lazy" /> }
+          <div class="nom"><strong>{{ f.cat.nombre }}</strong><small>{{ f.hijas ? f.hijas + (f.hijas === 1 ? ' subcategoría' : ' subcategorías') : f.nivel ? 'Subcategoría' : 'Sin subcategorías' }}</small></div>
+          @if (!f.cat.activa) { <span class="g-chip gris">Inactiva</span> }
+          <div class="acc">
+            @if (porEliminar() === f.cat.id) {
+              <span class="confirma">¿Eliminar?</span>
+              <button type="button" class="g-btn peligro mini" [disabled]="eliminando()" (click)="eliminar(f.cat)">Sí</button>
+              <button type="button" class="g-btn sec mini" (click)="porEliminar.set(null)">No</button>
+            } @else {
+              @if (f.nivel === 0) { <button type="button" class="g-enlace" (click)="abrir(null, f.cat.id)">+ Subcategoría</button> }
+              <button type="button" class="g-enlace" (click)="abrir(f.cat)">Editar</button>
+              <button type="button" class="g-enlace rojo" (click)="porEliminar.set(f.cat.id)">Eliminar</button>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+  } @else {
+    <div class="g-tarjeta g-vacio"><p>Todavía no hay categorías.</p><button type="button" class="g-btn" (click)="abrir(null)">Crear la primera</button></div>
+  }
+
+  <app-panel-lateral [abierto]="abierto()" [titulo]="editando() ? 'Editar categoría' : 'Nueva categoría'" (cerrar)="cerrar()">
+    @if (abierto()) {
+      <form [formGroup]="form" (ngSubmit)="guardar()" novalidate>
+        <div class="g-campo">
+          <label for="c-nombre">Nombre</label>
+          <input id="c-nombre" formControlName="nombre" [class.invalido]="mensaje(form.controls.nombre)" placeholder="Ej.: Melaminas" />
+          @if (mensaje(form.controls.nombre); as m) { <p class="error-campo">{{ m }}</p> }
+        </div>
+        <div class="g-campo">
+          <label for="c-padre">Pertenece a</label>
+          <select id="c-padre" formControlName="padreId">
+            <option [ngValue]="0">Ninguna (categoría principal)</option>
+            @for (c of opcionesPadre(); track c.id) { <option [ngValue]="c.id">{{ c.nombre }}</option> }
+          </select>
+        </div>
+        <div class="g-campo">
+          <label for="c-img">Imagen (enlace, opcional)</label>
+          <input id="c-img" formControlName="imagenUrl" placeholder="https://…" />
+        </div>
+        <div class="g-acciones-form">
+          <button type="submit" class="g-btn" [disabled]="guardando()">{{ guardando() ? 'Guardando…' : 'Guardar' }}</button>
+          <button type="button" class="g-btn sec" (click)="cerrar()">Cancelar</button>
+        </div>
+      </form>
+    }
+  </app-panel-lateral>
+</div>

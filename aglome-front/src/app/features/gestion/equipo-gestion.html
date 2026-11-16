@@ -1,0 +1,74 @@
+<div class="gp">
+  <header class="g-titulo">
+    <div><h1>Equipo</h1><p>Quién puede entrar al panel y qué puede hacer.</p></div>
+    <div class="acciones"><button type="button" class="g-btn" (click)="abrir()">+ Nueva cuenta de personal</button></div>
+  </header>
+
+  <div class="roles">
+    <article><strong>Administrador</strong><span>Ve el resumen, edita la tienda (productos, categorías, marcas), gestiona pedidos e inventario y crea cuentas.</span></article>
+    <article><strong>Vendedor</strong><span>Atiende pedidos y ajusta el inventario. No ve ingresos ni puede editar el catálogo.</span></article>
+  </div>
+
+  @if (error(); as e) {
+    <div class="aviso error" role="alert">{{ e }} <button type="button" class="g-btn sec mini" (click)="cargar()">Reintentar</button></div>
+  } @else if (usuarios() === null) {
+    <div class="esqueleto" aria-busy="true"></div>
+  } @else {
+    <div class="pestanitas" role="tablist">
+      <button type="button" role="tab" [attr.aria-selected]="filtro() === 'personal'" [class.activa]="filtro() === 'personal'" (click)="filtro.set('personal')">Personal ({{ personal().length }})</button>
+      <button type="button" role="tab" [attr.aria-selected]="filtro() === 'clientes'" [class.activa]="filtro() === 'clientes'" (click)="filtro.set('clientes')">Clientes ({{ clientes().length }})</button>
+    </div>
+    @if (lista().length) {
+      <div class="g-envoltura">
+        <table class="g-tabla">
+          <thead><tr><th>Nombre</th><th>Correo</th><th>Rol</th></tr></thead>
+          <tbody>
+            @for (u of lista(); track u.id) {
+              <tr>
+                <td><span class="quien"><span class="avatar" aria-hidden="true">{{ u.nombre[0] }}</span>{{ u.nombre }} @if (u.email === auth.sesion()?.email) { <span class="g-chip gris">Tú</span> }</span></td>
+                <td>{{ u.email }}</td>
+                <td><span class="g-chip" [class.ok]="u.rol === 'ADMIN'" [class.aviso]="u.rol === 'VENDEDOR'" [class.gris]="u.rol === 'CLIENTE'">{{ rolTexto[u.rol] }}</span></td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    } @else {
+      <div class="g-tarjeta g-vacio">{{ filtro() === 'personal' ? 'Todavía no hay personal registrado.' : 'Aún no hay clientes registrados.' }}</div>
+    }
+  }
+
+  <app-panel-lateral [abierto]="abierto()" titulo="Nueva cuenta de personal" (cerrar)="abierto.set(false)">
+    @if (abierto()) {
+      <form [formGroup]="form" (ngSubmit)="guardar()" novalidate>
+        <div class="g-campo">
+          <label for="u-nombre">Nombre completo</label>
+          <input id="u-nombre" formControlName="nombre" autocomplete="off" [class.invalido]="mensaje(form.controls.nombre)" />
+          @if (mensaje(form.controls.nombre); as m) { <p class="error-campo">{{ m }}</p> }
+        </div>
+        <div class="g-campo">
+          <label for="u-email">Correo</label>
+          <input id="u-email" type="email" formControlName="email" autocomplete="off" [class.invalido]="mensaje(form.controls.email)" />
+          @if (mensaje(form.controls.email); as m) { <p class="error-campo">{{ m }}</p> }
+        </div>
+        <div class="g-campo">
+          <label for="u-clave">Contraseña inicial</label>
+          <input id="u-clave" [type]="verClave() ? 'text' : 'password'" formControlName="password" autocomplete="new-password" [class.invalido]="mensaje(form.controls.password)" />
+          @if (mensaje(form.controls.password); as m) { <p class="error-campo">{{ m }}</p> } @else { <p class="ayuda">Mínimo 6 caracteres. La persona puede cambiarla desde «Mi cuenta».</p> }
+          <button type="button" class="g-enlace ver" (click)="verClave.set(!verClave())">{{ verClave() ? 'Ocultar' : 'Mostrar' }} contraseña</button>
+        </div>
+        <div class="g-campo">
+          <label for="u-rol">Rol</label>
+          <select id="u-rol" formControlName="rol">
+            <option value="VENDEDOR">Vendedor (pedidos e inventario)</option>
+            <option value="ADMIN">Administrador (todo)</option>
+          </select>
+        </div>
+        <div class="g-acciones-form">
+          <button type="submit" class="g-btn" [disabled]="guardando()">{{ guardando() ? 'Creando…' : 'Crear cuenta' }}</button>
+          <button type="button" class="g-btn sec" (click)="abierto.set(false)">Cancelar</button>
+        </div>
+      </form>
+    }
+  </app-panel-lateral>
+</div>

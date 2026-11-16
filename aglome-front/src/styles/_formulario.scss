@@ -1,0 +1,100 @@
+@use 'variables' as v;
+
+// Estilos compartidos por las pantallas con formulario (ingresar, registro, cuenta).
+.pagina-auth {
+  min-height: calc(100vh - 4.6rem);
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  background: v.$color-fondo;
+
+  @include v.tablet { grid-template-columns: 1fr; }
+}
+
+.lateral {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem clamp(1.5rem, 5vw, 4rem);
+  background: v.$color-noche;
+  color: #cfd8ea;
+
+  h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); max-width: 14ch; }
+  p { max-width: 32ch; margin: 0; }
+  ul { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 0.6rem; li { padding-left: 1.5rem; position: relative; &::before { content: '✓'; position: absolute; left: 0; color: #fff; font-weight: 700; } } }
+
+  // los dos cuadrados del logo, grandes y apenas visibles
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    border: 22px solid;
+    pointer-events: none;
+  }
+  &::before { width: 11rem; height: 11rem; right: 3rem; top: 3rem; border-color: rgb(0 73 175 / 75%); }
+  &::after { width: 11rem; height: 11rem; right: 1rem; top: 5rem; border-color: rgb(126 126 126 / 40%); }
+
+  @include v.tablet { display: none; }
+}
+
+.zona-form {
+  display: grid;
+  place-items: center;
+  padding: 2.5rem 1.25rem;
+  background: v.$color-fondo-seccion;
+}
+
+.form-tarjeta {
+  width: min(26rem, 100%);
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid v.$color-borde;
+  border-radius: v.$radio;
+  box-shadow: v.$sombra;
+
+  h2 { font-size: 2rem; }
+  .sub { margin: 0 0 1.5rem; color: v.$color-texto-suave; }
+}
+
+.campo {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+
+  label { font-weight: 600; font-size: 0.9rem; }
+  input { width: 100%; height: 2.8rem; padding-inline: 0.8rem; }
+  input.invalido { border-color: v.$color-error; }
+  .error-campo { margin: 0; font-size: 0.82rem; color: v.$color-error; }
+  .ayuda { margin: 0; font-size: 0.8rem; color: v.$color-texto-suave; }
+}
+
+.con-ver {
+  position: relative;
+  input { padding-right: 4.5rem; }
+  button {
+    position: absolute;
+    right: 0.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.3rem 0.55rem;
+    background: none;
+    border: 0;
+    border-radius: v.$radio;
+    color: v.$color-primario;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover { background: v.$color-primario-claro; }
+  }
+}
+
+.enviar { width: 100%; height: 3rem; font-weight: 600; font-size: 1rem; margin-top: 0.4rem; }
+
+.pie-form {
+  margin: 1.25rem 0 0;
+  text-align: center;
+  color: v.$color-texto-suave;
+  font-size: 0.92rem;
+}

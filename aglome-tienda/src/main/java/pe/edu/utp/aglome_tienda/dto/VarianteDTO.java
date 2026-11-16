@@ -17,4 +17,5 @@ public class VarianteDTO {
     private Integer stock;
     private Boolean activa;
     private Map<String, String> atributos; // ej: {"Color": "Rojo", "Medida": "1 Galón"}
+    private String imagenUrl;
 }

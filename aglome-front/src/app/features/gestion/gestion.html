@@ -1,0 +1,27 @@
+<div class="gp marco">
+  <aside class="lateral" aria-label="Secciones del panel">
+    <nav>
+      @for (g of grupos(); track g.titulo) {
+        <p class="grupo">{{ g.titulo }}</p>
+        <ul>
+          @for (s of g.secciones; track s.ruta) {
+            <li>
+              <a [routerLink]="s.ruta" routerLinkActive="activa">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path [attr.d]="s.icono" /></svg>
+                <span>{{ s.texto }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      }
+    </nav>
+    <div class="persona">
+      <span class="avatar" aria-hidden="true">{{ inicial() }}</span>
+      <span class="quien"><strong>{{ auth.nombre() }}</strong><small>{{ auth.rol() === 'ADMIN' ? 'Administrador' : 'Vendedor' }}</small></span>
+    </div>
+  </aside>
+
+  <section class="contenido">
+    <router-outlet />
+  </section>
+</div>

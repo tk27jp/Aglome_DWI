@@ -9,11 +9,15 @@ import pe.edu.utp.aglome_tienda.dto.AgregarAlCarritoRequest;
 import pe.edu.utp.aglome_tienda.dto.CarritoDTO;
 import pe.edu.utp.aglome_tienda.model.*;
 import pe.edu.utp.aglome_tienda.repository.*;
+import org.springframework.security.access.AccessDeniedException;
+import pe.edu.utp.aglome_tienda.exception.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+import pe.edu.utp.aglome_tienda.exception.RecursoNoEncontradoException;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -32,14 +36,14 @@ class CarritoServiceTest {
 
     private Variante crearVariante(int stock) {
         Categoria categoria = new Categoria(1L, "Melaminas", null, true);
-        ProductoBase producto = new ProductoBase(UUID.randomUUID(), "Melamina", "desc", "Aglome", categoria, true);
+        ProductoBase producto = new ProductoBase(UUID.randomUUID(), "Melamina", "desc", new Marca(1L, "Aglome"), categoria, true);
         return new Variante(UUID.randomUUID(), producto, "SKU-1", new BigDecimal("45.90"), stock, true);
     }
 
     @Test
     void agregarItem_conStockSuficiente_debeAgregarloAlCarrito() {
         // Simular datos SIN error
-        Usuario usuario = new Usuario(1L, "Jonathan Navarro", "jonathan@test.com", "hash", Rol.CLIENTE);
+        Usuario usuario = new Usuario(1L, "Jhonatan Navarro", "jhonatan@test.com", "hash", Rol.CLIENTE);
         Carrito carrito = new Carrito(UUID.randomUUID(), usuario);
         Variante variante = crearVariante(30);
 
@@ -47,13 +51,13 @@ class CarritoServiceTest {
         request.setVarianteId(variante.getId());
         request.setCantidad(2);
 
-        when(usuarioRepository.findByEmail("jonathan@test.com")).thenReturn(Optional.of(usuario));
+        when(usuarioRepository.findByEmail("jhonatan@test.com")).thenReturn(Optional.of(usuario));
         when(carritoRepository.findByUsuarioId(1L)).thenReturn(Optional.of(carrito));
         when(varianteRepository.findById(variante.getId())).thenReturn(Optional.of(variante));
         when(carritoItemRepository.findByCarritoIdAndVarianteId(any(), any())).thenReturn(Optional.empty());
         when(carritoItemRepository.findByCarritoId(any())).thenReturn(List.of());
 
-        CarritoDTO resultado = carritoService.agregarItem("jonathan@test.com", request);
+        CarritoDTO resultado = carritoService.agregarItem("jhonatan@test.com", request);
 
         // Verificar el test
         assertNotNull(resultado);
@@ -63,7 +67,7 @@ class CarritoServiceTest {
     @Test
     void agregarItem_conStockInsuficiente_debeLanzarExcepcion() {
         // Simular datos CON error (piden 5 y solo queda 1)
-        Usuario usuario = new Usuario(1L, "Jonathan Navarro", "jonathan@test.com", "hash", Rol.CLIENTE);
+        Usuario usuario = new Usuario(1L, "Jhonatan Navarro", "jhonatan@test.com", "hash", Rol.CLIENTE);
         Carrito carrito = new Carrito(UUID.randomUUID(), usuario);
         Variante variante = crearVariante(1);
 
@@ -71,13 +75,13 @@ class CarritoServiceTest {
         request.setVarianteId(variante.getId());
         request.setCantidad(5);
 
-        when(usuarioRepository.findByEmail("jonathan@test.com")).thenReturn(Optional.of(usuario));
+        when(usuarioRepository.findByEmail("jhonatan@test.com")).thenReturn(Optional.of(usuario));
         when(carritoRepository.findByUsuarioId(1L)).thenReturn(Optional.of(carrito));
         when(varianteRepository.findById(variante.getId())).thenReturn(Optional.of(variante));
 
         // Verificar el test
         RuntimeException ex = assertThrows(RuntimeException.class,
-                () -> carritoService.agregarItem("jonathan@test.com", request));
+                () -> carritoService.agregarItem("jhonatan@test.com", request));
         assertTrue(ex.getMessage().contains("Stock insuficiente"));
         verify(carritoItemRepository, never()).save(any());
     }
@@ -85,7 +89,7 @@ class CarritoServiceTest {
     @Test
     void agregarItem_conVarianteInexistente_debeLanzarExcepcion() {
         // Simular datos CON error (la variante no existe)
-        Usuario usuario = new Usuario(1L, "Jonathan Navarro", "jonathan@test.com", "hash", Rol.CLIENTE);
+        Usuario usuario = new Usuario(1L, "Jhonatan Navarro", "jhonatan@test.com", "hash", Rol.CLIENTE);
         Carrito carrito = new Carrito(UUID.randomUUID(), usuario);
         UUID varianteInventada = UUID.randomUUID();
 
@@ -93,14 +97,36 @@ class CarritoServiceTest {
         request.setVarianteId(varianteInventada);
         request.setCantidad(1);
 
-        when(usuarioRepository.findByEmail("jonathan@test.com")).thenReturn(Optional.of(usuario));
+        when(usuarioRepository.findByEmail("jhonatan@test.com")).thenReturn(Optional.of(usuario));
         when(carritoRepository.findByUsuarioId(1L)).thenReturn(Optional.of(carrito));
         when(varianteRepository.findById(varianteInventada)).thenReturn(Optional.empty());
 
         // Verificar el test
         RuntimeException ex = assertThrows(RuntimeException.class,
-                () -> carritoService.agregarItem("jonathan@test.com", request));
+                () -> carritoService.agregarItem("jhonatan@test.com", request));
         assertEquals("Variante no encontrada", ex.getMessage());
+        verify(carritoItemRepository, never()).save(any());
+    }
+
+    @Test
+    void agregarItem_conVarianteEliminada_debeLanzarRecursoNoEncontrado() {
+        // Simular datos CON error (el admin eliminó la variante)
+        Usuario usuario = new Usuario(1L, "Jhonatan Navarro", "jhonatan@test.com", "hash", Rol.CLIENTE);
+        Carrito carrito = new Carrito(UUID.randomUUID(), usuario);
+        Variante variante = crearVariante(30);
+        variante.setEliminado(true);
+
+        AgregarAlCarritoRequest request = new AgregarAlCarritoRequest();
+        request.setVarianteId(variante.getId());
+        request.setCantidad(1);
+
+        when(usuarioRepository.findByEmail("jhonatan@test.com")).thenReturn(Optional.of(usuario));
+        when(carritoRepository.findByUsuarioId(1L)).thenReturn(Optional.of(carrito));
+        when(varianteRepository.findById(variante.getId())).thenReturn(Optional.of(variante));
+
+        // Verificar el test
+        assertThrows(RecursoNoEncontradoException.class,
+                () -> carritoService.agregarItem("jhonatan@test.com", request));
         verify(carritoItemRepository, never()).save(any());
     }
 }

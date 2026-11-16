@@ -1,0 +1,65 @@
+<div class="contenedor pagina">
+  <h1>Mis pedidos</h1>
+
+  @if (error(); as e) {
+    <div class="aviso error" role="alert">{{ e }} <button type="button" class="enlace" (click)="cargar()">Reintentar</button></div>
+  } @else if (pedidos() === null) {
+    <div class="esqueleto" aria-busy="true"></div>
+  } @else if (pedidos()!.length === 0) {
+    <div class="vacio">
+      <h2>Todavía no tienes pedidos</h2>
+      <p>Cuando confirmes una compra, la verás aquí con su estado.</p>
+      <a routerLink="/productos" class="btn">Ver productos</a>
+    </div>
+  } @else {
+    <div class="filtros" role="tablist" aria-label="Filtrar por estado">
+      @for (f of filtros; track f) {
+        <button type="button" role="tab" [attr.aria-selected]="filtro() === f" [class.activo]="filtro() === f" (click)="filtro.set(f)">{{ etiquetaFiltro(f) }}</button>
+      }
+    </div>
+
+    @for (p of visibles(); track p.id) {
+      <article class="pedido">
+        <header class="cabeza">
+          <div>
+            <strong>Pedido #{{ codigo(p.id) }}</strong>
+            <span class="fecha">{{ p.fecha | date: 'dd/MM/yyyy HH:mm' }}</span>
+          </div>
+          <span class="estado" [class]="'estado ' + p.estado">{{ etiqueta[p.estado] }}</span>
+          <strong class="total">{{ p.total | currency: 'PEN' : 'S/ ' }}</strong>
+        </header>
+
+        @if (p.estado !== 'CANCELADO') {
+          <ol class="avance" aria-label="Avance del pedido">
+            @for (s of pasos; track s; let i = $index) {
+              <li [class.hecho]="i <= paso(p.estado)" [class.actual]="i === paso(p.estado)"><span class="punto"></span>{{ etiqueta[s] }}</li>
+            }
+          </ol>
+        }
+
+        <details>
+          <summary>Ver productos ({{ p.detalles.length }})</summary>
+          <ul class="detalle">
+            @for (d of p.detalles; track d.sku) {
+              <li><span>{{ d.cantidad }} × {{ d.productoNombre }} <small>{{ d.sku }}</small></span><span>{{ d.subtotal | currency: 'PEN' : 'S/ ' }}</span></li>
+            }
+          </ul>
+        </details>
+
+        @if (cancelable(p.estado)) {
+          <footer class="pie">
+            @if (confirmandoCancelar() === p.id) {
+              <span>¿Cancelar este pedido? El stock se devuelve.</span>
+              <button type="button" class="btn peligro" [disabled]="cancelando() === p.id" (click)="cancelar(p.id)">{{ cancelando() === p.id ? 'Cancelando…' : 'Sí, cancelar' }}</button>
+              <button type="button" class="btn secundario" (click)="confirmandoCancelar.set(null)">No</button>
+            } @else {
+              <button type="button" class="btn secundario" (click)="confirmandoCancelar.set(p.id)">Cancelar pedido</button>
+            }
+          </footer>
+        }
+      </article>
+    } @empty {
+      <p class="vacio-filtro">No tienes pedidos en estado «{{ etiquetaFiltro(filtro()) }}».</p>
+    }
+  }
+</div>

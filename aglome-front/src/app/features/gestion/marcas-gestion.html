@@ -1,0 +1,52 @@
+<div class="gp">
+  <header class="g-titulo">
+    <div><h1>Marcas</h1><p>Las marcas con las que trabajas. Se eligen al crear cada producto.</p></div>
+    <div class="acciones"><button type="button" class="g-btn" (click)="abrir(null)">+ Nueva marca</button></div>
+  </header>
+
+  @if (error(); as e) {
+    <div class="aviso error" role="alert">{{ e }} <button type="button" class="g-btn sec mini" (click)="cargar()">Reintentar</button></div>
+  } @else if (marcas() === null) {
+    <div class="esqueleto" aria-busy="true"></div>
+  } @else if (marcas()!.length) {
+    <ul class="rejilla-marcas">
+      @for (m of marcas(); track m.id; let i = $index) {
+        <li [style.--i]="i">
+          @if (m.imagenUrl) { <img class="logo" [src]="m.imagenUrl" [alt]="m.nombre" loading="lazy" /> } @else { <span class="logo letra" aria-hidden="true">{{ m.nombre[0] }}</span> }
+          <strong>{{ m.nombre }}</strong>
+          <div class="acc">
+            @if (porEliminar() === m.id) {
+              <button type="button" class="g-btn peligro mini" [disabled]="eliminando()" (click)="eliminar(m)">Eliminar</button>
+              <button type="button" class="g-btn sec mini" (click)="porEliminar.set(null)">No</button>
+            } @else {
+              <button type="button" class="g-enlace" (click)="abrir(m)">Editar</button>
+              <button type="button" class="g-enlace rojo" (click)="porEliminar.set(m.id)">Eliminar</button>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+  } @else {
+    <div class="g-tarjeta g-vacio"><p>Todavía no hay marcas.</p><button type="button" class="g-btn" (click)="abrir(null)">Agregar la primera</button></div>
+  }
+
+  <app-panel-lateral [abierto]="abierto()" [titulo]="editando() ? 'Editar marca' : 'Nueva marca'" (cerrar)="cerrar()">
+    @if (abierto()) {
+      <form [formGroup]="form" (ngSubmit)="guardar()" novalidate>
+        <div class="g-campo">
+          <label for="m-nombre">Nombre</label>
+          <input id="m-nombre" formControlName="nombre" [class.invalido]="mensaje(form.controls.nombre)" placeholder="Ej.: Dewalt" />
+          @if (mensaje(form.controls.nombre); as m) { <p class="error-campo">{{ m }}</p> }
+        </div>
+        <div class="g-campo">
+          <label for="m-img">Logo (enlace, opcional)</label>
+          <input id="m-img" formControlName="imagenUrl" placeholder="https://…" />
+        </div>
+        <div class="g-acciones-form">
+          <button type="submit" class="g-btn" [disabled]="guardando()">{{ guardando() ? 'Guardando…' : 'Guardar' }}</button>
+          <button type="button" class="g-btn sec" (click)="cerrar()">Cancelar</button>
+        </div>
+      </form>
+    }
+  </app-panel-lateral>
+</div>

@@ -19,29 +19,17 @@ public class AdminVarianteController {
 
     @PostMapping
     public ResponseEntity<?> crear(@Valid @RequestBody VarianteRequest request) {
-        try {
-            return ResponseEntity.status(HttpStatus.CREATED).body(varianteService.crear(request));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(varianteService.crear(request));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizar(@PathVariable UUID id, @Valid @RequestBody VarianteRequest request) {
-        try {
-            return ResponseEntity.ok(varianteService.actualizar(id, request));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        return ResponseEntity.ok(varianteService.actualizar(id, request));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable UUID id) {
-        try {
-            varianteService.eliminar(id);
-            return ResponseEntity.noContent().build();
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(404).body(e.getMessage());
-        }
+        varianteService.eliminar(id);
+        return ResponseEntity.noContent().build();
     }
 }

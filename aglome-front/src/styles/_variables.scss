@@ -1,0 +1,49 @@
+// ── Identidad de Aglome ─────────────────────────────────────────────
+// Azul y gris salen del logo (#0049AF y #7E7E7E). El ámbar es el tono de la madera
+// y se usa solo para resaltar (ofertas, avisos del carrito). Cambia aquí y toda la app se actualiza.
+$color-primario: #0049af;
+$color-primario-oscuro: #00378a;
+$color-primario-claro: #e6eef9;
+$color-noche: #0a1f44; // fondos oscuros (pie, bloques destacados)
+$color-secundario: #7e7e7e;
+$color-madera: #c8892b;
+$color-madera-claro: #fbf1e0;
+$color-fondo: #ffffff;
+$color-fondo-seccion: #f3f4f7;
+$color-texto: #1b2230;
+$color-texto-suave: #586073;
+$color-borde: #dcdfe6;
+
+// Colores funcionales
+$color-ok: #1e8e3e;
+$color-aviso: #b26a00;
+$color-error: #c62828;
+
+$radio: 3px; // esquinas casi rectas, como los cuadrados del logo
+$ancho-max: 1240px;
+$espacio: 1rem;
+$sombra: 0 8px 24px rgb(10 31 68 / 12%);
+
+// Barlow Condensed: rótulo de ferretería y maderera, para títulos y precios.
+// Public Sans: texto corrido, legible en pantallas pequeñas.
+$fuente-titulo: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+$fuente: 'Public Sans', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+
+$bp-movil: 640px;
+$bp-tablet: 960px;
+
+@mixin movil {
+  @media (max-width: #{$bp-movil}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: #{$bp-tablet}) {
+    @content;
+  }
+}
+@mixin sin-movimiento {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}

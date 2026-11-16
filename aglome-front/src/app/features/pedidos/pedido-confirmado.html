@@ -1,0 +1,28 @@
+<div class="contenedor pagina">
+  @if (pedido(); as p) {
+    <section class="tarjeta">
+      <div class="marca" aria-hidden="true">
+        <svg viewBox="0 0 52 52" width="64" height="64"><circle class="circulo" cx="26" cy="26" r="24" fill="none" stroke-width="3" /><path class="check" d="M15 27l8 8 14-16" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+      <h1>Pedido confirmado</h1>
+      <p class="codigo">Pedido <strong>#{{ codigo(p.id) }}</strong> · {{ p.fecha | date: 'dd/MM/yyyy HH:mm' }}</p>
+
+      <ul class="detalle">
+        @for (d of p.detalles; track d.sku) {
+          <li><span>{{ d.cantidad }} × {{ d.productoNombre }}</span><span>{{ d.subtotal | currency: 'PEN' : 'S/ ' }}</span></li>
+        }
+      </ul>
+      <div class="total"><span>Total</span><strong>{{ p.total | currency: 'PEN' : 'S/ ' }}</strong></div>
+
+      <div class="botones">
+        <a routerLink="/mis-pedidos" class="btn">Ver mis pedidos</a>
+        <a routerLink="/productos" class="btn secundario">Seguir comprando</a>
+      </div>
+    </section>
+  } @else if (error(); as e) {
+    <div class="aviso error" role="alert">{{ e }}</div>
+    <p><a routerLink="/mis-pedidos">Ir a mis pedidos</a></p>
+  } @else {
+    <div class="cargando" aria-busy="true"></div>
+  }
+</div>

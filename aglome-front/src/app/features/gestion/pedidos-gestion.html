@@ -1,0 +1,72 @@
+<div class="gp">
+  <header class="g-titulo"><div><h1>Pedidos</h1><p>Mira lo que llegó y avanza cada pedido hasta entregarlo.</p></div></header>
+
+<div class="barra-filtros">
+  <div class="chips" role="group" aria-label="Filtrar por estado">
+    @for (f of filtros; track f.valor) {
+      <button type="button" class="chip" [class.activo]="filtro() === f.valor" [attr.aria-pressed]="filtro() === f.valor" (click)="elegirFiltro(f.valor)">{{ f.texto }}</button>
+    }
+  </div>
+  <button type="button" class="btn secundario" (click)="cargar()">Actualizar</button>
+</div>
+
+@if (error(); as e) {
+  <div class="aviso error" role="alert">{{ e }}</div>
+} @else if (pedidos(); as lista) {
+  @if (lista.length) {
+    <ul class="pedidos">
+      @for (p of lista; track p.id; let i = $index) {
+        <li class="pedido" [class.abierto]="abierto() === p.id" [style.--i]="i">
+          <button type="button" class="cabecera-pedido" [attr.aria-expanded]="abierto() === p.id" (click)="alternar(p.id)">
+            <span class="codigo">#{{ codigo(p.id) }}</span>
+            <span class="fecha">{{ p.fecha | date: 'dd/MM/yyyy HH:mm' }}</span>
+            <span class="items">{{ unidades(p) }} {{ unidades(p) === 1 ? 'unidad' : 'unidades' }}</span>
+            <span class="etiqueta-estado" [class]="'etiqueta-estado ' + p.estado">{{ etiqueta[p.estado] }}</span>
+            <strong class="total">{{ p.total | currency: 'PEN' : 'S/ ' }}</strong>
+            <span class="flecha" aria-hidden="true">›</span>
+          </button>
+
+          @if (abierto() === p.id) {
+            <div class="detalle">
+              <div class="desplazable">
+                <table class="tabla-g">
+                  <thead><tr><th>Producto</th><th>Código</th><th class="num">Cant.</th><th class="num">Precio</th><th class="num">Subtotal</th></tr></thead>
+                  <tbody>
+                    @for (d of p.detalles; track d.sku) {
+                      <tr><td>{{ d.productoNombre }}</td><td>{{ d.sku }}</td><td class="num">{{ d.cantidad }}</td><td class="num">{{ d.precioUnitario | currency: 'PEN' : 'S/ ' }}</td><td class="num">{{ d.subtotal | currency: 'PEN' : 'S/ ' }}</td></tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="acciones">
+                @if (p.siguientesEstados.length) {
+                  @for (e of p.siguientesEstados; track e) {
+                    @if (e === 'CANCELADO') {
+                      @if (porCancelar() === p.id) {
+                        <span class="confirma">¿Cancelar este pedido? El stock vuelve al inventario.</span>
+                        <button type="button" class="btn peligro" [disabled]="cambiando() === p.id" (click)="mover(p, e)">Sí, cancelar</button>
+                        <button type="button" class="btn secundario" (click)="porCancelar.set(null)">No</button>
+                      } @else {
+                        <button type="button" class="btn secundario peligro-suave" [disabled]="cambiando() === p.id" (click)="mover(p, e)">{{ textoAccion(e) }}</button>
+                      }
+                    } @else {
+                      <button type="button" class="btn" [disabled]="cambiando() === p.id" (click)="mover(p, e)">{{ cambiando() === p.id ? 'Guardando…' : textoAccion(e) }}</button>
+                    }
+                  }
+                } @else {
+                  <span class="final">Este pedido ya no admite más cambios.</span>
+                }
+              </div>
+            </div>
+          }
+        </li>
+      }
+    </ul>
+  } @else {
+    <p class="vacio-g">No hay pedidos {{ filtro() ? 'en estado «' + etiqueta[filtro() || 'PENDIENTE'] + '»' : 'todavía' }}.</p>
+  }
+} @else {
+  <div class="cargando-g" aria-busy="true"></div>
+}
+</div>

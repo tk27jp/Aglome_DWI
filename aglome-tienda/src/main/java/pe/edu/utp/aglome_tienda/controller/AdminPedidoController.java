@@ -12,24 +12,27 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/admin/pedidos")
 @RequiredArgsConstructor
-@PreAuthorize("hasRole('ADMIN')")
+@PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR')")
 public class AdminPedidoController {
 
     private final PedidoService pedidoService;
 
+    // GET /api/admin/pedidos              → todos, los más recientes primero
+    // GET /api/admin/pedidos?estado=ENVIADO → solo los de ese estado
     @GetMapping
-    public ResponseEntity<?> listarTodos() {
-        return ResponseEntity.ok(pedidoService.listarTodosAdmin());
+    public ResponseEntity<?> listarTodos(@RequestParam(required = false) EstadoPedido estado) {
+        return ResponseEntity.ok(pedidoService.listarTodosAdmin(estado));
     }
 
-    // PUT /api/admin/pedidos/{id}/estado?estado=CANCELADO
+    @GetMapping("/{id}")
+    public ResponseEntity<?> obtener(@PathVariable UUID id) {
+        return ResponseEntity.ok(pedidoService.obtenerPorIdAdmin(id));
+    }
+
+    // PATCH /api/admin/pedidos/{id}/estado?estado=EN_PREPARACION (solo transiciones válidas, si no → 409)
     @PatchMapping("/{id}/estado")
     public ResponseEntity<?> cambiarEstado(@PathVariable UUID id,
                                            @RequestParam EstadoPedido estado) {
-        try {
-            return ResponseEntity.ok(pedidoService.cambiarEstado(id, estado));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        return ResponseEntity.ok(pedidoService.cambiarEstado(id, estado));
     }
 }

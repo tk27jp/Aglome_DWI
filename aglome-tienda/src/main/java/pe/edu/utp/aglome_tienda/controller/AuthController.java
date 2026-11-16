@@ -2,7 +2,6 @@ package pe.edu.utp.aglome_tienda.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.utp.aglome_tienda.dto.AuthResponse;
@@ -19,21 +18,13 @@ public class AuthController {
 
     @PostMapping("/registro")
     public ResponseEntity<?> registrar(@Valid @RequestBody RegistroRequest request) {
-        try {
-            AuthResponse response = authService.registrar(request);
-            return ResponseEntity.ok(response);
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        }
+        AuthResponse response = authService.registrar(request);
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
-        try {
-            AuthResponse response = authService.login(request);
-            return ResponseEntity.ok(response);
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
-        }
+        AuthResponse response = authService.login(request);
+        return ResponseEntity.ok(response);
     }
 }

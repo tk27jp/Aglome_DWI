@@ -1,0 +1,200 @@
+@if (auth.rol() === 'ADMIN' && producto(); as p) {
+  <div class="barra-admin" role="region" aria-label="Herramientas de administración">
+    <span>Estás viendo la tienda como administrador</span>
+    <a [routerLink]="['/gestion/catalogo']" [queryParams]="{ editar: p.id }">Editar este producto</a>
+    <a routerLink="/gestion/inventario" [queryParams]="{ buscar: p.nombre }">Ajustar stock</a>
+  </div>
+}
+<div class="contenedor pagina">
+  <nav class="migas" aria-label="Ruta">
+    <a routerLink="/productos">Catálogo</a>
+    @if (producto(); as p) {
+      @if (p.categoriaNombre) { <span>/</span> <a [routerLink]="['/productos']" [queryParams]="{ categoriaId: p.categoriaId }">{{ p.categoriaNombre }}</a> }
+      <span>/</span> <span aria-current="page">{{ p.nombre }}</span>
+    }
+  </nav>
+
+  @if (cargando()) {
+    <div class="esqueleto" aria-busy="true"></div>
+  } @else if (error(); as e) {
+    <div class="vacio">
+      <h1>{{ e.status === 404 ? 'Este producto no existe' : 'No se pudo cargar el producto' }}</h1>
+      <p>{{ e.mensaje }}</p>
+      <a routerLink="/productos" class="btn">Volver al catálogo</a>
+    </div>
+  } @else if (producto(); as p) {
+    <article class="ficha">
+      <div class="imagen" [class.con-foto]="conFoto()" (pointermove)="mover($event)" [style.--zx.%]="lupa().x" [style.--zy.%]="lupa().y">
+        <app-producto-imagen [producto]="p" [foto]="seleccionada()?.imagenUrl ?? null" />
+        @if (estadoStock(); as s) {
+          @if (s.clase !== 'ok') { <span class="sello" [class]="'sello ' + s.clase">{{ s.clase === 'agotado' ? 'Agotado' : '¡Últimas unidades!' }}</span> }
+        }
+      </div>
+
+      <div class="info">
+        @if (p.marca) { <span class="marca">{{ p.marca }}</span> }
+        <h1>{{ p.nombre }}</h1>
+        @if (p.descripcion) { <p class="descripcion">{{ p.descripcion }}</p> }
+
+        @if (variantes().length) {
+          @if (colores().length) {
+            <h2>Color: <strong>{{ colorElegido() }}</strong></h2>
+            <div class="colores" role="radiogroup" aria-label="Color">
+              @for (c of colores(); track c) {
+                <button type="button" role="radio" class="muestra" [class.elegida]="c === colorElegido()" [attr.aria-checked]="c === colorElegido()" [attr.aria-label]="c" [title]="c" [style.--c]="tono(c)" (click)="elegirColor(c)"></button>
+              }
+            </div>
+          }
+
+          <h2>{{ colores().length ? 'Medida' : 'Elige una opción' }}</h2>
+          <ul class="opciones" role="radiogroup" aria-label="Opciones del producto">
+            @for (v of opcionesVisibles(); track v.id) {
+              <li>
+                <button
+                  type="button"
+                  role="radio"
+                  class="opcion"
+                  [class.elegida]="v.id === seleccionada()?.id"
+                  [class.sin-stock]="v.stock <= 0"
+                  [attr.aria-checked]="v.id === seleccionada()?.id"
+                  (click)="elegir(v)"
+                >
+                  <span class="attrs">
+                    @for (a of atributosSin(v); track a.nombre) {
+                      <span><small>{{ a.nombre }}</small> {{ a.valor }}</span>
+                    } @empty {
+                      <span>{{ v.sku }}</span>
+                    }
+                  </span>
+                  <span class="precio-op">{{ v.precioVenta | currency: 'PEN' : 'S/ ' }}</span>
+                </button>
+              </li>
+            }
+          </ul>
+
+          @if (seleccionada(); as v) {
+            <div class="resumen">
+              @for (precio of [v.precioVenta]; track precio) { <div class="precio">{{ precio | currency: 'PEN' : 'S/ ' }}</div> }
+              @if (estadoStock(); as s) { <span class="stock" [class]="'stock ' + s.clase">{{ s.texto }}</span> }
+              @if (v.stock > 0 && v.stock <= 20) {
+                <div class="barra" role="img" [attr.aria-label]="v.stock + ' unidades en stock'"><i [class]="estadoStock()?.clase" [style.width.%]="v.stock * 5"></i></div>
+              }
+
+              @if (v.stock > 0) {
+                <div class="compra">
+                  <div class="cantidad" role="group" aria-label="Cantidad">
+                    <button type="button" aria-label="Quitar una unidad" (click)="cambiarCantidad(-1)" [disabled]="cantidad() <= 1">−</button>
+                    @for (c of [cantidad()]; track c) { <span class="numero">{{ c }}</span> }
+                    <button type="button" aria-label="Agregar una unidad" (click)="cambiarCantidad(1)" [disabled]="cantidad() >= v.stock">+</button>
+                  </div>
+                  <button type="button" class="btn agregar" [class.listo]="agregado()" [disabled]="agregando()" (click)="agregar()">
+                    @if (agregado()) { <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="trazo" d="m5 12.5 4.5 4.5L19 7.500" /></svg> Agregado }
+                    @else { {{ agregando() ? 'Agregando…' : 'Agregar al carrito' }} }
+                  </button>
+                </div>
+                <button type="button" class="btn comprar" [disabled]="agregando()" (click)="comprarAhora()">Comprar ahora</button>
+                @if (cantidad() > 1) {
+                  <p class="subtotal">Subtotal por {{ cantidad() }}: @for (t of [subtotal()]; track t) { <strong>{{ t | currency: 'PEN' : 'S/ ' }}</strong> }</p>
+                }
+              } @else {
+                <p class="sin-stock-msg">Esta opción está agotada por ahora. Prueba con otra opción.</p>
+              }
+            </div>
+
+            @if (plancha(); as pl) {
+              <section class="calculadora" aria-labelledby="calc-titulo">
+                <h2 id="calc-titulo">¿Cuántas planchas necesitas?</h2>
+                <p class="calc-ayuda">Cada plancha mide {{ pl.ancho }} × {{ pl.alto }} m ({{ pl.area | number: '1.1-2' }} m²). Escribe el área que vas a cubrir.</p>
+                <div class="calc-fila">
+                  <label class="calc-campo">
+                    <input type="text" inputmode="decimal" placeholder="Ej. 12" aria-label="Área a cubrir en metros cuadrados" (input)="leerArea($any($event.target).value)" />
+                    <span>m²</span>
+                  </label>
+                  @if (planchasNecesarias(); as n) {
+                    <div class="calc-resultado">
+                      @for (k of [n]; track k) { <strong>{{ k }} {{ k === 1 ? 'plancha' : 'planchas' }}</strong> }
+                      <small>incluye {{ desperdicio }}% para cortes · {{ n * v.precioVenta | currency: 'PEN' : 'S/ ' }}</small>
+                    </div>
+                    <button type="button" class="btn secundario" (click)="usarCalculo()">Usar esta cantidad</button>
+                  }
+                </div>
+              </section>
+            }
+
+            <div class="acciones-ficha">
+              @if (negocio.whatsapp) { <a class="compartir" [href]="enlaceConsulta()" target="_blank" rel="noopener">Consultar por WhatsApp</a> }
+              <a class="compartir" [href]="enlaceWhatsapp()" target="_blank" rel="noopener">Compartir por WhatsApp</a>
+              <button type="button" class="compartir" (click)="copiarEnlace()">Copiar enlace</button>
+            </div>
+          }
+        } @else {
+          <div class="aviso">Este producto no tiene opciones disponibles por ahora.</div>
+        }
+      </div>
+    </article>
+
+    <section class="pestanas" revelar>
+      <div class="lista-pestanas" role="tablist" aria-label="Información del producto">
+        <button type="button" role="tab" [class.activa]="pestana() === 'descripcion'" [attr.aria-selected]="pestana() === 'descripcion'" (click)="pestana.set('descripcion')">Descripción</button>
+        <button type="button" role="tab" [class.activa]="pestana() === 'ficha'" [attr.aria-selected]="pestana() === 'ficha'" (click)="pestana.set('ficha')">Ficha técnica</button>
+        <button type="button" role="tab" [class.activa]="pestana() === 'compra'" [attr.aria-selected]="pestana() === 'compra'" (click)="pestana.set('compra')">Cómo comprar</button>
+      </div>
+      @for (t of [pestana()]; track t) {
+        <div class="panel-pestana" role="tabpanel">
+          @switch (t) {
+            @case ('descripcion') {
+              <p>{{ p.descripcion || 'Este producto aún no tiene una descripción.' }}</p>
+            }
+            @case ('ficha') {
+              <dl class="datos">
+                @for (f of ficha(); track f.nombre) { <dt>{{ f.nombre }}</dt><dd>{{ f.valor }}</dd> }
+              </dl>
+            }
+            @case ('compra') {
+              <ol class="pasos">
+                <li><strong>Elige</strong> el color y la medida que necesitas.</li>
+                <li><strong>Agrega</strong> al carrito y revisa las cantidades.</li>
+                <li><strong>Confirma</strong> tu pedido: la tienda lo recibe al instante.</li>
+                <li><strong>Sigue</strong> su estado desde «Mis pedidos».</li>
+              </ol>
+            }
+          }
+        </div>
+      }
+    </section>
+
+    @if (relacionadosVista().length) {
+      <section class="relacionados">
+        <h2>Productos relacionados</h2>
+        <div class="grilla">
+          @for (r of relacionadosVista(); track r.id; let i = $index) {
+            <div revelar [style.--i]="i"><app-producto-card [producto]="r" /></div>
+          }
+        </div>
+      </section>
+    }
+
+    @if (combinan().length) {
+      <section class="relacionados">
+        <h2>Combina con tu compra</h2>
+        <p class="sub-seccion">Lo que suele hacer falta junto a este producto.</p>
+        <div class="grilla">
+          @for (r of combinan(); track r.id; let i = $index) {
+            <div revelar [style.--i]="i"><app-producto-card [producto]="r" /></div>
+          }
+        </div>
+      </section>
+    }
+
+    @if (recomendados().length) {
+      <section class="relacionados">
+        <h2>Recomendados para ti</h2>
+        <div class="grilla">
+          @for (r of recomendados(); track r.id; let i = $index) {
+            <div revelar [style.--i]="i % 4"><app-producto-card [producto]="r" /></div>
+          }
+        </div>
+      </section>
+    }
+  }
+</div>

@@ -1,0 +1,19 @@
+<app-cabecera />
+
+<main class="principal" [class.en-panel]="vista.panel()">
+  <router-outlet />
+</main>
+
+@if (!vista.panel()) {
+  <app-pie />
+  <app-panel-carrito />
+  <app-whatsapp />
+}
+<app-subir-arriba />
+
+@if (notificaciones.aviso(); as aviso) {
+  <div class="aviso-flotante" [class]="'aviso-flotante ' + aviso.tipo" [attr.role]="aviso.tipo === 'error' ? 'alert' : 'status'">
+    <span>{{ aviso.texto }}</span>
+    <button type="button" aria-label="Cerrar aviso" (click)="notificaciones.cerrar()">×</button>
+  </div>
+}

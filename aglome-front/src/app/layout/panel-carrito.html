@@ -1,0 +1,48 @@
+@if (carrito.panelAbierto()) {
+  <div class="velo" (click)="cerrarPanel()" aria-hidden="true"></div>
+  <aside class="panel" role="dialog" aria-modal="true" aria-label="Tu carrito">
+    <header class="encabezado">
+      <h2>Tu carrito <span>({{ carrito.cantidad() }})</span></h2>
+      <button #cerrar type="button" class="cerrar" aria-label="Cerrar carrito" (click)="cerrarPanel()">×</button>
+    </header>
+
+    @if (!auth.autenticado()) {
+      <div class="vacio">
+        <p>Ingresa para ver y guardar tu carrito.</p>
+        <button type="button" class="btn" (click)="irA('/ingresar')">Ingresar</button>
+      </div>
+    } @else if (carrito.vacio()) {
+      <div class="vacio">
+        <p>Tu carrito está vacío.</p>
+        <button type="button" class="btn" (click)="irA('/productos')">Ver productos</button>
+      </div>
+    } @else {
+      <ul class="items">
+        @for (i of carrito.carrito()!.items; track i.id) {
+          <li class="item">
+            <div class="datos">
+              <strong>{{ i.productoNombre }}</strong>
+              <span class="sku">{{ i.sku }}</span>
+              <span class="unitario">{{ i.precioUnitario | currency: 'PEN' : 'S/ ' }} c/u</span>
+            </div>
+            <div class="control">
+              <div class="cantidad" role="group" [attr.aria-label]="'Cantidad de ' + i.productoNombre">
+                <button type="button" aria-label="Quitar una unidad" (click)="cambiar(i.id, i.cantidad - 1)">−</button>
+                <span>{{ i.cantidad }}</span>
+                <button type="button" aria-label="Agregar una unidad" (click)="cambiar(i.id, i.cantidad + 1)">+</button>
+              </div>
+              <span class="subtotal">{{ i.subtotal | currency: 'PEN' : 'S/ ' }}</span>
+              <button type="button" class="quitar" (click)="quitar(i.id)">Quitar</button>
+            </div>
+          </li>
+        }
+      </ul>
+
+      <footer class="pie">
+        <div class="total"><span>Total</span><strong>{{ carrito.total() | currency: 'PEN' : 'S/ ' }}</strong></div>
+        <button type="button" class="btn grande" (click)="irA('/carrito')">Finalizar compra</button>
+        <button type="button" class="btn secundario grande" (click)="cerrarPanel()">Seguir comprando</button>
+      </footer>
+    }
+  </aside>
+}

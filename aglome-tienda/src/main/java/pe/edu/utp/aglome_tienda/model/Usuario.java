@@ -1,15 +1,15 @@
 package pe.edu.utp.aglome_tienda.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "usuario")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Usuario {
 
     @Id
@@ -23,9 +23,22 @@ public class Usuario {
     private String email;
 
     @Column(nullable = false)
-    private String password; // se va a guardar encriptada, no en texto plano
-
+    private String password;
+    
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private Rol rol;
+
+    @Column(nullable = false, columnDefinition = "integer default 0")
+    private Integer intentosFallidos = 0;
+
+    private LocalDateTime bloqueadoHasta;
+
+    public Usuario(Long id, String nombre, String email, String password, Rol rol) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.password = password;
+        this.rol = rol;
+    }
 }

@@ -1,0 +1,43 @@
+@use 'variables' as v;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.principal {
+  flex: 1;
+  background: v.$color-fondo-seccion;
+}
+
+.aviso-flotante {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 80;
+  max-width: 24rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.85rem 1rem;
+  background: v.$color-texto;
+  color: #fff;
+  border-left: 4px solid v.$color-error;
+  border-radius: v.$radio;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 30%);
+  animation: sube 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  &.ok { border-color: #35b36b; }
+  &.info { border-color: v.$color-madera; }
+
+  button {
+    margin-left: auto;
+    background: none;
+    border: 0;
+    color: inherit;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+}
+@keyframes sube { from { opacity: 0; transform: translateY(12px); } }

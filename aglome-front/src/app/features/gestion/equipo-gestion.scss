@@ -1,0 +1,12 @@
+@use 'variables' as v;
+
+.esqueleto { height: 12rem; background: linear-gradient(100deg, #e9eaef 30%, #f5f5f8 50%, #e9eaef 70%) 0 0 / 200% 100%; animation: brillo 1.2s linear infinite; }
+@keyframes brillo { to { background-position: -200% 0; } }
+.aviso button { margin-left: 0.75rem; }
+.roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 0.85rem; margin-bottom: 1.25rem;
+  article { display: grid; gap: 0.2rem; padding: 0.9rem 1.1rem; background: #fff; border: 1px solid v.$color-borde; border-left: 4px solid v.$color-primario; border-radius: v.$radio; strong { font-family: v.$fuente-titulo; font-size: 1.3rem; } span { color: v.$color-texto-suave; font-size: 0.88rem; } } }
+.pestanitas { display: flex; gap: 0.25rem; margin-bottom: 0.75rem; border-bottom: 2px solid v.$color-borde;
+  button { position: relative; padding: 0.55rem 1rem; border: 0; background: none; font: inherit; font-weight: 600; color: v.$color-texto-suave; cursor: pointer; &.activa { color: v.$color-primario; &::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 3px; background: v.$color-primario; } } } }
+.quien { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 600; }
+.avatar { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: v.$color-primario-claro; color: v.$color-primario; font-family: v.$fuente-titulo; font-size: 1.15rem; font-weight: 700; }
+.ver { justify-self: start; }
