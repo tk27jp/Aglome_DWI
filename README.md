@@ -448,5 +448,8 @@ npm run build     # compilación de producción en dist/
 ## Autores
 
 Proyecto académico — Universidad Tecnológica del Perú (UTP).
-
-<!-- Agrega aquí los nombres del equipo y, si quieres, una licencia. -->
+- Centurion Guzman, Jose 
+- Hurtado Chávez, Fernando
+- Navarro López, Jhonatan 
+- Pariachi Herrera, Dalia
+- Vacas Neyra, Elton
