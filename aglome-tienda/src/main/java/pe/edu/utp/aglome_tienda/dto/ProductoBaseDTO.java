@@ -3,6 +3,7 @@ package pe.edu.utp.aglome_tienda.dto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,8 +15,11 @@ public class ProductoBaseDTO {
     private String nombre;
     private String descripcion;
     private String marca;
+    private Long marcaId;
+    private String imagenUrl;
     private Long categoriaId;
     private String categoriaNombre;
     private Boolean publicado;
     private List<VarianteDTO> variantes;
+    private LocalDateTime fechaCreacion;
 }

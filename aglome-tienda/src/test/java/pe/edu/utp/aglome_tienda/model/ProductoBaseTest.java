@@ -12,13 +12,13 @@ class ProductoBaseTest {
         ProductoBase producto = new ProductoBase();
         producto.setNombre("Melamina Azul Marino");
         producto.setDescripcion("Aporta elegancia ejecutiva");
-        producto.setMarca("Aglome");
+        producto.setMarca(new Marca(1L, "Aglome"));
         producto.setCategoria(categoria);
         producto.setPublicado(true);
 
         // Verificar el test
         assertEquals("Melamina Azul Marino", producto.getNombre());
-        assertEquals("Aglome", producto.getMarca());
+        assertEquals("Aglome", producto.getMarca().getNombre());
         assertTrue(producto.getPublicado());
         assertEquals("Melaminas", producto.getCategoria().getNombre());
     }

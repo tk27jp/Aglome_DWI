@@ -1,0 +1,215 @@
+@use 'variables' as v;
+
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: v.$color-fondo;
+  box-shadow: 0 1px 0 v.$color-borde;
+}
+
+.fila {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 4.5rem;
+  @include v.tablet { gap: 0.75rem; min-height: 4rem; }
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: v.$color-texto;
+  &:hover { text-decoration: none; }
+}
+.nombre {
+  font-family: v.$fuente-titulo;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  small {
+    margin-left: 0.35rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: v.$color-secundario;
+    letter-spacing: 0.14em;
+  }
+  @include v.movil { small { display: none; } font-size: 1.6rem; }
+}
+
+.buscador {
+  flex: 1;
+  display: flex;
+  max-width: 40rem;
+  margin-inline: auto;
+  input {
+    flex: 1;
+    min-width: 0;
+    height: 2.8rem;
+    padding-inline: 1rem;
+    border: 2px solid v.$color-primario;
+    border-right: 0;
+    border-radius: v.$radio 0 0 v.$radio;
+  }
+  button {
+    width: 3.2rem;
+    border: 0;
+    background: v.$color-primario;
+    color: #fff;
+    border-radius: 0 v.$radio v.$radio 0;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    &:hover { background: v.$color-primario-oscuro; }
+  }
+  @include v.tablet { order: 5; flex-basis: 100%; max-width: none; margin: 0 0 0.6rem; }
+}
+.principal .fila { @include v.tablet { flex-wrap: wrap; } }
+
+.acciones { display: flex; align-items: center; gap: 0.25rem; margin-left: auto; }
+
+.accion {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.7rem;
+  background: none;
+  border: 0;
+  border-radius: v.$radio;
+  color: v.$color-texto;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover { background: v.$color-fondo-seccion; text-decoration: none; }
+  @include v.movil { .texto { display: none; } }
+}
+
+.globo {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  min-width: 1.2rem;
+  height: 1.2rem;
+  padding-inline: 0.3rem;
+  display: grid;
+  place-items: center;
+  background: v.$color-madera;
+  color: #fff;
+  border-radius: 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  &.rebote { animation: rebote 0.6s cubic-bezier(0.3, 1.6, 0.5, 1); }
+}
+@keyframes rebote {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.7); }
+  100% { transform: scale(1); }
+}
+
+.usuario { position: relative; }
+.desplegable {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  min-width: 11rem;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid v.$color-borde;
+  border-radius: v.$radio;
+  box-shadow: v.$sombra;
+  animation: baja 0.14s ease-out;
+
+  a, button {
+    padding: 0.65rem 1rem;
+    background: none;
+    border: 0;
+    text-align: left;
+    font: inherit;
+    color: v.$color-texto;
+    cursor: pointer;
+    &:hover { background: v.$color-primario-claro; text-decoration: none; }
+  }
+  button { border-top: 1px solid v.$color-borde; color: v.$color-error; }
+}
+@keyframes baja { from { opacity: 0; transform: translateY(-4px); } }
+
+.hamburguesa {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0.6rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  span { width: 22px; height: 2px; background: v.$color-texto; }
+  @include v.tablet { display: flex; }
+}
+
+// Franja de categorías: menú con submenú al pasar el mouse o con el teclado
+.categorias {
+  background: v.$color-primario;
+  .lista {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+    margin-block: 0;
+    padding-block: 0;
+  }
+  li { position: relative; }
+  a {
+    display: block;
+    padding: 0.7rem 0.9rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.92rem;
+    &:hover, &.activo { background: v.$color-primario-oscuro; text-decoration: none; }
+  }
+  .sub {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 5;
+    min-width: 13rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.35rem 0;
+    display: none;
+    background: #fff;
+    border: 1px solid v.$color-borde;
+    box-shadow: v.$sombra;
+    a { color: v.$color-texto; font-weight: 400; &:hover { background: v.$color-primario-claro; color: v.$color-primario; } }
+  }
+  .con-sub:hover .sub, .con-sub:focus-within .sub { display: block; animation: baja 0.14s ease-out; }
+
+  @include v.tablet {
+    display: none;
+    &.abierto { display: block; }
+    .lista { flex-direction: column; gap: 0; }
+    .sub { position: static; display: block; box-shadow: none; border: 0; background: v.$color-primario-oscuro; padding: 0;
+      a { color: #dfe8f7; padding-left: 2rem; } }
+  }
+}
+
+.cabecera .fila { transition: min-height 0.2s; }
+.cabecera { transition: box-shadow 0.25s; &.bajo { box-shadow: 0 6px 20px rgb(10 31 68 / 14%); .fila { min-height: 3.7rem; } } }
+
+// subrayado que crece desde la izquierda en el menú de categorías
+.categorias > .lista > li > a { position: relative; &::after { content: ''; position: absolute; left: 0.9rem; right: 0.9rem; bottom: 0.35rem; height: 2px; background: v.$color-madera; transform: scaleX(0); transform-origin: left; transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1); } &:hover::after, &.activo::after { transform: scaleX(1); } }
+
+.volver { margin-left: auto; font-weight: 600; }
+
+// Panel de gestión: solo logo, rótulo y menú de la persona
+.rotulo-panel {
+  padding: 0.2rem 0.65rem;
+  border-radius: v.$radio;
+  background: v.$color-primario-claro;
+  color: v.$color-primario-oscuro;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.panel .contenedor { max-width: 1500px; }

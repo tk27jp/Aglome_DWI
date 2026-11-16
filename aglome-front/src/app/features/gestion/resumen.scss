@@ -1,0 +1,91 @@
+@use 'variables' as v;
+
+.fecha { text-transform: capitalize; }
+.girar { &.activo { animation: gira 0.8s linear infinite; } }
+@keyframes gira { to { transform: rotate(360deg); } }
+.esqueleto { height: 24rem; background: linear-gradient(100deg, #e9eaef 30%, #f5f5f8 50%, #e9eaef 70%) 0 0 / 200% 100%; animation: brillo 1.2s linear infinite; }
+@keyframes brillo { to { background-position: -200% 0; } }
+.aviso button { margin-left: 0.75rem; }
+
+.por-atender { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.9rem; margin-bottom: 1rem; padding: 0.8rem 1.1rem; background: v.$color-madera-claro; border: 1px solid #ecd3a8; border-left: 4px solid v.$color-madera; border-radius: v.$radio; color: v.$color-texto; animation: sube 0.4s both;
+  span:last-child { margin-left: auto; font-size: 0.88rem; color: v.$color-aviso; } &:hover { text-decoration: none; box-shadow: v.$sombra; }
+  .punto { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: v.$color-madera; animation: late 1.6s ease-out infinite; } }
+@keyframes late { 0% { box-shadow: 0 0 0 0 rgb(200 137 43 / 55%); } 70%, 100% { box-shadow: 0 0 0 0.6rem rgb(200 137 43 / 0%); } }
+@keyframes sube { from { opacity: 0; transform: translateY(10px); } }
+
+// ── Barra de fechas
+.fechas { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; margin-bottom: 1rem; padding: 0.8rem 1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.35rem;
+  button { padding: 0.35rem 0.8rem; border: 1px solid v.$color-borde; border-radius: 999px; background: #fff; font: inherit; font-size: 0.85rem; font-weight: 600; color: v.$color-texto-suave; cursor: pointer; transition: all 0.15s;
+    &:hover { border-color: v.$color-primario; color: v.$color-primario; }
+    &.activo { background: v.$color-primario; border-color: v.$color-primario; color: #fff; } } }
+.rango { display: flex; flex-wrap: wrap; gap: 0.5rem; label { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: v.$color-texto-suave; } input { padding: 0.3rem 0.5rem; } }
+.comparando { margin: 0 0 0 auto; font-size: 0.85rem; color: v.$color-texto-suave; }
+
+// ── Indicadores
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)); gap: 0.85rem; margin-bottom: 1rem; }
+.kpi { position: relative; overflow: hidden; display: grid; gap: 0.1rem; padding: 1rem 1.1rem 1.4rem; background: #fff; border: 1px solid v.$color-borde; border-top: 4px solid v.$color-primario; border-radius: v.$radio; color: v.$color-texto; animation: sube 0.5s both; animation-delay: calc(var(--i, 0) * 60ms); transition: box-shadow 0.2s, transform 0.2s;
+  &:hover { box-shadow: v.$sombra; transform: translateY(-2px); text-decoration: none; }
+  .etq { font-size: 0.82rem; font-weight: 600; color: v.$color-texto-suave; }
+  strong { font-family: v.$fuente-titulo; font-size: 2.2rem; line-height: 1.1; color: v.$color-primario; }
+  .pie-kpi { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 0.5rem; small { color: v.$color-texto-suave; } }
+  .spark { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 1.3rem; opacity: 0.55; path { fill: none; stroke: v.$color-primario; stroke-width: 1.6; vector-effect: non-scaling-stroke; stroke-dasharray: 400; stroke-dashoffset: 400; animation: traza 1.1s 0.3s ease-out forwards; } }
+  &.stock { border-top-color: v.$color-madera; strong { color: v.$color-aviso; } &.ok { border-top-color: v.$color-ok; strong { color: v.$color-ok; } } } }
+@keyframes traza { to { stroke-dashoffset: 0; } }
+.delta { padding: 0.1rem 0.45rem; border-radius: 999px; font-size: 0.76rem; font-weight: 700; &.bien { background: #e6f4ea; color: v.$color-ok; } &.mal { background: #fdecec; color: v.$color-error; } &.neutro { background: v.$color-fondo-seccion; color: v.$color-texto-suave; } }
+
+// ── Rejilla de tarjetas
+.rejilla { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; }
+.c4 { grid-column: span 4; } .c8 { grid-column: span 8; } .c12 { grid-column: 1 / -1; }
+@include v.tablet { .c4, .c8 { grid-column: 1 / -1; } }
+.rejilla > section { animation: sube 0.5s both; }
+h2 { font-size: 1.5rem; margin: 0 0 0.75rem; }
+h3 { margin: 0 0 0.5rem; font-size: 0.82rem; font-family: v.$fuente; font-weight: 600; color: v.$color-texto-suave; }
+.cab-tarjeta { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.5rem; h2 { margin: 0; } }
+.hist { font-family: v.$fuente; font-size: 0.7rem; font-weight: 600; color: v.$color-secundario; text-transform: uppercase; letter-spacing: 0.06em; margin-left: 0.3rem; }
+.nota-g { margin: 0.5rem 0 0; font-size: 0.8rem; color: v.$color-texto-suave; }
+.alterna { display: inline-flex; border: 1px solid v.$color-borde; border-radius: v.$radio; overflow: hidden; button { padding: 0.3rem 0.8rem; border: 0; background: #fff; font: inherit; font-size: 0.82rem; font-weight: 600; color: v.$color-texto-suave; cursor: pointer; &.activo { background: v.$color-primario; color: #fff; } } }
+
+// ── Gráfico de línea
+.lienzo { position: relative; svg { display: block; width: 100%; height: auto; touch-action: pan-y; } }
+.rejilla-h { stroke: #e7e9ef; stroke-width: 1; }
+.eje { font-size: 11px; fill: v.$color-texto-suave; }
+.linea { fill: none; stroke: v.$color-primario; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: traza 1.4s ease-out forwards; }
+.area { opacity: 0; animation: aparece 0.8s 0.6s ease forwards; }
+@keyframes aparece { to { opacity: 1; } }
+.nodo { fill: #fff; stroke: v.$color-primario; stroke-width: 1.6; }
+.guia { stroke: v.$color-secundario; stroke-width: 1; stroke-dasharray: 4 3; }
+.foco { fill: v.$color-primario; stroke: #fff; stroke-width: 2.5; }
+.tip { position: absolute; z-index: 2; display: grid; gap: 0.1rem; min-width: 8rem; padding: 0.5rem 0.7rem; background: v.$color-noche; color: #fff; border-radius: v.$radio; font-size: 0.8rem; pointer-events: none; transform: translate(-50%, calc(-100% - 12px)); box-shadow: 0 6px 18px rgb(0 0 0 / 30%); strong { font-size: 0.82rem; } &.izq { transform: translate(-85%, calc(-100% - 12px)); } }
+
+// ── Dona y anillo
+.dona-caja, .anillo-caja { position: relative; width: min(11rem, 70%); margin: 0.25rem auto 0.75rem; }
+.dona, .anillo { display: block; width: 100%; transform: rotate(-0deg); }
+.trozo { animation: dibuja 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 90ms); transition: stroke-width 0.2s; &:hover { stroke-width: 7; } }
+@keyframes dibuja { from { stroke-dasharray: 0 100; } }
+.centro { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; strong { font-family: v.$fuente-titulo; font-size: 2.3rem; line-height: 1; color: v.$color-texto; } small { color: v.$color-texto-suave; } }
+.leyenda { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; li { display: grid; grid-template-columns: 0.7rem 1fr auto; align-items: center; gap: 0.5rem; font-size: 0.88rem; } i { width: 0.7rem; height: 0.7rem; border-radius: 2px; } }
+.progreso { transition: stroke-dasharray 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); &.completa { stroke: v.$color-ok; } }
+.meta { text-align: center; .detalle-meta { margin: 0 0 0.25rem; } .nota-g { margin-top: 0.25rem; } }
+.form-meta { display: flex; gap: 0.4rem; justify-content: center; input { width: 9rem; } }
+
+// ── Día de la semana y mapa de calor
+.dos-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 1.5rem; @include v.movil { grid-template-columns: 1fr; } }
+.semana { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4rem; height: 10.5rem; align-items: end; }
+.dia { height: 100%; display: grid; grid-template-rows: auto 1fr auto; justify-items: center; gap: 0.2rem; font-size: 0.75rem;
+  .valor { font-weight: 600; white-space: nowrap; min-height: 1em; } .nom { font-weight: 600; color: v.$color-texto-suave; }
+  .barra { align-self: end; width: 100%; min-height: 3px; background: #9db9e3; border-radius: v.$radio v.$radio 0 0; transform-origin: bottom; animation: crece 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 60ms); }
+  &.mejor .barra { background: v.$color-primario; } &.mejor .nom { color: v.$color-primario; } }
+@keyframes crece { from { transform: scaleY(0); } }
+.calor { display: grid; gap: 3px; }
+.fila-calor { display: grid; grid-template-columns: 2rem repeat(14, minmax(0, 1fr)); gap: 3px; align-items: center;
+  .d, .h { font-size: 0.68rem; color: v.$color-texto-suave; text-align: center; }
+  i { aspect-ratio: 1; border-radius: 2px; background: rgb(0 73 175 / calc(0.15 + var(--n, 0) * 0.85)); transition: transform 0.15s; &.vacia { background: #eef0f5; } &:hover { transform: scale(1.25); } } }
+
+// ── Rankings y barras
+.ranking, .barras, .actividad { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+.ranking li { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.6rem; align-items: start; animation: sube 0.4s both; animation-delay: calc(var(--i) * 60ms); .pos { display: grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 50%; background: v.$color-primario-claro; color: v.$color-primario; font-size: 0.78rem; font-weight: 700; } .nombre { display: block; font-weight: 600; line-height: 1.2; } small { color: v.$color-texto-suave; } div { display: grid; gap: 0.2rem; } }
+.barras li { display: grid; grid-template-columns: 6.5rem 1fr 2rem; align-items: center; gap: 0.6rem; font-size: 0.88rem; animation: sube 0.4s both; animation-delay: calc(var(--i) * 60ms); .nombre { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } strong { text-align: right; } }
+.pista { display: block; height: 0.6rem; background: v.$color-fondo-seccion; border-radius: 999px; overflow: hidden; i { display: block; height: 100%; background: v.$color-primario; border-radius: 999px; transform-origin: left; animation: ancha 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; } }
+@keyframes ancha { from { transform: scaleX(0); } }
+.actividad li { display: grid; grid-template-columns: 2.2rem 1fr auto; gap: 0.7rem; align-items: center; div { display: grid; line-height: 1.25; } small { color: v.$color-texto-suave; } .marca-estado { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; color: v.$color-primario; font-weight: 700; } .monto { font-weight: 700; font-variant-numeric: tabular-nums; &.tachado { text-decoration: line-through; color: v.$color-texto-suave; } } }

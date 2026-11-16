@@ -1,0 +1,35 @@
+@use 'variables' as v;
+@use 'panel';
+
+.dos-columnas { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 1rem; align-items: start; @include v.tablet { grid-template-columns: 1fr; } }
+.ayuda { margin: -0.25rem 0 1rem; color: v.$color-texto-suave; font-size: 0.92rem; }
+.campo-g { display: block; margin: 1rem 0 0.3rem; font-weight: 600; font-size: 0.92rem; }
+input, select { width: 100%; }
+
+.resultados { list-style: none; margin: 0.75rem 0 0; padding: 0; display: grid; gap: 0.6rem; max-height: 17rem; overflow-y: auto;
+  li { padding: 0.6rem 0.75rem; background: v.$color-fondo-seccion; border-radius: v.$radio; display: grid; gap: 0.35rem; } }
+.opciones { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.opcion { padding: 0.3rem 0.7rem; background: #fff; border: 1px solid v.$color-borde; border-radius: v.$radio; font: inherit; font-size: 0.85rem; cursor: pointer; transition: border-color 0.15s, background 0.15s; small { color: v.$color-texto-suave; }
+  &:hover { border-color: v.$color-primario; } &.elegida { background: v.$color-primario; border-color: v.$color-primario; color: #fff; small { color: #dbe6f7; } } }
+
+.seleccion { display: grid; gap: 0.1rem; margin-top: 1rem; padding: 0.8rem 1rem; background: v.$color-primario-claro; border-left: 4px solid v.$color-primario; border-radius: v.$radio; animation: entra 0.3s both;
+  strong { font-family: v.$fuente-titulo; font-size: 1.4rem; line-height: 1.1; } span { font-size: 0.88rem; color: v.$color-texto-suave; } .stock-actual b { color: v.$color-texto; font-size: 1.1rem; } }
+@keyframes entra { from { opacity: 0; transform: translateY(6px); } }
+
+.segmento { display: grid; grid-template-columns: 1fr 1fr; button { padding: 0.6rem; background: #fff; border: 1px solid v.$color-borde; font: inherit; font-weight: 600; cursor: pointer; transition: background 0.15s, color 0.15s;
+  &:first-child { border-radius: v.$radio 0 0 v.$radio; } &:last-child { border-radius: 0 v.$radio v.$radio 0; border-left: 0; }
+  &.activo { background: v.$color-primario; border-color: v.$color-primario; color: #fff; } } }
+.segmento button:last-child.activo { background: v.$color-error; border-color: v.$color-error; }
+
+.previa { margin: 0.4rem 0 0; font-size: 0.92rem; &.mal { color: v.$color-error; } }
+.rapidos { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+.chip { padding: 0.25rem 0.7rem; background: #fff; border: 1px solid v.$color-borde; border-radius: 999px; font: inherit; font-size: 0.8rem; cursor: pointer; &:hover { border-color: v.$color-primario; color: v.$color-primario; } }
+.guardar { width: 100%; margin-top: 1.25rem; }
+.pista-g { margin: 0.5rem 0 0; font-size: 0.85rem; color: v.$color-texto-suave; }
+
+.cab-historial { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.5rem; h2 { margin: 0; } select { width: auto; } }
+.fecha { white-space: nowrap; color: v.$color-texto-suave; }
+small { color: v.$color-texto-suave; }
+.tipo { padding: 0.15rem 0.55rem; border-radius: v.$radio; font-size: 0.78rem; font-weight: 600; background: v.$color-fondo-seccion; white-space: nowrap;
+  &.AJUSTE { background: v.$color-primario-claro; color: v.$color-primario-oscuro; } &.CANCELACION { background: v.$color-madera-claro; color: v.$color-aviso; } }
+.sube { color: v.$color-ok; } .baja { color: v.$color-error; }

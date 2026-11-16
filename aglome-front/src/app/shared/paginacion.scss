@@ -1,0 +1,26 @@
+@use 'variables' as v;
+
+.paginacion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1.75rem;
+}
+
+.numero {
+  min-width: 2.4rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid v.$color-borde;
+  border-radius: v.$radio;
+  background: #fff;
+  color: v.$color-texto;
+  font: inherit;
+  cursor: pointer;
+  &:hover { border-color: v.$color-primario; }
+  &.actual {
+    background: v.$color-primario;
+    border-color: v.$color-primario;
+    color: #fff;
+  }
+}

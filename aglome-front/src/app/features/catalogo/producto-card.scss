@@ -1,0 +1,94 @@
+@use 'variables' as v;
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: v.$color-fondo;
+  border: 1px solid v.$color-borde;
+  border-radius: v.$radio;
+  color: v.$color-texto;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+
+  &:hover {
+    text-decoration: none;
+    border-color: v.$color-primario;
+    box-shadow: 0 6px 18px rgb(0 73 175 / 12%);
+    transform: translateY(-2px);
+  }
+}
+
+.imagen {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: v.$color-primario-claro;
+  overflow: hidden;
+
+  app-producto-imagen { transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+}
+
+.tarjeta:hover app-producto-imagen { transform: scale(1.06); }
+
+.etiqueta {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: v.$color-texto;
+  color: #fff;
+  border-radius: v.$radio;
+}
+
+.cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.categoria {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: v.$color-secundario;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.marca {
+  font-size: 0.85rem;
+  color: v.$color-texto-suave;
+}
+
+.pie {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.precio {
+  font-family: v.$fuente-titulo;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: v.$color-primario;
+  small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: v.$color-texto-suave;
+  }
+  &.sin { color: v.$color-texto-suave; font-weight: 400; font-size: 0.9rem; }
+}
+
+.variantes {
+  font-size: 0.8rem;
+  color: v.$color-texto-suave;
+}

@@ -2,6 +2,7 @@ package pe.edu.utp.aglome_tienda.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import java.util.UUID;
 
@@ -10,7 +11,8 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 
-public class ProductoBase {
+@EqualsAndHashCode(callSuper = false)
+public class ProductoBase extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -22,7 +24,12 @@ public class ProductoBase {
     @Column(length = 2000)
     private String descripcion;
 
-    private String marca;
+    @ManyToOne
+    @JoinColumn(name = "marca_id")
+    private Marca marca; // opcional
+
+    @Column(length = 500)
+    private String imagenUrl;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "categoria_id", nullable = false)
@@ -30,7 +37,11 @@ public class ProductoBase {
 
     private Boolean publicado = false; // solo se muestra en la tienda si está en true
 
-    public ProductoBase(UUID id, String nombre, String descripcion, String marca,
+    // borrado lógico: el registro no se borra, solo se marca y deja de mostrarse
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private Boolean eliminado = false;
+
+    public ProductoBase(UUID id, String nombre, String descripcion, Marca marca,
                         Categoria categoria, Boolean publicado) {
         this.id = id;
         this.nombre = nombre;

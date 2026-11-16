@@ -1,0 +1,18 @@
+@use 'variables' as v;
+
+:host { display: block; background: v.$color-fondo-seccion; }
+.marco { display: grid; grid-template-columns: 15.5rem minmax(0, 1fr); max-width: 1500px; margin: 0 auto; min-height: calc(100vh - 4.5rem); @include v.tablet { grid-template-columns: 1fr; } }
+
+.lateral { position: sticky; top: 4.5rem; align-self: start; height: calc(100vh - 4.5rem); display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; padding: 1.25rem 0.9rem; background: #fff; border-right: 1px solid v.$color-borde;
+  @include v.tablet { position: static; height: auto; flex-direction: row; align-items: center; padding: 0.4rem 0.75rem; border-right: 0; border-bottom: 1px solid v.$color-borde; overflow-x: auto; .persona { display: none; } nav { display: flex; gap: 0.25rem; } } }
+.grupo { margin: 1.1rem 0 0.35rem 0.6rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: v.$color-secundario; &:first-child { margin-top: 0; } @include v.tablet { display: none; } }
+ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; @include v.tablet { display: flex; } }
+a { position: relative; display: flex; align-items: center; gap: 0.7rem; padding: 0.6rem 0.7rem; border-radius: v.$radio; color: v.$color-texto-suave; font-weight: 600; white-space: nowrap; transition: background 0.15s, color 0.15s, transform 0.15s;
+  &:hover { background: v.$color-fondo-seccion; color: v.$color-primario; text-decoration: none; transform: translateX(2px); }
+  &.activa { background: v.$color-primario-claro; color: v.$color-primario; &::before { content: ''; position: absolute; left: -0.9rem; top: 0.35rem; bottom: 0.35rem; width: 4px; border-radius: 0 4px 4px 0; background: v.$color-primario; @include v.tablet { display: none; } } } }
+
+.persona { display: flex; align-items: center; gap: 0.7rem; padding: 0.7rem; border-top: 1px solid v.$color-borde; }
+.avatar { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: v.$color-primario; color: #fff; font-family: v.$fuente-titulo; font-size: 1.3rem; font-weight: 700; }
+.quien { display: grid; min-width: 0; strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } small { color: v.$color-texto-suave; } }
+
+.contenido { min-width: 0; padding: 1.5rem clamp(1rem, 2.5vw, 2rem) 4rem; }

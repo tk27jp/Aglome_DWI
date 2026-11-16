@@ -1,0 +1,104 @@
+<div class="gp">
+  <header class="g-titulo"><div><h1>Inventario</h1><p>Ajusta el stock y revisa cada movimiento con su responsable.</p></div></header>
+
+<div class="dos-columnas">
+  <section class="tarjeta-g ajuste">
+    <h2>Ajustar stock</h2>
+    <p class="ayuda">Para reposiciones, mermas o conteos físicos. Queda registrado con tu usuario.</p>
+
+    <label class="campo-g" for="buscar-producto">1. Busca el producto</label>
+    <input id="buscar-producto" type="search" placeholder="Ej. melamina, bisagra…" autocomplete="off" [ngModel]="texto()" (ngModelChange)="texto.set($event)" />
+
+    @if (resultados(); as lista) {
+      @if (lista.length) {
+        <ul class="resultados">
+          @for (p of lista; track p.id) {
+            <li>
+              <strong>{{ p.nombre }}</strong>
+              <span class="opciones">
+                @for (v of variantes(p); track v.id) {
+                  <button type="button" class="opcion" [class.elegida]="elegida()?.variante?.id === v.id" (click)="elegir(p, v)">
+                    {{ nombreOpcion(v) }} <small>· {{ v.stock }} u.</small>
+                  </button>
+                }
+              </span>
+            </li>
+          }
+        </ul>
+      } @else {
+        <p class="vacio-g">No se encontró ese producto.</p>
+      }
+    }
+
+    @if (elegida(); as e) {
+      <div class="seleccion">
+        <span>Ajustando</span>
+        <strong>{{ e.producto }}</strong>
+        <span>{{ nombreOpcion(e.variante) }} · {{ e.variante.sku }}</span>
+        <span class="stock-actual">Stock actual: <b>{{ e.variante.stock }}</b></span>
+      </div>
+
+      <span class="campo-g">2. ¿Entra o sale mercadería?</span>
+      <div class="segmento" role="group" aria-label="Tipo de ajuste">
+        <button type="button" [class.activo]="entra()" [attr.aria-pressed]="entra()" (click)="entra.set(true)">Entra (+)</button>
+        <button type="button" [class.activo]="!entra()" [attr.aria-pressed]="!entra()" (click)="entra.set(false)">Sale (−)</button>
+      </div>
+
+      <label class="campo-g" for="cantidad">3. Cantidad</label>
+      <input id="cantidad" type="number" min="1" step="1" inputmode="numeric" placeholder="0" [ngModel]="cantidad()" (ngModelChange)="cantidad.set($event)" />
+      @if (cantidad()) {
+        <p class="previa" [class.mal]="quedaria() < 0">El stock pasará de {{ e.variante.stock }} a <strong>{{ quedaria() }}</strong>.</p>
+      }
+
+      <label class="campo-g" for="motivo">4. Motivo</label>
+      <input id="motivo" type="text" maxlength="255" placeholder="Ej. llegó mercadería del proveedor" [ngModel]="motivo()" (ngModelChange)="motivo.set($event)" />
+      <div class="rapidos">
+        @for (m of motivosRapidos; track m) { <button type="button" class="chip" (click)="motivoRapido(m)">{{ m }}</button> }
+      </div>
+    }
+
+    @if (elegida()) {
+      <button type="button" class="btn guardar" [disabled]="!!problema() || guardando()" (click)="guardar()">{{ guardando() ? 'Guardando…' : 'Guardar ajuste' }}</button>
+      @if (problema(); as p) { <p class="pista-g">{{ p }}</p> }
+    }
+  </section>
+
+  <section class="tarjeta-g historial">
+    <div class="cab-historial">
+      <h2>Movimientos de stock</h2>
+      <select aria-label="Tipo de movimiento" [ngModel]="tipo()" (ngModelChange)="elegirTipo($event)">
+        @for (t of tipos; track t.valor) { <option [value]="t.valor">{{ t.texto }}</option> }
+      </select>
+    </div>
+
+    @if (errorMov(); as e) {
+      <div class="aviso error" role="alert">{{ e }}</div>
+    } @else if (movimientos(); as m) {
+      @if (m.contenido.length) {
+        <div class="desplazable">
+          <table class="tabla-g">
+            <thead><tr><th>Fecha</th><th>Producto</th><th>Tipo</th><th class="num">Cant.</th><th class="num">Stock</th><th>Motivo</th></tr></thead>
+            <tbody>
+              @for (x of m.contenido; track x.id) {
+                <tr>
+                  <td class="fecha">{{ x.fecha | date: 'dd/MM HH:mm' }}</td>
+                  <td>{{ x.producto }}<br /><small>{{ x.sku }}</small></td>
+                  <td><span class="tipo" [class]="'tipo ' + x.tipo">{{ etiquetaTipo[x.tipo] }}</span></td>
+                  <td class="num"><strong [class.sube]="x.cantidad > 0" [class.baja]="x.cantidad < 0">{{ x.cantidad > 0 ? '+' : '' }}{{ x.cantidad }}</strong></td>
+                  <td class="num">{{ x.stockAnterior }} → {{ x.stockResultante }}</td>
+                  <td>{{ x.motivo || '—' }}@if (x.usuario) { <br /><small>{{ x.usuario }}</small> }</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+        <app-paginacion [pagina]="m.pagina" [totalPaginas]="m.totalPaginas" (cambio)="irA($event)" />
+      } @else {
+        <p class="vacio-g">No hay movimientos con ese filtro.</p>
+      }
+    } @else {
+      <div class="cargando-g" aria-busy="true"></div>
+    }
+  </section>
+</div>
+</div>

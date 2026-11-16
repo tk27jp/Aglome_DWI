@@ -1,0 +1,2436 @@
+{
+  "categorias": [
+    {
+      "nombre": "Melamina"
+    },
+    {
+      "nombre": "Madera"
+    },
+    {
+      "nombre": "Ferretería"
+    },
+    {
+      "nombre": "Bisagras",
+      "padre": "Ferretería"
+    },
+    {
+      "nombre": "Correderas",
+      "padre": "Ferretería"
+    },
+    {
+      "nombre": "Tiradores",
+      "padre": "Ferretería"
+    },
+    {
+      "nombre": "Tornillería",
+      "padre": "Ferretería"
+    },
+    {
+      "nombre": "Herramientas",
+      "padre": "Ferretería"
+    },
+    {
+      "nombre": "Acabados"
+    },
+    {
+      "nombre": "Iluminación"
+    }
+  ],
+  "marcas": [
+    "3M",
+    "Arauco",
+    "C&A",
+    "C&A PRO",
+    "Ducasse",
+    "Duratex",
+    "Ferretería Meléndez",
+    "GoldenPlast",
+    "Home Light",
+    "Ingco",
+    "Inversiones Jocema",
+    "Klingspor",
+    "Knauff",
+    "Maderas América SAC",
+    "Maderas Gilber",
+    "Masisa",
+    "PG Bison",
+    "Pegaso",
+    "Pretul",
+    "Representaciones Martin",
+    "Truper",
+    "Venezia"
+  ],
+  "productos": [
+    {
+      "nombre": "Melamina Masisa",
+      "categoria": "Melamina",
+      "marca": "Masisa",
+      "descripcion": "Tablero de melamina Masisa para muebles de cocina, closets, escritorios y oficina. Elige color y medida; el precio es por plancha.",
+      "variantes": [
+        {
+          "sku": "MEL-MAS-BLANCO-15MM214X250CM",
+          "precioVenta": 175.0,
+          "stock": 131,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "15 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA BLANCO 15 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-BLANCO-18MM214X250CM",
+          "precioVenta": 204.0,
+          "stock": 0,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA BLANCO 18 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-CEDRO-18MM214X250CM",
+          "precioVenta": 250.0,
+          "stock": 58,
+          "atributos": {
+            "Color": "Cedro",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA CEDRO MASISA"
+        },
+        {
+          "sku": "MEL-MAS-CEREZO-18MM214X250CM",
+          "precioVenta": 254.0,
+          "stock": 12,
+          "atributos": {
+            "Color": "Cerezo",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA CEREZO 18 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-ROBLEMOROWENGU-18MM214X250CM",
+          "precioVenta": 283.8,
+          "stock": 36,
+          "atributos": {
+            "Color": "Roble Moro (Wengué)",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA ROBLE MORO (WENGUE) 18 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-SAHARA-18MM214X250CM",
+          "precioVenta": 276.0,
+          "stock": 11,
+          "atributos": {
+            "Color": "Sahara",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA SAHARA 18 MM. MASISA"
+        },
+        {
+          "sku": "MEL-MAS-SANTORINI-18MM214X250CM",
+          "precioVenta": 284.0,
+          "stock": 52,
+          "atributos": {
+            "Color": "Santorini",
+            "Medida": "18 mm · 214 x 250 cm"
+          },
+          "_excel": "MELAMINA SANTORINI 18 MM. MASISA"
+        }
+      ]
+    },
+    {
+      "nombre": "Melamina Duratex",
+      "categoria": "Melamina",
+      "marca": "Duratex",
+      "descripcion": "Tablero de melamina Duratex para muebles de cocina, closets, escritorios y oficina. Elige color y medida; el precio es por plancha.",
+      "variantes": [
+        {
+          "sku": "MEL-DUR-BLANCO-15MM214X244CM",
+          "precioVenta": 160.5,
+          "stock": 40,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "15 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA BLANCO 15 MM. DURATEX 214 X 244"
+        },
+        {
+          "sku": "MEL-DUR-BLANCO-18MM214X244CM",
+          "precioVenta": 190.5,
+          "stock": 1,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA BLANCO 18 MM. DURATEX  214 X 244"
+        },
+        {
+          "sku": "MEL-DUR-ARENA-18MM214X244CM",
+          "precioVenta": 244.0,
+          "stock": 17,
+          "atributos": {
+            "Color": "Arena",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA ARENA DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-CEDRO-18MM210X244CM",
+          "precioVenta": 240.0,
+          "stock": 14,
+          "atributos": {
+            "Color": "Cedro",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA CEDRO DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-HUMO-18MM210X244CM",
+          "precioVenta": 245.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Humo",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA HUMO DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-CARBONO-18MM210X244CM",
+          "precioVenta": 225.0,
+          "stock": 20,
+          "atributos": {
+            "Color": "Carbono",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA CARBONO DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-WENGUE-18MM210X244CM",
+          "precioVenta": 244.0,
+          "stock": 3,
+          "atributos": {
+            "Color": "Wengué",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA WENGUE DURATEX"
+        },
+        {
+          "sku": "MEL-DUR-NEGRO-18MM210X244CM",
+          "precioVenta": 240.0,
+          "stock": 0,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "18 mm · 210 x 244 cm"
+          },
+          "_excel": "MELAMINA NEGRO DURATEX"
+        }
+      ]
+    },
+    {
+      "nombre": "Melamina PG Bison",
+      "categoria": "Melamina",
+      "marca": "PG Bison",
+      "descripcion": "Tablero de melamina PG Bison para muebles de cocina, closets, escritorios y oficina. Elige color y medida; el precio es por plancha.",
+      "variantes": [
+        {
+          "sku": "MEL-PGB-BLANCO-15MM275X183CM",
+          "precioVenta": 155.0,
+          "stock": 696,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "15 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA BLANCO 15 MM. PG BISON"
+        },
+        {
+          "sku": "MEL-PGB-BLANCO-18MM275X183CM",
+          "precioVenta": 175.0,
+          "stock": 92,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA BLANCO 18 MM. PG BISON"
+        },
+        {
+          "sku": "MEL-PGB-GRISCLARO-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 37,
+          "atributos": {
+            "Color": "Gris Claro",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA GRIS CLARO PG BISON"
+        },
+        {
+          "sku": "MEL-PGB-CENIZA-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 15,
+          "atributos": {
+            "Color": "Ceniza",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA CENIZA PG BISON"
+        },
+        {
+          "sku": "MEL-PGB-CARAMELO-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 8,
+          "atributos": {
+            "Color": "Caramelo",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA CARAMELO PG BISON"
+        },
+        {
+          "sku": "MEL-PGB-NEGRO-18MM275X183CM",
+          "precioVenta": 226.0,
+          "stock": 28,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "18 mm · 275 x 183 cm"
+          },
+          "_excel": "MELAMINA NEGRO PG BISON"
+        }
+      ]
+    },
+    {
+      "nombre": "Melamina Vesto",
+      "categoria": "Melamina",
+      "marca": "Arauco",
+      "descripcion": "Tablero de melamina Vesto para muebles de cocina, closets, escritorios y oficina. Elige color y medida; el precio es por plancha. Línea Vesto de Arauco.",
+      "variantes": [
+        {
+          "sku": "MEL-VES-CEDRO-18MM214X244CM",
+          "precioVenta": 247.5,
+          "stock": 20,
+          "atributos": {
+            "Color": "Cedro",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA CEDRO VESTO"
+        },
+        {
+          "sku": "MEL-VES-WENGUE-18MM214X244CM",
+          "precioVenta": 247.5,
+          "stock": 5,
+          "atributos": {
+            "Color": "Wengué",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA WENGUE VESTO"
+        },
+        {
+          "sku": "MEL-VES-HAYA-18MM214X244CM",
+          "precioVenta": 247.5,
+          "stock": 3,
+          "atributos": {
+            "Color": "Haya",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA HAYA VESTO"
+        },
+        {
+          "sku": "MEL-VES-ESPRESSO-18MM214X244CM",
+          "precioVenta": 248.5,
+          "stock": 11,
+          "atributos": {
+            "Color": "Espresso",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA ESPRESSO VESTO"
+        },
+        {
+          "sku": "MEL-VES-ROBLERUSTICO-18MM214X244CM",
+          "precioVenta": 248.5,
+          "stock": 17,
+          "atributos": {
+            "Color": "Roble Rústico",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA ROBLE RUSTICO VESTO"
+        },
+        {
+          "sku": "MEL-VES-ROJO-18MM214X244CM",
+          "precioVenta": 246.5,
+          "stock": 13,
+          "atributos": {
+            "Color": "Rojo",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "MELAMINA ROJO VESTO"
+        }
+      ]
+    },
+    {
+      "nombre": "Canto de PVC (por metro)",
+      "categoria": "Melamina",
+      "marca": "Venezia",
+      "descripcion": "Canto de PVC para cubrir los bordes de la melamina. Se vende por metro, en versión delgada o gruesa.",
+      "variantes": [
+        {
+          "sku": "CAN-BLANCO-DELGADO",
+          "precioVenta": 0.65,
+          "stock": 15819,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "Delgado"
+          },
+          "_excel": "CANTO BLANCO DELGADO VENEZIA"
+        },
+        {
+          "sku": "CAN-MADERADOCLASIC-DELGADO",
+          "precioVenta": 0.75,
+          "stock": 31602,
+          "atributos": {
+            "Color": "Maderado clásico",
+            "Medida": "Delgado"
+          },
+          "_excel": "CANTO MADERADO CLASICOS DELGADO"
+        },
+        {
+          "sku": "CAN-MADERADOOSCURO-DELGADO",
+          "precioVenta": 0.8,
+          "stock": 22472,
+          "atributos": {
+            "Color": "Maderado oscuro",
+            "Medida": "Delgado"
+          },
+          "_excel": "CANTO MADERADO TONALIDADES OSCURAS DELGADO"
+        },
+        {
+          "sku": "CAN-UNICOLOR-DELGADO",
+          "precioVenta": 0.8,
+          "stock": 28047,
+          "atributos": {
+            "Color": "Unicolor",
+            "Medida": "Delgado"
+          },
+          "_excel": "CANTO UNICOLORES DELGADO"
+        },
+        {
+          "sku": "CAN-BLANCO-GRUESO",
+          "precioVenta": 2.6,
+          "stock": 799,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "Grueso"
+          },
+          "_excel": "CANTO BLANCO GRUESO"
+        },
+        {
+          "sku": "CAN-MADERADOCLASIC-GRUESO",
+          "precioVenta": 2.7,
+          "stock": 46360,
+          "atributos": {
+            "Color": "Maderado clásico",
+            "Medida": "Grueso"
+          },
+          "_excel": "CANTO MADERADO GRUESO"
+        },
+        {
+          "sku": "CAN-UNICOLOR-GRUESO",
+          "precioVenta": 2.5,
+          "stock": 47536,
+          "atributos": {
+            "Color": "Unicolor",
+            "Medida": "Grueso"
+          },
+          "_excel": "CANTO UNICOLORES GRUESO"
+        }
+      ]
+    },
+    {
+      "nombre": "Tapatornillo para melamina",
+      "categoria": "Melamina",
+      "marca": "Representaciones Martin",
+      "descripcion": "Tapa decorativa para ocultar la cabeza del tornillo en muebles de melamina.",
+      "variantes": [
+        {
+          "sku": "TAPA-BLANCO",
+          "precioVenta": 0.05,
+          "stock": 17361,
+          "atributos": {
+            "Color": "Blanco"
+          },
+          "_excel": "TAPATORNILLO BLANCO"
+        },
+        {
+          "sku": "TAPA-MADERADO",
+          "precioVenta": 0.05,
+          "stock": 113023,
+          "atributos": {
+            "Color": "Maderado"
+          },
+          "_excel": "TAPATORNILLO MADERADO"
+        },
+        {
+          "sku": "TAPA-UNICOLOR",
+          "precioVenta": 0.05,
+          "stock": 98150,
+          "atributos": {
+            "Color": "Unicolor"
+          },
+          "_excel": "TAPATORNILLO UNICOLORES"
+        }
+      ]
+    },
+    {
+      "nombre": "Plywood",
+      "categoria": "Madera",
+      "marca": "Inversiones Jocema",
+      "descripcion": "Plywood para muebles, encofrados y carpintería general. Precio por plancha de 122 x 244 cm.",
+      "variantes": [
+        {
+          "sku": "PLY-NATURAL-9MM122X244CM",
+          "precioVenta": 75.0,
+          "stock": 68,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "9 mm · 122 x 244 cm"
+          },
+          "_excel": "PLYWOOD 9 MM."
+        },
+        {
+          "sku": "PLY-NATURAL-15MM122X244CM",
+          "precioVenta": 140.0,
+          "stock": 32,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "15 mm · 122 x 244 cm"
+          },
+          "_excel": "PLYWOOD 15 MM."
+        },
+        {
+          "sku": "PLY-NATURAL-18MM122X244CM",
+          "precioVenta": 163.0,
+          "stock": 23,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "18 mm · 122 x 244 cm"
+          },
+          "_excel": "PLYWOOD 18 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "OSB",
+      "categoria": "Madera",
+      "marca": "Ferretería Meléndez",
+      "descripcion": "Tablero OSB de virutas orientadas, para construcción, cercos y cubiertas. Precio por plancha de 122 x 244 cm.",
+      "variantes": [
+        {
+          "sku": "OSB-NATURAL-8MM122X244CM",
+          "precioVenta": 50.0,
+          "stock": 46,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "8 mm · 122 x 244 cm"
+          },
+          "_excel": "OSB 8 MM."
+        },
+        {
+          "sku": "OSB-NATURAL-15MM122X244CM",
+          "precioVenta": 86.0,
+          "stock": 26,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "15 mm · 122 x 244 cm"
+          },
+          "_excel": "OSB 15 MM."
+        },
+        {
+          "sku": "OSB-NATURAL-18MM122X244CM",
+          "precioVenta": 100.0,
+          "stock": 36,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "18 mm · 122 x 244 cm"
+          },
+          "_excel": "OSB 18 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Trupán Maderas América",
+      "categoria": "Madera",
+      "marca": "Maderas América SAC",
+      "descripcion": "Trupán (MDP crudo) para forrar con melamina, laminado o pintura. Precio por plancha.",
+      "variantes": [
+        {
+          "sku": "TRU-MA-NATURAL-55MM213X244CM",
+          "precioVenta": 76.5,
+          "stock": 31,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "5.5 mm · 213 x 244 cm"
+          },
+          "_excel": "TRUPAN 5,5 MM."
+        },
+        {
+          "sku": "TRU-MA-NATURAL-12MM210X244CM",
+          "precioVenta": 145.0,
+          "stock": 19,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "12 mm · 210 x 244 cm"
+          },
+          "_excel": "TRUPAN 12 MM."
+        },
+        {
+          "sku": "TRU-MA-NATURAL-18MM214X244CM",
+          "precioVenta": 195.4,
+          "stock": 8,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "18 mm · 214 x 244 cm"
+          },
+          "_excel": "TRUPAN 18 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Trupán Duratex",
+      "categoria": "Madera",
+      "marca": "Duratex",
+      "descripcion": "Trupán (MDP crudo) Duratex para muebles. Precio por plancha.",
+      "variantes": [
+        {
+          "sku": "TRU-DU-NATURAL-9MM210X244CM",
+          "precioVenta": 115.0,
+          "stock": 36,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "9 mm · 210 x 244 cm"
+          },
+          "_excel": "TRUPAN 9 MM."
+        },
+        {
+          "sku": "TRU-DU-NATURAL-15MM214X244CM",
+          "precioVenta": 163.0,
+          "stock": 21,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "15 mm · 214 x 244 cm"
+          },
+          "_excel": "TRUPAN 15 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Triplay",
+      "categoria": "Madera",
+      "marca": "Maderas Gilber",
+      "descripcion": "Triplay de 4 mm en 122 x 244 cm. Elige entre triplay común, lupuna o venner.",
+      "variantes": [
+        {
+          "sku": "TRP-NATURAL-4MM122X244CM",
+          "precioVenta": 28.0,
+          "stock": 1,
+          "atributos": {
+            "Color": "Natural",
+            "Medida": "4 mm · 122 x 244 cm"
+          },
+          "_excel": "TRIPLAY"
+        },
+        {
+          "sku": "TRP-LUPUNA-4MM122X244CM",
+          "precioVenta": 35.0,
+          "stock": 95,
+          "atributos": {
+            "Color": "Lupuna",
+            "Medida": "4 mm · 122 x 244 cm"
+          },
+          "_excel": "TRIPLAY LUPUNA"
+        },
+        {
+          "sku": "TRP-VENNER-35MM122X244CM",
+          "precioVenta": 27.7,
+          "stock": 99,
+          "atributos": {
+            "Color": "Venner",
+            "Medida": "3.5 mm · 122 x 244 cm"
+          },
+          "_excel": "TRIPLAY VENNER 3.5 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Listón de madera de 8 pies",
+      "categoria": "Madera",
+      "marca": "Maderas Gilber",
+      "descripcion": "Listón de madera para marcos, estructuras y acabados.",
+      "variantes": [
+        {
+          "sku": "LIS-1X15PULGX8PIES",
+          "precioVenta": 5.5,
+          "stock": 40,
+          "atributos": {
+            "Medida": "1 x 1.5 pulg x 8 pies"
+          },
+          "_excel": "LISTON DE MADERA 1X1.5X8"
+        },
+        {
+          "sku": "LIS-1X2PULGX8PIES",
+          "precioVenta": 6.5,
+          "stock": 150,
+          "atributos": {
+            "Medida": "1 x 2 pulg x 8 pies"
+          },
+          "_excel": "LISTON DE MADERA 1X2X8"
+        }
+      ]
+    },
+    {
+      "nombre": "Bisagra de cazoleta cierre lento 35 mm (par)",
+      "categoria": "Bisagras",
+      "marca": "Pegaso",
+      "descripcion": "Bisagra de cazoleta de 35 mm con cierre lento para puertas de muebles. Se vende por par. Central, interior o lateral según cómo cierre la puerta.",
+      "variantes": [
+        {
+          "sku": "BIS-CL-CENTRAL-35MM",
+          "precioVenta": 5.0,
+          "stock": 344,
+          "atributos": {
+            "Tipo": "Central",
+            "Medida": "35 mm"
+          },
+          "_excel": "BISAGRA CENTRAL CIERRE LENTO (PAR)"
+        },
+        {
+          "sku": "BIS-CL-INTERIOR-35MM",
+          "precioVenta": 5.0,
+          "stock": 207,
+          "atributos": {
+            "Tipo": "Interior",
+            "Medida": "35 mm"
+          },
+          "_excel": "BISAGRA INTERIOR CIERRE LENTO (PAR)"
+        },
+        {
+          "sku": "BIS-CL-LATERAL-35MM",
+          "precioVenta": 5.0,
+          "stock": 174,
+          "atributos": {
+            "Tipo": "Lateral",
+            "Medida": "35 mm"
+          },
+          "_excel": "BISAGRA LATERAL CIERRE LENTO (PAR)"
+        }
+      ]
+    },
+    {
+      "nombre": "Bisagra de cazoleta económica 35 mm",
+      "categoria": "Bisagras",
+      "marca": "Representaciones Martin",
+      "descripcion": "Bisagra de cazoleta económica de 35 mm, sin tornillos. Central, interior o lateral.",
+      "variantes": [
+        {
+          "sku": "BIS-EC-CENTRAL-35MM",
+          "precioVenta": 2.0,
+          "stock": 1761,
+          "atributos": {
+            "Tipo": "Central",
+            "Medida": "35 mm"
+          },
+          "_excel": "BISAGRA CENTRAL ECONOMICA SIN TORNILLO"
+        },
+        {
+          "sku": "BIS-EC-INTERIOR-35MM",
+          "precioVenta": 2.0,
+          "stock": 1220,
+          "atributos": {
+            "Tipo": "Interior",
+            "Medida": "35 mm"
+          },
+          "_excel": "BISAGRA INTERIOR ECONOMICA SIN TORNILLO"
+        },
+        {
+          "sku": "BIS-EC-LATERAL-35MM",
+          "precioVenta": 2.0,
+          "stock": 945,
+          "atributos": {
+            "Tipo": "Lateral",
+            "Medida": "35 mm"
+          },
+          "_excel": "BISAGRA LATERAL ECONOMICA SIN TORNILLO"
+        }
+      ]
+    },
+    {
+      "nombre": "Bisagra push open 35 mm + sistema",
+      "categoria": "Bisagras",
+      "marca": "Representaciones Martin",
+      "descripcion": "Bisagra de 35 mm con sistema push open: la puerta se abre al presionarla, sin jaladera.",
+      "variantes": [
+        {
+          "sku": "BIS-PO-CENTRAL-35MM",
+          "precioVenta": 5.0,
+          "stock": 22,
+          "atributos": {
+            "Tipo": "Central",
+            "Medida": "35 mm"
+          },
+          "_excel": "BISAGRA PUSH-OPEN CENTRAL + SISTEMA"
+        },
+        {
+          "sku": "BIS-PO-INTERIOR-35MM",
+          "precioVenta": 5.0,
+          "stock": 9,
+          "atributos": {
+            "Tipo": "Interior",
+            "Medida": "35 mm"
+          },
+          "_excel": "BISAGRA PUSH-OPEN INTERIOR + SISTEMA"
+        },
+        {
+          "sku": "BIS-PO-LATERAL-35MM",
+          "precioVenta": 5.0,
+          "stock": 0,
+          "atributos": {
+            "Tipo": "Lateral",
+            "Medida": "35 mm"
+          },
+          "_excel": "BISAGRA PUSH-OPEN LATERAL + SISTEMA"
+        }
+      ]
+    },
+    {
+      "nombre": "Corredera telescópica mini (par)",
+      "categoria": "Correderas",
+      "marca": "Pegaso",
+      "descripcion": "Par de correderas telescópicas mini para cajones livianos.",
+      "variantes": [
+        {
+          "sku": "COR-MI-1025CM",
+          "precioVenta": 5.0,
+          "stock": 156,
+          "atributos": {
+            "Medida": "10\" (25 cm)"
+          },
+          "_excel": "CORREDERAS MINI TELESCOPICAS 10\""
+        },
+        {
+          "sku": "COR-MI-1230CM",
+          "precioVenta": 5.8,
+          "stock": 352,
+          "atributos": {
+            "Medida": "12\" (30 cm)"
+          },
+          "_excel": "CORREDERAS MINI TELESCOPICAS 12\""
+        },
+        {
+          "sku": "COR-MI-1435CM",
+          "precioVenta": 6.5,
+          "stock": 288,
+          "atributos": {
+            "Medida": "14\" (35 cm)"
+          },
+          "_excel": "CORREDERAS MINI TELESCOPICAS 14\""
+        },
+        {
+          "sku": "COR-MI-1640CM",
+          "precioVenta": 7.0,
+          "stock": 250,
+          "atributos": {
+            "Medida": "16\" (40 cm)"
+          },
+          "_excel": "CORREDERAS MINI TELESCOPICAS 16\""
+        },
+        {
+          "sku": "COR-MI-1845CM",
+          "precioVenta": 7.5,
+          "stock": 313,
+          "atributos": {
+            "Medida": "18\" (45 cm)"
+          },
+          "_excel": "CORREDERAS MINI TELESCOPICAS 18\""
+        },
+        {
+          "sku": "COR-MI-2050CM",
+          "precioVenta": 9.5,
+          "stock": 297,
+          "atributos": {
+            "Medida": "20\" (50 cm)"
+          },
+          "_excel": "CORREDERAS MINI TELESCOPICAS 20\""
+        }
+      ]
+    },
+    {
+      "nombre": "Corredera telescópica pesada (par)",
+      "categoria": "Correderas",
+      "marca": "Pegaso",
+      "descripcion": "Par de correderas telescópicas reforzadas para cajones de uso exigente.",
+      "variantes": [
+        {
+          "sku": "COR-PE-1025CM",
+          "precioVenta": 7.0,
+          "stock": 165,
+          "atributos": {
+            "Medida": "10\" (25 cm)"
+          },
+          "_excel": "CORREDERAS PESADA 10\""
+        },
+        {
+          "sku": "COR-PE-1230CM",
+          "precioVenta": 7.5,
+          "stock": 153,
+          "atributos": {
+            "Medida": "12\" (30 cm)"
+          },
+          "_excel": "CORREDERAS PESADA 12\""
+        },
+        {
+          "sku": "COR-PE-1435CM",
+          "precioVenta": 8.3,
+          "stock": 29,
+          "atributos": {
+            "Medida": "14\" (35 cm)"
+          },
+          "_excel": "CORREDERAS PESADA 14\""
+        },
+        {
+          "sku": "COR-PE-1640CM",
+          "precioVenta": 9.0,
+          "stock": 54,
+          "atributos": {
+            "Medida": "16\" (40 cm)"
+          },
+          "_excel": "CORREDERAS PESADA 16\""
+        },
+        {
+          "sku": "COR-PE-1845CM",
+          "precioVenta": 9.5,
+          "stock": 178,
+          "atributos": {
+            "Medida": "18\" (45 cm)"
+          },
+          "_excel": "CORREDERAS PESADA 18\""
+        },
+        {
+          "sku": "COR-PE-2050CM",
+          "precioVenta": 12.5,
+          "stock": 202,
+          "atributos": {
+            "Medida": "20\" (50 cm)"
+          },
+          "_excel": "CORREDERAS PESADA 20\""
+        }
+      ]
+    },
+    {
+      "nombre": "Corredera telescópica push open (par)",
+      "categoria": "Correderas",
+      "marca": "Ducasse",
+      "descripcion": "Par de correderas telescópicas con sistema push open: el cajón se abre al presionarlo.",
+      "variantes": [
+        {
+          "sku": "COR-PO-1435CM",
+          "precioVenta": 22.5,
+          "stock": 25,
+          "atributos": {
+            "Medida": "14\" (35 cm)"
+          },
+          "_excel": "CORREDERAS TELESCOPICA PUSH OPEN 14\""
+        },
+        {
+          "sku": "COR-PO-1640CM",
+          "precioVenta": 24.5,
+          "stock": 36,
+          "atributos": {
+            "Medida": "16\" (40 cm)"
+          },
+          "_excel": "CORREDERAS TELESCOPICA PUSH OPEN 16\""
+        },
+        {
+          "sku": "COR-PO-1845CM",
+          "precioVenta": 26.5,
+          "stock": 36,
+          "atributos": {
+            "Medida": "18\" (45 cm)"
+          },
+          "_excel": "CORREDERAS TELESCOPICA PUSH OPEN 18\""
+        },
+        {
+          "sku": "COR-PO-2050CM",
+          "precioVenta": 32.5,
+          "stock": 36,
+          "atributos": {
+            "Medida": "20\" (50 cm)"
+          },
+          "_excel": "CORREDERAS TELESCOPICA PUSH OPEN 20\""
+        }
+      ]
+    },
+    {
+      "nombre": "Tirador barra liviana",
+      "categoria": "Tiradores",
+      "marca": "Pegaso",
+      "descripcion": "Tirador de barra liviano para puertas y cajones. La medida es la distancia entre agujeros.",
+      "variantes": [
+        {
+          "sku": "TIR-BL-96CM",
+          "precioVenta": 1.8,
+          "stock": 465,
+          "atributos": {
+            "Medida": "9.6 cm"
+          },
+          "_excel": "TIRADOR BARRA LIVIANA 9.6 CM"
+        },
+        {
+          "sku": "TIR-BL-128CM",
+          "precioVenta": 2.1,
+          "stock": 516,
+          "atributos": {
+            "Medida": "12.8 cm"
+          },
+          "_excel": "TIRADOR BARRA LIVIANA 12.8 CM."
+        }
+      ]
+    },
+    {
+      "nombre": "Tirador barra pesado",
+      "categoria": "Tiradores",
+      "marca": "Pegaso",
+      "descripcion": "Tirador de barra pesado para puertas y cajones. La medida es la distancia entre agujeros.",
+      "variantes": [
+        {
+          "sku": "TIR-BP-96CM",
+          "precioVenta": 3.5,
+          "stock": 32,
+          "atributos": {
+            "Medida": "9.6 cm"
+          },
+          "_excel": "TIRADOR BARRA PESADO 9.6 CM"
+        },
+        {
+          "sku": "TIR-BP-128CM",
+          "precioVenta": 4.1,
+          "stock": 193,
+          "atributos": {
+            "Medida": "12.8 cm"
+          },
+          "_excel": "TIRADOR BARRA PESADO 12.8 CM"
+        },
+        {
+          "sku": "TIR-BP-16CM",
+          "precioVenta": 5.3,
+          "stock": 0,
+          "atributos": {
+            "Medida": "16 cm"
+          },
+          "_excel": "TIRADOR BARRA PESADO 16.0 CM"
+        },
+        {
+          "sku": "TIR-BP-196CM",
+          "precioVenta": 5.5,
+          "stock": 0,
+          "atributos": {
+            "Medida": "19.6 cm"
+          },
+          "_excel": "TIRADOR BARRA PESADO 19.6 CM"
+        },
+        {
+          "sku": "TIR-BP-226CM",
+          "precioVenta": 5.9,
+          "stock": 0,
+          "atributos": {
+            "Medida": "22.6 cm"
+          },
+          "_excel": "TIRADOR BARRA PESADO 22.6 CM"
+        }
+      ]
+    },
+    {
+      "nombre": "Tirador tina cromado",
+      "categoria": "Tiradores",
+      "marca": "Pegaso",
+      "descripcion": "Tirador tipo tina cromado para muebles de cocina y closets.",
+      "variantes": [
+        {
+          "sku": "TIR-TI-CROMADO-96CM",
+          "precioVenta": 2.3,
+          "stock": 416,
+          "atributos": {
+            "Color": "Cromado",
+            "Medida": "9.6 cm"
+          },
+          "_excel": "TIRADOR TINA CROMADO 9.6 CM"
+        },
+        {
+          "sku": "TIR-TI-CROMADO-128CM",
+          "precioVenta": 3.8,
+          "stock": 293,
+          "atributos": {
+            "Color": "Cromado",
+            "Medida": "12.8 cm"
+          },
+          "_excel": "TIRADOR TINA 12.8 CM"
+        },
+        {
+          "sku": "TIR-TI-CROMADO-16CM",
+          "precioVenta": 4.5,
+          "stock": 0,
+          "atributos": {
+            "Color": "Cromado",
+            "Medida": "16 cm"
+          },
+          "_excel": "TIRADOR TINA 16.0 CM"
+        }
+      ]
+    },
+    {
+      "nombre": "Tirador en U cromado de aluminio",
+      "categoria": "Tiradores",
+      "marca": "Representaciones Martin",
+      "descripcion": "Tirador en U de aluminio cromado.",
+      "variantes": [
+        {
+          "sku": "TIR-U-CROMADO-96CM",
+          "precioVenta": 3.0,
+          "stock": 54,
+          "atributos": {
+            "Color": "Cromado",
+            "Medida": "9.6 cm"
+          },
+          "_excel": "TIRADOR EN U CROMADO ALUMINIO 9.6"
+        },
+        {
+          "sku": "TIR-U-CROMADO-128CM",
+          "precioVenta": 5.8,
+          "stock": 0,
+          "atributos": {
+            "Color": "Cromado",
+            "Medida": "12.8 cm"
+          },
+          "_excel": "TIRADOR EN U CROMADO ALUMINIO 12.8"
+        }
+      ]
+    },
+    {
+      "nombre": "Jalador de cristal",
+      "categoria": "Tiradores",
+      "marca": "Pegaso",
+      "descripcion": "Jalador de cristal para cajones y puertas.",
+      "variantes": [
+        {
+          "sku": "JAL-CR-30MM",
+          "precioVenta": 3.0,
+          "stock": 203,
+          "atributos": {
+            "Medida": "30 mm"
+          },
+          "_excel": "JALADOR DE CRISTAL 30 MM."
+        },
+        {
+          "sku": "JAL-CR-40MM",
+          "precioVenta": 3.8,
+          "stock": 26,
+          "atributos": {
+            "Medida": "40 mm"
+          },
+          "_excel": "JALADOR DE CRISTAL 40 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Pistón de aire (gas)",
+      "categoria": "Ferretería",
+      "marca": "Pegaso",
+      "descripcion": "Pistón de aire para puertas abatibles de muebles. Elige la fuerza según el peso de la puerta.",
+      "variantes": [
+        {
+          "sku": "PIS-6KG",
+          "precioVenta": 3.3,
+          "stock": 279,
+          "atributos": {
+            "Medida": "6 kg"
+          },
+          "_excel": "PISTON DE AIRE 6 KG."
+        },
+        {
+          "sku": "PIS-8KG",
+          "precioVenta": 3.3,
+          "stock": 243,
+          "atributos": {
+            "Medida": "8 kg"
+          },
+          "_excel": "PISTON DE AIRE 8 KG."
+        },
+        {
+          "sku": "PIS-10KG",
+          "precioVenta": 3.3,
+          "stock": 213,
+          "atributos": {
+            "Medida": "10 kg"
+          },
+          "_excel": "PISTON DE AIRE 10 KG."
+        },
+        {
+          "sku": "PIS-12KG",
+          "precioVenta": 3.3,
+          "stock": 211,
+          "atributos": {
+            "Medida": "12 kg"
+          },
+          "_excel": "PISTON DE AIRE 12 KG."
+        }
+      ]
+    },
+    {
+      "nombre": "Garrucha (rueda para muebles)",
+      "categoria": "Ferretería",
+      "marca": "Pegaso",
+      "descripcion": "Garrucha de plástico para muebles y carritos.",
+      "variantes": [
+        {
+          "sku": "GAR-NEGRO-112",
+          "precioVenta": 1.8,
+          "stock": 149,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "1 1/2\""
+          },
+          "_excel": "GARRUCHA 1 1/2\" NEGRO"
+        },
+        {
+          "sku": "GAR-GRIS-112",
+          "precioVenta": 2.5,
+          "stock": 108,
+          "atributos": {
+            "Color": "Gris",
+            "Medida": "1 1/2\""
+          },
+          "_excel": "GARRUCHA 1 1/2\" 25040GR GRIS S/FRENO"
+        },
+        {
+          "sku": "GAR-NARANJA-112",
+          "precioVenta": 2.5,
+          "stock": 93,
+          "atributos": {
+            "Color": "Naranja",
+            "Medida": "1 1/2\""
+          },
+          "_excel": "GARRUCHA 1 1/2\" 25040AL PVC CROMADO NARANJA"
+        },
+        {
+          "sku": "GAR-GRIS-2",
+          "precioVenta": 2.5,
+          "stock": 56,
+          "atributos": {
+            "Color": "Gris",
+            "Medida": "2\""
+          },
+          "_excel": "GARRUCHA 2\" 25050GR GRIS S/FRENO"
+        },
+        {
+          "sku": "GAR-NARANJA-2",
+          "precioVenta": 2.5,
+          "stock": 125,
+          "atributos": {
+            "Color": "Naranja",
+            "Medida": "2\""
+          },
+          "_excel": "GARRUCHA 2\" 25050AL PVC CROMADO NARANJA"
+        }
+      ]
+    },
+    {
+      "nombre": "Escuadra metálica blanca",
+      "categoria": "Ferretería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Escuadra metálica blanca para unir y reforzar piezas de madera y melamina.",
+      "variantes": [
+        {
+          "sku": "ESC-BL-BLANCO-4X5",
+          "precioVenta": 2.8,
+          "stock": 130,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "4 x 5"
+          },
+          "_excel": "ESCUADRA METALICA BLANCA DE 4X5X1MM."
+        },
+        {
+          "sku": "ESC-BL-BLANCO-5X6",
+          "precioVenta": 1.8,
+          "stock": 40,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "5 x 6"
+          },
+          "_excel": "ESCUADRA METALICA BLANCA DE 5X6X1.2 MM."
+        },
+        {
+          "sku": "ESC-BL-BLANCO-8X10",
+          "precioVenta": 3.0,
+          "stock": 61,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "8 x 10"
+          },
+          "_excel": "ESCUADRA METALICA BLANCA DE 8X10X1.2MM."
+        },
+        {
+          "sku": "ESC-BL-BLANCO-10X12",
+          "precioVenta": 3.5,
+          "stock": 41,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "10 x 12"
+          },
+          "_excel": "ESCUADRA METALICA BLANCA DE 10X12X1.2MM TC0922"
+        },
+        {
+          "sku": "ESC-BL-BLANCO-12X14",
+          "precioVenta": 4.6,
+          "stock": 1,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "12 x 14"
+          },
+          "_excel": "ESCUADRA METALICA BLANCA 12X14X1.2MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Escuadra zincada",
+      "categoria": "Ferretería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Escuadra zincada de refuerzo para carpintería y estructuras.",
+      "variantes": [
+        {
+          "sku": "ESC-ZI-ZINCADO-30X20X20",
+          "precioVenta": 0.6,
+          "stock": 233,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "30 x 20 x 20"
+          },
+          "_excel": "ESCUADRA ZINCADA 30 X 20 X 20"
+        },
+        {
+          "sku": "ESC-ZI-ZINCADO-30X30X30",
+          "precioVenta": 0.8,
+          "stock": 121,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "30 x 30 x 30"
+          },
+          "_excel": "ESCUADRA ZINCADA 30 X 30 X 30"
+        },
+        {
+          "sku": "ESC-ZI-ZINCADO-30X40X40",
+          "precioVenta": 1.0,
+          "stock": 321,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "30 x 40 x 40"
+          },
+          "_excel": "ESCUADRA ZINCADA 30 X 40 X 40"
+        },
+        {
+          "sku": "ESC-ZI-ZINCADO-40X45X45",
+          "precioVenta": 1.9,
+          "stock": 41,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "40 x 45 x 45"
+          },
+          "_excel": "ESCUADRA ZINCADA 40 X 45 X 45"
+        },
+        {
+          "sku": "ESC-ZI-ZINCADO-40X60X60",
+          "precioVenta": 2.2,
+          "stock": 302,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "40 x 60 x 60"
+          },
+          "_excel": "ESCUADRA ZINCADA 40 X 60 X 60"
+        },
+        {
+          "sku": "ESC-ZI-ZINCADO-30X100X100",
+          "precioVenta": 2.4,
+          "stock": 278,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "30 x 100 x 100"
+          },
+          "_excel": "ESCUADRA ZINCADA 30 X 100 X 100"
+        }
+      ]
+    },
+    {
+      "nombre": "Pasacable para escritorio",
+      "categoria": "Ferretería",
+      "marca": "Pegaso",
+      "descripcion": "Pasacable para escritorios y muebles de oficina, en varios colores.",
+      "variantes": [
+        {
+          "sku": "PAS-ALMENDRA",
+          "precioVenta": 1.0,
+          "stock": 7,
+          "atributos": {
+            "Color": "Almendra"
+          },
+          "_excel": "PASACABLE ALMENDRA"
+        },
+        {
+          "sku": "PAS-AZUL",
+          "precioVenta": 1.0,
+          "stock": 47,
+          "atributos": {
+            "Color": "Azul"
+          },
+          "_excel": "PASACABLE AZUL"
+        },
+        {
+          "sku": "PAS-HAYA",
+          "precioVenta": 1.0,
+          "stock": 24,
+          "atributos": {
+            "Color": "Haya"
+          },
+          "_excel": "PASACABLE HAYA"
+        },
+        {
+          "sku": "PAS-MARRON",
+          "precioVenta": 1.0,
+          "stock": 12,
+          "atributos": {
+            "Color": "Marrón"
+          },
+          "_excel": "PASACABLE MARRON"
+        },
+        {
+          "sku": "PAS-MARRONCLARO",
+          "precioVenta": 1.0,
+          "stock": 78,
+          "atributos": {
+            "Color": "Marrón claro"
+          },
+          "_excel": "PASACABLE MARRON CLARO"
+        },
+        {
+          "sku": "PAS-NEGRO",
+          "precioVenta": 1.0,
+          "stock": 19,
+          "atributos": {
+            "Color": "Negro"
+          },
+          "_excel": "PASACABLE NEGRO"
+        }
+      ]
+    },
+    {
+      "nombre": "Clavos con cabeza (por kilo)",
+      "categoria": "Tornillería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Clavos con cabeza, vendidos por kilogramo. Elige el largo.",
+      "variantes": [
+        {
+          "sku": "CLA-34",
+          "precioVenta": 10.0,
+          "stock": 30,
+          "atributos": {
+            "Medida": "3/4\""
+          },
+          "_excel": "CLAVOS 3/4 C/C"
+        },
+        {
+          "sku": "CLA-1",
+          "precioVenta": 10.0,
+          "stock": 30,
+          "atributos": {
+            "Medida": "1\""
+          },
+          "_excel": "CLAVOS 1\" C/C"
+        },
+        {
+          "sku": "CLA-2",
+          "precioVenta": 6.5,
+          "stock": 17,
+          "atributos": {
+            "Medida": "2\""
+          },
+          "_excel": "CLAVOS 2\" C/C"
+        },
+        {
+          "sku": "CLA-212",
+          "precioVenta": 7.42,
+          "stock": 19,
+          "atributos": {
+            "Medida": "2 1/2\""
+          },
+          "_excel": "CLAVOS 2 1/2\" C/C"
+        }
+      ]
+    },
+    {
+      "nombre": "Tornillo Stovolt zincado",
+      "categoria": "Tornillería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Tornillo Stovolt zincado para muebles. Precio por unidad.",
+      "variantes": [
+        {
+          "sku": "STO-ZINCADO-4X20MM",
+          "precioVenta": 0.08,
+          "stock": 610,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 20 mm"
+          },
+          "_excel": "STOVOLT ZINC. MED. 4X20 MM."
+        },
+        {
+          "sku": "STO-ZINCADO-4X25MM",
+          "precioVenta": 0.09,
+          "stock": 764,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 25 mm"
+          },
+          "_excel": "STOVOLT ZINC. MED. 4X25 MM."
+        },
+        {
+          "sku": "STO-ZINCADO-4X30MM",
+          "precioVenta": 0.08,
+          "stock": 651,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 30 mm"
+          },
+          "_excel": "STOVOLT ZINC. MED. 4X30 MM."
+        },
+        {
+          "sku": "STO-ZINCADO-4X35MM",
+          "precioVenta": 0.09,
+          "stock": 960,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 35 mm"
+          },
+          "_excel": "STOVOLT ZINC. MED. 4X35 MM."
+        },
+        {
+          "sku": "STO-ZINCADO-4X40MM",
+          "precioVenta": 0.09,
+          "stock": 718,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 40 mm"
+          },
+          "_excel": "STOVOLT ZINC. MED. 4X40 MM."
+        },
+        {
+          "sku": "STO-ZINCADO-4X50MM",
+          "precioVenta": 0.1,
+          "stock": 922,
+          "atributos": {
+            "Color": "Zincado",
+            "Medida": "4 x 50 mm"
+          },
+          "_excel": "STOVOLT ZINC. MED. 4X50 MM."
+        }
+      ]
+    },
+    {
+      "nombre": "Tornillo drywall punta fina negro",
+      "categoria": "Tornillería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Tornillo negro de punta fina para plancha de yeso (drywall).",
+      "variantes": [
+        {
+          "sku": "DRY-NEGRO-6X1",
+          "precioVenta": 4.2,
+          "stock": 67,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "6 x 1"
+          },
+          "_excel": "TORNILLO PUNTA FINA NEGRO 6 X 1 (DRYWALL)"
+        },
+        {
+          "sku": "DRY-NEGRO-7X716",
+          "precioVenta": 4.5,
+          "stock": 159,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "7 x 7/16"
+          },
+          "_excel": "TORNILLO PUNTA FINA NEGRO 7 X 7/16 (DRYWALL)"
+        }
+      ]
+    },
+    {
+      "nombre": "Tarugo de madera",
+      "categoria": "Tornillería",
+      "marca": "Representaciones Martin",
+      "descripcion": "Tarugo de madera para uniones de muebles.",
+      "variantes": [
+        {
+          "sku": "TAR-38",
+          "precioVenta": 0.1,
+          "stock": 2082,
+          "atributos": {
+            "Medida": "3/8"
+          },
+          "_excel": "TARUGO MADERA 3/8"
+        },
+        {
+          "sku": "TAR-124X70",
+          "precioVenta": 0.1,
+          "stock": 3961,
+          "atributos": {
+            "Medida": "1/2 (4 x 70)"
+          },
+          "_excel": "TARUGO MADERA 1/2 (4X70)"
+        }
+      ]
+    },
+    {
+      "nombre": "Wincha Pretul",
+      "categoria": "Herramientas",
+      "marca": "Pretul",
+      "descripcion": "Wincha (flexómetro) Pretul.",
+      "variantes": [
+        {
+          "sku": "WIN-3M",
+          "precioVenta": 8.0,
+          "stock": 9,
+          "atributos": {
+            "Medida": "3 m"
+          },
+          "_excel": "WINCHA X 3 MTS. 21605"
+        },
+        {
+          "sku": "WIN-5M",
+          "precioVenta": 11.0,
+          "stock": 13,
+          "atributos": {
+            "Medida": "5 m"
+          },
+          "_excel": "WINCHA X 5 MTS. 21606  0100908010067"
+        }
+      ]
+    },
+    {
+      "nombre": "Martillo de uña curva Truper",
+      "categoria": "Herramientas",
+      "marca": "Truper",
+      "descripcion": "Martillo de uña curva Truper.",
+      "variantes": [
+        {
+          "sku": "MAR-16OZ",
+          "precioVenta": 24.5,
+          "stock": 1,
+          "atributos": {
+            "Medida": "16 oz"
+          },
+          "_excel": "MARTILLO UÑA CURVA 16 ONZ 16752"
+        },
+        {
+          "sku": "MAR-20OZ",
+          "precioVenta": 28.5,
+          "stock": 2,
+          "atributos": {
+            "Medida": "20 oz"
+          },
+          "_excel": "MARTILLO UÑA CURVA 20 ONZ 16753"
+        }
+      ]
+    },
+    {
+      "nombre": "Alicate C&A",
+      "categoria": "Herramientas",
+      "marca": "C&A",
+      "descripcion": "Alicates C&A de 6\" y 8\".",
+      "variantes": [
+        {
+          "sku": "ALI-CORTE-6",
+          "precioVenta": 6.5,
+          "stock": 2,
+          "atributos": {
+            "Tipo": "Corte",
+            "Medida": "6\""
+          },
+          "_excel": "ALICATE DE CORTE 6\"  1400108140070"
+        },
+        {
+          "sku": "ALI-PUNTA-6",
+          "precioVenta": 7.8,
+          "stock": 3,
+          "atributos": {
+            "Tipo": "Punta",
+            "Medida": "6\""
+          },
+          "_excel": "ALICATE DE PUNTA 6\" 1400108140069"
+        },
+        {
+          "sku": "ALI-PELACABLES-6",
+          "precioVenta": 7.4,
+          "stock": 0,
+          "atributos": {
+            "Tipo": "Pelacables",
+            "Medida": "6\""
+          },
+          "_excel": "ALICATE PELACABLES 6\" 1400108140392"
+        },
+        {
+          "sku": "ALI-UNIVERSAL-8",
+          "precioVenta": 8.8,
+          "stock": 2,
+          "atributos": {
+            "Tipo": "Universal",
+            "Medida": "8\""
+          },
+          "_excel": "ALICATE UNIVERSAL 8\" 1400108140068"
+        }
+      ]
+    },
+    {
+      "nombre": "Serrucho de carpintero C&A",
+      "categoria": "Herramientas",
+      "marca": "C&A",
+      "descripcion": "Serrucho de carpintero con mango de madera.",
+      "variantes": [
+        {
+          "sku": "SER-18",
+          "precioVenta": 15.5,
+          "stock": 3,
+          "atributos": {
+            "Medida": "18\""
+          },
+          "_excel": "SERRUCHO CARPINTERO 18\" M/MADERA 1400102140215"
+        },
+        {
+          "sku": "SER-20",
+          "precioVenta": 17.8,
+          "stock": 6,
+          "atributos": {
+            "Medida": "20\""
+          },
+          "_excel": "SERRUCHO CARPINTERO 20\" M/MADERA 1400102140455"
+        }
+      ]
+    },
+    {
+      "nombre": "Llave francesa C&A",
+      "categoria": "Herramientas",
+      "marca": "C&A",
+      "descripcion": "Llave francesa (ajustable) C&A.",
+      "variantes": [
+        {
+          "sku": "LLF-6",
+          "precioVenta": 8.5,
+          "stock": 2,
+          "atributos": {
+            "Medida": "6\""
+          },
+          "_excel": "LLAVE FRANCESA 6\" 1400108140330"
+        },
+        {
+          "sku": "LLF-12",
+          "precioVenta": 15.5,
+          "stock": 3,
+          "atributos": {
+            "Medida": "12\""
+          },
+          "_excel": "LLAVE FRANCESA 12\" 1400108140148"
+        }
+      ]
+    },
+    {
+      "nombre": "Juego de brocas Truper",
+      "categoria": "Herramientas",
+      "marca": "Truper",
+      "descripcion": "Juegos de brocas Truper para madera, concreto y metal.",
+      "variantes": [
+        {
+          "sku": "BRO-MADERA-6PIEZAS",
+          "precioVenta": 13.5,
+          "stock": 3,
+          "atributos": {
+            "Tipo": "Madera",
+            "Medida": "6 piezas"
+          },
+          "_excel": "JGO BROCAS MADERA 6PZ 11337"
+        },
+        {
+          "sku": "BRO-CONCRETO-6PIEZAS",
+          "precioVenta": 21.5,
+          "stock": 13,
+          "atributos": {
+            "Tipo": "Concreto",
+            "Medida": "6 piezas"
+          },
+          "_excel": "JGO BROCAS CONCRETO 6PZ EST/PLASTICO 11295"
+        },
+        {
+          "sku": "BRO-METALMADERAYCO-9PIEZAS",
+          "precioVenta": 32.5,
+          "stock": 3,
+          "atributos": {
+            "Tipo": "Metal, madera y concreto",
+            "Medida": "9 piezas"
+          },
+          "_excel": "JGO BROCAS HSS METAL/MAD/CONCRETO 9PZ 11339"
+        },
+        {
+          "sku": "BRO-METALHSS-10PIEZAS",
+          "precioVenta": 37.0,
+          "stock": 3,
+          "atributos": {
+            "Tipo": "Metal HSS",
+            "Medida": "10 piezas"
+          },
+          "_excel": "JGO BROCAS METAL HSS 10PZ ES/PLASTICO 11399"
+        }
+      ]
+    },
+    {
+      "nombre": "Taladro inalámbrico Ingco 20V",
+      "categoria": "Herramientas",
+      "marca": "Ingco",
+      "descripcion": "Taladro percutor inalámbrico Ingco de 20 V con batería.",
+      "variantes": [
+        {
+          "sku": "TAL-IN-MANDRIL38",
+          "precioVenta": 300.0,
+          "stock": 1,
+          "atributos": {
+            "Medida": "Mandril 3/8\""
+          },
+          "_excel": "TALADRO PERC. INALAM. 3/8\" 20V C/B CIDLI201452"
+        },
+        {
+          "sku": "TAL-IN-MANDRIL12",
+          "precioVenta": 325.0,
+          "stock": 1,
+          "atributos": {
+            "Medida": "Mandril 1/2\""
+          },
+          "_excel": "TALADRO PERC. INALAM. 1/2\" 20V CIDLI20668 INGCO"
+        }
+      ]
+    },
+    {
+      "nombre": "Taladro percutor Ingco 850 W",
+      "categoria": "Herramientas",
+      "marca": "Ingco",
+      "descripcion": "Taladro percutor eléctrico Ingco de 850 W.",
+      "variantes": [
+        {
+          "sku": "TAL-85-850W",
+          "precioVenta": 150.0,
+          "stock": 2,
+          "atributos": {
+            "Medida": "850 W"
+          },
+          "_excel": "TALADRO PERCUTOR 850W ID8508 INGCO 1830103183006"
+        }
+      ]
+    },
+    {
+      "nombre": "Esmeril angular Ingco 4 1/2\" 750 W",
+      "categoria": "Herramientas",
+      "marca": "Ingco",
+      "descripcion": "Esmeril angular Ingco de 750 W para disco de 4 1/2\".",
+      "variantes": [
+        {
+          "sku": "ESM-412750W",
+          "precioVenta": 110.5,
+          "stock": 2,
+          "atributos": {
+            "Medida": "4 1/2\" · 750 W"
+          },
+          "_excel": "ESMERIL ANGULAR 4 1/2\" 750W AG75028"
+        }
+      ]
+    },
+    {
+      "nombre": "Sierra circular Ingco 1400 W",
+      "categoria": "Herramientas",
+      "marca": "Ingco",
+      "descripcion": "Sierra circular eléctrica Ingco de 1400 W.",
+      "variantes": [
+        {
+          "sku": "SIE-1400W",
+          "precioVenta": 277.5,
+          "stock": 2,
+          "atributos": {
+            "Medida": "1400 W"
+          },
+          "_excel": "SIERRA CIRCULAR 1400W CS18538"
+        }
+      ]
+    },
+    {
+      "nombre": "Nivel de aluminio 18\"",
+      "categoria": "Herramientas",
+      "marca": "C&A PRO",
+      "descripcion": "Nivel de aluminio de 18 pulgadas.",
+      "variantes": [
+        {
+          "sku": "NIV-18",
+          "precioVenta": 16.5,
+          "stock": 15,
+          "atributos": {
+            "Medida": "18\""
+          },
+          "_excel": "NIVEL DE ALUMINIO 18\"  1700103140423"
+        }
+      ]
+    },
+    {
+      "nombre": "Pistola para silicona C&A PRO",
+      "categoria": "Herramientas",
+      "marca": "C&A PRO",
+      "descripcion": "Pistola para aplicar silicona, en versión reforzada o tipo esqueleto.",
+      "variantes": [
+        {
+          "sku": "PIS-SI-REFORZADA",
+          "precioVenta": 8.5,
+          "stock": 8,
+          "atributos": {
+            "Tipo": "Reforzada"
+          },
+          "_excel": "PISTOLA PARA SILICONA REFORZADA 1700106200686"
+        },
+        {
+          "sku": "PIS-SI-ESQUELETO",
+          "precioVenta": 7.5,
+          "stock": 24,
+          "atributos": {
+            "Tipo": "Esqueleto"
+          },
+          "_excel": "PISTOLA PARA SILICONA TIPO ESQUELETO 1700106200691"
+        }
+      ]
+    },
+    {
+      "nombre": "Pegamento de contacto Africano's",
+      "categoria": "Acabados",
+      "marca": "GoldenPlast",
+      "descripcion": "Pegamento de contacto para laminados, cantos y carpintería. Presentaciones en fracciones de galón.",
+      "variantes": [
+        {
+          "sku": "PEG-AF-164DEGALON",
+          "precioVenta": 1.9,
+          "stock": 41,
+          "atributos": {
+            "Medida": "1/64 de galón"
+          },
+          "_excel": "PEGAMENTO DE CONTACTO 1/64 AFRICANO'S"
+        },
+        {
+          "sku": "PEG-AF-132DEGALON",
+          "precioVenta": 4.5,
+          "stock": 82,
+          "atributos": {
+            "Medida": "1/32 de galón"
+          },
+          "_excel": "PEGAMENTO DE CONTACTO 1/32 AFRICANO'S"
+        },
+        {
+          "sku": "PEG-AF-18DEGALON",
+          "precioVenta": 13.0,
+          "stock": 14,
+          "atributos": {
+            "Medida": "1/8 de galón"
+          },
+          "_excel": "PEGAMENTO DE CONTACTO 1/8 AFRICANO'S"
+        }
+      ]
+    },
+    {
+      "nombre": "Silicona multiusos Knauff 225 ml",
+      "categoria": "Acabados",
+      "marca": "Knauff",
+      "descripcion": "Silicona multiusos de 225 ml para sellar y pegar.",
+      "variantes": [
+        {
+          "sku": "SIL-BLANCO-225ML",
+          "precioVenta": 8.0,
+          "stock": 27,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "225 ml"
+          },
+          "_excel": "SILICONA MULTIUSOS 1000 BLANCO 225ML 0020105002839"
+        },
+        {
+          "sku": "SIL-GRIS-225ML",
+          "precioVenta": 8.0,
+          "stock": 42,
+          "atributos": {
+            "Color": "Gris",
+            "Medida": "225 ml"
+          },
+          "_excel": "SILICONA MULTIUSOS 1000 GRIS 225ML 0020105002842"
+        },
+        {
+          "sku": "SIL-NEGRO-225ML",
+          "precioVenta": 8.0,
+          "stock": 45,
+          "atributos": {
+            "Color": "Negro",
+            "Medida": "225 ml"
+          },
+          "_excel": "SILICONA MULTIUSOS 1000 NEGRO 225ML 0020105002841"
+        },
+        {
+          "sku": "SIL-TRANSPARENTE-225ML",
+          "precioVenta": 8.0,
+          "stock": 14,
+          "atributos": {
+            "Color": "Transparente",
+            "Medida": "225 ml"
+          },
+          "_excel": "SILICONA MULTIUSOS 1000 TRANSP 225ML 0020105002837"
+        }
+      ]
+    },
+    {
+      "nombre": "Pegamento instantáneo Knauff",
+      "categoria": "Acabados",
+      "marca": "Knauff",
+      "descripcion": "Pegamento instantáneo Knauff, en tubo de 1.5 g o 3 g.",
+      "variantes": [
+        {
+          "sku": "PEG-KN-15G",
+          "precioVenta": 0.8,
+          "stock": 106,
+          "atributos": {
+            "Medida": "1.5 g"
+          },
+          "_excel": "SUPER GLUE INSTANTANEO 1.5GR KNAUFF 0020104002861"
+        },
+        {
+          "sku": "PEG-KN-3G",
+          "precioVenta": 2.5,
+          "stock": 71,
+          "atributos": {
+            "Medida": "3 g"
+          },
+          "_excel": "PEGATODO INSTANTANEO 3G KANUFF 0020104200700"
+        }
+      ]
+    },
+    {
+      "nombre": "Lija para madera Klingspor",
+      "categoria": "Acabados",
+      "marca": "Klingspor",
+      "descripcion": "Lija para madera Klingspor PL31B. Elige el grano: menor número, más abrasiva.",
+      "variantes": [
+        {
+          "sku": "LIJ-MA-GRANO40",
+          "precioVenta": 3.6,
+          "stock": 50,
+          "atributos": {
+            "Medida": "Grano 40"
+          },
+          "_excel": "LIJA MADERA 40 PL31B 2059"
+        },
+        {
+          "sku": "LIJ-MA-GRANO50",
+          "precioVenta": 2.3,
+          "stock": 50,
+          "atributos": {
+            "Medida": "Grano 50"
+          },
+          "_excel": "LIJA MADERA 50 PL31B 2060"
+        },
+        {
+          "sku": "LIJ-MA-GRANO60",
+          "precioVenta": 2.1,
+          "stock": 50,
+          "atributos": {
+            "Medida": "Grano 60"
+          },
+          "_excel": "LIJA MADERA 60 PL31B 2061"
+        },
+        {
+          "sku": "LIJ-MA-GRANO80",
+          "precioVenta": 2.0,
+          "stock": 50,
+          "atributos": {
+            "Medida": "Grano 80"
+          },
+          "_excel": "LIJA MADERA 80 PL31B 2062"
+        },
+        {
+          "sku": "LIJ-MA-GRANO100",
+          "precioVenta": 1.9,
+          "stock": 49,
+          "atributos": {
+            "Medida": "Grano 100"
+          },
+          "_excel": "LIJA MADERA 100 PL31B 2048"
+        },
+        {
+          "sku": "LIJ-MA-GRANO120",
+          "precioVenta": 1.8,
+          "stock": 50,
+          "atributos": {
+            "Medida": "Grano 120"
+          },
+          "_excel": "LIJA MADERA 120 PL31B 2049"
+        },
+        {
+          "sku": "LIJ-MA-GRANO150",
+          "precioVenta": 1.8,
+          "stock": 50,
+          "atributos": {
+            "Medida": "Grano 150"
+          },
+          "_excel": "LIJA MADERA 150 PL31B 2050"
+        },
+        {
+          "sku": "LIJ-MA-GRANO180",
+          "precioVenta": 1.8,
+          "stock": 48,
+          "atributos": {
+            "Medida": "Grano 180"
+          },
+          "_excel": "LIJA MADERA 180 PL31B 2051"
+        },
+        {
+          "sku": "LIJ-MA-GRANO220",
+          "precioVenta": 1.7,
+          "stock": 50,
+          "atributos": {
+            "Medida": "Grano 220"
+          },
+          "_excel": "LIJA MADERA 220 PL31B 2052"
+        }
+      ]
+    },
+    {
+      "nombre": "Lija para fierro Klingspor",
+      "categoria": "Acabados",
+      "marca": "Klingspor",
+      "descripcion": "Lija para fierro Klingspor KL371. Elige el grano.",
+      "variantes": [
+        {
+          "sku": "LIJ-FI-GRANO40",
+          "precioVenta": 3.3,
+          "stock": 47,
+          "atributos": {
+            "Medida": "Grano 40"
+          },
+          "_excel": "LIJA FIERRO 40 KL371 2100"
+        },
+        {
+          "sku": "LIJ-FI-GRANO50",
+          "precioVenta": 3.5,
+          "stock": 50,
+          "atributos": {
+            "Medida": "Grano 50"
+          },
+          "_excel": "LIJA FIERRO 50 KL371 2101"
+        },
+        {
+          "sku": "LIJ-FI-GRANO60",
+          "precioVenta": 2.8,
+          "stock": 42,
+          "atributos": {
+            "Medida": "Grano 60"
+          },
+          "_excel": "LIJA FIERRO 60 KL371 2102"
+        },
+        {
+          "sku": "LIJ-FI-GRANO80",
+          "precioVenta": 2.7,
+          "stock": 46,
+          "atributos": {
+            "Medida": "Grano 80"
+          },
+          "_excel": "LIJA FIERRO 80 KL371 2103"
+        },
+        {
+          "sku": "LIJ-FI-GRANO100",
+          "precioVenta": 2.8,
+          "stock": 47,
+          "atributos": {
+            "Medida": "Grano 100"
+          },
+          "_excel": "LIJA FIERRO 100 KL371 2104"
+        },
+        {
+          "sku": "LIJ-FI-GRANO120",
+          "precioVenta": 2.6,
+          "stock": 24,
+          "atributos": {
+            "Medida": "Grano 120"
+          },
+          "_excel": "LIJA FIERRO 120 KL371 2105"
+        },
+        {
+          "sku": "LIJ-FI-GRANO150",
+          "precioVenta": 2.7,
+          "stock": 49,
+          "atributos": {
+            "Medida": "Grano 150"
+          },
+          "_excel": "LIJA FIERRO 150 KL371 2106"
+        },
+        {
+          "sku": "LIJ-FI-GRANO180",
+          "precioVenta": 3.5,
+          "stock": 49,
+          "atributos": {
+            "Medida": "Grano 180"
+          },
+          "_excel": "LIJA FIERRO 180 KL371 2107"
+        },
+        {
+          "sku": "LIJ-FI-GRANO220",
+          "precioVenta": 2.8,
+          "stock": 50,
+          "atributos": {
+            "Medida": "Grano 220"
+          },
+          "_excel": "LIJA FIERRO 220 KL371 2108"
+        }
+      ]
+    },
+    {
+      "nombre": "Cinta aislante 3M Temflex 155",
+      "categoria": "Ferretería",
+      "marca": "3M",
+      "descripcion": "Cinta aislante negra 3M Temflex 155 de 3/4\".",
+      "variantes": [
+        {
+          "sku": "CIN-34X45M",
+          "precioVenta": 3.0,
+          "stock": 109,
+          "atributos": {
+            "Medida": "3/4\" x 4.5 m"
+          },
+          "_excel": "CINTA AIS. TEMFLEX 155 C/NEG. 3/4 X 4.5M 101033011"
+        },
+        {
+          "sku": "CIN-34X18M",
+          "precioVenta": 5.0,
+          "stock": 57,
+          "atributos": {
+            "Medida": "3/4\" x 18 m"
+          },
+          "_excel": "CINTA AIS. TEMFLEX 155 C/NEGRO 3/4 X 18M 101033015"
+        }
+      ]
+    },
+    {
+      "nombre": "Foco LED espiral blanco",
+      "categoria": "Iluminación",
+      "marca": "Representaciones Martin",
+      "descripcion": "Foco LED espiral de luz blanca.",
+      "variantes": [
+        {
+          "sku": "FOC-ES-7W",
+          "precioVenta": 7.7,
+          "stock": 18,
+          "atributos": {
+            "Medida": "7 W"
+          },
+          "_excel": "FOCO LED ESPIRAL 7W/500 LUMEN BLANCO"
+        },
+        {
+          "sku": "FOC-ES-9W",
+          "precioVenta": 8.8,
+          "stock": 18,
+          "atributos": {
+            "Medida": "9 W"
+          },
+          "_excel": "FOCO LED ESPIRAL 9W/650 LUMEN BLANCO"
+        },
+        {
+          "sku": "FOC-ES-12W",
+          "precioVenta": 11.9,
+          "stock": 8,
+          "atributos": {
+            "Medida": "12 W"
+          },
+          "_excel": "FOCO LED ESPIRAL 12W/850 LUMEN BLANCO"
+        }
+      ]
+    },
+    {
+      "nombre": "Foco LED",
+      "categoria": "Iluminación",
+      "marca": "Representaciones Martin",
+      "descripcion": "Foco LED de 3 W y 5 W, en luz cálida o blanca.",
+      "variantes": [
+        {
+          "sku": "FOC-CALIDO-3W",
+          "precioVenta": 5.0,
+          "stock": 26,
+          "atributos": {
+            "Color": "Cálido",
+            "Medida": "3 W"
+          },
+          "_excel": "FOCO LED 3W/250 LUMEN 3000K CALIDO"
+        },
+        {
+          "sku": "FOC-CALIDO-5W",
+          "precioVenta": 6.3,
+          "stock": 29,
+          "atributos": {
+            "Color": "Cálido",
+            "Medida": "5 W"
+          },
+          "_excel": "FOCO LED 5W/430 LUMEN 3000K CALIDO"
+        },
+        {
+          "sku": "FOC-BLANCO-5W",
+          "precioVenta": 6.3,
+          "stock": 23,
+          "atributos": {
+            "Color": "Blanco",
+            "Medida": "5 W"
+          },
+          "_excel": "FOCO LED 5W/430 LUMEN 6500K BLANCO"
+        }
+      ]
+    },
+    {
+      "nombre": "Panel LED para empotrar",
+      "categoria": "Iluminación",
+      "marca": "Representaciones Martin",
+      "descripcion": "Panel LED de luz blanca, cuadrado o redondo.",
+      "variantes": [
+        {
+          "sku": "PAN-CUADRADO-6W",
+          "precioVenta": 13.2,
+          "stock": 13,
+          "atributos": {
+            "Tipo": "Cuadrado",
+            "Medida": "6 W"
+          },
+          "_excel": "FOCO LED PANEL CUADRADO 6W/320 LUMEN BLANCO"
+        },
+        {
+          "sku": "PAN-CUADRADO-12W",
+          "precioVenta": 17.5,
+          "stock": 17,
+          "atributos": {
+            "Tipo": "Cuadrado",
+            "Medida": "12 W"
+          },
+          "_excel": "FOCO LED PANEL CUADRADO 12W/720 LUMEN BLANCO"
+        },
+        {
+          "sku": "PAN-REDONDO-6W",
+          "precioVenta": 12.4,
+          "stock": 23,
+          "atributos": {
+            "Tipo": "Redondo",
+            "Medida": "6 W"
+          },
+          "_excel": "FOCO LED PANEL REDONDO 6W/320 LUMEN BLANCO"
+        },
+        {
+          "sku": "PAN-REDONDO-12W",
+          "precioVenta": 16.8,
+          "stock": 23,
+          "atributos": {
+            "Tipo": "Redondo",
+            "Medida": "12 W"
+          },
+          "_excel": "FOCO LED PANEL REDONDO 12W/720 LUMEN BLANCO"
+        }
+      ]
+    },
+    {
+      "nombre": "Extensión eléctrica 4 tomas gris Home Light",
+      "categoria": "Iluminación",
+      "marca": "Home Light",
+      "descripcion": "Extensión eléctrica de 4 tomas, cable de 18 AWG.",
+      "variantes": [
+        {
+          "sku": "EXT-3M",
+          "precioVenta": 10.5,
+          "stock": 5,
+          "atributos": {
+            "Medida": "3 m"
+          },
+          "_excel": "EXTENSIÓN CON 4 TOMAS GRIS 3M 18AWG"
+        },
+        {
+          "sku": "EXT-5M",
+          "precioVenta": 12.0,
+          "stock": 4,
+          "atributos": {
+            "Medida": "5 m"
+          },
+          "_excel": "EXTENSIÓN CON 4 TOMAS GRIS 5M 18AWG"
+        }
+      ]
+    },
+    {
+      "nombre": "Interruptor para empotrar Home Light",
+      "categoria": "Iluminación",
+      "marca": "Home Light",
+      "descripcion": "Interruptor para empotrar Home Light: simple, doble o triple.",
+      "variantes": [
+        {
+          "sku": "INT-SIMPLE",
+          "precioVenta": 2.1,
+          "stock": 10,
+          "atributos": {
+            "Tipo": "Simple"
+          },
+          "_excel": "INTERRUPTOR SIMPLE P/EMP 1660104046183"
+        },
+        {
+          "sku": "INT-DOBLE",
+          "precioVenta": 2.6,
+          "stock": 10,
+          "atributos": {
+            "Tipo": "Doble"
+          },
+          "_excel": "INTERRUPTOR DOBLE P/EMP 1660104046187"
+        },
+        {
+          "sku": "INT-TRIPLE",
+          "precioVenta": 3.3,
+          "stock": 10,
+          "atributos": {
+            "Tipo": "Triple"
+          },
+          "_excel": "INTERRUPTOR TRIPLE P/EMP CLASSIC 1660104046379"
+        }
+      ]
+    },
+    {
+      "nombre": "Tomacorriente para empotrar Home Light",
+      "categoria": "Iluminación",
+      "marca": "Home Light",
+      "descripcion": "Tomacorriente para empotrar Home Light: simple o doble.",
+      "variantes": [
+        {
+          "sku": "TOM-SIMPLE",
+          "precioVenta": 2.0,
+          "stock": 10,
+          "atributos": {
+            "Tipo": "Simple"
+          },
+          "_excel": "TOMACORRIENTE SIMPLE P/EMP 1660104046189"
+        },
+        {
+          "sku": "TOM-DOBLE",
+          "precioVenta": 2.5,
+          "stock": 5,
+          "atributos": {
+            "Tipo": "Doble"
+          },
+          "_excel": "TOMACORRIENTE DOBLE P/EMP 1660104046191"
+        }
+      ]
+    }
+  ]
+}

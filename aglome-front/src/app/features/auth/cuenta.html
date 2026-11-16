@@ -1,0 +1,45 @@
+<div class="contenedor pagina">
+  <h1>Mi cuenta</h1>
+
+  <div class="rejilla">
+    <section class="tarjeta">
+      <h2>Mis datos</h2>
+      @if (perfil(); as p) {
+        <dl>
+          <dt>Nombre</dt><dd>{{ p.nombre }}</dd>
+          <dt>Correo</dt><dd>{{ p.email }}</dd>
+          <dt>Tipo de cuenta</dt><dd><span class="rol">{{ etiquetaRol(p.rol) }}</span></dd>
+        </dl>
+        <a routerLink="/mis-pedidos" class="btn secundario">Ver mis pedidos</a>
+      } @else if (errorPerfil(); as e) {
+        <div class="aviso error" role="alert">{{ e }}</div>
+      } @else {
+        <div class="esqueleto" aria-busy="true"></div>
+      }
+    </section>
+
+    <section class="tarjeta">
+      <h2>Cambiar contraseña</h2>
+      <form [formGroup]="form" (ngSubmit)="enviar()" novalidate>
+        @if (error(); as e) { <div class="aviso error" role="alert">{{ e }}</div> }
+
+        <div class="campo">
+          <label for="actual">Contraseña actual</label>
+          <input id="actual" type="password" formControlName="actual" autocomplete="current-password" [class.invalido]="mensaje(form.controls.actual)" />
+          @if (mensaje(form.controls.actual); as m) { <p class="error-campo">{{ m }}</p> }
+        </div>
+        <div class="campo">
+          <label for="nueva">Contraseña nueva</label>
+          <input id="nueva" type="password" formControlName="nueva" autocomplete="new-password" [class.invalido]="mensaje(form.controls.nueva)" />
+          @if (mensaje(form.controls.nueva); as m) { <p class="error-campo">{{ m }}</p> } @else { <p class="ayuda">Entre 8 y 72 caracteres, con letras y números.</p> }
+        </div>
+        <div class="campo">
+          <label for="repetir">Repite la contraseña nueva</label>
+          <input id="repetir" type="password" formControlName="repetir" autocomplete="new-password" [class.invalido]="mensaje(form.controls.repetir)" />
+          @if (mensaje(form.controls.repetir); as m) { <p class="error-campo">{{ m }}</p> }
+        </div>
+        <button type="submit" class="btn" [disabled]="enviando()">{{ enviando() ? 'Guardando…' : 'Guardar contraseña' }}</button>
+      </form>
+    </section>
+  </div>
+</div>

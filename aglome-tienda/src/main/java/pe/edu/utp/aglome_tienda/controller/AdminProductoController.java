@@ -24,29 +24,17 @@ public class AdminProductoController {
 
     @PostMapping
     public ResponseEntity<?> crear(@Valid @RequestBody ProductoBaseRequest request) {
-        try {
-            return ResponseEntity.status(HttpStatus.CREATED).body(productoBaseService.crear(request));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(productoBaseService.crear(request));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizar(@PathVariable UUID id, @Valid @RequestBody ProductoBaseRequest request) {
-        try {
-            return ResponseEntity.ok(productoBaseService.actualizar(id, request));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        return ResponseEntity.ok(productoBaseService.actualizar(id, request));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable UUID id) {
-        try {
-            productoBaseService.eliminar(id);
-            return ResponseEntity.noContent().build();
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(404).body(e.getMessage());
-        }
+        productoBaseService.eliminar(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -1,0 +1,52 @@
+@use 'variables' as v;
+
+.pie {
+  background: v.$color-noche;
+  color: #b8c4dc;
+  font-size: 0.92rem;
+  a { color: #e5ecf8; &:hover { color: #fff; text-decoration: underline; } }
+}
+
+.columnas {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 2rem;
+  padding-block: 3rem 2.25rem;
+  @include v.tablet { grid-template-columns: 1fr 1fr; }
+  @include v.movil { grid-template-columns: 1fr; padding-block: 2rem; }
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+
+.id {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+  // el logo es azul y gris sobre transparente: sobre fondo oscuro necesita una placa clara
+  app-logo { background: #fff; padding: 0.3rem; border-radius: v.$radio; }
+}
+.nombre {
+  font-family: v.$fuente-titulo;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  small { margin-left: 0.35rem; font-size: 0.9rem; color: #8fa3c8; letter-spacing: 0.14em; }
+}
+.empresa p { max-width: 24rem; margin: 0; }
+
+.legal {
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  padding-block: 1rem;
+  font-size: 0.82rem;
+  color: #8fa3c8;
+}
+.legal { padding-bottom: 4.5rem; }

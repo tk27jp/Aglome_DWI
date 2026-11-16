@@ -35,7 +35,7 @@ class CarritoControllerTest {
     @MockitoBean private UserDetailsService userDetailsService;
 
     @Test
-    @WithMockUser(username = "ana@test.com")
+    @WithMockUser(username = "jhonatan@test.com")
     void agregarItem_usuarioLogueado_debeRetornar200() throws Exception {
         AgregarAlCarritoRequest request = new AgregarAlCarritoRequest();
         request.setVarianteId(UUID.randomUUID());

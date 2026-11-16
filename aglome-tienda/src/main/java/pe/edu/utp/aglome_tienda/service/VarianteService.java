@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.utp.aglome_tienda.dto.VarianteDTO;
 import pe.edu.utp.aglome_tienda.dto.VarianteRequest;
+import pe.edu.utp.aglome_tienda.exception.ConflictoException;
+import pe.edu.utp.aglome_tienda.exception.RecursoNoEncontradoException;
 import pe.edu.utp.aglome_tienda.model.*;
 import pe.edu.utp.aglome_tienda.repository.*;
 
@@ -23,10 +25,11 @@ public class VarianteService {
     private final ProductoBaseRepository productoBaseRepository;
     private final TipoAtributoRepository tipoAtributoRepository;
     private final VarianteAtributoRepository varianteAtributoRepository;
+    private final MovimientoStockService movimientoStockService;
 
     // ── lecturas ─────────────────────────────────────────────────────
     public List<VarianteDTO> listarPorProducto(UUID productoBaseId) {
-        return varianteRepository.findByProductoBaseId(productoBaseId)
+        return varianteRepository.findByProductoBaseIdAndEliminadoFalse(productoBaseId)
                 .stream()
                 .map(this::mapearADto)
                 .collect(Collectors.toList());
@@ -35,20 +38,27 @@ public class VarianteService {
     // ── escrituras: solo panel admin ────────────────────────────────
     public VarianteDTO crear(VarianteRequest request) {
         if (varianteRepository.existsBySku(request.getSku())) {
-            throw new RuntimeException("Ya existe una variante con ese SKU");
+            throw new ConflictoException("Ya existe una variante con ese SKU");
         }
 
         ProductoBase productoBase = productoBaseRepository.findById(request.getProductoBaseId())
-                .orElseThrow(() -> new RuntimeException("Producto base no encontrado"));
+                .filter(p -> !Boolean.TRUE.equals(p.getEliminado()))
+                .orElseThrow(() -> new RecursoNoEncontradoException("Producto base no encontrado"));
 
         Variante variante = new Variante();
         variante.setProductoBase(productoBase);
         variante.setSku(request.getSku());
         variante.setPrecioVenta(request.getPrecioVenta());
         variante.setStock(request.getStock());
+        variante.setImagenUrl(request.getImagenUrl());
         variante.setActiva(true);
 
         Variante guardada = varianteRepository.save(variante);
+
+        if (guardada.getStock() > 0) {
+            movimientoStockService.registrar(guardada, TipoMovimiento.STOCK_INICIAL,
+                    0, guardada.getStock(), "Stock inicial al crear la variante", null);
+        }
 
         guardarAtributos(guardada, request.getAtributos());
 
@@ -56,16 +66,22 @@ public class VarianteService {
     }
 
     public VarianteDTO actualizar(UUID id, VarianteRequest request) {
-        Variante variante = varianteRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Variante no encontrada"));
+        Variante variante = buscarOFallar(id);
         if (varianteRepository.existsBySkuAndIdNot(request.getSku(), id)) {
-        throw new RuntimeException("Ya existe otra variante con ese SKU");
+            throw new ConflictoException("Ya existe otra variante con ese SKU");
         }
+        int stockAnterior = variante.getStock();
         variante.setSku(request.getSku());
         variante.setPrecioVenta(request.getPrecioVenta());
         variante.setStock(request.getStock());
+        variante.setImagenUrl(request.getImagenUrl());
 
         Variante actualizada = varianteRepository.save(variante);
+
+        if (stockAnterior != request.getStock()) {
+            movimientoStockService.registrar(actualizada, TipoMovimiento.AJUSTE,
+                    stockAnterior, request.getStock(), "Stock editado al actualizar la variante", null);
+        }
 
         // reemplaza los atributos existentes por los nuevos que mandó el admin
         varianteAtributoRepository.findByVarianteId(id)
@@ -75,14 +91,27 @@ public class VarianteService {
         return mapearADto(actualizada);
     }
 
+    // borrado lógico: la variante se oculta pero los pedidos que la compraron siguen mostrándola
     public void eliminar(UUID id) {
-        if (!varianteRepository.existsById(id)) {
-            throw new RuntimeException("Variante no encontrada");
-        }
-        varianteRepository.deleteById(id);
+        Variante variante = buscarOFallar(id);
+        variante.setEliminado(true);
+        varianteRepository.save(variante);
+    }
+
+    // se usa al eliminar un producto: oculta todas sus variantes
+    public void eliminarPorProducto(UUID productoBaseId) {
+        List<Variante> variantes = varianteRepository.findByProductoBaseIdAndEliminadoFalse(productoBaseId);
+        variantes.forEach(v -> v.setEliminado(true));
+        varianteRepository.saveAll(variantes);
     }
 
     // ── helpers privados ─────────────────────────────────────────────
+    private Variante buscarOFallar(UUID id) {
+        return varianteRepository.findById(id)
+                .filter(v -> !Boolean.TRUE.equals(v.getEliminado()))
+                .orElseThrow(() -> new RecursoNoEncontradoException("Variante no encontrada"));
+    }
+
     private void guardarAtributos(Variante variante, Map<String, String> atributos) {
         if (atributos == null) return;
 
@@ -109,8 +138,8 @@ public class VarianteService {
         varianteAtributoRepository.findByVarianteId(v.getId())
                 .forEach(va -> atributos.put(va.getTipoAtributo().getNombre(), va.getValor()));
 
-        return new VarianteDTO(
-                v.getId(), v.getSku(), v.getPrecioVenta(), v.getStock(), v.getActiva(), atributos
+          return new VarianteDTO(
+          v.getId(), v.getSku(), v.getPrecioVenta(), v.getStock(), v.getActiva(), atributos, v.getImagenUrl()
         );
     }
 }

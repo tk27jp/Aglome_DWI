@@ -10,6 +10,7 @@ import pe.edu.utp.aglome_tienda.dto.PedidoDTO;
 import pe.edu.utp.aglome_tienda.model.*;
 import pe.edu.utp.aglome_tienda.repository.*;
 
+
 import java.math.BigDecimal;
 import java.util.UUID;
 
@@ -20,7 +21,7 @@ import static org.mockito.Mockito.doThrow;
 @SpringBootTest(properties = "spring.datasource.url=jdbc:h2:mem:txtest;DB_CLOSE_DELAY=-1")
 class PedidoTransaccionTest {
 
-    private static final String EMAIL = "jonathan@test.com";
+    private static final String EMAIL = "jhonatan@test.com";
 
     @Autowired private PedidoService pedidoService;
     @Autowired private UsuarioRepository usuarioRepository;
@@ -31,6 +32,7 @@ class PedidoTransaccionTest {
     @Autowired private CarritoItemRepository carritoItemRepository;
     @Autowired private PedidoRepository pedidoRepository;
     @Autowired private DetallePedidoRepository detallePedidoRepository;
+    @Autowired private MovimientoStockRepository movimientoStockRepository;
 
     // Se simula este service para poder forzar un fallo en el último paso de la compra
     @MockitoBean private CarritoService carritoService;
@@ -40,7 +42,7 @@ class PedidoTransaccionTest {
     @BeforeEach
     void prepararDatos() {
         Usuario usuario = new Usuario();
-        usuario.setNombre("Jonathan Navarro");
+        usuario.setNombre("Jhonatan Navarro");
         usuario.setEmail(EMAIL);
         usuario.setPassword("hash");
         usuario.setRol(Rol.CLIENTE);
@@ -77,6 +79,7 @@ class PedidoTransaccionTest {
 
     @AfterEach
     void limpiarDatos() {
+        movimientoStockRepository.deleteAll();   // primero: referencia a variante
         detallePedidoRepository.deleteAll();
         pedidoRepository.deleteAll();
         carritoItemRepository.deleteAll();
@@ -100,6 +103,15 @@ class PedidoTransaccionTest {
         assertEquals(0, new BigDecimal("91.80").compareTo(pedido.getTotal()));
         assertEquals(1, pedidoRepository.count());
         assertEquals(28, stockActual()); // 30 - 2
+
+        // y quedó anotado en el historial de stock
+        var movimientos = movimientoStockRepository.findAll();
+        assertEquals(1, movimientos.size());
+        assertEquals(TipoMovimiento.VENTA, movimientos.get(0).getTipo());
+        assertEquals(-2, movimientos.get(0).getCantidad());
+        assertEquals(30, movimientos.get(0).getStockAnterior());
+        assertEquals(28, movimientos.get(0).getStockResultante());
+        assertEquals(pedido.getId(), movimientos.get(0).getPedidoId());
     }
 
     @Test
@@ -113,5 +125,6 @@ class PedidoTransaccionTest {
         assertEquals(0, pedidoRepository.count());
         assertEquals(0, detallePedidoRepository.count());
         assertEquals(30, stockActual()); // el stock sigue intacto
+        assertEquals(0, movimientoStockRepository.count()); // y el historial también se deshizo
     }
 }

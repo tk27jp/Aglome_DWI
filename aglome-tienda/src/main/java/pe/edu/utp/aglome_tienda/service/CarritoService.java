@@ -1,5 +1,8 @@
 package pe.edu.utp.aglome_tienda.service;
 
+import org.springframework.security.access.AccessDeniedException;
+import pe.edu.utp.aglome_tienda.exception.ConflictoException;
+import pe.edu.utp.aglome_tienda.exception.RecursoNoEncontradoException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
@@ -27,7 +30,7 @@ public class CarritoService {
     // ── obtiene el carrito del usuario, o se lo crea si es la primera vez ──
     public Carrito obtenerOCrearCarrito(String email) {
         Usuario usuario = usuarioRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+                .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no encontrado"));
 
         return carritoRepository.findByUsuarioId(usuario.getId())
                 .orElseGet(() -> {
@@ -46,10 +49,14 @@ public class CarritoService {
         Carrito carrito = obtenerOCrearCarrito(email);
 
         Variante variante = varianteRepository.findById(request.getVarianteId())
-                .orElseThrow(() -> new RuntimeException("Variante no encontrada"));
+                .orElseThrow(() -> new RecursoNoEncontradoException("Variante no encontrada"));
+
+        if (noDisponible(variante)) {
+            throw new RecursoNoEncontradoException("Variante no encontrada");
+        }
 
         if (variante.getStock() < request.getCantidad()) {
-            throw new RuntimeException("Stock insuficiente. Disponible: " + variante.getStock());
+            throw new ConflictoException("Stock insuficiente. Disponible: " + variante.getStock());
         }
 
         // si ya existe ese producto en el carrito, suma la cantidad en vez de duplicar la fila
@@ -72,17 +79,17 @@ public class CarritoService {
         Carrito carrito = obtenerOCrearCarrito(email);
 
         CarritoItem item = carritoItemRepository.findById(itemId)
-                .orElseThrow(() -> new RuntimeException("Item no encontrado en el carrito"));
+                .orElseThrow(() -> new RecursoNoEncontradoException("Item no encontrado en el carrito"));
 
         if (!item.getCarrito().getId().equals(carrito.getId())) {
-            throw new RuntimeException("Este item no pertenece a tu carrito");
+            throw new AccessDeniedException("Este item no pertenece a tu carrito");
         }
 
         if (cantidad <= 0) {
             carritoItemRepository.delete(item);
         } else {
             if (item.getVariante().getStock() < cantidad) {
-                throw new RuntimeException("Stock insuficiente. Disponible: " + item.getVariante().getStock());
+                throw new ConflictoException("Stock insuficiente. Disponible: " + item.getVariante().getStock());
             }
             item.setCantidad(cantidad);
             carritoItemRepository.save(item);
@@ -95,10 +102,10 @@ public class CarritoService {
         Carrito carrito = obtenerOCrearCarrito(email);
 
         CarritoItem item = carritoItemRepository.findById(itemId)
-                .orElseThrow(() -> new RuntimeException("Item no encontrado en el carrito"));
+                .orElseThrow(() -> new RecursoNoEncontradoException("Item no encontrado en el carrito"));
 
         if (!item.getCarrito().getId().equals(carrito.getId())) {
-            throw new RuntimeException("Este item no pertenece a tu carrito");
+            throw new AccessDeniedException("Este item no pertenece a tu carrito");
         }
 
         carritoItemRepository.delete(item);
@@ -131,5 +138,12 @@ public class CarritoService {
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         return new CarritoDTO(carrito.getId(), itemsDto, total);
+    }
+
+    // una variante eliminada (o de un producto eliminado) ya no se puede comprar
+    private boolean noDisponible(Variante variante) {
+        return Boolean.TRUE.equals(variante.getEliminado())
+                || (variante.getProductoBase() != null
+                    && Boolean.TRUE.equals(variante.getProductoBase().getEliminado()));
     }
 }

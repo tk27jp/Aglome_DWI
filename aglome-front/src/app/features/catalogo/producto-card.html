@@ -1,0 +1,27 @@
+<a class="tarjeta" [routerLink]="['/productos', producto().id]">
+  <div class="imagen">
+    <app-producto-imagen [producto]="producto()" />
+    @if (agotado()) {
+      <span class="etiqueta agotado">Agotado</span>
+    }
+  </div>
+
+  <div class="cuerpo">
+    @if (producto().categoriaNombre) {
+      <span class="categoria">{{ producto().categoriaNombre }}</span>
+    }
+    <h3>{{ producto().nombre }}</h3>
+    @if (producto().marca) {
+      <span class="marca">{{ producto().marca }}</span>
+    }
+
+    <div class="pie">
+      @if (desde() !== null) {
+        <span class="precio"><small>Desde</small> {{ desde() | currency: 'PEN' : 'S/ ' }}</span>
+      } @else {
+        <span class="precio sin">Sin precio</span>
+      }
+      <span class="variantes">{{ cantidadVariantes() }} {{ cantidadVariantes() === 1 ? 'opción' : 'opciones' }}</span>
+    </div>
+  </div>
+</a>

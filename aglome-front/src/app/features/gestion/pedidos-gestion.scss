@@ -1,0 +1,30 @@
+@use 'variables' as v;
+@use 'panel';
+
+.barra-filtros { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip { padding: 0.4rem 0.9rem; background: #fff; border: 1px solid v.$color-borde; border-radius: 999px; font: inherit; font-size: 0.88rem; font-weight: 600; color: v.$color-texto-suave; cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
+  &:hover { border-color: v.$color-primario; color: v.$color-primario; }
+  &.activo { background: v.$color-primario; border-color: v.$color-primario; color: #fff; } }
+
+.pedidos { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.pedido { background: #fff; border: 1px solid v.$color-borde; border-radius: v.$radio; animation: entra 0.35s both; animation-delay: calc(min(var(--i), 8) * 40ms); transition: box-shadow 0.2s;
+  &.abierto { box-shadow: v.$sombra; border-color: v.$color-primario; } }
+@keyframes entra { from { opacity: 0; transform: translateY(8px); } }
+
+.cabecera-pedido { display: grid; grid-template-columns: 7rem 10rem 1fr auto 7rem 1.5rem; align-items: center; gap: 0.75rem; width: 100%; padding: 0.9rem 1rem; background: none; border: 0; font: inherit; text-align: left; cursor: pointer; color: v.$color-texto;
+  &:hover { background: v.$color-fondo-seccion; }
+  .codigo { font-family: v.$fuente-titulo; font-size: 1.3rem; font-weight: 700; }
+  .fecha, .items { color: v.$color-texto-suave; font-size: 0.9rem; }
+  .total { text-align: right; font-family: v.$fuente-titulo; font-size: 1.4rem; color: v.$color-primario; }
+  .flecha { font-size: 1.5rem; color: v.$color-texto-suave; transition: transform 0.2s; }
+  @include v.tablet { grid-template-columns: 1fr auto; .fecha, .items, .flecha { display: none; } .codigo { grid-column: 1; } .etiqueta-estado { grid-column: 2; grid-row: 1; } .total { grid-column: 1 / -1; text-align: left; } } }
+.abierto .flecha { transform: rotate(90deg); }
+
+.detalle { padding: 0 1rem 1rem; border-top: 1px solid v.$color-borde; animation: abre 0.25s ease both; }
+@keyframes abre { from { opacity: 0; transform: translateY(-6px); } }
+.acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 1rem; }
+.confirma { color: v.$color-error; font-weight: 600; }
+.final { color: v.$color-texto-suave; }
+.peligro { background: v.$color-error; border-color: v.$color-error; &:hover:not(:disabled) { background: #a61f1f; border-color: #a61f1f; box-shadow: none; } }
+.peligro-suave { color: v.$color-error; border-color: v.$color-error; }

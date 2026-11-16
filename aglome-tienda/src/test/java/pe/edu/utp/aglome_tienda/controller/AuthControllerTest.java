@@ -9,6 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
+import pe.edu.utp.aglome_tienda.exception.CredencialesInvalidasException;
+import pe.edu.utp.aglome_tienda.exception.CuentaBloqueadaException;
 import pe.edu.utp.aglome_tienda.dto.AuthResponse;
 import pe.edu.utp.aglome_tienda.dto.LoginRequest;
 import pe.edu.utp.aglome_tienda.dto.RegistroRequest;
@@ -35,11 +37,11 @@ class AuthControllerTest {
     @Test
     void login_conCredencialesValidas_debeRetornar200() throws Exception {
         LoginRequest request = new LoginRequest();
-        request.setEmail("jonathan@test.com");
+        request.setEmail("jhonatan@test.com");
         request.setPassword("123456");
 
         when(authService.login(any(LoginRequest.class)))
-                .thenReturn(new AuthResponse("token-falso", "Jonathan Navarro", "jonathan@test.com", "CLIENTE"));
+                .thenReturn(new AuthResponse("token-falso", "Jhonatan Navarro", "jhonatan@test.com", "CLIENTE"));
 
         mockMvc.perform(post("/api/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -51,11 +53,11 @@ class AuthControllerTest {
     @Test
     void login_conCredencialesIncorrectas_debeRetornar401() throws Exception {
         LoginRequest request = new LoginRequest();
-        request.setEmail("jonathan@test.com");
+        request.setEmail("jhonatan@test.com");
         request.setPassword("incorrecta");
 
         when(authService.login(any(LoginRequest.class)))
-                .thenThrow(new RuntimeException("Email o contraseña incorrectos"));
+                .thenThrow(new CredencialesInvalidasException("Email o contraseña incorrectos"));
 
         mockMvc.perform(post("/api/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -66,12 +68,29 @@ class AuthControllerTest {
     @Test
     void registro_sinEmail_debeRetornar400PorValidacion() throws Exception {
         RegistroRequest request = new RegistroRequest();
-        request.setNombre("Jonathan Navarro");
+        request.setNombre("Jhonatan Navarro");
         request.setPassword("123456");
 
         mockMvc.perform(post("/api/auth/registro")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void login_conCuentaBloqueada_debeRetornar423ConElMensaje() throws Exception {
+        LoginRequest request = new LoginRequest();
+        request.setEmail("jhonatan@test.com");
+        request.setPassword("123456");
+
+        when(authService.login(any(LoginRequest.class)))
+                .thenThrow(new CuentaBloqueadaException("Cuenta bloqueada temporalmente. Intenta de nuevo en 15 minutos"));
+
+        mockMvc.perform(post("/api/auth/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isLocked())
+                .andExpect(jsonPath("$.status").value(423))
+                .andExpect(jsonPath("$.mensaje").value("Cuenta bloqueada temporalmente. Intenta de nuevo en 15 minutos"));
     }
 }

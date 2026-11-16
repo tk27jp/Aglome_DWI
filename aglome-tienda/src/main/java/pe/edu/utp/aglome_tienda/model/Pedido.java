@@ -2,6 +2,7 @@ package pe.edu.utp.aglome_tienda.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
@@ -13,7 +14,8 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Pedido {
+@EqualsAndHashCode(callSuper = false)
+public class Pedido extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

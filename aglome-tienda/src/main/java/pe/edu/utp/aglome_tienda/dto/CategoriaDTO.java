@@ -12,4 +12,5 @@ public class CategoriaDTO {
     private String nombre;
     private Long padreId;
     private Boolean activa;
+    private String imagenUrl;
 }

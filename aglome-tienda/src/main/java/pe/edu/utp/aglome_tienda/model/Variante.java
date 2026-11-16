@@ -2,6 +2,7 @@ package pe.edu.utp.aglome_tienda.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -10,7 +11,8 @@ import java.util.UUID;
 @Table(name = "variante")
 @Data
 @NoArgsConstructor
-public class Variante {
+@EqualsAndHashCode(callSuper = false)
+public class Variante extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -30,6 +32,13 @@ public class Variante {
     private Integer stock = 0;
 
     private Boolean activa = true;
+
+    @Column(length = 500)
+    private String imagenUrl;
+
+    // borrado lógico: el registro no se borra, solo se marca y deja de mostrarse
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private Boolean eliminado = false;
 
     public Variante(UUID id, ProductoBase productoBase, String sku, BigDecimal precioVenta,
                     Integer stock, Boolean activa) {

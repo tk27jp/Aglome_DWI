@@ -10,7 +10,7 @@ class CarritoItemTest {
     void carritoItem_calculaSubtotalCorrectamente() {
         // Simular datos SIN error
         Categoria categoria = new Categoria(1L, "Melaminas", null, true);
-        ProductoBase producto = new ProductoBase(java.util.UUID.randomUUID(), "Melamina", "desc", "Aglome", categoria, true);
+        ProductoBase producto = new ProductoBase(java.util.UUID.randomUUID(), "Melamina", "desc", new Marca(1L, "Aglome"), categoria, true);
         Variante variante = new Variante(java.util.UUID.randomUUID(), producto, "SKU-1", new BigDecimal("45.90"), 30, true);
 
         CarritoItem item = new CarritoItem();

@@ -1,0 +1,48 @@
+<footer class="pie">
+  <div class="contenedor columnas">
+    <section class="empresa">
+      <div class="id">
+        <app-logo [tamano]="40" />
+        <span class="nombre">Aglome<small>Perú</small></span>
+      </div>
+      <p>{{ negocio.lema }}. Compra con precios y stock a la vista, sin llamar ni esperar.</p>
+    </section>
+
+    <nav aria-label="Categorías">
+      <h2>Catálogo</h2>
+      <ul>
+        <li><a routerLink="/productos">Todo el catálogo</a></li>
+        @for (c of categorias(); track c.id) {
+          <li><a routerLink="/productos" [queryParams]="{ categoriaId: c.id }">{{ c.nombre }}</a></li>
+        }
+      </ul>
+    </nav>
+
+    <nav aria-label="Mi cuenta">
+      <h2>Mi cuenta</h2>
+      <ul>
+        @if (auth.autenticado()) {
+          <li><a routerLink="/cuenta">Mi cuenta</a></li>
+          <li><a routerLink="/mis-pedidos">Mis pedidos</a></li>
+        } @else {
+          <li><a routerLink="/ingresar">Ingresar</a></li>
+          <li><a routerLink="/registro">Crear cuenta</a></li>
+        }
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Contacto</h2>
+      <ul class="contacto">
+        @for (sede of negocio.sedes; track sede.nombre) { <li><strong>{{ sede.nombre }}</strong><br />{{ sede.direccion }}</li> }
+        @if (negocio.telefono) { <li><a [href]="'tel:' + negocio.telefono">{{ negocio.telefono }}</a></li> }
+        @if (negocio.correo) { <li><a [href]="'mailto:' + negocio.correo">{{ negocio.correo }}</a></li> }
+        @if (negocio.whatsapp) { <li><a [href]="'https://wa.me/' + negocio.whatsapp" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></li> }
+      </ul>
+    </section>
+  </div>
+
+  <div class="legal">
+    <div class="contenedor">© {{ anio }} {{ negocio.nombre }}. Todos los derechos reservados.</div>
+  </div>
+</footer>

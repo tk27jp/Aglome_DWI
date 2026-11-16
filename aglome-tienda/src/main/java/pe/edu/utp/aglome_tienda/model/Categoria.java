@@ -2,13 +2,15 @@ package pe.edu.utp.aglome_tienda.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "categoria")
 @Data
 @NoArgsConstructor
-public class Categoria {
+@EqualsAndHashCode(callSuper = false)
+public class Categoria extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +24,13 @@ public class Categoria {
     private Categoria padre; // permite subcategorías, opcional
 
     private Boolean activa = true;
+    
+    @Column(length = 500)
+    private String imagenUrl;
+
+    // borrado lógico: el registro no se borra, solo se marca y deja de mostrarse
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private Boolean eliminado = false;
 
     public Categoria(Long id, String nombre, Categoria padre, Boolean activa) {
         this.id = id;

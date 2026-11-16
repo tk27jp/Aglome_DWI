@@ -1,0 +1,145 @@
+<section class="portada">
+  <div class="contenedor">
+    <h1>Madera, melamina y ferretería</h1>
+    <p>Consulta precios, colores, medidas y disponibilidad sin llamar. Aglome Perú, Chimbote.</p>
+  </div>
+</section>
+
+<div class="contenedor cuerpo">
+  <button type="button" class="btn secundario abrir-filtros" (click)="filtrosAbiertos.set(!filtrosAbiertos())" [attr.aria-expanded]="filtrosAbiertos()">
+    {{ filtrosAbiertos() ? 'Ocultar filtros' : 'Filtrar' }}
+    @if (activos().length) { ({{ activos().length }}) }
+  </button>
+
+  <aside class="filtros" [class.abierto]="filtrosAbiertos()" aria-label="Filtros del catálogo">
+    <form #f (submit)="$event.preventDefault(); aplicar(leerFormulario(f))">
+      <h2>Filtros</h2>
+
+      <label>
+        Buscar
+        <input type="search" name="texto" list="lista-sugerencias" autocomplete="off" placeholder="Nombre del producto" [value]="filtro().texto ?? ''" (input)="escribir($any($event.target).value)" />
+        <datalist id="lista-sugerencias">
+          @for (s of sugerencias(); track s) {
+            <option [value]="s"></option>
+          }
+        </datalist>
+      </label>
+
+      <label>
+        Categoría
+        <select name="categoriaId" (change)="aplicar(leerFormulario(f), false)">
+          <option value="">Todas</option>
+          @for (c of categorias(); track c.id) {
+            <option [value]="c.id" [selected]="c.id === filtro().categoriaId">{{ c.hija ? '— ' : '' }}{{ c.nombre }}</option>
+          }
+        </select>
+      </label>
+
+      <label>
+        Marca
+        <select name="marcaId" (change)="aplicar(leerFormulario(f), false)">
+          <option value="">Todas</option>
+          @for (m of opciones()?.marcas ?? []; track m.id) {
+            <option [value]="m.id" [selected]="m.id === filtro().marcaId">{{ m.nombre }}</option>
+          }
+        </select>
+      </label>
+
+      <label>
+        Color
+        <select name="color" (change)="aplicar(leerFormulario(f), false)">
+          <option value="">Todos</option>
+          @for (c of colores(); track c) {
+            <option [value]="c" [selected]="c === filtro().color">{{ c }}</option>
+          }
+        </select>
+      </label>
+
+      <label>
+        Medida
+        <select name="medida" (change)="aplicar(leerFormulario(f), false)">
+          <option value="">Todas</option>
+          @for (m of medidas(); track m) {
+            <option [value]="m" [selected]="m === filtro().medida">{{ m }}</option>
+          }
+        </select>
+      </label>
+
+      <label class="check">
+        <input type="checkbox" name="disponible" [checked]="!!filtro().disponible" (change)="aplicar(leerFormulario(f), false)" />
+        Solo con stock
+      </label>
+
+      <fieldset>
+        <legend>Precio (S/)</legend>
+        <div class="rango">
+          <input type="number" name="precioMin" min="0" step="0.01" [placeholder]="opciones()?.precioMinimo ?? 'Mín.'" [value]="filtro().precioMin ?? ''" aria-label="Precio mínimo" />
+          <span aria-hidden="true">–</span>
+          <input type="number" name="precioMax" min="0" step="0.01" [placeholder]="opciones()?.precioMaximo ?? 'Máx.'" [value]="filtro().precioMax ?? ''" aria-label="Precio máximo" />
+        </div>
+      </fieldset>
+
+      <div class="acciones">
+        <button type="submit" class="btn">Aplicar</button>
+        <button type="button" class="btn secundario" (click)="limpiar()">Limpiar</button>
+      </div>
+    </form>
+  </aside>
+
+  <section class="resultados" aria-live="polite">
+    <div class="barra">
+      <p class="conteo">
+        @if (resultado(); as r) {
+          <strong>{{ r.totalElementos }}</strong> {{ r.totalElementos === 1 ? 'producto' : 'productos' }}
+        } @else if (cargando()) {
+          Buscando…
+        }
+      </p>
+      <label class="orden">
+        Ordenar por
+        <select (change)="ordenar($any($event.target).value)">
+          <option value="nombre-asc" [selected]="ordenActual() === 'nombre-asc'">Nombre (A–Z)</option>
+          <option value="nombre-desc" [selected]="ordenActual() === 'nombre-desc'">Nombre (Z–A)</option>
+          <option value="marca-asc" [selected]="ordenActual() === 'marca-asc'">Marca (A–Z)</option>
+          <option value="marca-desc" [selected]="ordenActual() === 'marca-desc'">Marca (Z–A)</option>
+        </select>
+      </label>
+    </div>
+
+    @if (activos().length) {
+      <ul class="chips">
+        @for (c of activos(); track c.clave) {
+          <li>
+            {{ c.texto }}
+            <button type="button" [attr.aria-label]="'Quitar filtro ' + c.texto" (click)="quitar(c.clave)">×</button>
+          </li>
+        }
+      </ul>
+    }
+
+    @if (error(); as e) {
+      <div class="aviso error" role="alert">{{ e }}</div>
+    } @else if (cargando() && !resultado()) {
+      <div class="grilla" aria-hidden="true">
+        @for (i of [1, 2, 3, 4, 5, 6]; track i) {
+          <div class="esqueleto"></div>
+        }
+      </div>
+    } @else if (resultado(); as r) {
+      @if (r.contenido.length) {
+        <div class="grilla" [class.cargando]="cargando()">
+          @for (p of r.contenido; track p.id) {
+            <app-producto-card [producto]="p" />
+          }
+        </div>
+        <app-paginacion [pagina]="r.pagina" [totalPaginas]="r.totalPaginas" (cambio)="irAPagina($event)" />
+      } @else {
+        <div class="vacio">
+          <h2>No encontramos productos</h2>
+          <p>Prueba con otras palabras o quita algún filtro.</p>
+          <button type="button" class="btn" (click)="limpiar()">Ver todo el catálogo</button>
+        </div>
+      }
+    }
+  </section>
+</div>
