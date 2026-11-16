@@ -9,6 +9,12 @@ const COLORES: [string, string][] = [
   ['azul marino', '#1f3a68'], ['marino', '#1f3a68'], ['azul', '#2f62b5'], ['celeste', '#79a8d8'],
   ['verde', '#3f7d4e'], ['rojo', '#b3342f'], ['naranja', '#d8742b'], ['amarillo', '#e2b43a'],
   ['acero', '#b3b8bf'], ['plata', '#c6cacf'], ['niquel', '#bcc0c6'], ['zinc', '#a9aeb4'], ['dorado', '#c9a24a'], ['bronce', '#9c7a47'],
+  ['capuccino', '#a58468'], ['cappuccino', '#a58468'], ['arena', '#d9c7a3'], ['sahara', '#cdb48a'], ['almendra', '#d6bf9d'], ['carbono', '#3a3d42'], ['chantilli', '#ece6d8'],
+  ['limon', '#a9c63a'], ['fucsia', '#c2257a'], ['lila', '#b9a1d1'], ['rosado', '#e8b4c0'], ['polar', '#eef1f4'], ['siberia', '#dfe3e6'], ['ceniza', '#a7a49e'],
+  ['grigio', '#9a9a96'], ['taupe', '#8b7d70'], ['espresso', '#4a3427'], ['haya', '#d3a874'], ['rustico', '#a9825a'], ['toscana', '#9b7653'], ['fresno', '#cdb08a'],
+  ['macchiato', '#b79a7e'], ['floresta', '#8a6a48'], ['entablado', '#b88a5a'], ['coimbra', '#7d5a42'], ['verzasca', '#b5ab9d'], ['cherry', '#7a3a2e'], ['caramelo', '#b97a3d'],
+  ['bosco', '#7f6a4f'], ['santorini', '#d8d2c4'], ['cava', '#c7b79a'], ['lupuna', '#c9a272'], ['sapelly', '#a9673e'], ['bitangor', '#b88555'], ['venner', '#d8bd8f'],
+  ['maderado', '#a67c52'], ['unicolor', '#d5d7da'], ['cromado', '#c9ced4'], ['niquelado', '#bcc0c6'],
   ['transparente', '#e3ecf2'], ['cristal', '#e3ecf2'],
   // colores de melamina y cantos
   ['arena', '#d6c3a3'], ['sahara', '#c9a977'], ['santorini', '#b9a48a'], ['carbono', '#3a3d42'], ['caramelo', '#b07a45'],

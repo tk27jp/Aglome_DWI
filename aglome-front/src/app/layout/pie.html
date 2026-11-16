@@ -34,7 +34,6 @@
     <section>
       <h2>Contacto</h2>
       <ul class="contacto">
-        @for (sede of negocio.sedes; track sede.nombre) { <li><strong>{{ sede.nombre }}</strong><br />{{ sede.direccion }}</li> }
         @if (negocio.telefono) { <li><a [href]="'tel:' + negocio.telefono">{{ negocio.telefono }}</a></li> }
         @if (negocio.correo) { <li><a [href]="'mailto:' + negocio.correo">{{ negocio.correo }}</a></li> }
         @if (negocio.whatsapp) { <li><a [href]="'https://wa.me/' + negocio.whatsapp" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></li> }

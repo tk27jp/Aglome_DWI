@@ -8,6 +8,7 @@ import { GestionService } from '../../core/services/gestion.service';
 import { NotificacionService } from '../../core/services/notificacion.service';
 import { ProductoService } from '../../core/services/producto.service';
 import { Paginacion } from '../../shared/paginacion';
+import { atributosVisibles } from '../../shared/oferta';
 import { variantesActivas } from '../../shared/producto-utils';
 
 interface Elegida {
@@ -89,7 +90,7 @@ export class Inventario {
   }
 
   protected nombreOpcion(v: Variante): string {
-    return Object.values(v.atributos ?? {}).join(' · ') || v.sku;
+    return atributosVisibles(v.atributos).map(([, x]) => x).join(' · ') || v.sku;
   }
 
   protected elegir(p: Producto, v: Variante): void {

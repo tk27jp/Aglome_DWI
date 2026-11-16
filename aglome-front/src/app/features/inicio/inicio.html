@@ -67,6 +67,20 @@
   </section>
 }
 
+@if (ofertas().length) {
+  <section class="bloque ofertas">
+    <div class="contenedor">
+      <div class="titulo-fila" revelar>
+        <h2>Ofertas de la semana</h2>
+        <a routerLink="/productos">Ver todo el catálogo</a>
+      </div>
+      <div class="rejilla-ofertas">
+        @for (p of ofertas(); track p.id) { <app-producto-card [producto]="p" /> }
+      </div>
+    </div>
+  </section>
+}
+
 @if (destacados() === null || destacados()!.length) {
   <section class="bloque claro">
     <div class="contenedor">
@@ -145,9 +159,11 @@
           <div class="sede-datos">
             <h3>{{ sede.nombre }}</h3>
             <p class="direccion">{{ sede.direccion }}</p>
+            @if (sede.telefono) { <p class="tel"><a [href]="'tel:+51' + sede.telefono.replace(' ', '')">{{ sede.telefono }}</a></p> }
             <dl>
               @for (h of sede.horarios; track h.dias) { <dt>{{ h.dias }}</dt><dd>{{ h.horas }}</dd> }
             </dl>
+            @if (incrustado(sede); as mapa) { <iframe class="mapa" [src]="mapa" title="Mapa de la sede {{ sede.nombre }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> }
             <a class="btn secundario" [href]="mapaDe(sede)" target="_blank" rel="noopener">Cómo llegar</a>
           </div>
         </article>

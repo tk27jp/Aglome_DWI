@@ -217,3 +217,20 @@ h2 strong { font-weight: 700; }
 .sub-seccion { margin: -0.5rem 0 1rem; color: v.$color-texto-suave; }
 
 .barra-admin { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; padding: 0.55rem 1.25rem; background: v.$color-noche; color: #cfd8ea; font-size: 0.88rem; span { margin-right: auto; } a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; } }
+
+.precio-op { display: inline-flex; flex-direction: column; align-items: flex-end; line-height: 1.2; }
+.tachado { font-size: 0.78rem; font-weight: 400; color: v.$color-texto-suave; }
+.oferta-linea { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 0.75rem; margin: 0.15rem 0 0.5rem;
+  s { color: v.$color-texto-suave; font-size: 1.1rem; }
+  .chapa { background: v.$color-error; color: #fff; font-weight: 700; padding: 0.1rem 0.5rem; border-radius: v.$radio; font-size: 0.9rem; }
+  .ahorras { color: v.$color-error; font-weight: 600; font-size: 0.95rem; }
+}
+
+.flecha { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgb(255 255 255 / 92%); color: v.$color-noche; font-size: 1.9rem; line-height: 1; padding: 0 0 0.2rem; box-shadow: 0 2px 10px rgb(10 31 68 / 25%); transition: background 0.2s, transform 0.2s;
+  &:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
+  &:focus-visible { outline: 3px solid v.$color-primario; outline-offset: 2px; }
+  &.izq { left: 0.7rem; } &.der { right: 0.7rem; } }
+.puntos { position: absolute; left: 0; right: 0; bottom: 0.8rem; z-index: 2; display: flex; justify-content: center; gap: 0.35rem; pointer-events: none; flex-wrap: wrap; padding-inline: 3.5rem;
+  i { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: rgb(255 255 255 / 70%); box-shadow: 0 0 0 1px rgb(10 31 68 / 25%); transition: width 0.25s; &.activo { width: 1.3rem; border-radius: 0.3rem; background: #fff; } } }
+.contador { position: absolute; top: 0.8rem; right: 0.8rem; z-index: 2; background: rgb(10 31 68 / 78%); color: #fff; font-size: 0.78rem; padding: 0.15rem 0.55rem; border-radius: v.$radio; }
