@@ -1,21 +1,15 @@
-// Datos de contacto de Aglome que se muestran en el pie, la portada y el botón de WhatsApp.
-// Lo que dejes vacío ('') simplemente no se muestra.
+
 
 export interface Sede {
   nombre: string;
   direccion: string;
-  /** Teléfono de esa sede (el mismo que aparece en Google Maps). */
   telefono?: string;
-  /** Una línea por tramo de horario. */
   horarios: { dias: string; horas: string }[];
   foto: string;
-  /** Enlace de Google Maps del local exacto (Compartir → Copiar vínculo). Si queda vacío, se busca por dirección. */
   enlace?: string;
-  /** Opcional: src del iframe de Google Maps (Compartir → Insertar un mapa). Si lo pones, se muestra el mapa en la tarjeta. */
   incrustar?: string;
 }
 
-/** Enlace de Google Maps que busca el negocio por su nombre en Google (el mismo con el que aparece en el mapa). */
 const buscarEnMapa = (consulta: string) => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(consulta);
 
 export const negocio = {
@@ -67,11 +61,9 @@ export const negocio = {
       incrustar: '',
     },
   ] as Sede[],
-  /** Enlace "insertar mapa" de Google Maps (src del iframe). Opcional: cada sede ya tiene su botón "Cómo llegar". */
   mapaUrl: '',
 };
 
-/** Abre Google Maps buscando la dirección de la sede (no necesita clave). */
 export function enlaceMapa(sede: Sede): string {
   if (sede.enlace) return sede.enlace;
   return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(`${sede.direccion}, Chimbote, Áncash, Perú`);

@@ -42,6 +42,8 @@ const urlDeImagen = (nombre) => limpia(IMAGENES[nombre]?.url);
 const urlDeVariante = (producto, v) =>
   limpia(IMAGENES[producto]?.variantes?.[v.sku]?.url) || limpia(IMAGENES[producto]?.colores?.[v.atributos?.Color]?.url) || urlDeImagen(producto);
 const FORZAR_STOCK = process.argv.includes('--stock');
+/** Compara características sin importar el orden en que las devuelva el back. */
+const mismasCaracteristicas = (a, b) => JSON.stringify(Object.entries(a ?? {}).sort()) === JSON.stringify(Object.entries(b ?? {}).sort());
 
 function falla(mensaje, r) {
   console.error(`✗ ${mensaje}` + (r ? ` (HTTP ${r.estado}: ${r.datos?.mensaje ?? JSON.stringify(r.datos)})` : ''));
@@ -105,7 +107,7 @@ for (const p of CATALOGO.productos) {
     const previa = existentes.get(v.sku);
     if (previa) { // la opción ya existía: se actualizan su foto y sus características (ofertas); el stock solo con --stock
       n.omitidos++;
-      const cambio = (previa.imagenUrl ?? null) !== imagenUrl || JSON.stringify(previa.atributos ?? {}) !== JSON.stringify(v.atributos) || (FORZAR_STOCK && previa.stock !== v.stock);
+      const cambio = (previa.imagenUrl ?? null) !== imagenUrl || !mismasCaracteristicas(previa.atributos, v.atributos) || (FORZAR_STOCK && previa.stock !== v.stock);
       if (cambio) {
         const r = await api(`/api/admin/variantes/${previa.id}`, {
           metodo: 'PUT', token,
