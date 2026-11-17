@@ -16,58 +16,104 @@
       "MEL-MAS-CEDRO-18MM214X250CM": {
         "opcion": "Color: Cedro · Medida: 18 mm · 214 x 250 cm",
         "buscar": "Melamina Masisa Cedro 18 mm · 214 x 250 cm",
-        "url": ""
+        "url": "https://muebleselpaisa.com/wp-content/uploads/2021/11/Cedro_MDP.jpg"
       },
       "MEL-MAS-CEREZO-18MM214X250CM": {
         "opcion": "Color: Cerezo · Medida: 18 mm · 214 x 250 cm",
         "buscar": "Melamina Masisa Cerezo 18 mm · 214 x 250 cm",
-        "url": ""
+        "url": "https://www.maderasvaldes.cl/media/k2/items/cache/0c758c944f0062609b2677e28107bc5e_XL.jpg"
       },
       "MEL-MAS-ROBLEMOROWENGU-18MM214X250CM": {
         "opcion": "Color: Roble Moro (Wengué) · Medida: 18 mm · 214 x 250 cm",
         "buscar": "Melamina Masisa Roble Moro (Wengué) 18 mm · 214 x 250 cm",
-        "url": ""
+        "url": "https://arcosac.com/wp-content/uploads/2024/02/MELMAS002016-MASISA-18MM-ROBLE-MORO-2.14X2.50.jpg"
       },
       "MEL-MAS-SAHARA-18MM214X250CM": {
         "opcion": "Color: Sahara · Medida: 18 mm · 214 x 250 cm",
         "buscar": "Melamina Masisa Sahara 18 mm · 214 x 250 cm",
-        "url": ""
+        "url": "https://dimaplac.cl/cdn/shop/files/melamina_sahara_1.jpg?v=1783976939&width=500"
       },
       "MEL-MAS-SANTORINI-18MM214X250CM": {
         "opcion": "Color: Santorini · Medida: 18 mm · 214 x 250 cm",
         "buscar": "Melamina Masisa Santorini 18 mm · 214 x 250 cm",
-        "url": ""
+        "url": "https://maderasfasco.cl/wp-content/uploads/2025/03/MEL0087-1.jpg"
       },
       "MEL-MAS-BOSCO-18MM214X250CM": {
         "opcion": "Color: Bosco · Medida: 18 mm · 214 x 250 cm",
         "buscar": "Melamina Masisa Bosco 18 mm · 214 x 250 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToO917SF4d3M1bfgBH7NW7Kt75w_jDrhF56cjlOejJmGp41NEQv-0VZPNX&s=10"
       },
       "MEL-MAS-CAVA-18MM214X250CM": {
         "opcion": "Color: Cava · Medida: 18 mm · 214 x 250 cm",
         "buscar": "Melamina Masisa Cava 18 mm · 214 x 250 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBpIE3ej_FzJWClfbT-FupLu5UdfVDfN6NdjrBUr54wQ&s"
       },
       "MEL-MAS-GRIGIO-18MM214X250CM": {
         "opcion": "Color: Grigio · Medida: 18 mm · 214 x 250 cm",
         "buscar": "Melamina Masisa Grigio 18 mm · 214 x 250 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp8Bv462jbyKESFUaVEJfplyhQ4PJkVmJGnqZsU7ykxA&s=10"
       },
       "MEL-MAS-ROBLEMILANO-18MM183X250CM": {
         "opcion": "Color: Roble Milano · Medida: 18 mm · 183 x 250 cm",
         "buscar": "Melamina Masisa Roble Milano 18 mm · 183 x 250 cm",
-        "url": ""
+        "url": "https://maderasfasco.cl/wp-content/uploads/2025/02/45948.jpg"
       },
       "MEL-MAS-SAVIA-18MM214X250CM": {
         "opcion": "Color: Savia · Medida: 18 mm · 214 x 250 cm",
         "buscar": "Melamina Masisa Savia 18 mm · 214 x 250 cm",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTukMfKImAj_Ls_JvmYNQyhgI42WmY5nEqkGcVzPkb3icq9FDtFhxHL_pYr&s=10"
+      }
+    },
+    "colores": {
+      "Blanco": {
+        "buscar": "Melamina Masisa Blanco",
         "url": ""
+      },
+      "Cedro": {
+        "buscar": "Melamina Masisa Cedro",
+        "url": "https://muebleselpaisa.com/wp-content/uploads/2021/11/Cedro_MDP.jpg"
+      },
+      "Cerezo": {
+        "buscar": "Melamina Masisa Cerezo",
+        "url": "https://www.maderasvaldes.cl/media/k2/items/cache/0c758c944f0062609b2677e28107bc5e_XL.jpg"
+      },
+      "Roble Moro (Wengué)": {
+        "buscar": "Melamina Masisa Roble Moro (Wengué)",
+        "url": "https://arcosac.com/wp-content/uploads/2024/02/MELMAS002016-MASISA-18MM-ROBLE-MORO-2.14X2.50.jpg"
+      },
+      "Sahara": {
+        "buscar": "Melamina Masisa Sahara",
+        "url": "https://dimaplac.cl/cdn/shop/files/melamina_sahara_1.jpg?v=1783976939&width=500"
+      },
+      "Santorini": {
+        "buscar": "Melamina Masisa Santorini",
+        "url": "https://maderasfasco.cl/wp-content/uploads/2025/03/MEL0087-1.jpg"
+      },
+      "Bosco": {
+        "buscar": "Melamina Masisa Bosco",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToO917SF4d3M1bfgBH7NW7Kt75w_jDrhF56cjlOejJmGp41NEQv-0VZPNX&s=10"
+      },
+      "Cava": {
+        "buscar": "Melamina Masisa Cava",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBpIE3ej_FzJWClfbT-FupLu5UdfVDfN6NdjrBUr54wQ&s"
+      },
+      "Grigio": {
+        "buscar": "Melamina Masisa Grigio",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp8Bv462jbyKESFUaVEJfplyhQ4PJkVmJGnqZsU7ykxA&s=10"
+      },
+      "Roble Milano": {
+        "buscar": "Melamina Masisa Roble Milano",
+        "url": "https://maderasfasco.cl/wp-content/uploads/2025/02/45948.jpg"
+      },
+      "Savia": {
+        "buscar": "Melamina Masisa Savia",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTukMfKImAj_Ls_JvmYNQyhgI42WmY5nEqkGcVzPkb3icq9FDtFhxHL_pYr&s=10"
       }
     }
   },
   "Melamina Duratex": {
     "buscar": "melamina Duratex colores tablero",
-    "url": "",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj3zb2XJ9l5TzPoo7K8lbFU8uiGazALcAiCq3sbH4evffnA-SAMO8QUag&s=10",
     "variantes": {
       "MEL-DUR-BLANCO-15MM214X244CM": {
         "opcion": "Color: Blanco · Medida: 15 mm · 214 x 244 cm",
@@ -82,42 +128,42 @@
       "MEL-DUR-ARENA-18MM214X244CM": {
         "opcion": "Color: Arena · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Duratex Arena 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://media.falabella.com/sodimacPE/4192672_01/w=800,h=800,fit=pad"
       },
       "MEL-DUR-CEDRO-18MM210X244CM": {
         "opcion": "Color: Cedro · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Cedro 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://media.falabella.com/sodimacPE/4192656_01/w=800,h=800,fit=padf"
       },
       "MEL-DUR-HUMO-18MM210X244CM": {
         "opcion": "Color: Humo · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Humo 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://tablerosdelvalle.tiendada.com/api/scrooge/file/FL-45E97A84?v=-2"
       },
       "MEL-DUR-CARBONO-18MM210X244CM": {
         "opcion": "Color: Carbono · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Carbono 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://metalesymaderas.com/wp-content/uploads/2024/08/Carbono-Duratex.webp"
       },
       "MEL-DUR-WENGUE-18MM210X244CM": {
         "opcion": "Color: Wengué · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Wengué 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://tablerosdelvalle.tiendada.com/api/scrooge/file/FL-4E7B5334?v=-2"
       },
       "MEL-DUR-NEGRO-18MM210X244CM": {
         "opcion": "Color: Negro · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Negro 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzKxNdqFrvHLWkV7XextkQ5B1QzQcQEViHmKVc-kcK3g&s=10"
       },
       "MEL-DUR-ARIZONA-18MM210X244CM": {
         "opcion": "Color: Arizona · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Arizona 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://images.cws.digital/produtos/gg/93/90/mdf-arizona-cross-2-faces-2750-x-1840-x-6-mm-6559093-1575395539898.jpg"
       },
       "MEL-DUR-AZULCORAL-18MM214X244CM": {
         "opcion": "Color: Azul Coral · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Duratex Azul Coral 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://mundicor.co/wp-content/uploads/2024/09/ULTRAMAR.jpg"
       },
       "MEL-DUR-BLANCO-15MM210X244CM": {
         "opcion": "Color: Blanco · Medida: 15 mm · 210 x 244 cm",
@@ -132,83 +178,177 @@
       "MEL-DUR-BRISE-18MM183X275CM": {
         "opcion": "Color: Brise · Medida: 18 mm · 183 x 275 cm",
         "buscar": "Melamina Duratex Brise 18 mm · 183 x 275 cm",
-        "url": ""
+        "url": "https://madeksa.com.py/wp-content/uploads/2023/06/Imagen-de-WhatsApp-2023-08-05-a-las-11.09.58.jpg"
       },
       "MEL-DUR-BRIXTON-18MM210X244CM": {
         "opcion": "Color: Brixton · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Brixton 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://tablerosdelvalle.tiendada.com/api/scrooge/file/FL-489A33B4?v=-2"
       },
       "MEL-DUR-CAPUCCINO-18MM210X244CM": {
         "opcion": "Color: Capuccino · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Capuccino 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrmLsfxoFkXX9xAl4b7B09uvuvXOghktiCXYoGvACAHuKtlYXDovJzP8I&s=10"
       },
       "MEL-DUR-CHANTILLI-18MM210X244CM": {
         "opcion": "Color: Chantilli · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Chantilli 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://aglocol.com/wp-content/uploads/2026/02/Melamina-Rh-Chantilly-Duratex-Aglocol.webp"
       },
       "MEL-DUR-FUCSIA-18MM210X244CM": {
         "opcion": "Color: Fucsia · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Fucsia 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9F3aOCiP2XJmJjMPyUBGv8NzV9cQaNceV9Y_p_EtKoSHuYdV3gNfXkV4&s=10"
       },
       "MEL-DUR-GRAFITE-18MM184X275CM": {
         "opcion": "Color: Grafite · Medida: 18 mm · 184 x 275 cm",
         "buscar": "Melamina Duratex Grafite 18 mm · 184 x 275 cm",
-        "url": ""
+        "url": "https://www.madeiranit.com.br/media/catalog/product/M/D/MDF-Grafite-2-Faces-184cm-x-275cm-Duratex-2_1.jpg?optimize=high&fit=bounds&height=512&width=512&canvas=512:512"
       },
       "MEL-DUR-GRIS-18MM184X275CM": {
         "opcion": "Color: Gris · Medida: 18 mm · 184 x 275 cm",
         "buscar": "Melamina Duratex Gris 18 mm · 184 x 275 cm",
-        "url": ""
+        "url": "https://img.magnific.com/foto-gratis/textura-ligera-madera-gris_1194-5571.jpg?semt=ais_hybrid&w=740&q=80"
       },
       "MEL-DUR-HEURA-18MM210X244CM": {
         "opcion": "Color: Heura · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Heura 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdfVASHPvSQiK-V7HIAoVrn3kKZXVlsV8IcN-B3CdzDw&s=10"
       },
       "MEL-DUR-IBIZA-18MM214X244CM": {
         "opcion": "Color: Ibiza · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Duratex Ibiza 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMav30R4VUY004IZfBKonkRExirrsMSOIa3pkQt8Jd6AYmtcw8zb5xt3la&s=10"
       },
       "MEL-DUR-INHOTIM-18MM210X244CM": {
         "opcion": "Color: Inhotim · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Inhotim 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://labmadeiras.vtexassets.com/arquivos/ids/159787-800-auto?width=800&height=auto&aspect=true"
       },
       "MEL-DUR-NARANJA-18MM210X244CM": {
         "opcion": "Color: Naranja · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Naranja 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://www.tecip.pe/productos/70001205783-2.jpg"
       },
       "MEL-DUR-PIGNETTO-18MM210X244CM": {
         "opcion": "Color: Pignetto · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Pignetto 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://provemadera.com.ec/wp-content/uploads/2021/01/Pigneto-Provemadera-Melamina-Web.jpg"
       },
       "MEL-DUR-VERDELIMON-15MM210X244CM": {
         "opcion": "Color: Verde Limón · Medida: 15 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Verde Limón 15 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://www.pisopak.com/wp-content/uploads/2021/09/F618TC-01.jpg"
       },
       "MEL-DUR-VERDELIMON-18MM210X244CM": {
         "opcion": "Color: Verde Limón · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Verde Limón 18 mm · 210 x 244 cm",
-        "url": ""
+        "url": "https://www.pisopak.com/wp-content/uploads/2021/09/F618TC-01.jpg"
       },
       "MEL-DUR-VIENES-18MM210X244CM": {
         "opcion": "Color: Vienes · Medida: 18 mm · 210 x 244 cm",
         "buscar": "Melamina Duratex Vienes 18 mm · 210 x 244 cm",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKwJOU2_DYT5B5o69Dg9T1yaR2emUm8rjyrutj5JyavQ&s=10"
+      }
+    },
+    "colores": {
+      "Blanco": {
+        "buscar": "Melamina Duratex Blanco",
         "url": ""
+      },
+      "Arena": {
+        "buscar": "Melamina Duratex Arena",
+        "url": "https://media.falabella.com/sodimacPE/4192672_01/w=800,h=800,fit=pad"
+      },
+      "Cedro": {
+        "buscar": "Melamina Duratex Cedro",
+        "url": "https://media.falabella.com/sodimacPE/4192656_01/w=800,h=800,fit=padf"
+      },
+      "Humo": {
+        "buscar": "Melamina Duratex Humo",
+        "url": "https://tablerosdelvalle.tiendada.com/api/scrooge/file/FL-45E97A84?v=-2"
+      },
+      "Carbono": {
+        "buscar": "Melamina Duratex Carbono",
+        "url": "https://metalesymaderas.com/wp-content/uploads/2024/08/Carbono-Duratex.webp"
+      },
+      "Wengué": {
+        "buscar": "Melamina Duratex Wengué",
+        "url": "https://tablerosdelvalle.tiendada.com/api/scrooge/file/FL-4E7B5334?v=-2"
+      },
+      "Negro": {
+        "buscar": "Melamina Duratex Negro",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzKxNdqFrvHLWkV7XextkQ5B1QzQcQEViHmKVc-kcK3g&s=10"
+      },
+      "Arizona": {
+        "buscar": "Melamina Duratex Arizona",
+        "url": "https://images.cws.digital/produtos/gg/93/90/mdf-arizona-cross-2-faces-2750-x-1840-x-6-mm-6559093-1575395539898.jpg"
+      },
+      "Azul Coral": {
+        "buscar": "Melamina Duratex Azul Coral",
+        "url": "https://mundicor.co/wp-content/uploads/2024/09/ULTRAMAR.jpg"
+      },
+      "Brise": {
+        "buscar": "Melamina Duratex Brise",
+        "url": "https://madeksa.com.py/wp-content/uploads/2023/06/Imagen-de-WhatsApp-2023-08-05-a-las-11.09.58.jpg"
+      },
+      "Brixton": {
+        "buscar": "Melamina Duratex Brixton",
+        "url": "https://tablerosdelvalle.tiendada.com/api/scrooge/file/FL-489A33B4?v=-2"
+      },
+      "Capuccino": {
+        "buscar": "Melamina Duratex Capuccino",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrmLsfxoFkXX9xAl4b7B09uvuvXOghktiCXYoGvACAHuKtlYXDovJzP8I&s=10"
+      },
+      "Chantilli": {
+        "buscar": "Melamina Duratex Chantilli",
+        "url": "https://aglocol.com/wp-content/uploads/2026/02/Melamina-Rh-Chantilly-Duratex-Aglocol.webp"
+      },
+      "Fucsia": {
+        "buscar": "Melamina Duratex Fucsia",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9F3aOCiP2XJmJjMPyUBGv8NzV9cQaNceV9Y_p_EtKoSHuYdV3gNfXkV4&s=10"
+      },
+      "Grafite": {
+        "buscar": "Melamina Duratex Grafite",
+        "url": "https://www.madeiranit.com.br/media/catalog/product/M/D/MDF-Grafite-2-Faces-184cm-x-275cm-Duratex-2_1.jpg?optimize=high&fit=bounds&height=512&width=512&canvas=512:512"
+      },
+      "Gris": {
+        "buscar": "Melamina Duratex Gris",
+        "url": "https://img.magnific.com/foto-gratis/textura-ligera-madera-gris_1194-5571.jpg?semt=ais_hybrid&w=740&q=80"
+      },
+      "Heura": {
+        "buscar": "Melamina Duratex Heura",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdfVASHPvSQiK-V7HIAoVrn3kKZXVlsV8IcN-B3CdzDw&s=10"
+      },
+      "Ibiza": {
+        "buscar": "Melamina Duratex Ibiza",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMav30R4VUY004IZfBKonkRExirrsMSOIa3pkQt8Jd6AYmtcw8zb5xt3la&s=10"
+      },
+      "Inhotim": {
+        "buscar": "Melamina Duratex Inhotim",
+        "url": "https://labmadeiras.vtexassets.com/arquivos/ids/159787-800-auto?width=800&height=auto&aspect=true"
+      },
+      "Naranja": {
+        "buscar": "Melamina Duratex Naranja",
+        "url": "https://www.tecip.pe/productos/70001205783-2.jpg"
+      },
+      "Pignetto": {
+        "buscar": "Melamina Duratex Pignetto",
+        "url": "https://provemadera.com.ec/wp-content/uploads/2021/01/Pigneto-Provemadera-Melamina-Web.jpg"
+      },
+      "Verde Limón": {
+        "buscar": "Melamina Duratex Verde Limón",
+        "url": "https://www.pisopak.com/wp-content/uploads/2021/09/F618TC-01.jpg"
+      },
+      "Vienes": {
+        "buscar": "Melamina Duratex Vienes",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKwJOU2_DYT5B5o69Dg9T1yaR2emUm8rjyrutj5JyavQ&s=10"
       }
     }
   },
   "Melamina PG Bison": {
     "buscar": "melamina PG Bison colores tablero",
-    "url": "",
+    "url": "https://oechsle.vteximg.com.br/arquivos/ids/15014950-1000-1000/image-e44572db3b1a443d9e266ed5c8eb29a8.jpg?v=638277533164300000",
     "variantes": {
       "MEL-PGB-BLANCO-15MM275X183CM": {
         "opcion": "Color: Blanco · Medida: 15 mm · 275 x 183 cm",
@@ -223,32 +363,32 @@
       "MEL-PGB-GRISCLARO-18MM275X183CM": {
         "opcion": "Color: Gris Claro · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Gris Claro 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboTWeoYYPqIlkD8nMV5lh-Gpex77VMsxEZRBCLjNGtg&s=10"
       },
       "MEL-PGB-CENIZA-18MM275X183CM": {
         "opcion": "Color: Ceniza · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Ceniza 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://panel.construproductos.com/images/products/61c2322f2f7e2.jpg"
       },
       "MEL-PGB-CARAMELO-18MM275X183CM": {
         "opcion": "Color: Caramelo · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Caramelo 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://panel.construproductos.com/images/products/bOLc8Producto2colorcaramelo.jpg"
       },
       "MEL-PGB-NEGRO-18MM275X183CM": {
         "opcion": "Color: Negro · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Negro 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://promart.vteximg.com.br/arquivos/ids/9226260-1000-1000/165553_30.jpg?v=638913968964370000"
       },
       "MEL-BIS-ARDEN-18MM275X183CM": {
         "opcion": "Color: Arden · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Arden 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLOWCXQIpdvuezaV_J1no_vX1LLWXjVwj7OUyf9VD6wg&s=10"
       },
       "MEL-BIS-BLACKCHERRY-18MM275X183CM": {
         "opcion": "Color: Black Cherry · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Black Cherry 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiXPOQxy881opAehLK8QFOjG9maVToIa9hTTAhUdYvybAfP1V3HHitbdo&s=10"
       },
       "MEL-BIS-BLANCORHRESISTENTEALAHUMEDAD-18MM275X183CM": {
         "opcion": "Color: Blanco RH (resistente a la humedad) · Medida: 18 mm · 275 x 183 cm",
@@ -258,199 +398,371 @@
       "MEL-BIS-COIMBRA-18MM275X183CM": {
         "opcion": "Color: Coimbra · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Coimbra 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq9CTq8iFNc1VKDweDcIh4cXMDMTsSLmGLAiLFxeeeDN6yPaTJdEz8vC9p&s=10"
       },
       "MEL-BIS-HARVARDCHERRY-18MM275X183CM": {
         "opcion": "Color: Harvard Cherry · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Harvard Cherry 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR3m49dpAX9ZMaqvnV07B0J54uE32LziqHkEGT3-EicX5btTx2QBTLi-tk&s=10"
       },
       "MEL-BIS-PANELA-18MM275X183CM": {
         "opcion": "Color: Panela · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Panela 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://i.pinimg.com/736x/3c/c9/cc/3cc9cc07998c575bb5428d5f03448c2d.jpg"
       },
       "MEL-BIS-SHALE-18MM275X183CM": {
         "opcion": "Color: Shale · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Shale 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://slidenspace.co.za/wp-content/uploads/2025/03/SlidenSpace-Melamine-Finish-Options-Shale-Oak.jpg"
       },
       "MEL-BIS-TAUPE-18MM275X183CM": {
         "opcion": "Color: Taupe · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Taupe 18 mm · 275 x 183 cm",
-        "url": ""
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2021/04/01_4962_MUESTRA_70x70_181_TAUPE_1200x1200px_300Dpi_MODIF_Dic_21-1024x1024.jpg"
       },
       "MEL-BIS-VERZASCA-18MM275X183CM": {
         "opcion": "Color: Verzasca · Medida: 18 mm · 275 x 183 cm",
         "buscar": "Melamina PG Bison Verzasca 18 mm · 275 x 183 cm",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThfoUe32MSrG_ESObW3X5TvHgyBwMFMHg_owvwf7a6Kg&s=10"
+      }
+    },
+    "colores": {
+      "Blanco": {
+        "buscar": "Melamina PG Bison Blanco",
         "url": ""
+      },
+      "Gris Claro": {
+        "buscar": "Melamina PG Bison Gris Claro",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboTWeoYYPqIlkD8nMV5lh-Gpex77VMsxEZRBCLjNGtg&s=10"
+      },
+      "Ceniza": {
+        "buscar": "Melamina PG Bison Ceniza",
+        "url": "https://panel.construproductos.com/images/products/61c2322f2f7e2.jpg"
+      },
+      "Caramelo": {
+        "buscar": "Melamina PG Bison Caramelo",
+        "url": "https://panel.construproductos.com/images/products/bOLc8Producto2colorcaramelo.jpg"
+      },
+      "Negro": {
+        "buscar": "Melamina PG Bison Negro",
+        "url": "https://promart.vteximg.com.br/arquivos/ids/9226260-1000-1000/165553_30.jpg?v=638913968964370000"
+      },
+      "Arden": {
+        "buscar": "Melamina PG Bison Arden",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLOWCXQIpdvuezaV_J1no_vX1LLWXjVwj7OUyf9VD6wg&s=10"
+      },
+      "Black Cherry": {
+        "buscar": "Melamina PG Bison Black Cherry",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiXPOQxy881opAehLK8QFOjG9maVToIa9hTTAhUdYvybAfP1V3HHitbdo&s=10"
+      },
+      "Blanco RH (resistente a la humedad)": {
+        "buscar": "Melamina PG Bison Blanco RH (resistente a la humedad)",
+        "url": ""
+      },
+      "Coimbra": {
+        "buscar": "Melamina PG Bison Coimbra",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq9CTq8iFNc1VKDweDcIh4cXMDMTsSLmGLAiLFxeeeDN6yPaTJdEz8vC9p&s=10"
+      },
+      "Harvard Cherry": {
+        "buscar": "Melamina PG Bison Harvard Cherry",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR3m49dpAX9ZMaqvnV07B0J54uE32LziqHkEGT3-EicX5btTx2QBTLi-tk&s=10"
+      },
+      "Panela": {
+        "buscar": "Melamina PG Bison Panela",
+        "url": "https://i.pinimg.com/736x/3c/c9/cc/3cc9cc07998c575bb5428d5f03448c2d.jpg"
+      },
+      "Shale": {
+        "buscar": "Melamina PG Bison Shale",
+        "url": "https://slidenspace.co.za/wp-content/uploads/2025/03/SlidenSpace-Melamine-Finish-Options-Shale-Oak.jpg"
+      },
+      "Taupe": {
+        "buscar": "Melamina PG Bison Taupe",
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2021/04/01_4962_MUESTRA_70x70_181_TAUPE_1200x1200px_300Dpi_MODIF_Dic_21-1024x1024.jpg"
+      },
+      "Verzasca": {
+        "buscar": "Melamina PG Bison Verzasca",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThfoUe32MSrG_ESObW3X5TvHgyBwMFMHg_owvwf7a6Kg&s=10"
       }
     }
   },
   "Melamina Vesto": {
     "buscar": "melamina Vesto colores tablero",
-    "url": "",
+    "url": "https://snoopy.archdaily.com/images/archdaily/catalog/uploads/photo/image/320219/large_IMG_COLECCIONES_ARCHDAILY_VESTO-01.jpg?width=640&format=webp",
     "variantes": {
       "MEL-VES-CEDRO-18MM214X244CM": {
         "opcion": "Color: Cedro · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Cedro 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://www.araucoonline.com/store/medias/CL-055TT-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxNjAxNDZ8aW1hZ2UvanBlZ3xhRE0wTDJnMU9DODRPRFEzT1Rjd01UUXdNVGt3TDBOTVh6QTFOVlJVWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXxlYzFmYTA4MzllYTMyMDExNTczYTQwOTg4ZjM2NmM3ZjQwYmNjNTkxZjVkMjhjYTI1NGZlODFlODIzMzkwYzNl"
       },
       "MEL-VES-WENGUE-18MM214X244CM": {
         "opcion": "Color: Wengué · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Wengué 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy42aeNMw4UxVh-Gy1TcvkEb9epPwlkvFq3b6BKAWvdw&s=10"
       },
       "MEL-VES-HAYA-18MM214X244CM": {
         "opcion": "Color: Haya · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Haya 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpFYgrUPa2aQh0qJFIDTUkAe1REm5dyLUQO2K3N7vFaFygYKabuq4_D60&s=10"
       },
       "MEL-VES-ESPRESSO-18MM214X244CM": {
         "opcion": "Color: Espresso · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Espresso 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnmto01PulBElzwGPPxAFuBsBVFWpdulaKPFQwtc8MZrgqcUfxnSJFfRe1&s=10"
       },
       "MEL-VES-ROBLERUSTICO-18MM214X244CM": {
         "opcion": "Color: Roble Rústico · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Roble Rústico 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://www.araucoonline.com/store/medias/CL-028NN-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMzAwNjJ8aW1hZ2UvanBlZ3xhREE1TDJneU1pODRPRFE0TURBd01ESTBOakEyTDBOTVh6QXlPRTVPWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXxmZmM2NzQ2ZTY3ZjhjYTMzNzViN2RkYjliNDkyYzkzYWMzZjdkNDhmYWFlMTljNDA4YTg4NjI2ZDhjZGIwYWM4"
       },
       "MEL-VES-ROJO-18MM214X244CM": {
         "opcion": "Color: Rojo · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Rojo 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSL8dt3_MM104Wutym9-5D_ctB4zlZEtLVm5-jPgea5sWTXUyNnKDfJ3A&s=10"
       },
       "MEL-VES-ALMENDRA-18MM214X244CM": {
         "opcion": "Color: Almendra · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Almendra 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2018/01/180-ALMENDRA-2.jpg"
       },
       "MEL-VES-ALUMINIO-18MM214X244CM": {
         "opcion": "Color: Aluminio · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Aluminio 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2018/01/aluminio-01-1.jpg"
       },
       "MEL-VES-AMAZONAS-18MM214X244CM": {
         "opcion": "Color: Amazonas · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Amazonas 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://i0.wp.com/genesismelaminas.com/wp-content/uploads/2024/11/ArizonaTEXTURE-e1734970047656.png?fit=800%2C800&ssl=1"
       },
       "MEL-VES-ASERRADONORDICO-18MM214X244CM": {
         "opcion": "Color: Aserrado Nórdico · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Aserrado Nórdico 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://maderasfasco.cl/wp-content/uploads/2025/03/MEL0921.jpg"
       },
       "MEL-VES-AWOURA-18MM214X244CM": {
         "opcion": "Color: Awoura · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Awoura 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2018/01/awoura-01-1.jpg"
       },
       "MEL-VES-AZULLAGO-18MM214X244CM": {
         "opcion": "Color: Azul Lago · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Azul Lago 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://arcosac.com/wp-content/uploads/2022/10/MELVES001007-2028-VESTO-18MM-AZUL-LAGO-FROST-2.15-X-2.44.png"
       },
       "MEL-VES-CARAMEL-18MM214X244CM": {
         "opcion": "Color: Caramel · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Caramel 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://promart.vteximg.com.br/arquivos/ids/8241742-1000-1000/109540.jpg?v=638642047088370000"
       },
       "MEL-VES-CENDRAESCANDINAVO-18MM214X244CM": {
         "opcion": "Color: Cendra Escandinavo · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Cendra Escandinavo 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuD6NX8HvFPxS-jsW6aU2nsMqU6Ix10UA3M-V7IG7v2A&s=10"
       },
       "MEL-VES-CEREZONATURAL-18MM214X244CM": {
         "opcion": "Color: Cerezo Natural · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Cerezo Natural 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2018/01/cerezo-natural-01-1.jpg"
       },
       "MEL-VES-FRESNOEUROPEO-18MM214X244CM": {
         "opcion": "Color: Fresno Europeo · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Fresno Europeo 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://promart.vteximg.com.br/arquivos/ids/8241735/62825.jpg?v=638642046212700000"
       },
       "MEL-VES-MARAS-18MM214X244CM": {
         "opcion": "Color: Maras · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Maras 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1n50oOs2zKcwpiGCDLOVeq1FsFY6KYz-XQu30Dedr3Q&s=10"
       },
       "MEL-VES-NEGRO-18MM244X214CM": {
         "opcion": "Color: Negro · Medida: 18 mm · 244 x 214 cm",
         "buscar": "Melamina Vesto Negro 18 mm · 244 x 214 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjEZqWN4XkLnciqBf4gTjxuFtH2fg0Y67zeOPKH0mnCg&s"
       },
       "MEL-VES-NOCCEMILANO-18MM214X244CM": {
         "opcion": "Color: Nocce Milano · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Nocce Milano 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://arcosac.com/wp-content/uploads/2022/09/NOCCE-MILANO.jpg"
       },
       "MEL-VES-NOGALTERRACOTA-18MM214X244CM": {
         "opcion": "Color: Nogal Terracota · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Nogal Terracota 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://www.araucoonline.com/store/medias/CL-064SS-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxNTcxNDN8aW1hZ2UvanBlZ3xhRE0wTDJnNE55ODRPRFEzT1RnNE5qSXhNelF5TDBOTVh6QTJORk5UWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXw4MTJiOTIwNTUxNzIwZDg3OWM3ZDZmZGM3NmM3NWExODcxNzRhODQ3ODI2YzdhZDJmZDE3MGJkNzEzMjIzZGY0"
       },
       "MEL-VES-OLMOPARDO-18MM214X244CM": {
         "opcion": "Color: Olmo Pardo · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Olmo Pardo 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://www.araucoonline.com/store/medias/CL-058SS-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMDIzNzB8aW1hZ2UvanBlZ3xhR1U0TDJnd09DODRPRFEzT1Rrd05qVXlPVFU0TDBOTVh6QTFPRk5UWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXw3NjZjODIwYThlYzA2MGI1MDgxYzFlNzI3MWI3ODczYzA5NzAzZDBhNTZiYjU0NTNjMjIzNDhjODZlZDQ0ZjVi"
       },
       "MEL-VES-ORIGENANDINO-18MM214X244CM": {
         "opcion": "Color: Origen Andino · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Origen Andino 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://www.araucoonline.com/store/medias/CL-014SS-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wzNzY4MTJ8aW1hZ2UvanBlZ3xhREUyTDJoa1l5ODRPRFEzT1RreU5qRTVNRE00TDBOTVh6QXhORk5UWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXxhYjk3ZjMxYWVkMmNhYzQ3ZDBjYzRlM2QxZGJkNTdlNWVmZDEyZmM3ZGM5ODYyMjU1ZmM1NGVmNGFlMmI5MDUx"
       },
       "MEL-VES-ROBLEAMERICANO-18MM214X244CM": {
         "opcion": "Color: Roble Americano · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Roble Americano 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIFxdPC_rLLoLIpqlbRAp_FtHgrIgHBigqo9TMP9UsMCZamNE2yQYycN9W&s=10"
       },
       "MEL-VES-ROBLECAVA-18MM214X244CM": {
         "opcion": "Color: Roble Cava · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Roble Cava 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2OBKzuja6mriOwfwwgx99PAqi7U6uy9cEUX4KoIICFIBGLtWNPua-Y1M&s=10"
       },
       "MEL-VES-SEDANOTTE-18MM214X244CM": {
         "opcion": "Color: Seda Notte · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Seda Notte 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2019/01/Seda-notte-750x1024.jpg"
       },
       "MEL-VES-TEKAARTICO-18MM214X244CM": {
         "opcion": "Color: Teka Artico · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Teka Artico 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://promart.vteximg.com.br/arquivos/ids/8241730/62823.jpg?v=638642045592270000"
       },
       "MEL-VES-TOSCANA-18MM214X244CM": {
         "opcion": "Color: Toscana · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Toscana 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw5FuShBQ8QAO3hphL0aGimzy9Wn4JSZ3OueE96XqgOQ&s=10"
       },
       "MEL-VES-VISCAYA-18MM214X244CM": {
         "opcion": "Color: Viscaya · Medida: 18 mm · 214 x 244 cm",
         "buscar": "Melamina Vesto Viscaya 18 mm · 214 x 244 cm",
-        "url": ""
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFi03ALnxYEFkfK9cK4f_oo16TToX__Dpt3XpMSmm7RneChSYhS4XL0zJ3&s=10"
+      }
+    },
+    "colores": {
+      "Cedro": {
+        "buscar": "Melamina Vesto Cedro",
+        "url": "https://www.araucoonline.com/store/medias/CL-055TT-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxNjAxNDZ8aW1hZ2UvanBlZ3xhRE0wTDJnMU9DODRPRFEzT1Rjd01UUXdNVGt3TDBOTVh6QTFOVlJVWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXxlYzFmYTA4MzllYTMyMDExNTczYTQwOTg4ZjM2NmM3ZjQwYmNjNTkxZjVkMjhjYTI1NGZlODFlODIzMzkwYzNl"
+      },
+      "Wengué": {
+        "buscar": "Melamina Vesto Wengué",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy42aeNMw4UxVh-Gy1TcvkEb9epPwlkvFq3b6BKAWvdw&s=10"
+      },
+      "Haya": {
+        "buscar": "Melamina Vesto Haya",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpFYgrUPa2aQh0qJFIDTUkAe1REm5dyLUQO2K3N7vFaFygYKabuq4_D60&s=10"
+      },
+      "Espresso": {
+        "buscar": "Melamina Vesto Espresso",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnmto01PulBElzwGPPxAFuBsBVFWpdulaKPFQwtc8MZrgqcUfxnSJFfRe1&s=10"
+      },
+      "Roble Rústico": {
+        "buscar": "Melamina Vesto Roble Rústico",
+        "url": "https://www.araucoonline.com/store/medias/CL-028NN-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMzAwNjJ8aW1hZ2UvanBlZ3xhREE1TDJneU1pODRPRFE0TURBd01ESTBOakEyTDBOTVh6QXlPRTVPWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXxmZmM2NzQ2ZTY3ZjhjYTMzNzViN2RkYjliNDkyYzkzYWMzZjdkNDhmYWFlMTljNDA4YTg4NjI2ZDhjZGIwYWM4"
+      },
+      "Rojo": {
+        "buscar": "Melamina Vesto Rojo",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSL8dt3_MM104Wutym9-5D_ctB4zlZEtLVm5-jPgea5sWTXUyNnKDfJ3A&s=10"
+      },
+      "Almendra": {
+        "buscar": "Melamina Vesto Almendra",
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2018/01/180-ALMENDRA-2.jpg"
+      },
+      "Aluminio": {
+        "buscar": "Melamina Vesto Aluminio",
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2018/01/aluminio-01-1.jpg"
+      },
+      "Amazonas": {
+        "buscar": "Melamina Vesto Amazonas",
+        "url": "https://i0.wp.com/genesismelaminas.com/wp-content/uploads/2024/11/ArizonaTEXTURE-e1734970047656.png?fit=800%2C800&ssl=1"
+      },
+      "Aserrado Nórdico": {
+        "buscar": "Melamina Vesto Aserrado Nórdico",
+        "url": "https://maderasfasco.cl/wp-content/uploads/2025/03/MEL0921.jpg"
+      },
+      "Awoura": {
+        "buscar": "Melamina Vesto Awoura",
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2018/01/awoura-01-1.jpg"
+      },
+      "Azul Lago": {
+        "buscar": "Melamina Vesto Azul Lago",
+        "url": "https://arcosac.com/wp-content/uploads/2022/10/MELVES001007-2028-VESTO-18MM-AZUL-LAGO-FROST-2.15-X-2.44.png"
+      },
+      "Caramel": {
+        "buscar": "Melamina Vesto Caramel",
+        "url": "https://promart.vteximg.com.br/arquivos/ids/8241742-1000-1000/109540.jpg?v=638642047088370000"
+      },
+      "Cendra Escandinavo": {
+        "buscar": "Melamina Vesto Cendra Escandinavo",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuD6NX8HvFPxS-jsW6aU2nsMqU6Ix10UA3M-V7IG7v2A&s=10"
+      },
+      "Cerezo Natural": {
+        "buscar": "Melamina Vesto Cerezo Natural",
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2018/01/cerezo-natural-01-1.jpg"
+      },
+      "Fresno Europeo": {
+        "buscar": "Melamina Vesto Fresno Europeo",
+        "url": "https://promart.vteximg.com.br/arquivos/ids/8241735/62825.jpg?v=638642046212700000"
+      },
+      "Maras": {
+        "buscar": "Melamina Vesto Maras",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1n50oOs2zKcwpiGCDLOVeq1FsFY6KYz-XQu30Dedr3Q&s=10"
+      },
+      "Negro": {
+        "buscar": "Melamina Vesto Negro",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjEZqWN4XkLnciqBf4gTjxuFtH2fg0Y67zeOPKH0mnCg&s"
+      },
+      "Nocce Milano": {
+        "buscar": "Melamina Vesto Nocce Milano",
+        "url": "https://arcosac.com/wp-content/uploads/2022/09/NOCCE-MILANO.jpg"
+      },
+      "Nogal Terracota": {
+        "buscar": "Melamina Vesto Nogal Terracota",
+        "url": "https://www.araucoonline.com/store/medias/CL-064SS-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxNTcxNDN8aW1hZ2UvanBlZ3xhRE0wTDJnNE55ODRPRFEzT1RnNE5qSXhNelF5TDBOTVh6QTJORk5UWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXw4MTJiOTIwNTUxNzIwZDg3OWM3ZDZmZGM3NmM3NWExODcxNzRhODQ3ODI2YzdhZDJmZDE3MGJkNzEzMjIzZGY0"
+      },
+      "Olmo Pardo": {
+        "buscar": "Melamina Vesto Olmo Pardo",
+        "url": "https://www.araucoonline.com/store/medias/CL-058SS-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMDIzNzB8aW1hZ2UvanBlZ3xhR1U0TDJnd09DODRPRFEzT1Rrd05qVXlPVFU0TDBOTVh6QTFPRk5UWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXw3NjZjODIwYThlYzA2MGI1MDgxYzFlNzI3MWI3ODczYzA5NzAzZDBhNTZiYjU0NTNjMjIzNDhjODZlZDQ0ZjVi"
+      },
+      "Origen Andino": {
+        "buscar": "Melamina Vesto Origen Andino",
+        "url": "https://www.araucoonline.com/store/medias/CL-014SS-MEL-base-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wzNzY4MTJ8aW1hZ2UvanBlZ3xhREUyTDJoa1l5ODRPRFEzT1RreU5qRTVNRE00TDBOTVh6QXhORk5UWDAxRlRGOWlZWE5sWHpFeU1EQlhlREV5TURCSXxhYjk3ZjMxYWVkMmNhYzQ3ZDBjYzRlM2QxZGJkNTdlNWVmZDEyZmM3ZGM5ODYyMjU1ZmM1NGVmNGFlMmI5MDUx"
+      },
+      "Roble Americano": {
+        "buscar": "Melamina Vesto Roble Americano",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIFxdPC_rLLoLIpqlbRAp_FtHgrIgHBigqo9TMP9UsMCZamNE2yQYycN9W&s=10"
+      },
+      "Roble Cava": {
+        "buscar": "Melamina Vesto Roble Cava",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2OBKzuja6mriOwfwwgx99PAqi7U6uy9cEUX4KoIICFIBGLtWNPua-Y1M&s=10"
+      },
+      "Seda Notte": {
+        "buscar": "Melamina Vesto Seda Notte",
+        "url": "https://arauco.com/peru/wp-content/uploads/sites/22/2019/01/Seda-notte-750x1024.jpg"
+      },
+      "Teka Artico": {
+        "buscar": "Melamina Vesto Teka Artico",
+        "url": "https://promart.vteximg.com.br/arquivos/ids/8241730/62823.jpg?v=638642045592270000"
+      },
+      "Toscana": {
+        "buscar": "Melamina Vesto Toscana",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw5FuShBQ8QAO3hphL0aGimzy9Wn4JSZ3OueE96XqgOQ&s=10"
+      },
+      "Viscaya": {
+        "buscar": "Melamina Vesto Viscaya",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFi03ALnxYEFkfK9cK4f_oo16TToX__Dpt3XpMSmm7RneChSYhS4XL0zJ3&s=10"
       }
     }
   },
   "Canto de PVC (por metro)": {
     "buscar": "canto PVC melamina rollo",
-    "url": "",
+    "url": "https://www.mobelkant.com/wp-content/uploads/2023/06/cantos-de-melamina.webp",
     "variantes": {
       "CAN-BLANCO-DELGADO": {
         "opcion": "Color: Blanco · Medida: Delgado",
         "buscar": "Canto de PVC (por metro) Blanco Delgado",
-        "url": ""
+        "url": "https://carpintec.com.pe/cdn/shop/files/Tapacanto_blanco_delgado_por_rollo_1200x1200.jpg?v=1717535243"
       },
       "CAN-MADERADOCLASIC-DELGADO": {
         "opcion": "Color: Maderado clásico · Medida: Delgado",
         "buscar": "Canto de PVC (por metro) Maderado clásico Delgado",
-        "url": ""
+        "url": "https://media.falabella.com/sodimacPE/226031X_01/w=1500,h=1500,fit=cover"
       },
       "CAN-MADERADOOSCURO-DELGADO": {
         "opcion": "Color: Maderado oscuro · Medida: Delgado",
         "buscar": "Canto de PVC (por metro) Maderado oscuro Delgado",
-        "url": ""
+        "url": "https://promart.vteximg.com.br/arquivos/ids/423691-380-380/12863.jpg?v=637231348476500000"
       },
       "CAN-UNICOLOR-DELGADO": {
         "opcion": "Color: Unicolor · Medida: Delgado",
@@ -502,11 +814,33 @@
         "buscar": "Canto de PVC (por metro) Unicolor Doble ancho 40 x 0.45 mm",
         "url": ""
       }
+    },
+    "colores": {
+      "Blanco": {
+        "buscar": "Canto de PVC (por metro) Blanco",
+        "url": "https://carpintec.com.pe/cdn/shop/files/Tapacanto_blanco_delgado_por_rollo_1200x1200.jpg?v=1717535243"
+      },
+      "Maderado clásico": {
+        "buscar": "Canto de PVC (por metro) Maderado clásico",
+        "url": "https://media.falabella.com/sodimacPE/226031X_01/w=1500,h=1500,fit=cover"
+      },
+      "Maderado oscuro": {
+        "buscar": "Canto de PVC (por metro) Maderado oscuro",
+        "url": "https://promart.vteximg.com.br/arquivos/ids/423691-380-380/12863.jpg?v=637231348476500000"
+      },
+      "Unicolor": {
+        "buscar": "Canto de PVC (por metro) Unicolor",
+        "url": ""
+      },
+      "Maderado frío": {
+        "buscar": "Canto de PVC (por metro) Maderado frío",
+        "url": ""
+      }
     }
   },
   "Tapatornillo para melamina": {
     "buscar": "tapatornillo melamina tapa tornillo",
-    "url": "",
+    "url": "https://carpintec.com.pe/cdn/shop/collections/Tapa_tornillo_adhesivo_1200x1200.jpg?v=1717619727",
     "variantes": {
       "TAPA-BLANCO": {
         "opcion": "Color: Blanco",
@@ -523,11 +857,25 @@
         "buscar": "Tapatornillo para melamina Unicolor",
         "url": ""
       }
+    },
+    "colores": {
+      "Blanco": {
+        "buscar": "Tapatornillo para melamina Blanco",
+        "url": ""
+      },
+      "Maderado": {
+        "buscar": "Tapatornillo para melamina Maderado",
+        "url": ""
+      },
+      "Unicolor": {
+        "buscar": "Tapatornillo para melamina Unicolor",
+        "url": ""
+      }
     }
   },
   "Plywood": {
     "buscar": "plywood tablero madera plancha",
-    "url": "",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROAEd9e4Cx2MjHyPJn4CTltt7uBsHz9IMd1uzlamK_Mn9mroFXOe-7mSw&s=10",
     "variantes": {
       "PLY-NATURAL-9MM122X244CM": {
         "opcion": "Color: Natural · Medida: 9 mm · 122 x 244 cm",
@@ -544,11 +892,17 @@
         "buscar": "Plywood Natural 18 mm · 122 x 244 cm",
         "url": ""
       }
+    },
+    "colores": {
+      "Natural": {
+        "buscar": "Plywood Natural",
+        "url": ""
+      }
     }
   },
   "OSB": {
     "buscar": "tablero OSB plancha",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/7920291-1000-1000/106627_20.jpg?v=638990749228670000",
     "variantes": {
       "OSB-NATURAL-8MM122X244CM": {
         "opcion": "Color: Natural · Medida: 8 mm · 122 x 244 cm",
@@ -565,11 +919,17 @@
         "buscar": "OSB Natural 18 mm · 122 x 244 cm",
         "url": ""
       }
+    },
+    "colores": {
+      "Natural": {
+        "buscar": "OSB Natural",
+        "url": ""
+      }
     }
   },
   "Trupán Maderas América": {
     "buscar": "trupan MDP crudo tablero",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/11769709/mdf-3mm-2-14x2-44m-sin-melamina-151339_151339_1.png?v=639289864322200000",
     "variantes": {
       "TRU-MA-NATURAL-55MM213X244CM": {
         "opcion": "Color: Natural · Medida: 5.5 mm · 213 x 244 cm",
@@ -586,11 +946,17 @@
         "buscar": "Trupán Maderas América Natural 18 mm · 214 x 244 cm",
         "url": ""
       }
+    },
+    "colores": {
+      "Natural": {
+        "buscar": "Trupán Maderas América Natural",
+        "url": ""
+      }
     }
   },
   "Trupán Duratex": {
     "buscar": "trupan MDP crudo tablero Duratex",
-    "url": "",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYOTP9JoZhe7y_U5LXFl2snZdErNDgfNYJyRiK7MRu7D1evRwWupHmQ-E&s=10",
     "variantes": {
       "TRU-DU-NATURAL-9MM210X244CM": {
         "opcion": "Color: Natural · Medida: 9 mm · 210 x 244 cm",
@@ -602,42 +968,50 @@
         "buscar": "Trupán Duratex Natural 15 mm · 214 x 244 cm",
         "url": ""
       }
+    },
+    "colores": {
+      "Natural": {
+        "buscar": "Trupán Duratex Natural",
+        "url": ""
+      }
     }
   },
   "Triplay": {
     "buscar": "triplay lupuna plancha",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/2103888-1000-1000/22161.jpg?v=637678345406800000",
     "variantes": {
       "TRP-NATURAL-4MM122X244CM": {
         "opcion": "Color: Natural · Medida: 4 mm · 122 x 244 cm",
         "buscar": "Triplay Natural 4 mm · 122 x 244 cm",
         "url": ""
-      },
-      "TRP-LUPUNA-4MM122X244CM": {
-        "opcion": "Color: Lupuna · Medida: 4 mm · 122 x 244 cm",
-        "buscar": "Triplay Lupuna 4 mm · 122 x 244 cm",
+      }
+    },
+    "colores": {
+      "Natural": {
+        "buscar": "Triplay Natural",
         "url": ""
       },
-      "TRP-VENNER-35MM122X244CM": {
-        "opcion": "Color: Venner · Medida: 3.5 mm · 122 x 244 cm",
-        "buscar": "Triplay Venner 3.5 mm · 122 x 244 cm",
+      "Lupuna": {
+        "buscar": "Triplay Lupuna",
         "url": ""
       },
-      "TRISAPELLY4MM122X244CM": {
-        "opcion": "Color: Sapelly · Medida: 4 mm · 122 x 244 cm",
-        "buscar": "Triplay Sapelly 4 mm · 122 x 244 cm",
+      "Venner": {
+        "buscar": "Triplay Venner",
         "url": ""
       },
-      "TRIBITANGOR4MM122X244CM": {
-        "opcion": "Color: Bitangor · Medida: 4 mm · 122 x 244 cm",
-        "buscar": "Triplay Bitangor 4 mm · 122 x 244 cm",
+      "Sapelly": {
+        "buscar": "Triplay Sapelly",
+        "url": ""
+      },
+      "Bitangor": {
+        "buscar": "Triplay Bitangor",
         "url": ""
       }
     }
   },
   "Listón de madera de 8 pies": {
     "buscar": "liston madera pino",
-    "url": "",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkbnuogzV4XzJ9KeERu76F0sJAJht-Hw-jI4JyTicNpQunwtZTIaIK3R0&s=10",
     "variantes": {
       "LIS-1X15PULGX8PIES": {
         "opcion": "Medida: 1 x 1.5 pulg x 8 pies",
@@ -653,7 +1027,7 @@
   },
   "Bisagra de cazoleta cierre lento 35 mm (par)": {
     "buscar": "bisagra cangrejo cierre lento 35mm",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/205863-1000-1000/19013.jpg?v=635930818801330000",
     "variantes": {
       "BIS-CL-CENTRAL-35MM": {
         "opcion": "Tipo: Central · Medida: 35 mm",
@@ -674,7 +1048,7 @@
   },
   "Bisagra de cazoleta económica 35 mm": {
     "buscar": "bisagra cangrejo económica 35mm",
-    "url": "",
+    "url": "https://media.falabella.com/sodimacPE/1049437_15/w=1500,h=1500,fit=cover",
     "variantes": {
       "BIS-EC-CENTRAL-35MM": {
         "opcion": "Tipo: Central · Medida: 35 mm",
@@ -695,7 +1069,7 @@
   },
   "Bisagra push open 35 mm + sistema": {
     "buscar": "bisagra push open 35mm",
-    "url": "",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR405L19WtW09v6g_Vk3FmI5c1S_dpFtGZNaw0BJ3917Akypwhm-TuiC2iC&s=10",
     "variantes": {
       "BIS-PO-CENTRAL-35MM": {
         "opcion": "Tipo: Central · Medida: 35 mm",
@@ -716,7 +1090,7 @@
   },
   "Corredera telescópica mini (par)": {
     "buscar": "corredera telescópica cajón mini",
-    "url": "",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnBMe5fFeYEHmgctCf6m3t0jLt2SXHRHWs9Ihnuz8Lxl3XzCayNjMbThqu&s=10",
     "variantes": {
       "COR-MI-1025CM": {
         "opcion": "Medida: 10\" (25 cm)",
@@ -752,7 +1126,7 @@
   },
   "Corredera telescópica pesada (par)": {
     "buscar": "corredera telescópica pesada cajón",
-    "url": "",
+    "url": "https://carpintec.com.pe/cdn/shop/files/Corredera_telescopica_pesada_16.jpg?v=1748032723&width=800",
     "variantes": {
       "COR-PE-1025CM": {
         "opcion": "Medida: 10\" (25 cm)",
@@ -788,7 +1162,7 @@
   },
   "Corredera telescópica push open (par)": {
     "buscar": "corredera telescópica push open",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/10222759/166487.jpg?v=639065199130500000",
     "variantes": {
       "COR-PO-1435CM": {
         "opcion": "Medida: 14\" (35 cm)",
@@ -814,7 +1188,7 @@
   },
   "Tirador barra liviana": {
     "buscar": "tirador barra mueble cromado",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/2064824-1000-1000/107312.jpg?v=637675195965630000",
     "variantes": {
       "TIR-BL-96CM": {
         "opcion": "Medida: 9.6 cm",
@@ -830,7 +1204,7 @@
   },
   "Tirador barra pesado": {
     "buscar": "tirador barra pesado mueble",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/426092-1000-1000/103917.jpg?v=637232584007700000",
     "variantes": {
       "TIR-BP-96CM": {
         "opcion": "Medida: 9.6 cm",
@@ -861,7 +1235,7 @@
   },
   "Tirador tina cromado": {
     "buscar": "tirador tina cromado mueble",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/530585/79437.jpg?v=637357107698700000",
     "variantes": {
       "TIR-TI-CROMADO-96CM": {
         "opcion": "Color: Cromado · Medida: 9.6 cm",
@@ -878,11 +1252,17 @@
         "buscar": "Tirador tina cromado Cromado 16 cm",
         "url": ""
       }
+    },
+    "colores": {
+      "Cromado": {
+        "buscar": "Tirador tina cromado Cromado",
+        "url": ""
+      }
     }
   },
   "Tirador en U cromado de aluminio": {
     "buscar": "tirador en U aluminio cromado mueble",
-    "url": "",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJgdxWMMcsjz40XxcLZCa0VOSrI5OOV2Vh1ekpSJfHkG4k9bZY61CX5Hc&s=10",
     "variantes": {
       "TIR-U-CROMADO-96CM": {
         "opcion": "Color: Cromado · Medida: 9.6 cm",
@@ -894,11 +1274,17 @@
         "buscar": "Tirador en U cromado de aluminio Cromado 12.8 cm",
         "url": ""
       }
+    },
+    "colores": {
+      "Cromado": {
+        "buscar": "Tirador en U cromado de aluminio Cromado",
+        "url": ""
+      }
     }
   },
   "Jalador de cristal": {
     "buscar": "jalador cristal perilla mueble",
-    "url": "",
+    "url": "https://media.falabella.com/sodimacPE/2631040_01/w=1500,h=1500,fit=cover",
     "variantes": {
       "JAL-CR-30MM": {
         "opcion": "Medida: 30 mm",
@@ -914,7 +1300,7 @@
   },
   "Pistón de aire (gas)": {
     "buscar": "pistón de gas mueble puerta abatible",
-    "url": "",
+    "url": "https://static.wixstatic.com/media/58cefa_53d9922c524e4a93baafd467f3e4c4d9~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "variantes": {
       "PIS-6KG": {
         "opcion": "Medida: 6 kg",
@@ -940,7 +1326,7 @@
   },
   "Garrucha (rueda para muebles)": {
     "buscar": "garrucha rueda mueble plástico",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/203444/24245.jpg?v=635927289679130000",
     "variantes": {
       "GAR-NEGRO-112": {
         "opcion": "Color: Negro · Medida: 1 1/2\"",
@@ -977,11 +1363,25 @@
         "buscar": "Garrucha (rueda para muebles) Gris Plástica sin freno",
         "url": ""
       }
+    },
+    "colores": {
+      "Negro": {
+        "buscar": "Garrucha (rueda para muebles) Negro",
+        "url": ""
+      },
+      "Gris": {
+        "buscar": "Garrucha (rueda para muebles) Gris",
+        "url": ""
+      },
+      "Naranja": {
+        "buscar": "Garrucha (rueda para muebles) Naranja",
+        "url": ""
+      }
     }
   },
   "Escuadra metálica blanca": {
     "buscar": "escuadra metálica blanca unión",
-    "url": "",
+    "url": "https://acdn-us.mitiendanube.com/stores/001/530/390/products/union-blanca-9c1f5f692441e3ebda17138902179908-640-0.webp",
     "variantes": {
       "ESC-BL-BLANCO-4X5": {
         "opcion": "Color: Blanco · Medida: 4 x 5",
@@ -1008,11 +1408,17 @@
         "buscar": "Escuadra metálica blanca Blanco 12 x 14",
         "url": ""
       }
+    },
+    "colores": {
+      "Blanco": {
+        "buscar": "Escuadra metálica blanca Blanco",
+        "url": ""
+      }
     }
   },
   "Escuadra zincada": {
     "buscar": "escuadra zincada refuerzo ángulo",
-    "url": "",
+    "url": "https://carpintec.com.pe/cdn/shop/files/Angulo_zincado_2.jpg?v=1709566382&width=800",
     "variantes": {
       "ESC-ZI-ZINCADO-30X20X20": {
         "opcion": "Color: Zincado · Medida: 30 x 20 x 20",
@@ -1044,11 +1450,17 @@
         "buscar": "Escuadra zincada Zincado 30 x 100 x 100",
         "url": ""
       }
+    },
+    "colores": {
+      "Zincado": {
+        "buscar": "Escuadra zincada Zincado",
+        "url": ""
+      }
     }
   },
   "Pasacable para escritorio": {
     "buscar": "pasacable escritorio tapa cables",
-    "url": "",
+    "url": "https://carpintec.com.pe/cdn/shop/files/Pasacable_para_escritorio_negro_1024x1024.jpg?v=1746804685",
     "variantes": {
       "PAS-ALMENDRA": {
         "opcion": "Color: Almendra",
@@ -1080,11 +1492,37 @@
         "buscar": "Pasacable para escritorio Negro",
         "url": ""
       }
+    },
+    "colores": {
+      "Almendra": {
+        "buscar": "Pasacable para escritorio Almendra",
+        "url": ""
+      },
+      "Azul": {
+        "buscar": "Pasacable para escritorio Azul",
+        "url": ""
+      },
+      "Haya": {
+        "buscar": "Pasacable para escritorio Haya",
+        "url": ""
+      },
+      "Marrón": {
+        "buscar": "Pasacable para escritorio Marrón",
+        "url": ""
+      },
+      "Marrón claro": {
+        "buscar": "Pasacable para escritorio Marrón claro",
+        "url": ""
+      },
+      "Negro": {
+        "buscar": "Pasacable para escritorio Negro",
+        "url": ""
+      }
     }
   },
   "Clavos con cabeza (por kilo)": {
     "buscar": "clavos con cabeza kilo",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/8550402/13615.jpg?v=639004605568770000",
     "variantes": {
       "CLA-34": {
         "opcion": "Medida: 3/4\"",
@@ -1110,7 +1548,7 @@
   },
   "Tornillo Stovolt zincado": {
     "buscar": "tornillo stovolt zincado",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/502489/16553.jpg?v=637320847813100000",
     "variantes": {
       "STO-ZINCADO-4X20MM": {
         "opcion": "Color: Zincado · Medida: 4 x 20 mm",
@@ -1142,11 +1580,17 @@
         "buscar": "Tornillo Stovolt zincado Zincado 4 x 50 mm",
         "url": ""
       }
+    },
+    "colores": {
+      "Zincado": {
+        "buscar": "Tornillo Stovolt zincado Zincado",
+        "url": ""
+      }
     }
   },
   "Tornillo drywall punta fina negro": {
     "buscar": "tornillo drywall punta fina negro",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/8549348/20574.jpg?v=638727477648600000",
     "variantes": {
       "DRY-NEGRO-6X1": {
         "opcion": "Color: Negro · Medida: 6 x 1",
@@ -1158,11 +1602,17 @@
         "buscar": "Tornillo drywall punta fina negro Negro 7 x 7/16",
         "url": ""
       }
+    },
+    "colores": {
+      "Negro": {
+        "buscar": "Tornillo drywall punta fina negro Negro",
+        "url": ""
+      }
     }
   },
   "Tarugo de madera": {
     "buscar": "tarugo madera unión espiga",
-    "url": "",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiNHBpqMGatyWumuRz2Rg756SKCDfEY1q3Z5-yNtj33uK9Y9ip4YlQEj4&s=10",
     "variantes": {
       "TAR-38": {
         "opcion": "Medida: 3/8",
@@ -1178,7 +1628,7 @@
   },
   "Wincha Pretul": {
     "buscar": "wincha flexómetro Pretul",
-    "url": "",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiEAaTOY2w5pdo06ZFZh8FDY2wSUV4ITu958x6wUEhBGkE0YvbIC-F0fw&s=10",
     "variantes": {
       "WIN-3M": {
         "opcion": "Medida: 3 m",
@@ -1194,7 +1644,7 @@
   },
   "Martillo de uña curva Truper": {
     "buscar": "martillo uña curva Truper",
-    "url": "",
+    "url": "https://promart.vteximg.com.br/arquivos/ids/9452360/imageUrl_1.jpg?v=638959754278700000",
     "variantes": {
       "MAR-16OZ": {
         "opcion": "Medida: 16 oz",
@@ -1210,7 +1660,7 @@
   },
   "Alicate C&A": {
     "buscar": "alicate universal punta corte",
-    "url": "",
+    "url": "https://rimage.ripley.com.pe/home.ripley/Attachment/MKP/4070/PMP20000077000/thumbnail-1.jpeg",
     "variantes": {
       "ALI-CORTE-6": {
         "opcion": "Tipo: Corte · Medida: 6\"",
@@ -1236,7 +1686,7 @@
   },
   "Serrucho de carpintero C&A": {
     "buscar": "serrucho carpintero mango madera",
-    "url": "",
+    "url": "https://cdn.ardiles.pe/productos/ml/serrucho-carpintero-20-m-madera-c-a-1400102140455-2-1.jpg",
     "variantes": {
       "SER-18": {
         "opcion": "Medida: 18\"",
@@ -1411,6 +1861,24 @@
       "SIL-TRANSPARENTE-225ML": {
         "opcion": "Color: Transparente · Medida: 225 ml",
         "buscar": "Silicona multiusos Knauff 225 ml Transparente 225 ml",
+        "url": ""
+      }
+    },
+    "colores": {
+      "Blanco": {
+        "buscar": "Silicona multiusos Knauff 225 ml Blanco",
+        "url": ""
+      },
+      "Gris": {
+        "buscar": "Silicona multiusos Knauff 225 ml Gris",
+        "url": ""
+      },
+      "Negro": {
+        "buscar": "Silicona multiusos Knauff 225 ml Negro",
+        "url": ""
+      },
+      "Transparente": {
+        "buscar": "Silicona multiusos Knauff 225 ml Transparente",
         "url": ""
       }
     }
@@ -1589,6 +2057,16 @@
         "buscar": "Foco LED Blanco 5 W",
         "url": ""
       }
+    },
+    "colores": {
+      "Cálido": {
+        "buscar": "Foco LED Cálido",
+        "url": ""
+      },
+      "Blanco": {
+        "buscar": "Foco LED Blanco",
+        "url": ""
+      }
     }
   },
   "Panel LED para empotrar": {
@@ -1699,6 +2177,12 @@
         "buscar": "MDP crudo Natural 18 mm · 207 x 244 cm",
         "url": ""
       }
+    },
+    "colores": {
+      "Natural": {
+        "buscar": "MDP crudo Natural",
+        "url": ""
+      }
     }
   },
   "Trupán": {
@@ -1720,6 +2204,12 @@
         "buscar": "Trupán Natural Ranurado grande 18 mm · 244 x 152 cm",
         "url": ""
       }
+    },
+    "colores": {
+      "Natural": {
+        "buscar": "Trupán Natural",
+        "url": ""
+      }
     }
   },
   "Plywood especial": {
@@ -1739,6 +2229,12 @@
       "PLYNATURALPLYNOVOSUPER18MM18MM244X122CM": {
         "opcion": "Color: Natural · Tipo: Plynovo Super 18 mm · Medida: 18 mm · 244 x 122 cm",
         "buscar": "Plywood especial Natural Plynovo Super 18 mm 18 mm · 244 x 122 cm",
+        "url": ""
+      }
+    },
+    "colores": {
+      "Natural": {
+        "buscar": "Plywood especial Natural",
         "url": ""
       }
     }
@@ -1857,6 +2353,96 @@
         "buscar": "Wall panel (panel decorativo para pared) WPq9451-01 2.90 m x 16 cm",
         "url": ""
       }
+    },
+    "colores": {
+      "LK1013": {
+        "buscar": "Wall panel (panel decorativo para pared) LK1013",
+        "url": ""
+      },
+      "LK1016": {
+        "buscar": "Wall panel (panel decorativo para pared) LK1016",
+        "url": ""
+      },
+      "LK4006": {
+        "buscar": "Wall panel (panel decorativo para pared) LK4006",
+        "url": ""
+      },
+      "LK4032": {
+        "buscar": "Wall panel (panel decorativo para pared) LK4032",
+        "url": ""
+      },
+      "LK5005": {
+        "buscar": "Wall panel (panel decorativo para pared) LK5005",
+        "url": ""
+      },
+      "LK6017": {
+        "buscar": "Wall panel (panel decorativo para pared) LK6017",
+        "url": ""
+      },
+      "LK8003": {
+        "buscar": "Wall panel (panel decorativo para pared) LK8003",
+        "url": ""
+      },
+      "LK8019": {
+        "buscar": "Wall panel (panel decorativo para pared) LK8019",
+        "url": ""
+      },
+      "LK8020": {
+        "buscar": "Wall panel (panel decorativo para pared) LK8020",
+        "url": ""
+      },
+      "LKh3102": {
+        "buscar": "Wall panel (panel decorativo para pared) LKh3102",
+        "url": ""
+      },
+      "LKh3103": {
+        "buscar": "Wall panel (panel decorativo para pared) LKh3103",
+        "url": ""
+      },
+      "LKh3115": {
+        "buscar": "Wall panel (panel decorativo para pared) LKh3115",
+        "url": ""
+      },
+      "WP4032 Black": {
+        "buscar": "Wall panel (panel decorativo para pared) WP4032 Black",
+        "url": ""
+      },
+      "WP53102-308": {
+        "buscar": "Wall panel (panel decorativo para pared) WP53102-308",
+        "url": ""
+      },
+      "WP85030-02b2": {
+        "buscar": "Wall panel (panel decorativo para pared) WP85030-02b2",
+        "url": ""
+      },
+      "WPaw062": {
+        "buscar": "Wall panel (panel decorativo para pared) WPaw062",
+        "url": ""
+      },
+      "WPdt-10": {
+        "buscar": "Wall panel (panel decorativo para pared) WPdt-10",
+        "url": ""
+      },
+      "WPh002-1": {
+        "buscar": "Wall panel (panel decorativo para pared) WPh002-1",
+        "url": ""
+      },
+      "WPh2109": {
+        "buscar": "Wall panel (panel decorativo para pared) WPh2109",
+        "url": ""
+      },
+      "WPh3114": {
+        "buscar": "Wall panel (panel decorativo para pared) WPh3114",
+        "url": ""
+      },
+      "WPow": {
+        "buscar": "Wall panel (panel decorativo para pared) WPow",
+        "url": ""
+      },
+      "WPq9451-01": {
+        "buscar": "Wall panel (panel decorativo para pared) WPq9451-01",
+        "url": ""
+      }
     }
   },
   "Panel mármol": {
@@ -1926,6 +2512,60 @@
       "PANSJ101325MM244X122CM": {
         "opcion": "Color: SJ101-3 · Medida: 2.5 mm · 244 x 122 cm",
         "buscar": "Panel mármol SJ101-3 2.5 mm · 244 x 122 cm",
+        "url": ""
+      }
+    },
+    "colores": {
+      "3077": {
+        "buscar": "Panel mármol 3077",
+        "url": ""
+      },
+      "AK-89606": {
+        "buscar": "Panel mármol AK-89606",
+        "url": ""
+      },
+      "DY058": {
+        "buscar": "Panel mármol DY058",
+        "url": ""
+      },
+      "DY061": {
+        "buscar": "Panel mármol DY061",
+        "url": ""
+      },
+      "DY101": {
+        "buscar": "Panel mármol DY101",
+        "url": ""
+      },
+      "DY175": {
+        "buscar": "Panel mármol DY175",
+        "url": ""
+      },
+      "LJ001": {
+        "buscar": "Panel mármol LJ001",
+        "url": ""
+      },
+      "LJ80007": {
+        "buscar": "Panel mármol LJ80007",
+        "url": ""
+      },
+      "MT9021-L": {
+        "buscar": "Panel mármol MT9021-L",
+        "url": ""
+      },
+      "S1650": {
+        "buscar": "Panel mármol S1650",
+        "url": ""
+      },
+      "S1654-1": {
+        "buscar": "Panel mármol S1654-1",
+        "url": ""
+      },
+      "S1657-1": {
+        "buscar": "Panel mármol S1657-1",
+        "url": ""
+      },
+      "SJ101-3": {
+        "buscar": "Panel mármol SJ101-3",
         "url": ""
       }
     }
@@ -1999,6 +2639,60 @@
         "buscar": "Jalador animado GM-A861 Modelo GM-A861",
         "url": ""
       }
+    },
+    "colores": {
+      "GM-110": {
+        "buscar": "Jalador animado GM-110",
+        "url": ""
+      },
+      "GM-112": {
+        "buscar": "Jalador animado GM-112",
+        "url": ""
+      },
+      "GM-113": {
+        "buscar": "Jalador animado GM-113",
+        "url": ""
+      },
+      "GM-120": {
+        "buscar": "Jalador animado GM-120",
+        "url": ""
+      },
+      "GM-124": {
+        "buscar": "Jalador animado GM-124",
+        "url": ""
+      },
+      "GM-24": {
+        "buscar": "Jalador animado GM-24",
+        "url": ""
+      },
+      "GM-72": {
+        "buscar": "Jalador animado GM-72",
+        "url": ""
+      },
+      "GM-73": {
+        "buscar": "Jalador animado GM-73",
+        "url": ""
+      },
+      "GM-74": {
+        "buscar": "Jalador animado GM-74",
+        "url": ""
+      },
+      "GM-75": {
+        "buscar": "Jalador animado GM-75",
+        "url": ""
+      },
+      "GM-76": {
+        "buscar": "Jalador animado GM-76",
+        "url": ""
+      },
+      "GM-77": {
+        "buscar": "Jalador animado GM-77",
+        "url": ""
+      },
+      "GM-A861": {
+        "buscar": "Jalador animado GM-A861",
+        "url": ""
+      }
     }
   },
   "Tornillo autorroscante 3.5 mm": {
@@ -2048,6 +2742,12 @@
       "TORZINCADODENTADO35X50MM": {
         "opcion": "Color: Zincado · Tipo: Dentado · Medida: 3.5 x 50 mm",
         "buscar": "Tornillo autorroscante 3.5 mm Zincado Dentado 3.5 x 50 mm",
+        "url": ""
+      }
+    },
+    "colores": {
+      "Zincado": {
+        "buscar": "Tornillo autorroscante 3.5 mm Zincado",
         "url": ""
       }
     }
@@ -2106,6 +2806,12 @@
         "buscar": "Tornillo autorroscante 4 mm Zincado Dentado 4 x 50 mm",
         "url": ""
       }
+    },
+    "colores": {
+      "Zincado": {
+        "buscar": "Tornillo autorroscante 4 mm Zincado",
+        "url": ""
+      }
     }
   },
   "Tornillo autorroscante 5 mm": {
@@ -2135,6 +2841,12 @@
       "TORZINCADO5X80MM": {
         "opcion": "Color: Zincado · Medida: 5 x 80 mm",
         "buscar": "Tornillo autorroscante 5 mm Zincado 5 x 80 mm",
+        "url": ""
+      }
+    },
+    "colores": {
+      "Zincado": {
+        "buscar": "Tornillo autorroscante 5 mm Zincado",
         "url": ""
       }
     }
@@ -2173,6 +2885,12 @@
         "buscar": "Gancho para trupán Zincado 50 mm",
         "url": ""
       }
+    },
+    "colores": {
+      "Zincado": {
+        "buscar": "Gancho para trupán Zincado",
+        "url": ""
+      }
     }
   },
   "Tarugo plástico": {
@@ -2204,6 +2922,28 @@
         "buscar": "Tarugo plástico Azul 3/4\"",
         "url": ""
       }
+    },
+    "colores": {
+      "Rojo": {
+        "buscar": "Tarugo plástico Rojo",
+        "url": ""
+      },
+      "Naranja": {
+        "buscar": "Tarugo plástico Naranja",
+        "url": ""
+      },
+      "Verde": {
+        "buscar": "Tarugo plástico Verde",
+        "url": ""
+      },
+      "Gris": {
+        "buscar": "Tarugo plástico Gris",
+        "url": ""
+      },
+      "Azul": {
+        "buscar": "Tarugo plástico Azul",
+        "url": ""
+      }
     }
   },
   "Platina": {
@@ -2228,6 +2968,12 @@
       "PLAZINCADO100MM": {
         "opcion": "Color: Zincado · Medida: 100 mm",
         "buscar": "Platina Zincado 100 mm",
+        "url": ""
+      }
+    },
+    "colores": {
+      "Zincado": {
+        "buscar": "Platina Zincado",
         "url": ""
       }
     }
@@ -2271,6 +3017,12 @@
         "buscar": "Rejilla de aluminio Aluminio 5 líneas 50 x 300 mm",
         "url": ""
       }
+    },
+    "colores": {
+      "Aluminio": {
+        "buscar": "Rejilla de aluminio Aluminio",
+        "url": ""
+      }
     }
   },
   "Perchero de aluminio e inox": {
@@ -2305,6 +3057,20 @@
       "PERCROMADOLISOREDONDO1BH0193M": {
         "opcion": "Color: Cromado · Medida: Liso Redondo 1\" Bh-019-3m",
         "buscar": "Perchero de aluminio e inox Cromado Liso Redondo 1\" Bh-019-3m",
+        "url": ""
+      }
+    },
+    "colores": {
+      "Acero inoxidable": {
+        "buscar": "Perchero de aluminio e inox Acero inoxidable",
+        "url": ""
+      },
+      "Aluminio": {
+        "buscar": "Perchero de aluminio e inox Aluminio",
+        "url": ""
+      },
+      "Cromado": {
+        "buscar": "Perchero de aluminio e inox Cromado",
         "url": ""
       }
     }
@@ -2343,6 +3109,16 @@
         "buscar": "Precinto de seguridad Transparente 400 mm · 25 unid.",
         "url": ""
       }
+    },
+    "colores": {
+      "Negro": {
+        "buscar": "Precinto de seguridad Negro",
+        "url": ""
+      },
+      "Transparente": {
+        "buscar": "Precinto de seguridad Transparente",
+        "url": ""
+      }
     }
   },
   "Escuadra de carpintero": {
@@ -2367,6 +3143,12 @@
       "ESCACERO8": {
         "opcion": "Color: Acero · Medida: 8\"",
         "buscar": "Escuadra de carpintero Acero 8\"",
+        "url": ""
+      }
+    },
+    "colores": {
+      "Acero": {
+        "buscar": "Escuadra de carpintero Acero",
         "url": ""
       }
     }
